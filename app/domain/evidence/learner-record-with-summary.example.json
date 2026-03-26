@@ -1,5 +1,6 @@
 {
   "learnerId": "sample-learner",
+  "activeSession": null,
   "sessions": [
     {
       "targetSkillId": "U1-S4",

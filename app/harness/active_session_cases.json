@@ -1,0 +1,20 @@
+[
+  {
+    "name": "store resumed session as active session",
+    "learnerFile": "app/domain/evidence/learner-record-with-active-session.example.json",
+    "expected": {
+      "targetSkillId": "U1-S4",
+      "currentLessonStepId": "STEP-U1-S4-VERIFY-PRIME-FIRST",
+      "status": "in_progress"
+    }
+  },
+  {
+    "name": "store newly planned session as active session",
+    "learnerFile": "app/domain/evidence/learner-record-with-summary.example.json",
+    "expected": {
+      "targetSkillId": "U1-S3",
+      "currentLessonStepId": "STEP-U1-S2-ENTRY-BRIDGE",
+      "status": "in_progress"
+    }
+  }
+]

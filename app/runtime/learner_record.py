@@ -3,12 +3,14 @@ from __future__ import annotations
 from copy import deepcopy
 
 from app.runtime.diagnostics import summarize_learner
+from app.runtime.session_runner import create_session_state
 from app.runtime.session_runner import session_history_to_evidence_events
 
 
 def create_learner_record(learner_id: str) -> dict:
     return {
         "learnerId": learner_id,
+        "activeSession": None,
         "sessions": [],
         "evidenceEvents": [],
         "latestSkillSummaries": [],
@@ -48,6 +50,7 @@ def merge_session_into_learner_record(learner_record: dict, session_state: dict,
 
     merged_record = {
         **learner_record,
+        "activeSession": None if session_state.get("status") == "completed" else _session_snapshot(session_state),
         "sessions": list(learner_record.get("sessions", [])) + [_session_snapshot(session_state)],
         "evidenceEvents": merged_events,
         "latestSkillSummaries": [] if summary is None else summary.skillSummaries,
@@ -61,3 +64,30 @@ def _latest_timestamp(session_state: dict) -> str | None:
     history = session_state.get("history", [])
     timestamps = [record.get("timestamp") for record in history if isinstance(record.get("timestamp"), str)]
     return timestamps[-1] if timestamps else None
+
+
+def store_active_session(learner_record: dict, orchestration_result: dict) -> dict:
+    learner_id = learner_record.get("learnerId")
+    if learner_id != orchestration_result.get("learnerId"):
+        raise ValueError("Learner record and orchestration result must belong to the same learnerId.")
+
+    action = orchestration_result.get("action")
+    if action == "resume_session":
+        active_session = orchestration_result.get("sessionState")
+    elif action == "plan_new_session":
+        planned_session = orchestration_result.get("plannedSession", {})
+        payload = planned_session.get("sessionPayload", {})
+        active_session = create_session_state(
+            {
+                "learnerId": learner_id,
+                "targetSkillId": payload.get("targetSkillId"),
+                "sessionPayload": payload,
+            }
+        )
+    else:
+        raise ValueError(f"Unsupported orchestration action: {action}")
+
+    return {
+        **learner_record,
+        "activeSession": _session_snapshot(active_session),
+    }

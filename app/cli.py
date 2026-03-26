@@ -10,7 +10,7 @@ if __package__ in {None, ""}:
 
 from app.runtime.content_loader import load_unit1_content
 from app.runtime.diagnostics import diagnose_event, summarize_learner, validate_evidence_event
-from app.runtime.learner_record import merge_session_into_learner_record
+from app.runtime.learner_record import merge_session_into_learner_record, store_active_session
 from app.runtime.session_orchestrator import resume_or_plan_session
 from app.runtime.session_planner import plan_next_session
 from app.runtime.session_runner import (
@@ -78,6 +78,12 @@ def _build_parser() -> argparse.ArgumentParser:
         help="Resume an in-progress session when possible, otherwise plan the next session.",
     )
     resume_or_plan_parser.add_argument("--learner", required=True, help="Path to a learner record JSON file.")
+
+    sync_active_session_parser = subparsers.add_parser(
+        "sync-active-session",
+        help="Run resume-or-plan and store the resulting live session on the learner record.",
+    )
+    sync_active_session_parser.add_argument("--learner", required=True, help="Path to a learner record JSON file.")
 
     subparsers.add_parser("run-harness", help="Run the first Unit 1 harness.")
     return parser
@@ -240,6 +246,19 @@ def run_resume_or_plan(learner_path: Path) -> int:
     return 0
 
 
+def run_sync_active_session(learner_path: Path) -> int:
+    learner_record = _load_json(learner_path)
+    try:
+        orchestration_result = resume_or_plan_session(learner_record)
+        updated_record = store_active_session(learner_record, orchestration_result)
+    except ValueError as exc:
+        print(f"Sync-active-session failed: {exc}")
+        return 1
+
+    print(json.dumps(updated_record, ensure_ascii=False, indent=2))
+    return 0
+
+
 def run_summarize_learner(input_path: Path) -> int:
     events = _load_json(input_path)
     if not isinstance(events, list):
@@ -290,6 +309,8 @@ def main() -> int:
         return run_plan_next_session(Path(args.learner))
     if args.command == "resume-or-plan":
         return run_resume_or_plan(Path(args.learner))
+    if args.command == "sync-active-session":
+        return run_sync_active_session(Path(args.learner))
     if args.command == "run-harness":
         return run_harness()
 

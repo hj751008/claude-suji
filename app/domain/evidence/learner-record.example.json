@@ -1,5 +1,6 @@
 {
   "learnerId": "sample-learner",
+  "activeSession": null,
   "sessions": [],
   "evidenceEvents": [],
   "latestSkillSummaries": [],
