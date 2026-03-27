@@ -22,9 +22,15 @@ If not, it plans a new session from the latest recommendations and stores it as 
 ## 2. Record One Learner Turn
 
 ```bash
+python app/cli.py prepare-observation-form --learner app/domain/evidence/learner-record-with-live-session.example.json
 python app/cli.py run-learning-turn --learner app/domain/evidence/learner-record-with-live-session.example.json --input app/domain/evidence/observation-form-step-u1-s2.example.json
 ```
 
+`prepare-observation-form` returns a strict draft built only from the current
+`activeSession.currentStep` and the documented observation-form mapping. It
+does not invent fields or prompts. If the mapping is missing, it should fail.
+
+Then fill the returned `observationForm` and pass it to `run-learning-turn`.
 Read the returned `turnSummary`.
 
 - `decision`: how the evaluator judged the submitted observation
@@ -51,6 +57,7 @@ To persist the updated learner record:
 
 ```bash
 python app/cli.py start-learning-session --learner <learner-record.json> --write
+python app/cli.py prepare-observation-form --learner <learner-record.json> --output <observation-form.json>
 python app/cli.py run-learning-turn --learner <learner-record.json> --input <observation-form.json> --write
 ```
 

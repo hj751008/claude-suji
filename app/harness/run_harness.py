@@ -7,6 +7,7 @@ from app.runtime.content_loader import load_unit1_content
 from app.runtime.diagnostics import diagnose_event, summarize_learner, validate_evidence_event
 from app.runtime.learner_record import (
     merge_session_into_learner_record,
+    prepare_observation_form_for_learner_record,
     run_learning_turn,
     store_active_session,
     submit_observation_to_learner_record,
@@ -95,6 +96,11 @@ def _load_start_learning_session_cases() -> list[dict]:
 
 def _load_learning_turn_cases() -> list[dict]:
     with (HARNESS_ROOT / "learning_turn_cases.json").open("r", encoding="utf-8") as handle:
+        return json.load(handle)
+
+
+def _load_prepare_observation_form_cases() -> list[dict]:
+    with (HARNESS_ROOT / "prepare_observation_form_cases.json").open("r", encoding="utf-8") as handle:
         return json.load(handle)
 
 
@@ -693,6 +699,33 @@ def _assert_learning_turn_case(case: dict, content) -> list[str]:
     return failures
 
 
+def _assert_prepare_observation_form_case(case: dict, content) -> list[str]:
+    failures: list[str] = []
+    learner_path = Path(HARNESS_ROOT.parent.parent, case["learnerFile"])
+    with learner_path.open("r", encoding="utf-8") as handle:
+        learner_record = json.load(handle)
+
+    prepared = prepare_observation_form_for_learner_record(learner_record, content.observation_form_mappings)
+    expected = case["expected"]
+    observation_form = prepared.get("observationForm", {})
+    template = prepared.get("observationFormTemplate", {})
+
+    if prepared.get("sourceLessonStepId") != expected["lessonStepId"]:
+        failures.append(
+            f"{case['name']}: expected lesson step {expected['lessonStepId']}, got {prepared.get('sourceLessonStepId')}."
+        )
+    if list(observation_form.get("fieldValues", {}).keys()) != expected["fieldIds"]:
+        failures.append(
+            f"{case['name']}: expected field ids {expected['fieldIds']}, got {list(observation_form.get('fieldValues', {}).keys())}."
+        )
+    if template.get("learnerResponsePrompt") != expected["learnerResponsePrompt"]:
+        failures.append(
+            f"{case['name']}: expected learner prompt {expected['learnerResponsePrompt']!r}, got {template.get('learnerResponsePrompt')!r}."
+        )
+
+    return failures
+
+
 def main() -> int:
     content = load_unit1_content()
     cases = _load_cases()
@@ -709,6 +742,7 @@ def main() -> int:
     failure_cases = _load_failure_cases()
     start_learning_session_cases = _load_start_learning_session_cases()
     learning_turn_cases = _load_learning_turn_cases()
+    prepare_observation_form_cases = _load_prepare_observation_form_cases()
 
     failures: list[str] = []
     for case in cases:
@@ -739,6 +773,8 @@ def main() -> int:
         failures.extend(_assert_start_learning_session_case(case))
     for case in learning_turn_cases:
         failures.extend(_assert_learning_turn_case(case, content))
+    for case in prepare_observation_form_cases:
+        failures.extend(_assert_prepare_observation_form_case(case, content))
 
     if failures:
         print("Harness failed:")
@@ -761,6 +797,7 @@ def main() -> int:
     print(f"Failure cases: {len(failure_cases)}")
     print(f"Start-learning-session cases: {len(start_learning_session_cases)}")
     print(f"Learning-turn cases: {len(learning_turn_cases)}")
+    print(f"Prepare-observation-form cases: {len(prepare_observation_form_cases)}")
     return 0
 
 

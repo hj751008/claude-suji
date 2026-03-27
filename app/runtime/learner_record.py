@@ -3,7 +3,7 @@ from __future__ import annotations
 from copy import deepcopy
 
 from app.runtime.diagnostics import summarize_learner
-from app.runtime.session_runner import create_session_state
+from app.runtime.session_runner import build_observation_form_template, create_session_state
 from app.runtime.session_runner import session_history_to_evidence_events, submit_observation
 
 
@@ -203,6 +203,36 @@ def run_learning_turn(learner_record: dict, observation_form: dict, content) -> 
         "learnerId": updated_record.get("learnerId"),
         "turnSummary": turn_summary,
         "learnerRecord": updated_record,
+    }
+
+
+def prepare_observation_form_for_learner_record(learner_record: dict, observation_form_mappings: list[dict]) -> dict:
+    validation_errors = validate_learner_record(learner_record)
+    if validation_errors:
+        raise ValueError("; ".join(validation_errors))
+
+    prepared_record = _ensure_active_session(learner_record)
+    active_session = prepared_record.get("activeSession")
+    if not isinstance(active_session, dict):
+        raise ValueError("Learner record has no activeSession to prepare an observation form for.")
+
+    template = build_observation_form_template(active_session, observation_form_mappings)
+    return {
+        "learnerId": prepared_record.get("learnerId"),
+        "sourceLessonStepId": template["lessonStepId"],
+        "activeSession": _session_snapshot(active_session),
+        "observationForm": {
+            "lessonStepId": template["lessonStepId"],
+            "learnerResponse": "",
+            "fieldValues": {
+                field["fieldId"]: False
+                for field in template.get("fields", [])
+                if isinstance(field.get("fieldId"), str)
+            },
+            "tutorNote": "",
+            "timestamp": "",
+        },
+        "observationFormTemplate": template,
     }
 
 

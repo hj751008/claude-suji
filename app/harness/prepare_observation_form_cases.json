@@ -1,0 +1,26 @@
+[
+  {
+    "name": "prepare observation form from planned live session",
+    "learnerFile": "app/domain/evidence/learner-record-with-live-session.example.json",
+    "expected": {
+      "lessonStepId": "STEP-U1-S2-ENTRY-BRIDGE",
+      "fieldIds": [
+        "starts_with_two",
+        "mentions_evenness"
+      ],
+      "learnerResponsePrompt": "Write the learner's first move for entering the factorization of 24."
+    }
+  },
+  {
+    "name": "prepare observation form from resumed active session",
+    "learnerFile": "app/domain/evidence/learner-record-with-active-session.example.json",
+    "expected": {
+      "lessonStepId": "STEP-U1-S4-VERIFY-PRIME-FIRST",
+      "fieldIds": [
+        "rejects_composite_factor_answer",
+        "selects_all_prime_answer"
+      ],
+      "learnerResponsePrompt": "Write how the learner compared 2 x 6 and 2 x 2 x 3."
+    }
+  }
+]

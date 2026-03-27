@@ -12,6 +12,7 @@ from app.runtime.content_loader import load_unit1_content
 from app.runtime.diagnostics import diagnose_event, summarize_learner, validate_evidence_event
 from app.runtime.learner_record import (
     merge_session_into_learner_record,
+    prepare_observation_form_for_learner_record,
     run_learning_turn,
     store_active_session,
     submit_observation_to_learner_record,
@@ -93,6 +94,13 @@ def _build_parser() -> argparse.ArgumentParser:
     run_learning_turn_parser.add_argument("--learner", required=True, help="Path to a learner record JSON file.")
     run_learning_turn_parser.add_argument("--input", required=True, help="Path to an observation form JSON file.")
     run_learning_turn_parser.add_argument("--write", action="store_true", help="Write the updated learner record back to the learner file.")
+
+    prepare_observation_form_parser = subparsers.add_parser(
+        "prepare-observation-form",
+        help="Build a strict observation form draft from the current learner-record step and documented mappings only.",
+    )
+    prepare_observation_form_parser.add_argument("--learner", required=True, help="Path to a learner record JSON file.")
+    prepare_observation_form_parser.add_argument("--output", help="Optional path to write the observation form draft JSON.")
 
     session_summary_parser = subparsers.add_parser("summarize-session-history", help="Convert session history to learner evidence and summarize it.")
     session_summary_parser.add_argument("--session", required=True, help="Path to a session state JSON file.")
@@ -281,6 +289,22 @@ def run_learning_turn_command(learner_path: Path, input_path: Path, write_result
     return 0
 
 
+def run_prepare_observation_form(learner_path: Path, output_path: Path | None) -> int:
+    learner_record = _load_json(learner_path)
+    content = load_unit1_content()
+    try:
+        result = prepare_observation_form_for_learner_record(learner_record, content.observation_form_mappings)
+    except ValueError as exc:
+        print(f"Prepare-observation-form failed: {exc}")
+        return 1
+
+    if output_path is not None:
+        _dump_json(output_path, result["observationForm"])
+
+    print(json.dumps(result, ensure_ascii=False, indent=2))
+    return 0
+
+
 def run_summarize_session_history(session_path: Path) -> int:
     session_state = _load_json(session_path)
     content = load_unit1_content()
@@ -426,6 +450,11 @@ def main() -> int:
         return run_submit_observation_to_learner_record(Path(args.learner), Path(args.input), args.write)
     if args.command == "run-learning-turn":
         return run_learning_turn_command(Path(args.learner), Path(args.input), args.write)
+    if args.command == "prepare-observation-form":
+        return run_prepare_observation_form(
+            Path(args.learner),
+            None if args.output is None else Path(args.output),
+        )
     if args.command == "summarize-session-history":
         return run_summarize_session_history(Path(args.session))
     if args.command == "update-learner-record":
