@@ -1,0 +1,9 @@
+{
+  "learnerResponse": "2 x 6 is not prime factorization because 6 is not prime, but 2 x 2 x 3 is.",
+  "fieldValues": {
+    "rejects_composite_factor_answer": true,
+    "selects_all_prime_answer": true
+  },
+  "tutorNote": "Learner rejected the composite-factor answer and selected the all-prime expression.",
+  "timestamp": "2026-03-27T10:00:00+09:00"
+}

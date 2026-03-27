@@ -7,6 +7,7 @@ from app.runtime.content_loader import load_unit1_content
 from app.runtime.diagnostics import diagnose_event, summarize_learner, validate_evidence_event
 from app.runtime.learner_record import (
     merge_session_into_learner_record,
+    run_learning_turn,
     store_active_session,
     submit_observation_to_learner_record,
     validate_learner_record,
@@ -89,6 +90,11 @@ def _load_failure_cases() -> list[dict]:
 
 def _load_start_learning_session_cases() -> list[dict]:
     with (HARNESS_ROOT / "start_learning_session_cases.json").open("r", encoding="utf-8") as handle:
+        return json.load(handle)
+
+
+def _load_learning_turn_cases() -> list[dict]:
+    with (HARNESS_ROOT / "learning_turn_cases.json").open("r", encoding="utf-8") as handle:
         return json.load(handle)
 
 
@@ -640,6 +646,53 @@ def _assert_start_learning_session_case(case: dict) -> list[str]:
     return failures
 
 
+def _assert_learning_turn_case(case: dict, content) -> list[str]:
+    failures: list[str] = []
+    learner_path = Path(HARNESS_ROOT.parent.parent, case["learnerFile"])
+    with learner_path.open("r", encoding="utf-8") as handle:
+        learner_record = json.load(handle)
+
+    result = run_learning_turn(learner_record, case["observationFormInput"], content)
+    expected = case["expected"]
+    turn_summary = result.get("turnSummary", {})
+
+    if turn_summary.get("decision") != expected["decision"]:
+        failures.append(
+            f"{case['name']}: expected decision {expected['decision']}, got {turn_summary.get('decision')}."
+        )
+    if turn_summary.get("nextAction") != expected["nextAction"]:
+        failures.append(
+            f"{case['name']}: expected next action {expected['nextAction']}, got {turn_summary.get('nextAction')}."
+        )
+    if turn_summary.get("sessionStatus") != expected["sessionStatus"]:
+        failures.append(
+            f"{case['name']}: expected session status {expected['sessionStatus']}, got {turn_summary.get('sessionStatus')}."
+        )
+
+    if expected["nextAction"] == "continue_active_session":
+        next_step_guide = turn_summary.get("nextStepGuide", {})
+        if next_step_guide.get("currentLessonStepId") != expected["currentLessonStepId"]:
+            failures.append(
+                f"{case['name']}: expected next current step {expected['currentLessonStepId']}, got {next_step_guide.get('currentLessonStepId')}."
+            )
+        if next_step_guide.get("firstTutorQuestion") != expected["firstTutorQuestion"]:
+            failures.append(
+                f"{case['name']}: expected next first question {expected['firstTutorQuestion']!r}, got {next_step_guide.get('firstTutorQuestion')!r}."
+            )
+    else:
+        next_session = turn_summary.get("nextRecommendedSession", {})
+        if next_session.get("targetSkillId") != expected["targetSkillId"]:
+            failures.append(
+                f"{case['name']}: expected next recommended target skill {expected['targetSkillId']}, got {next_session.get('targetSkillId')}."
+            )
+        if next_session.get("firstLessonStepId") != expected["firstLessonStepId"]:
+            failures.append(
+                f"{case['name']}: expected first lesson step {expected['firstLessonStepId']}, got {next_session.get('firstLessonStepId')}."
+            )
+
+    return failures
+
+
 def main() -> int:
     content = load_unit1_content()
     cases = _load_cases()
@@ -655,6 +708,7 @@ def main() -> int:
     learner_record_submission_cases = _load_learner_record_submission_cases()
     failure_cases = _load_failure_cases()
     start_learning_session_cases = _load_start_learning_session_cases()
+    learning_turn_cases = _load_learning_turn_cases()
 
     failures: list[str] = []
     for case in cases:
@@ -683,6 +737,8 @@ def main() -> int:
         failures.extend(_assert_failure_case(case, content))
     for case in start_learning_session_cases:
         failures.extend(_assert_start_learning_session_case(case))
+    for case in learning_turn_cases:
+        failures.extend(_assert_learning_turn_case(case, content))
 
     if failures:
         print("Harness failed:")
@@ -704,6 +760,7 @@ def main() -> int:
     print(f"Learner-record submission cases: {len(learner_record_submission_cases)}")
     print(f"Failure cases: {len(failure_cases)}")
     print(f"Start-learning-session cases: {len(start_learning_session_cases)}")
+    print(f"Learning-turn cases: {len(learning_turn_cases)}")
     return 0
 
 

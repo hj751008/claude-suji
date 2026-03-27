@@ -121,6 +121,7 @@ def submit_observation_to_learner_record(learner_record: dict, observation_form:
     if validation_errors:
         raise ValueError("; ".join(validation_errors))
 
+    learner_record = _ensure_active_session(learner_record)
     active_session = learner_record.get("activeSession")
     if not isinstance(active_session, dict):
         raise ValueError("Learner record has no activeSession to submit an observation against.")
@@ -136,6 +137,94 @@ def submit_observation_to_learner_record(learner_record: dict, observation_form:
         content.observation_form_mappings,
     )
     return merge_session_into_learner_record(learner_record, updated_session, content)
+
+
+def run_learning_turn(learner_record: dict, observation_form: dict, content) -> dict:
+    updated_record = submit_observation_to_learner_record(learner_record, observation_form, content)
+    active_session = updated_record.get("activeSession")
+    latest_recommendations = updated_record.get("latestRecommendations", [])
+    latest_sessions = updated_record.get("sessions", [])
+    latest_session = latest_sessions[-1] if latest_sessions else None
+    last_history = None
+    if isinstance(latest_session, dict):
+        history = latest_session.get("history", [])
+        if isinstance(history, list) and history:
+            last_history = history[-1]
+
+    evaluation = last_history.get("evaluation", {}) if isinstance(last_history, dict) else {}
+    turn_summary = {
+        "learnerId": updated_record.get("learnerId"),
+        "submittedLessonStepId": None if not isinstance(last_history, dict) else last_history.get("lessonStepId"),
+        "decision": evaluation.get("decision"),
+        "sessionStatus": "completed" if active_session is None else active_session.get("status"),
+        "completedStepIds": [] if not isinstance(latest_session, dict) else latest_session.get("completedStepIds", []),
+        "latestRecommendationSkillIds": [
+            record.get("targetSkillId")
+            for record in latest_recommendations
+            if isinstance(record, dict)
+        ],
+    }
+
+    if isinstance(active_session, dict):
+        current_step = active_session.get("currentStep") or {}
+        next_step = active_session.get("nextStep") or {}
+        turn_summary["nextAction"] = "continue_active_session"
+        turn_summary["nextStepGuide"] = {
+            "targetSkillId": active_session.get("targetSkillId"),
+            "currentLessonStepId": current_step.get("lessonStepId"),
+            "currentActivityId": current_step.get("activityId"),
+            "title": current_step.get("title"),
+            "openingLine": current_step.get("openingLine"),
+            "firstTutorQuestion": current_step.get("firstTutorQuestion"),
+            "smallHint": current_step.get("smallHint"),
+            "goodStoppingPoint": current_step.get("goodStoppingPoint"),
+            "nextLessonStepId": next_step.get("lessonStepId"),
+            "remainingStepCount": len(active_session.get("remainingStepIds", [])),
+        }
+    else:
+        next_recommendation = latest_recommendations[0] if latest_recommendations else {}
+        payload = next_recommendation.get("sessionPayload", {}) if isinstance(next_recommendation, dict) else {}
+        steps = payload.get("steps", []) if isinstance(payload, dict) else []
+        first_step = steps[0] if steps and isinstance(steps[0], dict) else {}
+        turn_summary["nextAction"] = "review_next_recommendation"
+        turn_summary["nextRecommendedSession"] = {
+            "targetSkillId": None if not isinstance(next_recommendation, dict) else next_recommendation.get("targetSkillId"),
+            "firstLessonStepId": first_step.get("lessonStepId"),
+            "firstTutorQuestion": first_step.get("firstTutorQuestion"),
+            "stepCount": len(steps) if isinstance(steps, list) else 0,
+        }
+
+    return {
+        "learnerId": updated_record.get("learnerId"),
+        "turnSummary": turn_summary,
+        "learnerRecord": updated_record,
+    }
+
+
+def _ensure_active_session(learner_record: dict) -> dict:
+    active_session = learner_record.get("activeSession")
+    if isinstance(active_session, dict):
+        return learner_record
+
+    sessions = learner_record.get("sessions", [])
+    if not isinstance(sessions, list):
+        return learner_record
+
+    for session in reversed(sessions):
+        if not isinstance(session, dict):
+            continue
+        if session.get("status") != "in_progress":
+            continue
+        if session.get("currentStep") is None:
+            continue
+        if not isinstance(session.get("steps"), list) or not session.get("steps"):
+            continue
+        return {
+            **learner_record,
+            "activeSession": _session_snapshot(session),
+        }
+
+    return learner_record
 
 
 def _upsert_session_snapshot(existing_sessions: list[dict], session_state: dict) -> list[dict]:

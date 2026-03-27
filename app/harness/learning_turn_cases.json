@@ -1,0 +1,42 @@
+[
+  {
+    "name": "run learning turn and continue to next active step",
+    "learnerFile": "app/domain/evidence/learner-record-with-live-session.example.json",
+    "observationFormInput": {
+      "learnerResponse": "24 is even, so I should start by dividing by 2 first.",
+      "fieldValues": {
+        "starts_with_two": true,
+        "mentions_evenness": true
+      },
+      "tutorNote": "Learner chose 2 as the first easy divisor for 24.",
+      "timestamp": "2026-03-27T09:30:00+09:00"
+    },
+    "expected": {
+      "decision": "completed",
+      "nextAction": "continue_active_session",
+      "sessionStatus": "in_progress",
+      "currentLessonStepId": "STEP-U1-S3-REWRITE-CLEANLY",
+      "firstTutorQuestion": "Which factors should still remain in the final line?"
+    }
+  },
+  {
+    "name": "run learning turn and finish session",
+    "learnerFile": "app/domain/evidence/learner-record-with-active-session.example.json",
+    "observationFormInput": {
+      "learnerResponse": "2 x 6 is not prime factorization because 6 is not prime, but 2 x 2 x 3 is.",
+      "fieldValues": {
+        "rejects_composite_factor_answer": true,
+        "selects_all_prime_answer": true
+      },
+      "tutorNote": "Learner rejected the composite-factor answer and selected the all-prime expression.",
+      "timestamp": "2026-03-27T10:00:00+09:00"
+    },
+    "expected": {
+      "decision": "completed",
+      "nextAction": "review_next_recommendation",
+      "sessionStatus": "completed",
+      "targetSkillId": "U1-S3",
+      "firstLessonStepId": "STEP-U1-S2-ENTRY-BRIDGE"
+    }
+  }
+]
