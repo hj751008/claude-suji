@@ -2,7 +2,7 @@
   {
     "name": "submit observation fails when learner record has no active session",
     "kind": "submit_observation_to_learner_record",
-    "learnerFile": "app/domain/evidence/learner-record-with-summary.example.json",
+    "learnerFile": "app/domain/evidence/learner-record.example.json",
     "observationFormInput": {
       "learnerResponse": "I think I can start with 2.",
       "fieldValues": {
@@ -57,6 +57,12 @@
       "tutorNote": "Mismatched learner ids.",
       "timestamp": "2026-03-27T09:40:00+09:00"
     },
-    "expectedErrorContains": "same learnerId"
+    "expectedErrorContains": "activeSession.learnerId"
+  },
+  {
+    "name": "validate learner record catches malformed active session",
+    "kind": "validate_learner_record",
+    "learnerFile": "app/domain/evidence/learner-record-invalid.example.json",
+    "expectedErrorContains": "activeSession.learnerId"
   }
 ]

@@ -14,6 +14,7 @@ from app.runtime.learner_record import (
     merge_session_into_learner_record,
     store_active_session,
     submit_observation_to_learner_record,
+    validate_learner_record,
 )
 from app.runtime.session_orchestrator import resume_or_plan_session
 from app.runtime.session_planner import plan_next_session
@@ -45,6 +46,8 @@ def _build_parser() -> argparse.ArgumentParser:
     subparsers = parser.add_subparsers(dest="command", required=True)
 
     subparsers.add_parser("validate-content", help="Validate app content files.")
+    validate_learner_record_parser = subparsers.add_parser("validate-learner-record", help="Validate learner record structure and active session consistency.")
+    validate_learner_record_parser.add_argument("--learner", required=True, help="Path to a learner record JSON file.")
 
     diagnose_parser = subparsers.add_parser("diagnose", help="Diagnose one evidence input JSON file.")
     diagnose_parser.add_argument("--input", required=True, help="Path to the evidence event JSON file.")
@@ -132,6 +135,19 @@ def run_harness() -> int:
     from app.harness.run_harness import main as harness_main
 
     return harness_main()
+
+
+def run_validate_learner_record(learner_path: Path) -> int:
+    learner_record = _load_json(learner_path)
+    errors = validate_learner_record(learner_record)
+    if errors:
+        print("Learner record validation failed:")
+        for message in errors:
+            print(f"- {message}")
+        return 1
+
+    print("Learner record validation passed.")
+    return 0
 
 
 def run_start_session(input_path: Path) -> int:
@@ -330,6 +346,8 @@ def main() -> int:
 
     if args.command == "validate-content":
         return validate_content_main()
+    if args.command == "validate-learner-record":
+        return run_validate_learner_record(Path(args.learner))
     if args.command == "diagnose":
         return run_diagnose(Path(args.input))
     if args.command == "summarize-learner":

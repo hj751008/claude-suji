@@ -9,6 +9,7 @@ from app.runtime.learner_record import (
     merge_session_into_learner_record,
     store_active_session,
     submit_observation_to_learner_record,
+    validate_learner_record,
 )
 from app.runtime.session_orchestrator import resume_or_plan_session
 from app.runtime.session_planner import plan_next_session
@@ -571,6 +572,16 @@ def _assert_failure_case(case: dict, content) -> list[str]:
     try:
         if case["kind"].startswith("submit_observation_to_learner_record"):
             submit_observation_to_learner_record(learner_record, case["observationFormInput"], content)
+        elif case["kind"] == "validate_learner_record":
+            errors = validate_learner_record(learner_record)
+            if not errors:
+                return [f"{case['name']}: expected validation errors but validation passed."]
+            combined = "; ".join(errors)
+            if case["expectedErrorContains"] not in combined:
+                return [
+                    f"{case['name']}: expected validation error containing {case['expectedErrorContains']!r}, got {combined!r}."
+                ]
+            return []
         else:
             return [f"{case['name']}: unsupported failure case kind {case['kind']}."]
     except ValueError as exc:

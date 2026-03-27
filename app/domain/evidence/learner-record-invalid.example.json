@@ -1,0 +1,33 @@
+{
+  "learnerId": "sample-learner",
+  "activeSession": {
+    "learnerId": "other-learner",
+    "targetSkillId": "U1-S3",
+    "status": "in_progress",
+    "currentStepIndex": 0,
+    "currentStep": {
+      "activityId": "ACT-U1-S3-REWRITE-CLEANLY",
+      "lessonStepId": "STEP-U1-S3-REWRITE-CLEANLY",
+      "skillId": "U1-S3"
+    },
+    "nextStep": null,
+    "completedStepIds": [],
+    "remainingStepIds": [
+      "STEP-U1-S2-ENTRY-BRIDGE"
+    ],
+    "steps": [
+      {
+        "activityId": "ACT-U1-S2-ENTRY-BRIDGE",
+        "lessonStepId": "STEP-U1-S2-ENTRY-BRIDGE",
+        "skillId": "U1-S2"
+      }
+    ],
+    "completionRule": "complete_all_steps_in_order",
+    "history": []
+  },
+  "sessions": [],
+  "evidenceEvents": [],
+  "latestSkillSummaries": [],
+  "latestRecommendations": [],
+  "updatedAt": null
+}

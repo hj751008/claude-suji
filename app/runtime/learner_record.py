@@ -19,6 +19,29 @@ def create_learner_record(learner_id: str) -> dict:
     }
 
 
+def validate_learner_record(learner_record: dict) -> list[str]:
+    errors: list[str] = []
+    learner_id = learner_record.get("learnerId")
+    if not isinstance(learner_id, str) or not learner_id:
+        errors.append("learnerRecord.learnerId must be a non-empty string.")
+
+    active_session = learner_record.get("activeSession")
+    if active_session is not None:
+        errors.extend(_validate_session_like(active_session, learner_id, "activeSession"))
+
+    sessions = learner_record.get("sessions", [])
+    if not isinstance(sessions, list):
+        errors.append("learnerRecord.sessions must be a list.")
+    else:
+        for index, session in enumerate(sessions):
+            if not isinstance(session, dict):
+                errors.append(f"learnerRecord.sessions[{index}] must be an object.")
+                continue
+            errors.extend(_validate_session_like(session, learner_id, f"sessions[{index}]"))
+
+    return errors
+
+
 def _session_snapshot(session_state: dict) -> dict:
     return {
         "learnerId": session_state.get("learnerId"),
@@ -94,6 +117,10 @@ def store_active_session(learner_record: dict, orchestration_result: dict) -> di
 
 
 def submit_observation_to_learner_record(learner_record: dict, observation_form: dict, content) -> dict:
+    validation_errors = validate_learner_record(learner_record)
+    if validation_errors:
+        raise ValueError("; ".join(validation_errors))
+
     active_session = learner_record.get("activeSession")
     if not isinstance(active_session, dict):
         raise ValueError("Learner record has no activeSession to submit an observation against.")
@@ -138,3 +165,47 @@ def _session_step_ids(session_like: dict) -> list[str]:
     if not isinstance(steps, list):
         return []
     return [step.get("lessonStepId") for step in steps if isinstance(step, dict)]
+
+
+def _validate_session_like(session_like: dict, learner_id: str | None, label: str) -> list[str]:
+    errors: list[str] = []
+    if session_like.get("learnerId") != learner_id:
+        errors.append(f"learnerRecord.{label}.learnerId must match learnerRecord.learnerId.")
+
+    steps = session_like.get("steps")
+    if not isinstance(steps, list) or not steps:
+        errors.append(f"learnerRecord.{label}.steps must be a non-empty list.")
+        return errors
+
+    current_step_index = session_like.get("currentStepIndex")
+    if not isinstance(current_step_index, int) or not (0 <= current_step_index < len(steps)):
+        errors.append(f"learnerRecord.{label}.currentStepIndex must point to an existing step.")
+        return errors
+
+    current_step = session_like.get("currentStep")
+    expected_current = steps[current_step_index]
+    expected_current_id = expected_current.get("lessonStepId") if isinstance(expected_current, dict) else None
+    current_step_id = current_step.get("lessonStepId") if isinstance(current_step, dict) else None
+    if current_step_id != expected_current_id:
+        errors.append(f"learnerRecord.{label}.currentStep must match steps[currentStepIndex].")
+
+    next_step = session_like.get("nextStep")
+    expected_next = steps[current_step_index + 1] if current_step_index + 1 < len(steps) else None
+    expected_next_id = expected_next.get("lessonStepId") if isinstance(expected_next, dict) else None
+    next_step_id = next_step.get("lessonStepId") if isinstance(next_step, dict) else None
+    if next_step_id != expected_next_id:
+        errors.append(f"learnerRecord.{label}.nextStep must match the next step in sequence or be null at the end.")
+
+    remaining_step_ids = session_like.get("remainingStepIds")
+    if not isinstance(remaining_step_ids, list):
+        errors.append(f"learnerRecord.{label}.remainingStepIds must be a list.")
+    else:
+        expected_remaining = [
+            step.get("lessonStepId")
+            for step in steps[current_step_index:]
+            if isinstance(step, dict)
+        ]
+        if remaining_step_ids != expected_remaining:
+            errors.append(f"learnerRecord.{label}.remainingStepIds must match the remaining steps from currentStepIndex.")
+
+    return errors
