@@ -22,6 +22,7 @@ from app.runtime.session_planner import plan_next_session
 from app.runtime.session_runner import (
     advance_session_state,
     apply_evaluator_decision,
+    build_observation_form_template,
     create_session_state,
     evaluate_current_step,
     observation_form_to_evaluation_input,
@@ -263,6 +264,12 @@ def run_learning_turn_command(learner_path: Path, input_path: Path, write_result
     content = load_unit1_content()
     try:
         result = run_learning_turn(learner_record, observation_form, content)
+        active_session = result["learnerRecord"].get("activeSession")
+        if isinstance(active_session, dict):
+            result["observationFormTemplate"] = build_observation_form_template(
+                active_session,
+                content.observation_form_mappings,
+            )
     except ValueError as exc:
         print(f"Run-learning-turn failed: {exc}")
         return 1
@@ -353,8 +360,13 @@ def run_sync_active_session(learner_path: Path, write_result: bool) -> int:
 
 def run_start_learning_session(learner_path: Path, write_result: bool) -> int:
     learner_record = _load_json(learner_path)
+    content = load_unit1_content()
     try:
         result = start_learning_session(learner_record)
+        result["observationFormTemplate"] = build_observation_form_template(
+            result["activeSession"],
+            content.observation_form_mappings,
+        )
     except ValueError as exc:
         print(f"Start-learning-session failed: {exc}")
         return 1

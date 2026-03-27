@@ -14,7 +14,13 @@
       "openingLine": "Let's just find one easy way into the problem instead of solving everything at once.",
       "firstTutorQuestion": "What is the easiest divisor you can test first?",
       "smallHint": "If the number is even, checking 2 is a calm first step.",
-      "goodStoppingPoint": "Learner starts with 2 for 24 and explains that 24 is even."
+      "goodStoppingPoint": "Learner starts with 2 for 24 and explains that 24 is even.",
+      "watchFor": [
+        "Learner stalls because they think they need the whole tree immediately.",
+        "Learner notices 24 is even but still does not choose 2."
+      ],
+      "exampleTutorMove": "You do not need the whole answer yet. What does the word 'even' let you try first?",
+      "exampleLearnerResponse": "24 is even, so trying 2 first is the easiest entry."
     },
     "nextStep": {
       "activityId": "ACT-U1-S3-REWRITE-CLEANLY",
@@ -25,7 +31,13 @@
       "openingLine": "Your split-work is close; now let's turn it into one clean final factorization.",
       "firstTutorQuestion": "Which factors should still remain in the final line?",
       "smallHint": "Keep only prime factors in the last line, and make sure none were dropped.",
-      "goodStoppingPoint": "Learner writes one complete prime factorization with no missing or composite factor."
+      "goodStoppingPoint": "Learner writes one complete prime factorization with no missing or composite factor.",
+      "watchFor": [
+        "Learner keeps a composite factor like 6 in the final line.",
+        "Learner rewrites with only prime factors but drops one repeated factor."
+      ],
+      "exampleTutorMove": "Cover the scratch work and rebuild the last line only with prime factors that still remain.",
+      "exampleLearnerResponse": "The final line should keep 2, 2, and 3 because all of them are prime and none can be dropped."
     },
     "completedStepIds": [],
     "remainingStepIds": [
@@ -42,7 +54,13 @@
         "openingLine": "Let's just find one easy way into the problem instead of solving everything at once.",
         "firstTutorQuestion": "What is the easiest divisor you can test first?",
         "smallHint": "If the number is even, checking 2 is a calm first step.",
-        "goodStoppingPoint": "Learner starts with 2 for 24 and explains that 24 is even."
+        "goodStoppingPoint": "Learner starts with 2 for 24 and explains that 24 is even.",
+        "watchFor": [
+          "Learner stalls because they think they need the whole tree immediately.",
+          "Learner notices 24 is even but still does not choose 2."
+        ],
+        "exampleTutorMove": "You do not need the whole answer yet. What does the word 'even' let you try first?",
+        "exampleLearnerResponse": "24 is even, so trying 2 first is the easiest entry."
       },
       {
         "activityId": "ACT-U1-S3-REWRITE-CLEANLY",
@@ -53,7 +71,13 @@
         "openingLine": "Your split-work is close; now let's turn it into one clean final factorization.",
         "firstTutorQuestion": "Which factors should still remain in the final line?",
         "smallHint": "Keep only prime factors in the last line, and make sure none were dropped.",
-        "goodStoppingPoint": "Learner writes one complete prime factorization with no missing or composite factor."
+        "goodStoppingPoint": "Learner writes one complete prime factorization with no missing or composite factor.",
+        "watchFor": [
+          "Learner keeps a composite factor like 6 in the final line.",
+          "Learner rewrites with only prime factors but drops one repeated factor."
+        ],
+        "exampleTutorMove": "Cover the scratch work and rebuild the last line only with prime factors that still remain.",
+        "exampleLearnerResponse": "The final line should keep 2, 2, and 3 because all of them are prime and none can be dropped."
       }
     ],
     "completionRule": "complete_all_steps_in_order",

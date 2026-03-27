@@ -1,6 +1,32 @@
 from __future__ import annotations
 
 
+def build_observation_form_template(session_state: dict, observation_form_mappings: list[dict]) -> dict:
+    current_step = session_state.get("currentStep")
+    if current_step is None:
+        raise ValueError("Session state has no current step.")
+
+    lesson_step_id = current_step.get("lessonStepId")
+    mapping = next((record for record in observation_form_mappings if record.get("lessonStepId") == lesson_step_id), None)
+    if mapping is None:
+        raise ValueError(f"No observation form mapping found for lesson step {lesson_step_id}.")
+
+    return {
+        "lessonStepId": lesson_step_id,
+        "learnerResponsePrompt": mapping.get("learnerResponsePrompt", "Record the learner response in plain language."),
+        "tutorNotePrompt": mapping.get("tutorNotePrompt", "Record a short tutor note if needed."),
+        "fields": [
+            {
+                "fieldId": field.get("fieldId"),
+                "label": field.get("label", field.get("fieldId")),
+                "prompt": field.get("prompt"),
+                "trueMeans": field.get("trueMeans"),
+            }
+            for field in mapping.get("fields", [])
+        ],
+    }
+
+
 def create_observation_record(session_state: dict, observation_form: dict, evaluation_result: dict) -> dict:
     current_step = session_state.get("currentStep")
     if current_step is None:

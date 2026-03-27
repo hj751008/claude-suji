@@ -2,14 +2,22 @@
   {
     "lessonStepId": "STEP-U1-S1-CONCEPT-CHECK",
     "status": "draft-from-docs",
+    "learnerResponsePrompt": "Write the learner's explanation about whether 1 is prime, composite, or neither.",
+    "tutorNotePrompt": "Note whether the learner used divisor reasoning or only repeated a label.",
     "fields": [
       {
         "fieldId": "classifies_one_correctly",
-        "signalOnTrue": "says_neither_prime_nor_composite"
+        "signalOnTrue": "says_neither_prime_nor_composite",
+        "label": "Says 1 is neither",
+        "prompt": "Did the learner correctly say that 1 is neither prime nor composite?",
+        "trueMeans": "The learner gave the correct category for 1."
       },
       {
         "fieldId": "uses_divisor_reason",
-        "signalOnTrue": "gives_divisor_based_reason"
+        "signalOnTrue": "gives_divisor_based_reason",
+        "label": "Uses divisor reason",
+        "prompt": "Did the learner explain the answer using the number of divisors?",
+        "trueMeans": "The learner justified the category using divisor-based reasoning."
       }
     ],
     "sourceDocs": [
@@ -19,14 +27,22 @@
   {
     "lessonStepId": "STEP-U1-S2-ENTRY-BRIDGE",
     "status": "draft-from-docs",
+    "learnerResponsePrompt": "Write the learner's first move for entering the factorization of 24.",
+    "tutorNotePrompt": "Note whether the learner used the idea that 24 is even to choose a starting divisor.",
     "fields": [
       {
         "fieldId": "starts_with_two",
-        "signalOnTrue": "chooses_two_as_start"
+        "signalOnTrue": "chooses_two_as_start",
+        "label": "Starts with 2",
+        "prompt": "Did the learner choose 2 as the first divisor to test?",
+        "trueMeans": "The learner used 2 as the calm first entry."
       },
       {
         "fieldId": "mentions_evenness",
-        "signalOnTrue": "notes_even_number"
+        "signalOnTrue": "notes_even_number",
+        "label": "Mentions evenness",
+        "prompt": "Did the learner explain the choice by noticing that 24 is even?",
+        "trueMeans": "The learner linked the starting move to the even-number clue."
       }
     ],
     "sourceDocs": [
@@ -36,14 +52,22 @@
   {
     "lessonStepId": "STEP-U1-S3-REWRITE-CLEANLY",
     "status": "draft-from-docs",
+    "learnerResponsePrompt": "Write the learner's clean final prime-factor line.",
+    "tutorNotePrompt": "Note whether the learner kept all repeated factors and removed composite factors.",
     "fields": [
       {
         "fieldId": "uses_only_prime_factors",
-        "signalOnTrue": "writes_only_prime_factors"
+        "signalOnTrue": "writes_only_prime_factors",
+        "label": "Only prime factors",
+        "prompt": "Did the learner write the final line using only prime factors?",
+        "trueMeans": "The learner removed any composite factor from the final line."
       },
       {
         "fieldId": "keeps_all_factors",
-        "signalOnTrue": "keeps_all_factors"
+        "signalOnTrue": "keeps_all_factors",
+        "label": "Keeps all factors",
+        "prompt": "Did the learner keep every needed factor, including repeats?",
+        "trueMeans": "The learner did not drop a repeated or needed factor."
       }
     ],
     "sourceDocs": [
@@ -53,14 +77,22 @@
   {
     "lessonStepId": "STEP-U1-S4-VERIFY-PRIME-FIRST",
     "status": "draft-from-docs",
+    "learnerResponsePrompt": "Write how the learner compared 2 x 6 and 2 x 2 x 3.",
+    "tutorNotePrompt": "Note whether the learner checked primeness before checking the product.",
     "fields": [
       {
         "fieldId": "rejects_composite_factor_answer",
-        "signalOnTrue": "rejects_composite_factor_answer"
+        "signalOnTrue": "rejects_composite_factor_answer",
+        "label": "Rejects composite-factor answer",
+        "prompt": "Did the learner reject an answer like 2 x 6 because 6 is not prime?",
+        "trueMeans": "The learner noticed that a composite factor makes the factorization unfinished."
       },
       {
         "fieldId": "selects_all_prime_answer",
-        "signalOnTrue": "selects_all_prime_answer"
+        "signalOnTrue": "selects_all_prime_answer",
+        "label": "Selects all-prime answer",
+        "prompt": "Did the learner select the version where every factor is prime, such as 2 x 2 x 3?",
+        "trueMeans": "The learner chose the fully prime expression as the correct factorization."
       }
     ],
     "sourceDocs": [
@@ -70,14 +102,22 @@
   {
     "lessonStepId": "STEP-U1-S5A-DIVISOR-COUNT-TRANSFER",
     "status": "draft-from-docs",
+    "learnerResponsePrompt": "Write how the learner started the divisor-count transfer task.",
+    "tutorNotePrompt": "Note whether the learner reused the factorization or restarted from scratch.",
     "fields": [
       {
         "fieldId": "starts_from_factorization",
-        "signalOnTrue": "starts_from_factorization"
+        "signalOnTrue": "starts_from_factorization",
+        "label": "Starts from factorization",
+        "prompt": "Did the learner begin from the existing prime factorization?",
+        "trueMeans": "The learner reused the factorization instead of opening a new search."
       },
       {
         "fieldId": "avoids_blind_divisor_listing",
-        "signalOnTrue": "does_not_list_divisors_blindly"
+        "signalOnTrue": "does_not_list_divisors_blindly",
+        "label": "Avoids blind listing",
+        "prompt": "Did the learner avoid listing divisors one by one without a reason?",
+        "trueMeans": "The learner stayed with structure-based reasoning."
       }
     ],
     "sourceDocs": [
@@ -87,14 +127,22 @@
   {
     "lessonStepId": "STEP-U1-S5B-SQUARE-NUMBER",
     "status": "draft-from-docs",
+    "learnerResponsePrompt": "Write how the learner found the missing factor for the square-number task.",
+    "tutorNotePrompt": "Note whether the learner used odd and even prime-factor counts.",
     "fields": [
       {
         "fieldId": "identifies_missing_factor",
-        "signalOnTrue": "identifies_missing_factor"
+        "signalOnTrue": "identifies_missing_factor",
+        "label": "Identifies missing factor",
+        "prompt": "Did the learner identify the missing factor needed to complete the square?",
+        "trueMeans": "The learner named the missing factor rather than guessing randomly."
       },
       {
         "fieldId": "explains_even_exponent_goal",
-        "signalOnTrue": "explains_even_exponent_goal"
+        "signalOnTrue": "explains_even_exponent_goal",
+        "label": "Explains even counts",
+        "prompt": "Did the learner explain that square numbers need even prime-factor counts?",
+        "trueMeans": "The learner justified the missing factor using even exponent structure."
       }
     ],
     "sourceDocs": [
@@ -104,10 +152,15 @@
   {
     "lessonStepId": "STEP-U1-S5C-GCD-LCM-SORT",
     "status": "draft-from-docs",
+    "learnerResponsePrompt": "Write how the learner described the difference between shared structure and covering structure.",
+    "tutorNotePrompt": "Note whether the learner named the task type before calculating.",
     "fields": [
       {
         "fieldId": "names_shared_vs_covering_structure",
-        "signalOnTrue": "names_shared_vs_covering_structure"
+        "signalOnTrue": "names_shared_vs_covering_structure",
+        "label": "Names overlap vs cover",
+        "prompt": "Did the learner say whether the task asks for overlap or for covering both numbers?",
+        "trueMeans": "The learner classified the task before starting arithmetic."
       }
     ],
     "sourceDocs": [
@@ -117,10 +170,15 @@
   {
     "lessonStepId": "STEP-U1-S5D-RELEVANT-PART-EXPLAIN",
     "status": "draft-from-docs",
+    "learnerResponsePrompt": "Write which part of the factorization the learner said matters first.",
+    "tutorNotePrompt": "Note whether the learner pointed to the relevant factor or exponent before solving.",
     "fields": [
       {
         "fieldId": "points_to_relevant_part",
-        "signalOnTrue": "points_to_relevant_part_before_solving"
+        "signalOnTrue": "points_to_relevant_part_before_solving",
+        "label": "Points to relevant part",
+        "prompt": "Did the learner identify the relevant part of the factorization before solving?",
+        "trueMeans": "The learner selected the useful factor or exponent before doing the transfer task."
       }
     ],
     "sourceDocs": [
