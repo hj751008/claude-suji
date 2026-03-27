@@ -30,6 +30,12 @@ def _load_json(path: Path):
         return json.load(handle)
 
 
+def _dump_json(path: Path, payload: dict) -> None:
+    with path.open("w", encoding="utf-8") as handle:
+        json.dump(payload, handle, ensure_ascii=False, indent=2)
+        handle.write("\n")
+
+
 def _build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description="Minimal CLI for Unit 1 content and diagnosis.")
     subparsers = parser.add_subparsers(dest="command", required=True)
@@ -69,6 +75,7 @@ def _build_parser() -> argparse.ArgumentParser:
     update_learner_parser = subparsers.add_parser("update-learner-record", help="Merge a session state into a learner record.")
     update_learner_parser.add_argument("--learner", required=True, help="Path to a learner record JSON file.")
     update_learner_parser.add_argument("--session", required=True, help="Path to a session state JSON file.")
+    update_learner_parser.add_argument("--write", action="store_true", help="Write the updated learner record back to the learner file.")
 
     plan_session_parser = subparsers.add_parser("plan-next-session", help="Choose the next recommended session from a learner record.")
     plan_session_parser.add_argument("--learner", required=True, help="Path to a learner record JSON file.")
@@ -84,6 +91,7 @@ def _build_parser() -> argparse.ArgumentParser:
         help="Run resume-or-plan and store the resulting live session on the learner record.",
     )
     sync_active_session_parser.add_argument("--learner", required=True, help="Path to a learner record JSON file.")
+    sync_active_session_parser.add_argument("--write", action="store_true", help="Write the updated learner record back to the learner file.")
 
     subparsers.add_parser("run-harness", help="Run the first Unit 1 harness.")
     return parser
@@ -208,7 +216,7 @@ def run_summarize_session_history(session_path: Path) -> int:
     return 0
 
 
-def run_update_learner_record(learner_path: Path, session_path: Path) -> int:
+def run_update_learner_record(learner_path: Path, session_path: Path, write_result: bool) -> int:
     learner_record = _load_json(learner_path)
     session_state = _load_json(session_path)
     content = load_unit1_content()
@@ -217,6 +225,9 @@ def run_update_learner_record(learner_path: Path, session_path: Path) -> int:
     except ValueError as exc:
         print(f"Learner record update failed: {exc}")
         return 1
+
+    if write_result:
+        _dump_json(learner_path, updated_record)
 
     print(json.dumps(updated_record, ensure_ascii=False, indent=2))
     return 0
@@ -246,7 +257,7 @@ def run_resume_or_plan(learner_path: Path) -> int:
     return 0
 
 
-def run_sync_active_session(learner_path: Path) -> int:
+def run_sync_active_session(learner_path: Path, write_result: bool) -> int:
     learner_record = _load_json(learner_path)
     try:
         orchestration_result = resume_or_plan_session(learner_record)
@@ -254,6 +265,9 @@ def run_sync_active_session(learner_path: Path) -> int:
     except ValueError as exc:
         print(f"Sync-active-session failed: {exc}")
         return 1
+
+    if write_result:
+        _dump_json(learner_path, updated_record)
 
     print(json.dumps(updated_record, ensure_ascii=False, indent=2))
     return 0
@@ -304,13 +318,13 @@ def main() -> int:
     if args.command == "summarize-session-history":
         return run_summarize_session_history(Path(args.session))
     if args.command == "update-learner-record":
-        return run_update_learner_record(Path(args.learner), Path(args.session))
+        return run_update_learner_record(Path(args.learner), Path(args.session), args.write)
     if args.command == "plan-next-session":
         return run_plan_next_session(Path(args.learner))
     if args.command == "resume-or-plan":
         return run_resume_or_plan(Path(args.learner))
     if args.command == "sync-active-session":
-        return run_sync_active_session(Path(args.learner))
+        return run_sync_active_session(Path(args.learner), args.write)
     if args.command == "run-harness":
         return run_harness()
 
