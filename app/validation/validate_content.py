@@ -190,6 +190,7 @@ def validate_evaluator_rubrics(rubrics: list[dict], lesson_step_ids: set[str], e
 
         lesson_step_id = record.get("lessonStepId")
         required_signals = record.get("requiredSignals")
+        signal_text_hints = record.get("signalTextHints")
 
         if lesson_step_id not in lesson_step_ids:
             add_error(errors, f"{label} references unknown lessonStepId {lesson_step_id}.")
@@ -200,6 +201,23 @@ def validate_evaluator_rubrics(rubrics: list[dict], lesson_step_ids: set[str], e
 
         if not isinstance(required_signals, list) or not required_signals:
             add_error(errors, f"{label} must include a non-empty requiredSignals list.")
+            continue
+
+        if signal_text_hints is None:
+            continue
+        if not isinstance(signal_text_hints, dict):
+            add_error(errors, f"{label} signalTextHints must be an object when provided.")
+            continue
+
+        for signal_name, hints in signal_text_hints.items():
+            if signal_name not in required_signals:
+                add_error(errors, f"{label} signalTextHints references unknown required signal {signal_name}.")
+                continue
+            if not isinstance(hints, list) or not hints:
+                add_error(errors, f"{label} signalTextHints for {signal_name} must be a non-empty list.")
+                continue
+            if not all(isinstance(hint, str) and hint.strip() for hint in hints):
+                add_error(errors, f"{label} signalTextHints for {signal_name} must contain only non-empty strings.")
 
 
 def validate_observation_form_mappings(mappings: list[dict], lesson_step_ids: set[str], errors: list[str]) -> None:

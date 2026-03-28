@@ -20,7 +20,7 @@
         "U1-S3"
       ],
       "summaryStatuses": {
-        "U1-S3": "evidence_positive_but_unapproved"
+        "U1-S3": "ready_for_next_step"
       }
     }
   }

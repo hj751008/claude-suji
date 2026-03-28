@@ -1,0 +1,37 @@
+{
+  "learnerId": "sample-learner",
+  "targetSkillId": "U1-S5A",
+  "status": "in_progress",
+  "currentStepIndex": 0,
+  "currentStep": {
+    "activityId": "ACT-U1-S5A-DIVISOR-COUNT-TRANSFER",
+    "lessonStepId": "STEP-U1-S5A-DIVISOR-COUNT-TRANSFER",
+    "skillId": "U1-S5A",
+    "activityType": "dialogue-flow",
+    "title": "Reuse Factorization for Divisor Count",
+    "openingLine": "You do not need to restart from zero here; let's reuse what the factorization already tells us.",
+    "firstTutorQuestion": "In this problem, do you need the factorization itself or the number of divisors?",
+    "smallHint": "Write the prime factorization first, then use it instead of listing divisors one by one.",
+    "goodStoppingPoint": "Learner starts the divisor-count task from the factorization rather than restarting blindly."
+  },
+  "nextStep": null,
+  "completedStepIds": [],
+  "remainingStepIds": [
+    "STEP-U1-S5A-DIVISOR-COUNT-TRANSFER"
+  ],
+  "steps": [
+    {
+      "activityId": "ACT-U1-S5A-DIVISOR-COUNT-TRANSFER",
+      "lessonStepId": "STEP-U1-S5A-DIVISOR-COUNT-TRANSFER",
+      "skillId": "U1-S5A",
+      "activityType": "dialogue-flow",
+      "title": "Reuse Factorization for Divisor Count",
+      "openingLine": "You do not need to restart from zero here; let's reuse what the factorization already tells us.",
+      "firstTutorQuestion": "In this problem, do you need the factorization itself or the number of divisors?",
+      "smallHint": "Write the prime factorization first, then use it instead of listing divisors one by one.",
+      "goodStoppingPoint": "Learner starts the divisor-count task from the factorization rather than restarting blindly."
+    }
+  ],
+  "completionRule": "complete_all_steps_in_order",
+  "history": []
+}

@@ -7,7 +7,7 @@
   "needsReview": true,
   "reasonCodes": [
     "documented_error_pattern_match",
-    "mastery_thresholds_not_approved",
+    "unit_mastery_threshold_pending",
     "required_prerequisite_blocker"
   ],
   "summary": "Learner can attempt factorization but misses whether all prime factors are present.",

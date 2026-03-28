@@ -1,5 +1,30 @@
 from __future__ import annotations
 
+import re
+
+
+def _normalize_hint_text(value: str) -> str:
+    normalized = value.lower()
+    normalized = normalized.replace("n't", " not")
+    normalized = normalized.replace("’", "'").replace("'", "")
+    for token in ("×", "✕", "·", "*"):
+        normalized = normalized.replace(token, " x ")
+    normalized = re.sub(r"[^0-9a-z\uac00-\ud7a3]+", " ", normalized)
+    normalized = re.sub(r"\s+", " ", normalized).strip()
+    return normalized
+
+
+def _match_text_hints(learner_response: str, hints: list[str]) -> list[str]:
+    normalized_response = _normalize_hint_text(learner_response)
+    matched: list[str] = []
+    for hint in hints:
+        if not isinstance(hint, str):
+            continue
+        normalized_hint = _normalize_hint_text(hint)
+        if normalized_hint and normalized_hint in normalized_response:
+            matched.append(hint)
+    return matched
+
 
 def build_observation_form_template(session_state: dict, observation_form_mappings: list[dict]) -> dict:
     current_step = session_state.get("currentStep")
@@ -138,13 +163,19 @@ def evaluate_current_step(session_state: dict, evaluation_input: dict, evaluator
         raise ValueError("Evaluation input learnerResponse must be a string.")
 
     required_signals = rubric.get("requiredSignals", [])
-    matched_required_signals = [signal for signal in required_signals if signal in observed_signals]
-    missing_required_signals = [signal for signal in required_signals if signal not in observed_signals]
-
-    lowered_response = learner_response.lower()
-    matched_text_hints = [
-        hint for hint in rubric.get("optionalTextHints", []) if isinstance(hint, str) and hint.lower() in lowered_response
+    signal_text_hints = rubric.get("signalTextHints", {})
+    inferred_text_signals = [
+        signal
+        for signal in required_signals
+        if signal not in observed_signals
+        and isinstance(signal_text_hints, dict)
+        and _match_text_hints(learner_response, signal_text_hints.get(signal, []))
     ]
+    matched_required_signals = [
+        signal for signal in required_signals if signal in observed_signals or signal in inferred_text_signals
+    ]
+    missing_required_signals = [signal for signal in required_signals if signal not in matched_required_signals]
+    matched_text_hints = _match_text_hints(learner_response, rubric.get("optionalTextHints", []))
 
     if not missing_required_signals:
         decision = "completed"
@@ -159,6 +190,7 @@ def evaluate_current_step(session_state: dict, evaluation_input: dict, evaluator
         "matchedRequiredSignals": matched_required_signals,
         "missingRequiredSignals": missing_required_signals,
         "matchedTextHints": matched_text_hints,
+        "matchedTextHintSignals": inferred_text_signals,
         "canAutoAdvance": decision == "completed",
     }
 

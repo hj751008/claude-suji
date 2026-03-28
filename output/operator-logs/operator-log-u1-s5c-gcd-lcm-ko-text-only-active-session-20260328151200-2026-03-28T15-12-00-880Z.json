@@ -1,0 +1,2175 @@
+{
+  "logFormatVersion": "unit1-operator-ui-pilot-v1",
+  "exportedAt": "2026-03-28T15:12:00.880Z",
+  "selectedTranscriptId": "u1-s5c-gcd-lcm-ko-text-only-active-session",
+  "transcriptFile": "app/domain/evidence/unit1-tutor-transcripts.example.json",
+  "loadedLearnerFile": "app/domain/evidence/learner-record-with-active-session-u1-s5c.example.json",
+  "pilotNote": "Pilot C\nTester: \nFocus: S5C gcd/lcm transfer with blocker-first reopen\nNatural: \nAwkward: \nOperator hesitation: \nFixture realism: ",
+  "actionHistory": [
+    {
+      "actionAt": "2026-03-28T15:11:15.064Z",
+      "kind": "replay-transcript",
+      "detail": {
+        "transcriptId": "u1-s5c-gcd-lcm-ko-text-only-active-session",
+        "turnCount": 1,
+        "replayedTurnCount": 1,
+        "finalAction": "review_next_recommendation"
+      }
+    },
+    {
+      "actionAt": "2026-03-28T15:11:22.285Z",
+      "kind": "start-learning-session",
+      "detail": {
+        "action": "plan_new_session",
+        "sessionTargetSkillId": "U1-S5C",
+        "currentStepSkillId": "U1-S3",
+        "currentLessonStepId": "STEP-U1-S3-REWRITE-CLEANLY",
+        "plannedFromSkillId": "U1-S5C",
+        "recommendedNextSkillIds": [
+          "U1-S3",
+          "U1-S5C"
+        ]
+      }
+    },
+    {
+      "actionAt": "2026-03-28T15:11:36.841Z",
+      "kind": "prepare-observation-form",
+      "detail": {
+        "lessonStepId": "STEP-U1-S3-REWRITE-CLEANLY",
+        "fieldIds": [
+          "uses_only_prime_factors",
+          "keeps_all_factors"
+        ]
+      }
+    },
+    {
+      "actionAt": "2026-03-28T15:11:56.653Z",
+      "kind": "run-learning-turn",
+      "detail": {
+        "submittedLessonStepId": "STEP-U1-S3-REWRITE-CLEANLY",
+        "decision": "completed",
+        "nextAction": "continue_active_session",
+        "sessionStatus": "in_progress",
+        "inputObservationForm": {
+          "lessonStepId": "STEP-U1-S3-REWRITE-CLEANLY",
+          "learnerResponse": "공배수는 둘 다 담는 쪽이라 먼저 구조를 정하고 계산은 나중에 해야 해.",
+          "fieldValues": {
+            "uses_only_prime_factors": true,
+            "keeps_all_factors": true
+          },
+          "tutorNote": "",
+          "timestamp": ""
+        }
+      }
+    }
+  ],
+  "latestReplayResult": {
+    "transcriptId": "u1-s5c-gcd-lcm-ko-text-only-active-session",
+    "name": "Active S5C transfer log with Korean text-only observation",
+    "skillId": "U1-S5C",
+    "tags": [
+      "unit1",
+      "transfer",
+      "ko",
+      "text-only",
+      "active"
+    ],
+    "learnerFile": "app/domain/evidence/learner-record-with-active-session-u1-s5c.example.json",
+    "turnCount": 1,
+    "replayedTurnCount": 1,
+    "turnResults": [
+      {
+        "turnIndex": 1,
+        "lessonStepId": "STEP-U1-S5C-GCD-LCM-SORT",
+        "messages": [
+          {
+            "speaker": "tutor",
+            "text": "계산하기 전에, 이 문제가 겹치는 쪽인지 둘을 다 담는 쪽인지 먼저 말해 볼래?"
+          },
+          {
+            "speaker": "learner",
+            "text": "이건 공배수라서 둘을 다 담는 쪽을 먼저 보고, 계산은 그다음에 해야 해."
+          }
+        ],
+        "operatorNote": "튜터가 구조 구분 발화만 기록하고 체크박스는 비워 두었다.",
+        "turnSummary": {
+          "learnerId": "sample-learner",
+          "submittedLessonStepId": "STEP-U1-S5C-GCD-LCM-SORT",
+          "decision": "completed",
+          "sessionStatus": "completed",
+          "completedStepIds": [
+            "STEP-U1-S5C-GCD-LCM-SORT"
+          ],
+          "latestRecommendationSkillIds": [
+            "U1-S5C"
+          ],
+          "nextAction": "review_next_recommendation",
+          "nextRecommendedSession": {
+            "plannedFromSkillId": "U1-S5C",
+            "recommendedNextSkillIds": [
+              "U1-S3",
+              "U1-S5C"
+            ],
+            "firstStepSkillId": "U1-S3",
+            "firstLessonStepId": "STEP-U1-S3-REWRITE-CLEANLY",
+            "firstTutorQuestion": "Which factors should still remain in the final line?",
+            "watchFor": [
+              "Learner keeps a composite factor like 6 in the final line.",
+              "Learner rewrites with only prime factors but drops one repeated factor."
+            ],
+            "exampleTutorMove": "Cover the scratch work and rebuild the last line only with prime factors that still remain.",
+            "stepCount": 2
+          }
+        }
+      }
+    ],
+    "finalLearnerRecord": {
+      "learnerId": "sample-learner",
+      "activeSession": null,
+      "sessions": [
+        {
+          "learnerId": "sample-learner",
+          "targetSkillId": "U1-S5C",
+          "status": "completed",
+          "currentStepIndex": 0,
+          "currentStep": null,
+          "nextStep": null,
+          "completedStepIds": [
+            "STEP-U1-S5C-GCD-LCM-SORT"
+          ],
+          "remainingStepIds": [],
+          "steps": [
+            {
+              "activityId": "ACT-U1-S5C-GCD-LCM-SORT",
+              "lessonStepId": "STEP-U1-S5C-GCD-LCM-SORT",
+              "skillId": "U1-S5C",
+              "activityType": "dialogue-flow",
+              "title": "Sort Common Divisor vs Common Multiple",
+              "openingLine": "Before calculating, let's decide what kind of structure this question is asking for.",
+              "firstTutorQuestion": "Are you looking for what overlaps or what covers both numbers?",
+              "smallHint": "Say the task type first: shared structure for common divisor, covering structure for common multiple.",
+              "goodStoppingPoint": "Learner names the task type first and delays calculation until that structure is clear."
+            }
+          ],
+          "completionRule": "complete_all_steps_in_order",
+          "lastEvaluation": {
+            "lessonStepId": "STEP-U1-S5C-GCD-LCM-SORT",
+            "decision": "completed",
+            "matchedRequiredSignals": [
+              "names_shared_vs_covering_structure",
+              "delays_calculation_until_structure_named"
+            ],
+            "missingRequiredSignals": [],
+            "matchedTextHints": [],
+            "matchedTextHintSignals": [
+              "names_shared_vs_covering_structure",
+              "delays_calculation_until_structure_named"
+            ],
+            "canAutoAdvance": true
+          },
+          "history": [
+            {
+              "attemptIndex": 0,
+              "lessonStepId": "STEP-U1-S5C-GCD-LCM-SORT",
+              "activityId": "ACT-U1-S5C-GCD-LCM-SORT",
+              "learnerResponse": "이건 공배수라서 둘을 다 담는 쪽을 먼저 보고, 계산은 그다음에 해야 해.",
+              "fieldValues": {
+                "names_shared_vs_covering_structure": false,
+                "delays_calculation_until_structure_named": false
+              },
+              "tutorNote": "튜터가 구조 구분 발화만 기록하고 체크박스는 비워 두었다.",
+              "timestamp": "2026-03-28T11:20:00+09:00",
+              "evaluation": {
+                "lessonStepId": "STEP-U1-S5C-GCD-LCM-SORT",
+                "decision": "completed",
+                "matchedRequiredSignals": [
+                  "names_shared_vs_covering_structure",
+                  "delays_calculation_until_structure_named"
+                ],
+                "missingRequiredSignals": [],
+                "matchedTextHints": [],
+                "matchedTextHintSignals": [
+                  "names_shared_vs_covering_structure",
+                  "delays_calculation_until_structure_named"
+                ],
+                "canAutoAdvance": true
+              }
+            }
+          ]
+        }
+      ],
+      "evidenceEvents": [
+        {
+          "eventId": "session-history-0-STEP-U1-S5C-GCD-LCM-SORT",
+          "learnerId": "sample-learner",
+          "kind": "session_history_observation",
+          "skillId": "U1-S5C",
+          "result": "correct",
+          "errorPatternIds": [],
+          "observations": [
+            "이건 공배수라서 둘을 다 담는 쪽을 먼저 보고, 계산은 그다음에 해야 해.",
+            "튜터가 구조 구분 발화만 기록하고 체크박스는 비워 두었다."
+          ],
+          "confidenceSignal": "confident",
+          "sourceDocs": [],
+          "derivedFrom": {
+            "lessonStepId": "STEP-U1-S5C-GCD-LCM-SORT",
+            "activityId": "ACT-U1-S5C-GCD-LCM-SORT",
+            "matchedRequiredSignals": [
+              "names_shared_vs_covering_structure",
+              "delays_calculation_until_structure_named"
+            ],
+            "missingRequiredSignals": []
+          }
+        }
+      ],
+      "latestSkillSummaries": [
+        {
+          "learnerId": "sample-learner",
+          "skillId": "U1-S5C",
+          "status": "ready_for_next_step",
+          "statusApproval": "provisional",
+          "decisionType": "multi_event_rule_assisted_conservative",
+          "supportingEvidenceIds": [
+            "session-history-0-STEP-U1-S5C-GCD-LCM-SORT"
+          ],
+          "matchedErrorPatternIds": [],
+          "explanations": [
+            "The current event satisfies the minimum Unit 1 rule for moving to the next guided step.",
+            "This supports conservative next-step planning, not a final mastered label."
+          ],
+          "blockedBy": [
+            "This status supports conservative tutoring flow only, not final mastery approval.",
+            "Unit-level mastered thresholds, reassessment rules, and overrides remain UNDECIDED."
+          ],
+          "eventCount": 1,
+          "blockedByPrerequisites": [
+            {
+              "prerequisiteSkillId": "U1-S3",
+              "relationship": "HELPFUL",
+              "approvalStatus": "draft-from-docs",
+              "sourceDocs": [
+                "docs/suji-subskills-prime-factorization.md"
+              ],
+              "whyBlocked": "Prerequisite skill U1-S3 does not yet have learner evidence, so progress on U1-S5C should stay conservative."
+            }
+          ],
+          "hasRequiredPrerequisiteBlocker": false
+        }
+      ],
+      "latestRecommendations": [
+        {
+          "learnerId": "sample-learner",
+          "targetSkillId": "U1-S5C",
+          "targetSkillTitle": "Use factor structure when comparing common divisors or common multiples",
+          "recommendationType": "practice",
+          "confidence": "limited",
+          "needsReview": true,
+          "reasonCodes": [
+            "documented_skill_target",
+            "unit_mastery_threshold_pending",
+            "helpful_prerequisite_blocker"
+          ],
+          "summary": "Learner mixes common-divisor and common-multiple reasoning in transfer tasks.",
+          "sourceDocs": [
+            "docs/suji-subskills-prime-factorization.md",
+            "docs/suji-error-patterns-prime-factorization.md",
+            "docs/suji-tutor-dialogue-flow-prime-factorization.md"
+          ],
+          "recommendedActivities": [
+            {
+              "activityId": "ACT-U1-S5C-GCD-LCM-SORT",
+              "skillId": "U1-S5C",
+              "activityType": "dialogue-flow",
+              "title": "Sort Common Divisor vs Common Multiple",
+              "goal": "Help the learner name which structure to look for before calculating.",
+              "firstTutorQuestion": "Are you looking for what overlaps or what covers both numbers?",
+              "operatorFocus": "Get the learner to classify the structure before any arithmetic and keep them from computing too early.",
+              "watchFor": [
+                "Learner starts calculating without deciding whether the task is GCD or LCM.",
+                "Learner uses the word 'common' but cannot distinguish shared from covering structure.",
+                "Learner classifies correctly once but then falls back into calculation-first behavior."
+              ],
+              "exampleTutorMove": "Pause the learner at the first arithmetic move and ask them to restate whether this is an overlap task or a cover-both task."
+            }
+          ],
+          "sessionPayload": {
+            "learnerId": "sample-learner",
+            "targetSkillId": "U1-S5C",
+            "steps": [
+              {
+                "activityId": "ACT-U1-S3-REWRITE-CLEANLY",
+                "lessonStepId": "STEP-U1-S3-REWRITE-CLEANLY",
+                "skillId": "U1-S3",
+                "activityType": "dialogue-flow",
+                "title": "Rewrite the Final Factorization Cleanly",
+                "openingLine": "Your split-work is close; now let's turn it into one clean final factorization.",
+                "firstTutorQuestion": "Which factors should still remain in the final line?",
+                "smallHint": "Keep only prime factors in the last line, and make sure none were dropped.",
+                "goodStoppingPoint": "Learner writes one complete prime factorization with no missing or composite factor.",
+                "watchFor": [
+                  "Learner keeps a composite factor like 6 in the final line.",
+                  "Learner rewrites with only prime factors but drops one repeated factor."
+                ],
+                "exampleTutorMove": "Cover the scratch work and rebuild the last line only with prime factors that still remain.",
+                "exampleLearnerResponse": "The final line should keep 2, 2, and 3 because all of them are prime and none can be dropped."
+              },
+              {
+                "activityId": "ACT-U1-S5C-GCD-LCM-SORT",
+                "lessonStepId": "STEP-U1-S5C-GCD-LCM-SORT",
+                "skillId": "U1-S5C",
+                "activityType": "dialogue-flow",
+                "title": "Sort Common Divisor vs Common Multiple",
+                "openingLine": "Before calculating, let's decide what kind of structure this question is asking for.",
+                "firstTutorQuestion": "Are you looking for what overlaps or what covers both numbers?",
+                "smallHint": "Say the task type first: shared structure for common divisor, covering structure for common multiple.",
+                "goodStoppingPoint": "Learner names the task type first and delays calculation until that structure is clear.",
+                "watchFor": [
+                  "Learner starts calculation before deciding whether the task is about overlap or coverage.",
+                  "Learner uses the same rule for both common divisor and common multiple.",
+                  "Learner says 'common' but cannot explain whether they need shared factors or enough factors for both numbers."
+                ],
+                "exampleTutorMove": "Stop the arithmetic and ask, 'Before we compute, is this the overlap answer or the cover-both answer?'",
+                "exampleLearnerResponse": "A common divisor uses only the overlap, but a common multiple needs enough prime factors to cover both numbers."
+              }
+            ]
+          },
+          "sourceEventIds": [
+            "session-history-0-STEP-U1-S5C-GCD-LCM-SORT"
+          ],
+          "blockedByPrerequisites": [
+            {
+              "prerequisiteSkillId": "U1-S3",
+              "relationship": "HELPFUL",
+              "approvalStatus": "draft-from-docs",
+              "sourceDocs": [
+                "docs/suji-subskills-prime-factorization.md"
+              ],
+              "whyBlocked": "Prerequisite skill U1-S3 does not yet have learner evidence, so progress on U1-S5C should stay conservative."
+            }
+          ],
+          "recommendedNextSkillIds": [
+            "U1-S3",
+            "U1-S5C"
+          ],
+          "recommendedActivitySequence": [
+            {
+              "activityId": "ACT-U1-S3-REWRITE-CLEANLY",
+              "skillId": "U1-S3",
+              "activityType": "dialogue-flow",
+              "title": "Rewrite the Final Factorization Cleanly",
+              "goal": "Stabilize the move from split-work to a complete final prime factorization.",
+              "firstTutorQuestion": "Which factors should still remain in the final line?",
+              "operatorFocus": "Push for one clean final line, not more splitting work.",
+              "watchFor": [
+                "Learner drops a repeated factor while rewriting.",
+                "Learner leaves a composite factor in the final line."
+              ],
+              "exampleTutorMove": "Cover the scratch work and ask the learner to rebuild only the final prime-factor line."
+            },
+            {
+              "activityId": "ACT-U1-S5C-GCD-LCM-SORT",
+              "skillId": "U1-S5C",
+              "activityType": "dialogue-flow",
+              "title": "Sort Common Divisor vs Common Multiple",
+              "goal": "Help the learner name which structure to look for before calculating.",
+              "firstTutorQuestion": "Are you looking for what overlaps or what covers both numbers?",
+              "operatorFocus": "Get the learner to classify the structure before any arithmetic and keep them from computing too early.",
+              "watchFor": [
+                "Learner starts calculating without deciding whether the task is GCD or LCM.",
+                "Learner uses the word 'common' but cannot distinguish shared from covering structure.",
+                "Learner classifies correctly once but then falls back into calculation-first behavior."
+              ],
+              "exampleTutorMove": "Pause the learner at the first arithmetic move and ask them to restate whether this is an overlap task or a cover-both task."
+            }
+          ]
+        }
+      ],
+      "updatedAt": "2026-03-28T11:20:00+09:00"
+    }
+  },
+  "latestStartSessionResult": {
+    "learnerId": "sample-learner",
+    "action": "plan_new_session",
+    "activeSession": {
+      "learnerId": "sample-learner",
+      "targetSkillId": "U1-S5C",
+      "status": "in_progress",
+      "currentStepIndex": 0,
+      "currentStep": {
+        "activityId": "ACT-U1-S3-REWRITE-CLEANLY",
+        "lessonStepId": "STEP-U1-S3-REWRITE-CLEANLY",
+        "skillId": "U1-S3",
+        "activityType": "dialogue-flow",
+        "title": "Rewrite the Final Factorization Cleanly",
+        "openingLine": "Your split-work is close; now let's turn it into one clean final factorization.",
+        "firstTutorQuestion": "Which factors should still remain in the final line?",
+        "smallHint": "Keep only prime factors in the last line, and make sure none were dropped.",
+        "goodStoppingPoint": "Learner writes one complete prime factorization with no missing or composite factor.",
+        "watchFor": [
+          "Learner keeps a composite factor like 6 in the final line.",
+          "Learner rewrites with only prime factors but drops one repeated factor."
+        ],
+        "exampleTutorMove": "Cover the scratch work and rebuild the last line only with prime factors that still remain.",
+        "exampleLearnerResponse": "The final line should keep 2, 2, and 3 because all of them are prime and none can be dropped."
+      },
+      "nextStep": {
+        "activityId": "ACT-U1-S5C-GCD-LCM-SORT",
+        "lessonStepId": "STEP-U1-S5C-GCD-LCM-SORT",
+        "skillId": "U1-S5C",
+        "activityType": "dialogue-flow",
+        "title": "Sort Common Divisor vs Common Multiple",
+        "openingLine": "Before calculating, let's decide what kind of structure this question is asking for.",
+        "firstTutorQuestion": "Are you looking for what overlaps or what covers both numbers?",
+        "smallHint": "Say the task type first: shared structure for common divisor, covering structure for common multiple.",
+        "goodStoppingPoint": "Learner names the task type first and delays calculation until that structure is clear.",
+        "watchFor": [
+          "Learner starts calculation before deciding whether the task is about overlap or coverage.",
+          "Learner uses the same rule for both common divisor and common multiple.",
+          "Learner says 'common' but cannot explain whether they need shared factors or enough factors for both numbers."
+        ],
+        "exampleTutorMove": "Stop the arithmetic and ask, 'Before we compute, is this the overlap answer or the cover-both answer?'",
+        "exampleLearnerResponse": "A common divisor uses only the overlap, but a common multiple needs enough prime factors to cover both numbers."
+      },
+      "completedStepIds": [],
+      "remainingStepIds": [
+        "STEP-U1-S3-REWRITE-CLEANLY",
+        "STEP-U1-S5C-GCD-LCM-SORT"
+      ],
+      "steps": [
+        {
+          "activityId": "ACT-U1-S3-REWRITE-CLEANLY",
+          "lessonStepId": "STEP-U1-S3-REWRITE-CLEANLY",
+          "skillId": "U1-S3",
+          "activityType": "dialogue-flow",
+          "title": "Rewrite the Final Factorization Cleanly",
+          "openingLine": "Your split-work is close; now let's turn it into one clean final factorization.",
+          "firstTutorQuestion": "Which factors should still remain in the final line?",
+          "smallHint": "Keep only prime factors in the last line, and make sure none were dropped.",
+          "goodStoppingPoint": "Learner writes one complete prime factorization with no missing or composite factor.",
+          "watchFor": [
+            "Learner keeps a composite factor like 6 in the final line.",
+            "Learner rewrites with only prime factors but drops one repeated factor."
+          ],
+          "exampleTutorMove": "Cover the scratch work and rebuild the last line only with prime factors that still remain.",
+          "exampleLearnerResponse": "The final line should keep 2, 2, and 3 because all of them are prime and none can be dropped."
+        },
+        {
+          "activityId": "ACT-U1-S5C-GCD-LCM-SORT",
+          "lessonStepId": "STEP-U1-S5C-GCD-LCM-SORT",
+          "skillId": "U1-S5C",
+          "activityType": "dialogue-flow",
+          "title": "Sort Common Divisor vs Common Multiple",
+          "openingLine": "Before calculating, let's decide what kind of structure this question is asking for.",
+          "firstTutorQuestion": "Are you looking for what overlaps or what covers both numbers?",
+          "smallHint": "Say the task type first: shared structure for common divisor, covering structure for common multiple.",
+          "goodStoppingPoint": "Learner names the task type first and delays calculation until that structure is clear.",
+          "watchFor": [
+            "Learner starts calculation before deciding whether the task is about overlap or coverage.",
+            "Learner uses the same rule for both common divisor and common multiple.",
+            "Learner says 'common' but cannot explain whether they need shared factors or enough factors for both numbers."
+          ],
+          "exampleTutorMove": "Stop the arithmetic and ask, 'Before we compute, is this the overlap answer or the cover-both answer?'",
+          "exampleLearnerResponse": "A common divisor uses only the overlap, but a common multiple needs enough prime factors to cover both numbers."
+        }
+      ],
+      "completionRule": "complete_all_steps_in_order",
+      "lastEvaluation": null,
+      "history": []
+    },
+    "sessionStartGuide": {
+      "sessionTargetSkillId": "U1-S5C",
+      "currentStepSkillId": "U1-S3",
+      "currentLessonStepId": "STEP-U1-S3-REWRITE-CLEANLY",
+      "currentActivityId": "ACT-U1-S3-REWRITE-CLEANLY",
+      "title": "Rewrite the Final Factorization Cleanly",
+      "openingLine": "Your split-work is close; now let's turn it into one clean final factorization.",
+      "firstTutorQuestion": "Which factors should still remain in the final line?",
+      "smallHint": "Keep only prime factors in the last line, and make sure none were dropped.",
+      "goodStoppingPoint": "Learner writes one complete prime factorization with no missing or composite factor.",
+      "watchFor": [
+        "Learner keeps a composite factor like 6 in the final line.",
+        "Learner rewrites with only prime factors but drops one repeated factor."
+      ],
+      "exampleTutorMove": "Cover the scratch work and rebuild the last line only with prime factors that still remain.",
+      "exampleLearnerResponse": "The final line should keep 2, 2, and 3 because all of them are prime and none can be dropped.",
+      "nextLessonStepId": "STEP-U1-S5C-GCD-LCM-SORT",
+      "remainingStepCount": 2
+    },
+    "plannedSessionPreview": {
+      "plannedFromSkillId": "U1-S5C",
+      "recommendedNextSkillIds": [
+        "U1-S3",
+        "U1-S5C"
+      ],
+      "firstStepSkillId": "U1-S3",
+      "firstLessonStepId": "STEP-U1-S3-REWRITE-CLEANLY"
+    },
+    "learnerRecord": {
+      "learnerId": "sample-learner",
+      "activeSession": {
+        "learnerId": "sample-learner",
+        "targetSkillId": "U1-S5C",
+        "status": "in_progress",
+        "currentStepIndex": 0,
+        "currentStep": {
+          "activityId": "ACT-U1-S3-REWRITE-CLEANLY",
+          "lessonStepId": "STEP-U1-S3-REWRITE-CLEANLY",
+          "skillId": "U1-S3",
+          "activityType": "dialogue-flow",
+          "title": "Rewrite the Final Factorization Cleanly",
+          "openingLine": "Your split-work is close; now let's turn it into one clean final factorization.",
+          "firstTutorQuestion": "Which factors should still remain in the final line?",
+          "smallHint": "Keep only prime factors in the last line, and make sure none were dropped.",
+          "goodStoppingPoint": "Learner writes one complete prime factorization with no missing or composite factor.",
+          "watchFor": [
+            "Learner keeps a composite factor like 6 in the final line.",
+            "Learner rewrites with only prime factors but drops one repeated factor."
+          ],
+          "exampleTutorMove": "Cover the scratch work and rebuild the last line only with prime factors that still remain.",
+          "exampleLearnerResponse": "The final line should keep 2, 2, and 3 because all of them are prime and none can be dropped."
+        },
+        "nextStep": {
+          "activityId": "ACT-U1-S5C-GCD-LCM-SORT",
+          "lessonStepId": "STEP-U1-S5C-GCD-LCM-SORT",
+          "skillId": "U1-S5C",
+          "activityType": "dialogue-flow",
+          "title": "Sort Common Divisor vs Common Multiple",
+          "openingLine": "Before calculating, let's decide what kind of structure this question is asking for.",
+          "firstTutorQuestion": "Are you looking for what overlaps or what covers both numbers?",
+          "smallHint": "Say the task type first: shared structure for common divisor, covering structure for common multiple.",
+          "goodStoppingPoint": "Learner names the task type first and delays calculation until that structure is clear.",
+          "watchFor": [
+            "Learner starts calculation before deciding whether the task is about overlap or coverage.",
+            "Learner uses the same rule for both common divisor and common multiple.",
+            "Learner says 'common' but cannot explain whether they need shared factors or enough factors for both numbers."
+          ],
+          "exampleTutorMove": "Stop the arithmetic and ask, 'Before we compute, is this the overlap answer or the cover-both answer?'",
+          "exampleLearnerResponse": "A common divisor uses only the overlap, but a common multiple needs enough prime factors to cover both numbers."
+        },
+        "completedStepIds": [],
+        "remainingStepIds": [
+          "STEP-U1-S3-REWRITE-CLEANLY",
+          "STEP-U1-S5C-GCD-LCM-SORT"
+        ],
+        "steps": [
+          {
+            "activityId": "ACT-U1-S3-REWRITE-CLEANLY",
+            "lessonStepId": "STEP-U1-S3-REWRITE-CLEANLY",
+            "skillId": "U1-S3",
+            "activityType": "dialogue-flow",
+            "title": "Rewrite the Final Factorization Cleanly",
+            "openingLine": "Your split-work is close; now let's turn it into one clean final factorization.",
+            "firstTutorQuestion": "Which factors should still remain in the final line?",
+            "smallHint": "Keep only prime factors in the last line, and make sure none were dropped.",
+            "goodStoppingPoint": "Learner writes one complete prime factorization with no missing or composite factor.",
+            "watchFor": [
+              "Learner keeps a composite factor like 6 in the final line.",
+              "Learner rewrites with only prime factors but drops one repeated factor."
+            ],
+            "exampleTutorMove": "Cover the scratch work and rebuild the last line only with prime factors that still remain.",
+            "exampleLearnerResponse": "The final line should keep 2, 2, and 3 because all of them are prime and none can be dropped."
+          },
+          {
+            "activityId": "ACT-U1-S5C-GCD-LCM-SORT",
+            "lessonStepId": "STEP-U1-S5C-GCD-LCM-SORT",
+            "skillId": "U1-S5C",
+            "activityType": "dialogue-flow",
+            "title": "Sort Common Divisor vs Common Multiple",
+            "openingLine": "Before calculating, let's decide what kind of structure this question is asking for.",
+            "firstTutorQuestion": "Are you looking for what overlaps or what covers both numbers?",
+            "smallHint": "Say the task type first: shared structure for common divisor, covering structure for common multiple.",
+            "goodStoppingPoint": "Learner names the task type first and delays calculation until that structure is clear.",
+            "watchFor": [
+              "Learner starts calculation before deciding whether the task is about overlap or coverage.",
+              "Learner uses the same rule for both common divisor and common multiple.",
+              "Learner says 'common' but cannot explain whether they need shared factors or enough factors for both numbers."
+            ],
+            "exampleTutorMove": "Stop the arithmetic and ask, 'Before we compute, is this the overlap answer or the cover-both answer?'",
+            "exampleLearnerResponse": "A common divisor uses only the overlap, but a common multiple needs enough prime factors to cover both numbers."
+          }
+        ],
+        "completionRule": "complete_all_steps_in_order",
+        "lastEvaluation": null,
+        "history": []
+      },
+      "sessions": [
+        {
+          "learnerId": "sample-learner",
+          "targetSkillId": "U1-S5C",
+          "status": "completed",
+          "currentStepIndex": 0,
+          "currentStep": null,
+          "nextStep": null,
+          "completedStepIds": [
+            "STEP-U1-S5C-GCD-LCM-SORT"
+          ],
+          "remainingStepIds": [],
+          "steps": [
+            {
+              "activityId": "ACT-U1-S5C-GCD-LCM-SORT",
+              "lessonStepId": "STEP-U1-S5C-GCD-LCM-SORT",
+              "skillId": "U1-S5C",
+              "activityType": "dialogue-flow",
+              "title": "Sort Common Divisor vs Common Multiple",
+              "openingLine": "Before calculating, let's decide what kind of structure this question is asking for.",
+              "firstTutorQuestion": "Are you looking for what overlaps or what covers both numbers?",
+              "smallHint": "Say the task type first: shared structure for common divisor, covering structure for common multiple.",
+              "goodStoppingPoint": "Learner names the task type first and delays calculation until that structure is clear."
+            }
+          ],
+          "completionRule": "complete_all_steps_in_order",
+          "lastEvaluation": {
+            "lessonStepId": "STEP-U1-S5C-GCD-LCM-SORT",
+            "decision": "completed",
+            "matchedRequiredSignals": [
+              "names_shared_vs_covering_structure",
+              "delays_calculation_until_structure_named"
+            ],
+            "missingRequiredSignals": [],
+            "matchedTextHints": [],
+            "matchedTextHintSignals": [
+              "names_shared_vs_covering_structure",
+              "delays_calculation_until_structure_named"
+            ],
+            "canAutoAdvance": true
+          },
+          "history": [
+            {
+              "attemptIndex": 0,
+              "lessonStepId": "STEP-U1-S5C-GCD-LCM-SORT",
+              "activityId": "ACT-U1-S5C-GCD-LCM-SORT",
+              "learnerResponse": "이건 공배수라서 둘을 다 담는 쪽을 먼저 보고, 계산은 그다음에 해야 해.",
+              "fieldValues": {
+                "names_shared_vs_covering_structure": false,
+                "delays_calculation_until_structure_named": false
+              },
+              "tutorNote": "튜터가 구조 구분 발화만 기록하고 체크박스는 비워 두었다.",
+              "timestamp": "2026-03-28T11:20:00+09:00",
+              "evaluation": {
+                "lessonStepId": "STEP-U1-S5C-GCD-LCM-SORT",
+                "decision": "completed",
+                "matchedRequiredSignals": [
+                  "names_shared_vs_covering_structure",
+                  "delays_calculation_until_structure_named"
+                ],
+                "missingRequiredSignals": [],
+                "matchedTextHints": [],
+                "matchedTextHintSignals": [
+                  "names_shared_vs_covering_structure",
+                  "delays_calculation_until_structure_named"
+                ],
+                "canAutoAdvance": true
+              }
+            }
+          ]
+        }
+      ],
+      "evidenceEvents": [
+        {
+          "eventId": "session-history-0-STEP-U1-S5C-GCD-LCM-SORT",
+          "learnerId": "sample-learner",
+          "kind": "session_history_observation",
+          "skillId": "U1-S5C",
+          "result": "correct",
+          "errorPatternIds": [],
+          "observations": [
+            "이건 공배수라서 둘을 다 담는 쪽을 먼저 보고, 계산은 그다음에 해야 해.",
+            "튜터가 구조 구분 발화만 기록하고 체크박스는 비워 두었다."
+          ],
+          "confidenceSignal": "confident",
+          "sourceDocs": [],
+          "derivedFrom": {
+            "lessonStepId": "STEP-U1-S5C-GCD-LCM-SORT",
+            "activityId": "ACT-U1-S5C-GCD-LCM-SORT",
+            "matchedRequiredSignals": [
+              "names_shared_vs_covering_structure",
+              "delays_calculation_until_structure_named"
+            ],
+            "missingRequiredSignals": []
+          }
+        }
+      ],
+      "latestSkillSummaries": [
+        {
+          "learnerId": "sample-learner",
+          "skillId": "U1-S5C",
+          "status": "ready_for_next_step",
+          "statusApproval": "provisional",
+          "decisionType": "multi_event_rule_assisted_conservative",
+          "supportingEvidenceIds": [
+            "session-history-0-STEP-U1-S5C-GCD-LCM-SORT"
+          ],
+          "matchedErrorPatternIds": [],
+          "explanations": [
+            "The current event satisfies the minimum Unit 1 rule for moving to the next guided step.",
+            "This supports conservative next-step planning, not a final mastered label."
+          ],
+          "blockedBy": [
+            "This status supports conservative tutoring flow only, not final mastery approval.",
+            "Unit-level mastered thresholds, reassessment rules, and overrides remain UNDECIDED."
+          ],
+          "eventCount": 1,
+          "blockedByPrerequisites": [
+            {
+              "prerequisiteSkillId": "U1-S3",
+              "relationship": "HELPFUL",
+              "approvalStatus": "draft-from-docs",
+              "sourceDocs": [
+                "docs/suji-subskills-prime-factorization.md"
+              ],
+              "whyBlocked": "Prerequisite skill U1-S3 does not yet have learner evidence, so progress on U1-S5C should stay conservative."
+            }
+          ],
+          "hasRequiredPrerequisiteBlocker": false
+        }
+      ],
+      "latestRecommendations": [
+        {
+          "learnerId": "sample-learner",
+          "targetSkillId": "U1-S5C",
+          "targetSkillTitle": "Use factor structure when comparing common divisors or common multiples",
+          "recommendationType": "practice",
+          "confidence": "limited",
+          "needsReview": true,
+          "reasonCodes": [
+            "documented_skill_target",
+            "unit_mastery_threshold_pending",
+            "helpful_prerequisite_blocker"
+          ],
+          "summary": "Learner mixes common-divisor and common-multiple reasoning in transfer tasks.",
+          "sourceDocs": [
+            "docs/suji-subskills-prime-factorization.md",
+            "docs/suji-error-patterns-prime-factorization.md",
+            "docs/suji-tutor-dialogue-flow-prime-factorization.md"
+          ],
+          "recommendedActivities": [
+            {
+              "activityId": "ACT-U1-S5C-GCD-LCM-SORT",
+              "skillId": "U1-S5C",
+              "activityType": "dialogue-flow",
+              "title": "Sort Common Divisor vs Common Multiple",
+              "goal": "Help the learner name which structure to look for before calculating.",
+              "firstTutorQuestion": "Are you looking for what overlaps or what covers both numbers?",
+              "operatorFocus": "Get the learner to classify the structure before any arithmetic and keep them from computing too early.",
+              "watchFor": [
+                "Learner starts calculating without deciding whether the task is GCD or LCM.",
+                "Learner uses the word 'common' but cannot distinguish shared from covering structure.",
+                "Learner classifies correctly once but then falls back into calculation-first behavior."
+              ],
+              "exampleTutorMove": "Pause the learner at the first arithmetic move and ask them to restate whether this is an overlap task or a cover-both task."
+            }
+          ],
+          "sessionPayload": {
+            "learnerId": "sample-learner",
+            "targetSkillId": "U1-S5C",
+            "steps": [
+              {
+                "activityId": "ACT-U1-S3-REWRITE-CLEANLY",
+                "lessonStepId": "STEP-U1-S3-REWRITE-CLEANLY",
+                "skillId": "U1-S3",
+                "activityType": "dialogue-flow",
+                "title": "Rewrite the Final Factorization Cleanly",
+                "openingLine": "Your split-work is close; now let's turn it into one clean final factorization.",
+                "firstTutorQuestion": "Which factors should still remain in the final line?",
+                "smallHint": "Keep only prime factors in the last line, and make sure none were dropped.",
+                "goodStoppingPoint": "Learner writes one complete prime factorization with no missing or composite factor.",
+                "watchFor": [
+                  "Learner keeps a composite factor like 6 in the final line.",
+                  "Learner rewrites with only prime factors but drops one repeated factor."
+                ],
+                "exampleTutorMove": "Cover the scratch work and rebuild the last line only with prime factors that still remain.",
+                "exampleLearnerResponse": "The final line should keep 2, 2, and 3 because all of them are prime and none can be dropped."
+              },
+              {
+                "activityId": "ACT-U1-S5C-GCD-LCM-SORT",
+                "lessonStepId": "STEP-U1-S5C-GCD-LCM-SORT",
+                "skillId": "U1-S5C",
+                "activityType": "dialogue-flow",
+                "title": "Sort Common Divisor vs Common Multiple",
+                "openingLine": "Before calculating, let's decide what kind of structure this question is asking for.",
+                "firstTutorQuestion": "Are you looking for what overlaps or what covers both numbers?",
+                "smallHint": "Say the task type first: shared structure for common divisor, covering structure for common multiple.",
+                "goodStoppingPoint": "Learner names the task type first and delays calculation until that structure is clear.",
+                "watchFor": [
+                  "Learner starts calculation before deciding whether the task is about overlap or coverage.",
+                  "Learner uses the same rule for both common divisor and common multiple.",
+                  "Learner says 'common' but cannot explain whether they need shared factors or enough factors for both numbers."
+                ],
+                "exampleTutorMove": "Stop the arithmetic and ask, 'Before we compute, is this the overlap answer or the cover-both answer?'",
+                "exampleLearnerResponse": "A common divisor uses only the overlap, but a common multiple needs enough prime factors to cover both numbers."
+              }
+            ]
+          },
+          "sourceEventIds": [
+            "session-history-0-STEP-U1-S5C-GCD-LCM-SORT"
+          ],
+          "blockedByPrerequisites": [
+            {
+              "prerequisiteSkillId": "U1-S3",
+              "relationship": "HELPFUL",
+              "approvalStatus": "draft-from-docs",
+              "sourceDocs": [
+                "docs/suji-subskills-prime-factorization.md"
+              ],
+              "whyBlocked": "Prerequisite skill U1-S3 does not yet have learner evidence, so progress on U1-S5C should stay conservative."
+            }
+          ],
+          "recommendedNextSkillIds": [
+            "U1-S3",
+            "U1-S5C"
+          ],
+          "recommendedActivitySequence": [
+            {
+              "activityId": "ACT-U1-S3-REWRITE-CLEANLY",
+              "skillId": "U1-S3",
+              "activityType": "dialogue-flow",
+              "title": "Rewrite the Final Factorization Cleanly",
+              "goal": "Stabilize the move from split-work to a complete final prime factorization.",
+              "firstTutorQuestion": "Which factors should still remain in the final line?",
+              "operatorFocus": "Push for one clean final line, not more splitting work.",
+              "watchFor": [
+                "Learner drops a repeated factor while rewriting.",
+                "Learner leaves a composite factor in the final line."
+              ],
+              "exampleTutorMove": "Cover the scratch work and ask the learner to rebuild only the final prime-factor line."
+            },
+            {
+              "activityId": "ACT-U1-S5C-GCD-LCM-SORT",
+              "skillId": "U1-S5C",
+              "activityType": "dialogue-flow",
+              "title": "Sort Common Divisor vs Common Multiple",
+              "goal": "Help the learner name which structure to look for before calculating.",
+              "firstTutorQuestion": "Are you looking for what overlaps or what covers both numbers?",
+              "operatorFocus": "Get the learner to classify the structure before any arithmetic and keep them from computing too early.",
+              "watchFor": [
+                "Learner starts calculating without deciding whether the task is GCD or LCM.",
+                "Learner uses the word 'common' but cannot distinguish shared from covering structure.",
+                "Learner classifies correctly once but then falls back into calculation-first behavior."
+              ],
+              "exampleTutorMove": "Pause the learner at the first arithmetic move and ask them to restate whether this is an overlap task or a cover-both task."
+            }
+          ]
+        }
+      ],
+      "updatedAt": "2026-03-28T11:20:00+09:00"
+    },
+    "observationFormTemplate": {
+      "lessonStepId": "STEP-U1-S3-REWRITE-CLEANLY",
+      "learnerResponsePrompt": "Write the learner's clean final prime-factor line.",
+      "tutorNotePrompt": "Note whether the learner kept all repeated factors and removed composite factors.",
+      "fields": [
+        {
+          "fieldId": "uses_only_prime_factors",
+          "label": "Only prime factors",
+          "prompt": "Did the learner write the final line using only prime factors?",
+          "trueMeans": "The learner removed any composite factor from the final line."
+        },
+        {
+          "fieldId": "keeps_all_factors",
+          "label": "Keeps all factors",
+          "prompt": "Did the learner keep every needed factor, including repeats?",
+          "trueMeans": "The learner did not drop a repeated or needed factor."
+        }
+      ]
+    }
+  },
+  "latestPreparedObservationForm": {
+    "sourceLessonStepId": "STEP-U1-S5C-GCD-LCM-SORT",
+    "observationFormTemplate": {
+      "lessonStepId": "STEP-U1-S5C-GCD-LCM-SORT",
+      "learnerResponsePrompt": "Write how the learner described the difference between shared structure and covering structure.",
+      "tutorNotePrompt": "Note whether the learner named the task type before calculating.",
+      "fields": [
+        {
+          "fieldId": "names_shared_vs_covering_structure",
+          "label": "Names overlap vs cover",
+          "prompt": "Did the learner say whether the task asks for overlap or for covering both numbers?",
+          "trueMeans": "The learner classified the task before starting arithmetic."
+        },
+        {
+          "fieldId": "delays_calculation_until_structure_named",
+          "label": "Delays calculation",
+          "prompt": "Did the learner hold off on arithmetic until the task type was named clearly?",
+          "trueMeans": "The learner kept calculation secondary until the structure was identified."
+        }
+      ]
+    },
+    "observationForm": {
+      "lessonStepId": "STEP-U1-S5C-GCD-LCM-SORT",
+      "learnerResponse": "",
+      "fieldValues": {
+        "names_shared_vs_covering_structure": false,
+        "delays_calculation_until_structure_named": false
+      },
+      "tutorNote": "",
+      "timestamp": ""
+    }
+  },
+  "latestTurnResult": {
+    "learnerId": "sample-learner",
+    "turnSummary": {
+      "learnerId": "sample-learner",
+      "submittedLessonStepId": "STEP-U1-S3-REWRITE-CLEANLY",
+      "decision": "completed",
+      "sessionStatus": "in_progress",
+      "completedStepIds": [
+        "STEP-U1-S3-REWRITE-CLEANLY"
+      ],
+      "latestRecommendationSkillIds": [
+        "U1-S3",
+        "U1-S5C"
+      ],
+      "nextAction": "continue_active_session",
+      "nextStepGuide": {
+        "sessionTargetSkillId": "U1-S5C",
+        "currentStepSkillId": "U1-S5C",
+        "currentLessonStepId": "STEP-U1-S5C-GCD-LCM-SORT",
+        "currentActivityId": "ACT-U1-S5C-GCD-LCM-SORT",
+        "title": "Sort Common Divisor vs Common Multiple",
+        "openingLine": "Before calculating, let's decide what kind of structure this question is asking for.",
+        "firstTutorQuestion": "Are you looking for what overlaps or what covers both numbers?",
+        "smallHint": "Say the task type first: shared structure for common divisor, covering structure for common multiple.",
+        "goodStoppingPoint": "Learner names the task type first and delays calculation until that structure is clear.",
+        "watchFor": [
+          "Learner starts calculation before deciding whether the task is about overlap or coverage.",
+          "Learner uses the same rule for both common divisor and common multiple.",
+          "Learner says 'common' but cannot explain whether they need shared factors or enough factors for both numbers."
+        ],
+        "exampleTutorMove": "Stop the arithmetic and ask, 'Before we compute, is this the overlap answer or the cover-both answer?'",
+        "exampleLearnerResponse": "A common divisor uses only the overlap, but a common multiple needs enough prime factors to cover both numbers.",
+        "nextLessonStepId": null,
+        "remainingStepCount": 1
+      }
+    },
+    "learnerRecord": {
+      "learnerId": "sample-learner",
+      "activeSession": {
+        "learnerId": "sample-learner",
+        "targetSkillId": "U1-S5C",
+        "status": "in_progress",
+        "currentStepIndex": 1,
+        "currentStep": {
+          "activityId": "ACT-U1-S5C-GCD-LCM-SORT",
+          "lessonStepId": "STEP-U1-S5C-GCD-LCM-SORT",
+          "skillId": "U1-S5C",
+          "activityType": "dialogue-flow",
+          "title": "Sort Common Divisor vs Common Multiple",
+          "openingLine": "Before calculating, let's decide what kind of structure this question is asking for.",
+          "firstTutorQuestion": "Are you looking for what overlaps or what covers both numbers?",
+          "smallHint": "Say the task type first: shared structure for common divisor, covering structure for common multiple.",
+          "goodStoppingPoint": "Learner names the task type first and delays calculation until that structure is clear.",
+          "watchFor": [
+            "Learner starts calculation before deciding whether the task is about overlap or coverage.",
+            "Learner uses the same rule for both common divisor and common multiple.",
+            "Learner says 'common' but cannot explain whether they need shared factors or enough factors for both numbers."
+          ],
+          "exampleTutorMove": "Stop the arithmetic and ask, 'Before we compute, is this the overlap answer or the cover-both answer?'",
+          "exampleLearnerResponse": "A common divisor uses only the overlap, but a common multiple needs enough prime factors to cover both numbers."
+        },
+        "nextStep": null,
+        "completedStepIds": [
+          "STEP-U1-S3-REWRITE-CLEANLY"
+        ],
+        "remainingStepIds": [
+          "STEP-U1-S5C-GCD-LCM-SORT"
+        ],
+        "steps": [
+          {
+            "activityId": "ACT-U1-S3-REWRITE-CLEANLY",
+            "lessonStepId": "STEP-U1-S3-REWRITE-CLEANLY",
+            "skillId": "U1-S3",
+            "activityType": "dialogue-flow",
+            "title": "Rewrite the Final Factorization Cleanly",
+            "openingLine": "Your split-work is close; now let's turn it into one clean final factorization.",
+            "firstTutorQuestion": "Which factors should still remain in the final line?",
+            "smallHint": "Keep only prime factors in the last line, and make sure none were dropped.",
+            "goodStoppingPoint": "Learner writes one complete prime factorization with no missing or composite factor.",
+            "watchFor": [
+              "Learner keeps a composite factor like 6 in the final line.",
+              "Learner rewrites with only prime factors but drops one repeated factor."
+            ],
+            "exampleTutorMove": "Cover the scratch work and rebuild the last line only with prime factors that still remain.",
+            "exampleLearnerResponse": "The final line should keep 2, 2, and 3 because all of them are prime and none can be dropped."
+          },
+          {
+            "activityId": "ACT-U1-S5C-GCD-LCM-SORT",
+            "lessonStepId": "STEP-U1-S5C-GCD-LCM-SORT",
+            "skillId": "U1-S5C",
+            "activityType": "dialogue-flow",
+            "title": "Sort Common Divisor vs Common Multiple",
+            "openingLine": "Before calculating, let's decide what kind of structure this question is asking for.",
+            "firstTutorQuestion": "Are you looking for what overlaps or what covers both numbers?",
+            "smallHint": "Say the task type first: shared structure for common divisor, covering structure for common multiple.",
+            "goodStoppingPoint": "Learner names the task type first and delays calculation until that structure is clear.",
+            "watchFor": [
+              "Learner starts calculation before deciding whether the task is about overlap or coverage.",
+              "Learner uses the same rule for both common divisor and common multiple.",
+              "Learner says 'common' but cannot explain whether they need shared factors or enough factors for both numbers."
+            ],
+            "exampleTutorMove": "Stop the arithmetic and ask, 'Before we compute, is this the overlap answer or the cover-both answer?'",
+            "exampleLearnerResponse": "A common divisor uses only the overlap, but a common multiple needs enough prime factors to cover both numbers."
+          }
+        ],
+        "completionRule": "complete_all_steps_in_order",
+        "lastEvaluation": {
+          "lessonStepId": "STEP-U1-S3-REWRITE-CLEANLY",
+          "decision": "completed",
+          "matchedRequiredSignals": [
+            "writes_only_prime_factors",
+            "keeps_all_factors"
+          ],
+          "missingRequiredSignals": [],
+          "matchedTextHints": [],
+          "matchedTextHintSignals": [],
+          "canAutoAdvance": true
+        },
+        "history": [
+          {
+            "attemptIndex": 0,
+            "lessonStepId": "STEP-U1-S3-REWRITE-CLEANLY",
+            "activityId": "ACT-U1-S3-REWRITE-CLEANLY",
+            "learnerResponse": "공배수는 둘 다 담는 쪽이라 먼저 구조를 정하고 계산은 나중에 해야 해.",
+            "fieldValues": {
+              "uses_only_prime_factors": true,
+              "keeps_all_factors": true
+            },
+            "tutorNote": "",
+            "timestamp": "",
+            "evaluation": {
+              "lessonStepId": "STEP-U1-S3-REWRITE-CLEANLY",
+              "decision": "completed",
+              "matchedRequiredSignals": [
+                "writes_only_prime_factors",
+                "keeps_all_factors"
+              ],
+              "missingRequiredSignals": [],
+              "matchedTextHints": [],
+              "matchedTextHintSignals": [],
+              "canAutoAdvance": true
+            }
+          }
+        ]
+      },
+      "sessions": [
+        {
+          "learnerId": "sample-learner",
+          "targetSkillId": "U1-S5C",
+          "status": "completed",
+          "currentStepIndex": 0,
+          "currentStep": null,
+          "nextStep": null,
+          "completedStepIds": [
+            "STEP-U1-S5C-GCD-LCM-SORT"
+          ],
+          "remainingStepIds": [],
+          "steps": [
+            {
+              "activityId": "ACT-U1-S5C-GCD-LCM-SORT",
+              "lessonStepId": "STEP-U1-S5C-GCD-LCM-SORT",
+              "skillId": "U1-S5C",
+              "activityType": "dialogue-flow",
+              "title": "Sort Common Divisor vs Common Multiple",
+              "openingLine": "Before calculating, let's decide what kind of structure this question is asking for.",
+              "firstTutorQuestion": "Are you looking for what overlaps or what covers both numbers?",
+              "smallHint": "Say the task type first: shared structure for common divisor, covering structure for common multiple.",
+              "goodStoppingPoint": "Learner names the task type first and delays calculation until that structure is clear."
+            }
+          ],
+          "completionRule": "complete_all_steps_in_order",
+          "lastEvaluation": {
+            "lessonStepId": "STEP-U1-S5C-GCD-LCM-SORT",
+            "decision": "completed",
+            "matchedRequiredSignals": [
+              "names_shared_vs_covering_structure",
+              "delays_calculation_until_structure_named"
+            ],
+            "missingRequiredSignals": [],
+            "matchedTextHints": [],
+            "matchedTextHintSignals": [
+              "names_shared_vs_covering_structure",
+              "delays_calculation_until_structure_named"
+            ],
+            "canAutoAdvance": true
+          },
+          "history": [
+            {
+              "attemptIndex": 0,
+              "lessonStepId": "STEP-U1-S5C-GCD-LCM-SORT",
+              "activityId": "ACT-U1-S5C-GCD-LCM-SORT",
+              "learnerResponse": "이건 공배수라서 둘을 다 담는 쪽을 먼저 보고, 계산은 그다음에 해야 해.",
+              "fieldValues": {
+                "names_shared_vs_covering_structure": false,
+                "delays_calculation_until_structure_named": false
+              },
+              "tutorNote": "튜터가 구조 구분 발화만 기록하고 체크박스는 비워 두었다.",
+              "timestamp": "2026-03-28T11:20:00+09:00",
+              "evaluation": {
+                "lessonStepId": "STEP-U1-S5C-GCD-LCM-SORT",
+                "decision": "completed",
+                "matchedRequiredSignals": [
+                  "names_shared_vs_covering_structure",
+                  "delays_calculation_until_structure_named"
+                ],
+                "missingRequiredSignals": [],
+                "matchedTextHints": [],
+                "matchedTextHintSignals": [
+                  "names_shared_vs_covering_structure",
+                  "delays_calculation_until_structure_named"
+                ],
+                "canAutoAdvance": true
+              }
+            }
+          ]
+        },
+        {
+          "learnerId": "sample-learner",
+          "targetSkillId": "U1-S5C",
+          "status": "in_progress",
+          "currentStepIndex": 1,
+          "currentStep": {
+            "activityId": "ACT-U1-S5C-GCD-LCM-SORT",
+            "lessonStepId": "STEP-U1-S5C-GCD-LCM-SORT",
+            "skillId": "U1-S5C",
+            "activityType": "dialogue-flow",
+            "title": "Sort Common Divisor vs Common Multiple",
+            "openingLine": "Before calculating, let's decide what kind of structure this question is asking for.",
+            "firstTutorQuestion": "Are you looking for what overlaps or what covers both numbers?",
+            "smallHint": "Say the task type first: shared structure for common divisor, covering structure for common multiple.",
+            "goodStoppingPoint": "Learner names the task type first and delays calculation until that structure is clear.",
+            "watchFor": [
+              "Learner starts calculation before deciding whether the task is about overlap or coverage.",
+              "Learner uses the same rule for both common divisor and common multiple.",
+              "Learner says 'common' but cannot explain whether they need shared factors or enough factors for both numbers."
+            ],
+            "exampleTutorMove": "Stop the arithmetic and ask, 'Before we compute, is this the overlap answer or the cover-both answer?'",
+            "exampleLearnerResponse": "A common divisor uses only the overlap, but a common multiple needs enough prime factors to cover both numbers."
+          },
+          "nextStep": null,
+          "completedStepIds": [
+            "STEP-U1-S3-REWRITE-CLEANLY"
+          ],
+          "remainingStepIds": [
+            "STEP-U1-S5C-GCD-LCM-SORT"
+          ],
+          "steps": [
+            {
+              "activityId": "ACT-U1-S3-REWRITE-CLEANLY",
+              "lessonStepId": "STEP-U1-S3-REWRITE-CLEANLY",
+              "skillId": "U1-S3",
+              "activityType": "dialogue-flow",
+              "title": "Rewrite the Final Factorization Cleanly",
+              "openingLine": "Your split-work is close; now let's turn it into one clean final factorization.",
+              "firstTutorQuestion": "Which factors should still remain in the final line?",
+              "smallHint": "Keep only prime factors in the last line, and make sure none were dropped.",
+              "goodStoppingPoint": "Learner writes one complete prime factorization with no missing or composite factor.",
+              "watchFor": [
+                "Learner keeps a composite factor like 6 in the final line.",
+                "Learner rewrites with only prime factors but drops one repeated factor."
+              ],
+              "exampleTutorMove": "Cover the scratch work and rebuild the last line only with prime factors that still remain.",
+              "exampleLearnerResponse": "The final line should keep 2, 2, and 3 because all of them are prime and none can be dropped."
+            },
+            {
+              "activityId": "ACT-U1-S5C-GCD-LCM-SORT",
+              "lessonStepId": "STEP-U1-S5C-GCD-LCM-SORT",
+              "skillId": "U1-S5C",
+              "activityType": "dialogue-flow",
+              "title": "Sort Common Divisor vs Common Multiple",
+              "openingLine": "Before calculating, let's decide what kind of structure this question is asking for.",
+              "firstTutorQuestion": "Are you looking for what overlaps or what covers both numbers?",
+              "smallHint": "Say the task type first: shared structure for common divisor, covering structure for common multiple.",
+              "goodStoppingPoint": "Learner names the task type first and delays calculation until that structure is clear.",
+              "watchFor": [
+                "Learner starts calculation before deciding whether the task is about overlap or coverage.",
+                "Learner uses the same rule for both common divisor and common multiple.",
+                "Learner says 'common' but cannot explain whether they need shared factors or enough factors for both numbers."
+              ],
+              "exampleTutorMove": "Stop the arithmetic and ask, 'Before we compute, is this the overlap answer or the cover-both answer?'",
+              "exampleLearnerResponse": "A common divisor uses only the overlap, but a common multiple needs enough prime factors to cover both numbers."
+            }
+          ],
+          "completionRule": "complete_all_steps_in_order",
+          "lastEvaluation": {
+            "lessonStepId": "STEP-U1-S3-REWRITE-CLEANLY",
+            "decision": "completed",
+            "matchedRequiredSignals": [
+              "writes_only_prime_factors",
+              "keeps_all_factors"
+            ],
+            "missingRequiredSignals": [],
+            "matchedTextHints": [],
+            "matchedTextHintSignals": [],
+            "canAutoAdvance": true
+          },
+          "history": [
+            {
+              "attemptIndex": 0,
+              "lessonStepId": "STEP-U1-S3-REWRITE-CLEANLY",
+              "activityId": "ACT-U1-S3-REWRITE-CLEANLY",
+              "learnerResponse": "공배수는 둘 다 담는 쪽이라 먼저 구조를 정하고 계산은 나중에 해야 해.",
+              "fieldValues": {
+                "uses_only_prime_factors": true,
+                "keeps_all_factors": true
+              },
+              "tutorNote": "",
+              "timestamp": "",
+              "evaluation": {
+                "lessonStepId": "STEP-U1-S3-REWRITE-CLEANLY",
+                "decision": "completed",
+                "matchedRequiredSignals": [
+                  "writes_only_prime_factors",
+                  "keeps_all_factors"
+                ],
+                "missingRequiredSignals": [],
+                "matchedTextHints": [],
+                "matchedTextHintSignals": [],
+                "canAutoAdvance": true
+              }
+            }
+          ]
+        }
+      ],
+      "evidenceEvents": [
+        {
+          "eventId": "session-history-0-STEP-U1-S5C-GCD-LCM-SORT",
+          "learnerId": "sample-learner",
+          "kind": "session_history_observation",
+          "skillId": "U1-S5C",
+          "result": "correct",
+          "errorPatternIds": [],
+          "observations": [
+            "이건 공배수라서 둘을 다 담는 쪽을 먼저 보고, 계산은 그다음에 해야 해.",
+            "튜터가 구조 구분 발화만 기록하고 체크박스는 비워 두었다."
+          ],
+          "confidenceSignal": "confident",
+          "sourceDocs": [],
+          "derivedFrom": {
+            "lessonStepId": "STEP-U1-S5C-GCD-LCM-SORT",
+            "activityId": "ACT-U1-S5C-GCD-LCM-SORT",
+            "matchedRequiredSignals": [
+              "names_shared_vs_covering_structure",
+              "delays_calculation_until_structure_named"
+            ],
+            "missingRequiredSignals": []
+          }
+        },
+        {
+          "eventId": "session-history-0-STEP-U1-S3-REWRITE-CLEANLY",
+          "learnerId": "sample-learner",
+          "kind": "session_history_observation",
+          "skillId": "U1-S3",
+          "result": "correct",
+          "errorPatternIds": [],
+          "observations": [
+            "공배수는 둘 다 담는 쪽이라 먼저 구조를 정하고 계산은 나중에 해야 해."
+          ],
+          "confidenceSignal": "confident",
+          "sourceDocs": [],
+          "derivedFrom": {
+            "lessonStepId": "STEP-U1-S3-REWRITE-CLEANLY",
+            "activityId": "ACT-U1-S3-REWRITE-CLEANLY",
+            "matchedRequiredSignals": [
+              "writes_only_prime_factors",
+              "keeps_all_factors"
+            ],
+            "missingRequiredSignals": []
+          }
+        }
+      ],
+      "latestSkillSummaries": [
+        {
+          "learnerId": "sample-learner",
+          "skillId": "U1-S3",
+          "status": "ready_for_next_step",
+          "statusApproval": "provisional",
+          "decisionType": "multi_event_rule_assisted_conservative",
+          "supportingEvidenceIds": [
+            "session-history-0-STEP-U1-S3-REWRITE-CLEANLY"
+          ],
+          "matchedErrorPatternIds": [],
+          "explanations": [
+            "The current event satisfies the minimum Unit 1 rule for moving to the next guided step.",
+            "This supports conservative next-step planning, not a final mastered label."
+          ],
+          "blockedBy": [
+            "This status supports conservative tutoring flow only, not final mastery approval.",
+            "Unit-level mastered thresholds, reassessment rules, and overrides remain UNDECIDED."
+          ],
+          "eventCount": 1,
+          "blockedByPrerequisites": [
+            {
+              "prerequisiteSkillId": "U1-S2",
+              "relationship": "HELPFUL",
+              "approvalStatus": "provisional",
+              "sourceDocs": [
+                "docs/prerequisite-map.md"
+              ],
+              "whyBlocked": "Prerequisite skill U1-S2 does not yet have learner evidence, so progress on U1-S3 should stay conservative."
+            }
+          ],
+          "hasRequiredPrerequisiteBlocker": false
+        },
+        {
+          "learnerId": "sample-learner",
+          "skillId": "U1-S5C",
+          "status": "ready_for_next_step",
+          "statusApproval": "provisional",
+          "decisionType": "multi_event_rule_assisted_conservative",
+          "supportingEvidenceIds": [
+            "session-history-0-STEP-U1-S5C-GCD-LCM-SORT"
+          ],
+          "matchedErrorPatternIds": [],
+          "explanations": [
+            "The current event satisfies the minimum Unit 1 rule for moving to the next guided step.",
+            "This supports conservative next-step planning, not a final mastered label."
+          ],
+          "blockedBy": [
+            "This status supports conservative tutoring flow only, not final mastery approval.",
+            "Unit-level mastered thresholds, reassessment rules, and overrides remain UNDECIDED."
+          ],
+          "eventCount": 1,
+          "blockedByPrerequisites": [],
+          "hasRequiredPrerequisiteBlocker": false
+        }
+      ],
+      "latestRecommendations": [
+        {
+          "learnerId": "sample-learner",
+          "targetSkillId": "U1-S3",
+          "targetSkillTitle": "Express a number in prime factorized form",
+          "recommendationType": "practice",
+          "confidence": "limited",
+          "needsReview": true,
+          "reasonCodes": [
+            "documented_skill_target",
+            "unit_mastery_threshold_pending",
+            "helpful_prerequisite_blocker"
+          ],
+          "summary": "Conservative follow-up practice is recommended pending more evidence.",
+          "sourceDocs": [
+            "docs/suji-tutor-dialogue-flow-prime-factorization.md",
+            "docs/suji-subskills-prime-factorization.md"
+          ],
+          "recommendedActivities": [
+            {
+              "activityId": "ACT-U1-S3-REWRITE-CLEANLY",
+              "skillId": "U1-S3",
+              "activityType": "dialogue-flow",
+              "title": "Rewrite the Final Factorization Cleanly",
+              "goal": "Stabilize the move from split-work to a complete final prime factorization.",
+              "firstTutorQuestion": "Which factors should still remain in the final line?",
+              "operatorFocus": "Push for one clean final line, not more splitting work.",
+              "watchFor": [
+                "Learner drops a repeated factor while rewriting.",
+                "Learner leaves a composite factor in the final line."
+              ],
+              "exampleTutorMove": "Cover the scratch work and ask the learner to rebuild only the final prime-factor line."
+            }
+          ],
+          "sessionPayload": {
+            "learnerId": "sample-learner",
+            "targetSkillId": "U1-S3",
+            "steps": [
+              {
+                "activityId": "ACT-U1-S2-ENTRY-BRIDGE",
+                "lessonStepId": "STEP-U1-S2-ENTRY-BRIDGE",
+                "skillId": "U1-S2",
+                "activityType": "worked-bridge",
+                "title": "Entry Bridge With 24",
+                "openingLine": "Let's just find one easy way into the problem instead of solving everything at once.",
+                "firstTutorQuestion": "What is the easiest divisor you can test first?",
+                "smallHint": "If the number is even, checking 2 is a calm first step.",
+                "goodStoppingPoint": "Learner starts with 2 for 24 and explains that 24 is even.",
+                "watchFor": [
+                  "Learner stalls because they think they need the whole tree immediately.",
+                  "Learner notices 24 is even but still does not choose 2."
+                ],
+                "exampleTutorMove": "You do not need the whole answer yet. What does the word 'even' let you try first?",
+                "exampleLearnerResponse": "24 is even, so trying 2 first is the easiest entry."
+              },
+              {
+                "activityId": "ACT-U1-S3-REWRITE-CLEANLY",
+                "lessonStepId": "STEP-U1-S3-REWRITE-CLEANLY",
+                "skillId": "U1-S3",
+                "activityType": "dialogue-flow",
+                "title": "Rewrite the Final Factorization Cleanly",
+                "openingLine": "Your split-work is close; now let's turn it into one clean final factorization.",
+                "firstTutorQuestion": "Which factors should still remain in the final line?",
+                "smallHint": "Keep only prime factors in the last line, and make sure none were dropped.",
+                "goodStoppingPoint": "Learner writes one complete prime factorization with no missing or composite factor.",
+                "watchFor": [
+                  "Learner keeps a composite factor like 6 in the final line.",
+                  "Learner rewrites with only prime factors but drops one repeated factor."
+                ],
+                "exampleTutorMove": "Cover the scratch work and rebuild the last line only with prime factors that still remain.",
+                "exampleLearnerResponse": "The final line should keep 2, 2, and 3 because all of them are prime and none can be dropped."
+              }
+            ]
+          },
+          "sourceEventIds": [
+            "session-history-0-STEP-U1-S3-REWRITE-CLEANLY"
+          ],
+          "blockedByPrerequisites": [
+            {
+              "prerequisiteSkillId": "U1-S2",
+              "relationship": "HELPFUL",
+              "approvalStatus": "provisional",
+              "sourceDocs": [
+                "docs/prerequisite-map.md"
+              ],
+              "whyBlocked": "Prerequisite skill U1-S2 does not yet have learner evidence, so progress on U1-S3 should stay conservative."
+            }
+          ],
+          "recommendedNextSkillIds": [
+            "U1-S2",
+            "U1-S3"
+          ],
+          "recommendedActivitySequence": [
+            {
+              "activityId": "ACT-U1-S2-ENTRY-BRIDGE",
+              "skillId": "U1-S2",
+              "activityType": "worked-bridge",
+              "title": "Entry Bridge With 24",
+              "goal": "Rebuild the habit of starting with an easy divisor pair instead of freezing.",
+              "firstTutorQuestion": "What is the easiest divisor you can test first?",
+              "operatorFocus": "Reward a calm starting move instead of speed.",
+              "watchFor": [
+                "Learner freezes because they think they must finish the whole factorization at once.",
+                "Learner chooses a hard divisor first even after noticing the number is even."
+              ],
+              "exampleTutorMove": "If the learner hesitates, point back to the word 'even' and ask what divisor that suggests."
+            },
+            {
+              "activityId": "ACT-U1-S3-REWRITE-CLEANLY",
+              "skillId": "U1-S3",
+              "activityType": "dialogue-flow",
+              "title": "Rewrite the Final Factorization Cleanly",
+              "goal": "Stabilize the move from split-work to a complete final prime factorization.",
+              "firstTutorQuestion": "Which factors should still remain in the final line?",
+              "operatorFocus": "Push for one clean final line, not more splitting work.",
+              "watchFor": [
+                "Learner drops a repeated factor while rewriting.",
+                "Learner leaves a composite factor in the final line."
+              ],
+              "exampleTutorMove": "Cover the scratch work and ask the learner to rebuild only the final prime-factor line."
+            }
+          ]
+        },
+        {
+          "learnerId": "sample-learner",
+          "targetSkillId": "U1-S5C",
+          "targetSkillTitle": "Use factor structure when comparing common divisors or common multiples",
+          "recommendationType": "practice",
+          "confidence": "limited",
+          "needsReview": true,
+          "reasonCodes": [
+            "documented_skill_target",
+            "unit_mastery_threshold_pending"
+          ],
+          "summary": "Learner mixes common-divisor and common-multiple reasoning in transfer tasks.",
+          "sourceDocs": [
+            "docs/suji-subskills-prime-factorization.md",
+            "docs/suji-error-patterns-prime-factorization.md",
+            "docs/suji-tutor-dialogue-flow-prime-factorization.md"
+          ],
+          "recommendedActivities": [
+            {
+              "activityId": "ACT-U1-S5C-GCD-LCM-SORT",
+              "skillId": "U1-S5C",
+              "activityType": "dialogue-flow",
+              "title": "Sort Common Divisor vs Common Multiple",
+              "goal": "Help the learner name which structure to look for before calculating.",
+              "firstTutorQuestion": "Are you looking for what overlaps or what covers both numbers?",
+              "operatorFocus": "Get the learner to classify the structure before any arithmetic and keep them from computing too early.",
+              "watchFor": [
+                "Learner starts calculating without deciding whether the task is GCD or LCM.",
+                "Learner uses the word 'common' but cannot distinguish shared from covering structure.",
+                "Learner classifies correctly once but then falls back into calculation-first behavior."
+              ],
+              "exampleTutorMove": "Pause the learner at the first arithmetic move and ask them to restate whether this is an overlap task or a cover-both task."
+            }
+          ],
+          "sessionPayload": {
+            "learnerId": "sample-learner",
+            "targetSkillId": "U1-S5C",
+            "steps": [
+              {
+                "activityId": "ACT-U1-S5C-GCD-LCM-SORT",
+                "lessonStepId": "STEP-U1-S5C-GCD-LCM-SORT",
+                "skillId": "U1-S5C",
+                "activityType": "dialogue-flow",
+                "title": "Sort Common Divisor vs Common Multiple",
+                "openingLine": "Before calculating, let's decide what kind of structure this question is asking for.",
+                "firstTutorQuestion": "Are you looking for what overlaps or what covers both numbers?",
+                "smallHint": "Say the task type first: shared structure for common divisor, covering structure for common multiple.",
+                "goodStoppingPoint": "Learner names the task type first and delays calculation until that structure is clear.",
+                "watchFor": [
+                  "Learner starts calculation before deciding whether the task is about overlap or coverage.",
+                  "Learner uses the same rule for both common divisor and common multiple.",
+                  "Learner says 'common' but cannot explain whether they need shared factors or enough factors for both numbers."
+                ],
+                "exampleTutorMove": "Stop the arithmetic and ask, 'Before we compute, is this the overlap answer or the cover-both answer?'",
+                "exampleLearnerResponse": "A common divisor uses only the overlap, but a common multiple needs enough prime factors to cover both numbers."
+              }
+            ]
+          },
+          "sourceEventIds": [
+            "session-history-0-STEP-U1-S5C-GCD-LCM-SORT"
+          ],
+          "blockedByPrerequisites": [],
+          "recommendedNextSkillIds": [
+            "U1-S5C"
+          ],
+          "recommendedActivitySequence": [
+            {
+              "activityId": "ACT-U1-S5C-GCD-LCM-SORT",
+              "skillId": "U1-S5C",
+              "activityType": "dialogue-flow",
+              "title": "Sort Common Divisor vs Common Multiple",
+              "goal": "Help the learner name which structure to look for before calculating.",
+              "firstTutorQuestion": "Are you looking for what overlaps or what covers both numbers?",
+              "operatorFocus": "Get the learner to classify the structure before any arithmetic and keep them from computing too early.",
+              "watchFor": [
+                "Learner starts calculating without deciding whether the task is GCD or LCM.",
+                "Learner uses the word 'common' but cannot distinguish shared from covering structure.",
+                "Learner classifies correctly once but then falls back into calculation-first behavior."
+              ],
+              "exampleTutorMove": "Pause the learner at the first arithmetic move and ask them to restate whether this is an overlap task or a cover-both task."
+            }
+          ]
+        }
+      ],
+      "updatedAt": ""
+    },
+    "observationFormTemplate": {
+      "lessonStepId": "STEP-U1-S5C-GCD-LCM-SORT",
+      "learnerResponsePrompt": "Write how the learner described the difference between shared structure and covering structure.",
+      "tutorNotePrompt": "Note whether the learner named the task type before calculating.",
+      "fields": [
+        {
+          "fieldId": "names_shared_vs_covering_structure",
+          "label": "Names overlap vs cover",
+          "prompt": "Did the learner say whether the task asks for overlap or for covering both numbers?",
+          "trueMeans": "The learner classified the task before starting arithmetic."
+        },
+        {
+          "fieldId": "delays_calculation_until_structure_named",
+          "label": "Delays calculation",
+          "prompt": "Did the learner hold off on arithmetic until the task type was named clearly?",
+          "trueMeans": "The learner kept calculation secondary until the structure was identified."
+        }
+      ]
+    },
+    "observationForm": {
+      "lessonStepId": "STEP-U1-S5C-GCD-LCM-SORT",
+      "learnerResponse": "",
+      "fieldValues": {
+        "names_shared_vs_covering_structure": false,
+        "delays_calculation_until_structure_named": false
+      },
+      "tutorNote": "",
+      "timestamp": ""
+    }
+  },
+  "currentLearnerRecord": {
+    "learnerId": "sample-learner",
+    "activeSession": {
+      "learnerId": "sample-learner",
+      "targetSkillId": "U1-S5C",
+      "status": "in_progress",
+      "currentStepIndex": 1,
+      "currentStep": {
+        "activityId": "ACT-U1-S5C-GCD-LCM-SORT",
+        "lessonStepId": "STEP-U1-S5C-GCD-LCM-SORT",
+        "skillId": "U1-S5C",
+        "activityType": "dialogue-flow",
+        "title": "Sort Common Divisor vs Common Multiple",
+        "openingLine": "Before calculating, let's decide what kind of structure this question is asking for.",
+        "firstTutorQuestion": "Are you looking for what overlaps or what covers both numbers?",
+        "smallHint": "Say the task type first: shared structure for common divisor, covering structure for common multiple.",
+        "goodStoppingPoint": "Learner names the task type first and delays calculation until that structure is clear.",
+        "watchFor": [
+          "Learner starts calculation before deciding whether the task is about overlap or coverage.",
+          "Learner uses the same rule for both common divisor and common multiple.",
+          "Learner says 'common' but cannot explain whether they need shared factors or enough factors for both numbers."
+        ],
+        "exampleTutorMove": "Stop the arithmetic and ask, 'Before we compute, is this the overlap answer or the cover-both answer?'",
+        "exampleLearnerResponse": "A common divisor uses only the overlap, but a common multiple needs enough prime factors to cover both numbers."
+      },
+      "nextStep": null,
+      "completedStepIds": [
+        "STEP-U1-S3-REWRITE-CLEANLY"
+      ],
+      "remainingStepIds": [
+        "STEP-U1-S5C-GCD-LCM-SORT"
+      ],
+      "steps": [
+        {
+          "activityId": "ACT-U1-S3-REWRITE-CLEANLY",
+          "lessonStepId": "STEP-U1-S3-REWRITE-CLEANLY",
+          "skillId": "U1-S3",
+          "activityType": "dialogue-flow",
+          "title": "Rewrite the Final Factorization Cleanly",
+          "openingLine": "Your split-work is close; now let's turn it into one clean final factorization.",
+          "firstTutorQuestion": "Which factors should still remain in the final line?",
+          "smallHint": "Keep only prime factors in the last line, and make sure none were dropped.",
+          "goodStoppingPoint": "Learner writes one complete prime factorization with no missing or composite factor.",
+          "watchFor": [
+            "Learner keeps a composite factor like 6 in the final line.",
+            "Learner rewrites with only prime factors but drops one repeated factor."
+          ],
+          "exampleTutorMove": "Cover the scratch work and rebuild the last line only with prime factors that still remain.",
+          "exampleLearnerResponse": "The final line should keep 2, 2, and 3 because all of them are prime and none can be dropped."
+        },
+        {
+          "activityId": "ACT-U1-S5C-GCD-LCM-SORT",
+          "lessonStepId": "STEP-U1-S5C-GCD-LCM-SORT",
+          "skillId": "U1-S5C",
+          "activityType": "dialogue-flow",
+          "title": "Sort Common Divisor vs Common Multiple",
+          "openingLine": "Before calculating, let's decide what kind of structure this question is asking for.",
+          "firstTutorQuestion": "Are you looking for what overlaps or what covers both numbers?",
+          "smallHint": "Say the task type first: shared structure for common divisor, covering structure for common multiple.",
+          "goodStoppingPoint": "Learner names the task type first and delays calculation until that structure is clear.",
+          "watchFor": [
+            "Learner starts calculation before deciding whether the task is about overlap or coverage.",
+            "Learner uses the same rule for both common divisor and common multiple.",
+            "Learner says 'common' but cannot explain whether they need shared factors or enough factors for both numbers."
+          ],
+          "exampleTutorMove": "Stop the arithmetic and ask, 'Before we compute, is this the overlap answer or the cover-both answer?'",
+          "exampleLearnerResponse": "A common divisor uses only the overlap, but a common multiple needs enough prime factors to cover both numbers."
+        }
+      ],
+      "completionRule": "complete_all_steps_in_order",
+      "lastEvaluation": {
+        "lessonStepId": "STEP-U1-S3-REWRITE-CLEANLY",
+        "decision": "completed",
+        "matchedRequiredSignals": [
+          "writes_only_prime_factors",
+          "keeps_all_factors"
+        ],
+        "missingRequiredSignals": [],
+        "matchedTextHints": [],
+        "matchedTextHintSignals": [],
+        "canAutoAdvance": true
+      },
+      "history": [
+        {
+          "attemptIndex": 0,
+          "lessonStepId": "STEP-U1-S3-REWRITE-CLEANLY",
+          "activityId": "ACT-U1-S3-REWRITE-CLEANLY",
+          "learnerResponse": "공배수는 둘 다 담는 쪽이라 먼저 구조를 정하고 계산은 나중에 해야 해.",
+          "fieldValues": {
+            "uses_only_prime_factors": true,
+            "keeps_all_factors": true
+          },
+          "tutorNote": "",
+          "timestamp": "",
+          "evaluation": {
+            "lessonStepId": "STEP-U1-S3-REWRITE-CLEANLY",
+            "decision": "completed",
+            "matchedRequiredSignals": [
+              "writes_only_prime_factors",
+              "keeps_all_factors"
+            ],
+            "missingRequiredSignals": [],
+            "matchedTextHints": [],
+            "matchedTextHintSignals": [],
+            "canAutoAdvance": true
+          }
+        }
+      ]
+    },
+    "sessions": [
+      {
+        "learnerId": "sample-learner",
+        "targetSkillId": "U1-S5C",
+        "status": "completed",
+        "currentStepIndex": 0,
+        "currentStep": null,
+        "nextStep": null,
+        "completedStepIds": [
+          "STEP-U1-S5C-GCD-LCM-SORT"
+        ],
+        "remainingStepIds": [],
+        "steps": [
+          {
+            "activityId": "ACT-U1-S5C-GCD-LCM-SORT",
+            "lessonStepId": "STEP-U1-S5C-GCD-LCM-SORT",
+            "skillId": "U1-S5C",
+            "activityType": "dialogue-flow",
+            "title": "Sort Common Divisor vs Common Multiple",
+            "openingLine": "Before calculating, let's decide what kind of structure this question is asking for.",
+            "firstTutorQuestion": "Are you looking for what overlaps or what covers both numbers?",
+            "smallHint": "Say the task type first: shared structure for common divisor, covering structure for common multiple.",
+            "goodStoppingPoint": "Learner names the task type first and delays calculation until that structure is clear."
+          }
+        ],
+        "completionRule": "complete_all_steps_in_order",
+        "lastEvaluation": {
+          "lessonStepId": "STEP-U1-S5C-GCD-LCM-SORT",
+          "decision": "completed",
+          "matchedRequiredSignals": [
+            "names_shared_vs_covering_structure",
+            "delays_calculation_until_structure_named"
+          ],
+          "missingRequiredSignals": [],
+          "matchedTextHints": [],
+          "matchedTextHintSignals": [
+            "names_shared_vs_covering_structure",
+            "delays_calculation_until_structure_named"
+          ],
+          "canAutoAdvance": true
+        },
+        "history": [
+          {
+            "attemptIndex": 0,
+            "lessonStepId": "STEP-U1-S5C-GCD-LCM-SORT",
+            "activityId": "ACT-U1-S5C-GCD-LCM-SORT",
+            "learnerResponse": "이건 공배수라서 둘을 다 담는 쪽을 먼저 보고, 계산은 그다음에 해야 해.",
+            "fieldValues": {
+              "names_shared_vs_covering_structure": false,
+              "delays_calculation_until_structure_named": false
+            },
+            "tutorNote": "튜터가 구조 구분 발화만 기록하고 체크박스는 비워 두었다.",
+            "timestamp": "2026-03-28T11:20:00+09:00",
+            "evaluation": {
+              "lessonStepId": "STEP-U1-S5C-GCD-LCM-SORT",
+              "decision": "completed",
+              "matchedRequiredSignals": [
+                "names_shared_vs_covering_structure",
+                "delays_calculation_until_structure_named"
+              ],
+              "missingRequiredSignals": [],
+              "matchedTextHints": [],
+              "matchedTextHintSignals": [
+                "names_shared_vs_covering_structure",
+                "delays_calculation_until_structure_named"
+              ],
+              "canAutoAdvance": true
+            }
+          }
+        ]
+      },
+      {
+        "learnerId": "sample-learner",
+        "targetSkillId": "U1-S5C",
+        "status": "in_progress",
+        "currentStepIndex": 1,
+        "currentStep": {
+          "activityId": "ACT-U1-S5C-GCD-LCM-SORT",
+          "lessonStepId": "STEP-U1-S5C-GCD-LCM-SORT",
+          "skillId": "U1-S5C",
+          "activityType": "dialogue-flow",
+          "title": "Sort Common Divisor vs Common Multiple",
+          "openingLine": "Before calculating, let's decide what kind of structure this question is asking for.",
+          "firstTutorQuestion": "Are you looking for what overlaps or what covers both numbers?",
+          "smallHint": "Say the task type first: shared structure for common divisor, covering structure for common multiple.",
+          "goodStoppingPoint": "Learner names the task type first and delays calculation until that structure is clear.",
+          "watchFor": [
+            "Learner starts calculation before deciding whether the task is about overlap or coverage.",
+            "Learner uses the same rule for both common divisor and common multiple.",
+            "Learner says 'common' but cannot explain whether they need shared factors or enough factors for both numbers."
+          ],
+          "exampleTutorMove": "Stop the arithmetic and ask, 'Before we compute, is this the overlap answer or the cover-both answer?'",
+          "exampleLearnerResponse": "A common divisor uses only the overlap, but a common multiple needs enough prime factors to cover both numbers."
+        },
+        "nextStep": null,
+        "completedStepIds": [
+          "STEP-U1-S3-REWRITE-CLEANLY"
+        ],
+        "remainingStepIds": [
+          "STEP-U1-S5C-GCD-LCM-SORT"
+        ],
+        "steps": [
+          {
+            "activityId": "ACT-U1-S3-REWRITE-CLEANLY",
+            "lessonStepId": "STEP-U1-S3-REWRITE-CLEANLY",
+            "skillId": "U1-S3",
+            "activityType": "dialogue-flow",
+            "title": "Rewrite the Final Factorization Cleanly",
+            "openingLine": "Your split-work is close; now let's turn it into one clean final factorization.",
+            "firstTutorQuestion": "Which factors should still remain in the final line?",
+            "smallHint": "Keep only prime factors in the last line, and make sure none were dropped.",
+            "goodStoppingPoint": "Learner writes one complete prime factorization with no missing or composite factor.",
+            "watchFor": [
+              "Learner keeps a composite factor like 6 in the final line.",
+              "Learner rewrites with only prime factors but drops one repeated factor."
+            ],
+            "exampleTutorMove": "Cover the scratch work and rebuild the last line only with prime factors that still remain.",
+            "exampleLearnerResponse": "The final line should keep 2, 2, and 3 because all of them are prime and none can be dropped."
+          },
+          {
+            "activityId": "ACT-U1-S5C-GCD-LCM-SORT",
+            "lessonStepId": "STEP-U1-S5C-GCD-LCM-SORT",
+            "skillId": "U1-S5C",
+            "activityType": "dialogue-flow",
+            "title": "Sort Common Divisor vs Common Multiple",
+            "openingLine": "Before calculating, let's decide what kind of structure this question is asking for.",
+            "firstTutorQuestion": "Are you looking for what overlaps or what covers both numbers?",
+            "smallHint": "Say the task type first: shared structure for common divisor, covering structure for common multiple.",
+            "goodStoppingPoint": "Learner names the task type first and delays calculation until that structure is clear.",
+            "watchFor": [
+              "Learner starts calculation before deciding whether the task is about overlap or coverage.",
+              "Learner uses the same rule for both common divisor and common multiple.",
+              "Learner says 'common' but cannot explain whether they need shared factors or enough factors for both numbers."
+            ],
+            "exampleTutorMove": "Stop the arithmetic and ask, 'Before we compute, is this the overlap answer or the cover-both answer?'",
+            "exampleLearnerResponse": "A common divisor uses only the overlap, but a common multiple needs enough prime factors to cover both numbers."
+          }
+        ],
+        "completionRule": "complete_all_steps_in_order",
+        "lastEvaluation": {
+          "lessonStepId": "STEP-U1-S3-REWRITE-CLEANLY",
+          "decision": "completed",
+          "matchedRequiredSignals": [
+            "writes_only_prime_factors",
+            "keeps_all_factors"
+          ],
+          "missingRequiredSignals": [],
+          "matchedTextHints": [],
+          "matchedTextHintSignals": [],
+          "canAutoAdvance": true
+        },
+        "history": [
+          {
+            "attemptIndex": 0,
+            "lessonStepId": "STEP-U1-S3-REWRITE-CLEANLY",
+            "activityId": "ACT-U1-S3-REWRITE-CLEANLY",
+            "learnerResponse": "공배수는 둘 다 담는 쪽이라 먼저 구조를 정하고 계산은 나중에 해야 해.",
+            "fieldValues": {
+              "uses_only_prime_factors": true,
+              "keeps_all_factors": true
+            },
+            "tutorNote": "",
+            "timestamp": "",
+            "evaluation": {
+              "lessonStepId": "STEP-U1-S3-REWRITE-CLEANLY",
+              "decision": "completed",
+              "matchedRequiredSignals": [
+                "writes_only_prime_factors",
+                "keeps_all_factors"
+              ],
+              "missingRequiredSignals": [],
+              "matchedTextHints": [],
+              "matchedTextHintSignals": [],
+              "canAutoAdvance": true
+            }
+          }
+        ]
+      }
+    ],
+    "evidenceEvents": [
+      {
+        "eventId": "session-history-0-STEP-U1-S5C-GCD-LCM-SORT",
+        "learnerId": "sample-learner",
+        "kind": "session_history_observation",
+        "skillId": "U1-S5C",
+        "result": "correct",
+        "errorPatternIds": [],
+        "observations": [
+          "이건 공배수라서 둘을 다 담는 쪽을 먼저 보고, 계산은 그다음에 해야 해.",
+          "튜터가 구조 구분 발화만 기록하고 체크박스는 비워 두었다."
+        ],
+        "confidenceSignal": "confident",
+        "sourceDocs": [],
+        "derivedFrom": {
+          "lessonStepId": "STEP-U1-S5C-GCD-LCM-SORT",
+          "activityId": "ACT-U1-S5C-GCD-LCM-SORT",
+          "matchedRequiredSignals": [
+            "names_shared_vs_covering_structure",
+            "delays_calculation_until_structure_named"
+          ],
+          "missingRequiredSignals": []
+        }
+      },
+      {
+        "eventId": "session-history-0-STEP-U1-S3-REWRITE-CLEANLY",
+        "learnerId": "sample-learner",
+        "kind": "session_history_observation",
+        "skillId": "U1-S3",
+        "result": "correct",
+        "errorPatternIds": [],
+        "observations": [
+          "공배수는 둘 다 담는 쪽이라 먼저 구조를 정하고 계산은 나중에 해야 해."
+        ],
+        "confidenceSignal": "confident",
+        "sourceDocs": [],
+        "derivedFrom": {
+          "lessonStepId": "STEP-U1-S3-REWRITE-CLEANLY",
+          "activityId": "ACT-U1-S3-REWRITE-CLEANLY",
+          "matchedRequiredSignals": [
+            "writes_only_prime_factors",
+            "keeps_all_factors"
+          ],
+          "missingRequiredSignals": []
+        }
+      }
+    ],
+    "latestSkillSummaries": [
+      {
+        "learnerId": "sample-learner",
+        "skillId": "U1-S3",
+        "status": "ready_for_next_step",
+        "statusApproval": "provisional",
+        "decisionType": "multi_event_rule_assisted_conservative",
+        "supportingEvidenceIds": [
+          "session-history-0-STEP-U1-S3-REWRITE-CLEANLY"
+        ],
+        "matchedErrorPatternIds": [],
+        "explanations": [
+          "The current event satisfies the minimum Unit 1 rule for moving to the next guided step.",
+          "This supports conservative next-step planning, not a final mastered label."
+        ],
+        "blockedBy": [
+          "This status supports conservative tutoring flow only, not final mastery approval.",
+          "Unit-level mastered thresholds, reassessment rules, and overrides remain UNDECIDED."
+        ],
+        "eventCount": 1,
+        "blockedByPrerequisites": [
+          {
+            "prerequisiteSkillId": "U1-S2",
+            "relationship": "HELPFUL",
+            "approvalStatus": "provisional",
+            "sourceDocs": [
+              "docs/prerequisite-map.md"
+            ],
+            "whyBlocked": "Prerequisite skill U1-S2 does not yet have learner evidence, so progress on U1-S3 should stay conservative."
+          }
+        ],
+        "hasRequiredPrerequisiteBlocker": false
+      },
+      {
+        "learnerId": "sample-learner",
+        "skillId": "U1-S5C",
+        "status": "ready_for_next_step",
+        "statusApproval": "provisional",
+        "decisionType": "multi_event_rule_assisted_conservative",
+        "supportingEvidenceIds": [
+          "session-history-0-STEP-U1-S5C-GCD-LCM-SORT"
+        ],
+        "matchedErrorPatternIds": [],
+        "explanations": [
+          "The current event satisfies the minimum Unit 1 rule for moving to the next guided step.",
+          "This supports conservative next-step planning, not a final mastered label."
+        ],
+        "blockedBy": [
+          "This status supports conservative tutoring flow only, not final mastery approval.",
+          "Unit-level mastered thresholds, reassessment rules, and overrides remain UNDECIDED."
+        ],
+        "eventCount": 1,
+        "blockedByPrerequisites": [],
+        "hasRequiredPrerequisiteBlocker": false
+      }
+    ],
+    "latestRecommendations": [
+      {
+        "learnerId": "sample-learner",
+        "targetSkillId": "U1-S3",
+        "targetSkillTitle": "Express a number in prime factorized form",
+        "recommendationType": "practice",
+        "confidence": "limited",
+        "needsReview": true,
+        "reasonCodes": [
+          "documented_skill_target",
+          "unit_mastery_threshold_pending",
+          "helpful_prerequisite_blocker"
+        ],
+        "summary": "Conservative follow-up practice is recommended pending more evidence.",
+        "sourceDocs": [
+          "docs/suji-tutor-dialogue-flow-prime-factorization.md",
+          "docs/suji-subskills-prime-factorization.md"
+        ],
+        "recommendedActivities": [
+          {
+            "activityId": "ACT-U1-S3-REWRITE-CLEANLY",
+            "skillId": "U1-S3",
+            "activityType": "dialogue-flow",
+            "title": "Rewrite the Final Factorization Cleanly",
+            "goal": "Stabilize the move from split-work to a complete final prime factorization.",
+            "firstTutorQuestion": "Which factors should still remain in the final line?",
+            "operatorFocus": "Push for one clean final line, not more splitting work.",
+            "watchFor": [
+              "Learner drops a repeated factor while rewriting.",
+              "Learner leaves a composite factor in the final line."
+            ],
+            "exampleTutorMove": "Cover the scratch work and ask the learner to rebuild only the final prime-factor line."
+          }
+        ],
+        "sessionPayload": {
+          "learnerId": "sample-learner",
+          "targetSkillId": "U1-S3",
+          "steps": [
+            {
+              "activityId": "ACT-U1-S2-ENTRY-BRIDGE",
+              "lessonStepId": "STEP-U1-S2-ENTRY-BRIDGE",
+              "skillId": "U1-S2",
+              "activityType": "worked-bridge",
+              "title": "Entry Bridge With 24",
+              "openingLine": "Let's just find one easy way into the problem instead of solving everything at once.",
+              "firstTutorQuestion": "What is the easiest divisor you can test first?",
+              "smallHint": "If the number is even, checking 2 is a calm first step.",
+              "goodStoppingPoint": "Learner starts with 2 for 24 and explains that 24 is even.",
+              "watchFor": [
+                "Learner stalls because they think they need the whole tree immediately.",
+                "Learner notices 24 is even but still does not choose 2."
+              ],
+              "exampleTutorMove": "You do not need the whole answer yet. What does the word 'even' let you try first?",
+              "exampleLearnerResponse": "24 is even, so trying 2 first is the easiest entry."
+            },
+            {
+              "activityId": "ACT-U1-S3-REWRITE-CLEANLY",
+              "lessonStepId": "STEP-U1-S3-REWRITE-CLEANLY",
+              "skillId": "U1-S3",
+              "activityType": "dialogue-flow",
+              "title": "Rewrite the Final Factorization Cleanly",
+              "openingLine": "Your split-work is close; now let's turn it into one clean final factorization.",
+              "firstTutorQuestion": "Which factors should still remain in the final line?",
+              "smallHint": "Keep only prime factors in the last line, and make sure none were dropped.",
+              "goodStoppingPoint": "Learner writes one complete prime factorization with no missing or composite factor.",
+              "watchFor": [
+                "Learner keeps a composite factor like 6 in the final line.",
+                "Learner rewrites with only prime factors but drops one repeated factor."
+              ],
+              "exampleTutorMove": "Cover the scratch work and rebuild the last line only with prime factors that still remain.",
+              "exampleLearnerResponse": "The final line should keep 2, 2, and 3 because all of them are prime and none can be dropped."
+            }
+          ]
+        },
+        "sourceEventIds": [
+          "session-history-0-STEP-U1-S3-REWRITE-CLEANLY"
+        ],
+        "blockedByPrerequisites": [
+          {
+            "prerequisiteSkillId": "U1-S2",
+            "relationship": "HELPFUL",
+            "approvalStatus": "provisional",
+            "sourceDocs": [
+              "docs/prerequisite-map.md"
+            ],
+            "whyBlocked": "Prerequisite skill U1-S2 does not yet have learner evidence, so progress on U1-S3 should stay conservative."
+          }
+        ],
+        "recommendedNextSkillIds": [
+          "U1-S2",
+          "U1-S3"
+        ],
+        "recommendedActivitySequence": [
+          {
+            "activityId": "ACT-U1-S2-ENTRY-BRIDGE",
+            "skillId": "U1-S2",
+            "activityType": "worked-bridge",
+            "title": "Entry Bridge With 24",
+            "goal": "Rebuild the habit of starting with an easy divisor pair instead of freezing.",
+            "firstTutorQuestion": "What is the easiest divisor you can test first?",
+            "operatorFocus": "Reward a calm starting move instead of speed.",
+            "watchFor": [
+              "Learner freezes because they think they must finish the whole factorization at once.",
+              "Learner chooses a hard divisor first even after noticing the number is even."
+            ],
+            "exampleTutorMove": "If the learner hesitates, point back to the word 'even' and ask what divisor that suggests."
+          },
+          {
+            "activityId": "ACT-U1-S3-REWRITE-CLEANLY",
+            "skillId": "U1-S3",
+            "activityType": "dialogue-flow",
+            "title": "Rewrite the Final Factorization Cleanly",
+            "goal": "Stabilize the move from split-work to a complete final prime factorization.",
+            "firstTutorQuestion": "Which factors should still remain in the final line?",
+            "operatorFocus": "Push for one clean final line, not more splitting work.",
+            "watchFor": [
+              "Learner drops a repeated factor while rewriting.",
+              "Learner leaves a composite factor in the final line."
+            ],
+            "exampleTutorMove": "Cover the scratch work and ask the learner to rebuild only the final prime-factor line."
+          }
+        ]
+      },
+      {
+        "learnerId": "sample-learner",
+        "targetSkillId": "U1-S5C",
+        "targetSkillTitle": "Use factor structure when comparing common divisors or common multiples",
+        "recommendationType": "practice",
+        "confidence": "limited",
+        "needsReview": true,
+        "reasonCodes": [
+          "documented_skill_target",
+          "unit_mastery_threshold_pending"
+        ],
+        "summary": "Learner mixes common-divisor and common-multiple reasoning in transfer tasks.",
+        "sourceDocs": [
+          "docs/suji-subskills-prime-factorization.md",
+          "docs/suji-error-patterns-prime-factorization.md",
+          "docs/suji-tutor-dialogue-flow-prime-factorization.md"
+        ],
+        "recommendedActivities": [
+          {
+            "activityId": "ACT-U1-S5C-GCD-LCM-SORT",
+            "skillId": "U1-S5C",
+            "activityType": "dialogue-flow",
+            "title": "Sort Common Divisor vs Common Multiple",
+            "goal": "Help the learner name which structure to look for before calculating.",
+            "firstTutorQuestion": "Are you looking for what overlaps or what covers both numbers?",
+            "operatorFocus": "Get the learner to classify the structure before any arithmetic and keep them from computing too early.",
+            "watchFor": [
+              "Learner starts calculating without deciding whether the task is GCD or LCM.",
+              "Learner uses the word 'common' but cannot distinguish shared from covering structure.",
+              "Learner classifies correctly once but then falls back into calculation-first behavior."
+            ],
+            "exampleTutorMove": "Pause the learner at the first arithmetic move and ask them to restate whether this is an overlap task or a cover-both task."
+          }
+        ],
+        "sessionPayload": {
+          "learnerId": "sample-learner",
+          "targetSkillId": "U1-S5C",
+          "steps": [
+            {
+              "activityId": "ACT-U1-S5C-GCD-LCM-SORT",
+              "lessonStepId": "STEP-U1-S5C-GCD-LCM-SORT",
+              "skillId": "U1-S5C",
+              "activityType": "dialogue-flow",
+              "title": "Sort Common Divisor vs Common Multiple",
+              "openingLine": "Before calculating, let's decide what kind of structure this question is asking for.",
+              "firstTutorQuestion": "Are you looking for what overlaps or what covers both numbers?",
+              "smallHint": "Say the task type first: shared structure for common divisor, covering structure for common multiple.",
+              "goodStoppingPoint": "Learner names the task type first and delays calculation until that structure is clear.",
+              "watchFor": [
+                "Learner starts calculation before deciding whether the task is about overlap or coverage.",
+                "Learner uses the same rule for both common divisor and common multiple.",
+                "Learner says 'common' but cannot explain whether they need shared factors or enough factors for both numbers."
+              ],
+              "exampleTutorMove": "Stop the arithmetic and ask, 'Before we compute, is this the overlap answer or the cover-both answer?'",
+              "exampleLearnerResponse": "A common divisor uses only the overlap, but a common multiple needs enough prime factors to cover both numbers."
+            }
+          ]
+        },
+        "sourceEventIds": [
+          "session-history-0-STEP-U1-S5C-GCD-LCM-SORT"
+        ],
+        "blockedByPrerequisites": [],
+        "recommendedNextSkillIds": [
+          "U1-S5C"
+        ],
+        "recommendedActivitySequence": [
+          {
+            "activityId": "ACT-U1-S5C-GCD-LCM-SORT",
+            "skillId": "U1-S5C",
+            "activityType": "dialogue-flow",
+            "title": "Sort Common Divisor vs Common Multiple",
+            "goal": "Help the learner name which structure to look for before calculating.",
+            "firstTutorQuestion": "Are you looking for what overlaps or what covers both numbers?",
+            "operatorFocus": "Get the learner to classify the structure before any arithmetic and keep them from computing too early.",
+            "watchFor": [
+              "Learner starts calculating without deciding whether the task is GCD or LCM.",
+              "Learner uses the word 'common' but cannot distinguish shared from covering structure.",
+              "Learner classifies correctly once but then falls back into calculation-first behavior."
+            ],
+            "exampleTutorMove": "Pause the learner at the first arithmetic move and ask them to restate whether this is an overlap task or a cover-both task."
+          }
+        ]
+      }
+    ],
+    "updatedAt": ""
+  }
+}

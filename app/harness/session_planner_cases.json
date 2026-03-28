@@ -11,5 +11,61 @@
       "firstLessonStepId": "STEP-U1-S2-ENTRY-BRIDGE",
       "stepCount": 2
     }
+  },
+  {
+    "name": "plan-next-session-from-completed-s5a-transcript",
+    "transcriptFile": "app/domain/evidence/unit1-tutor-transcripts.example.json",
+    "transcriptId": "u1-s5a-divisor-count-ko-text-only-active-session",
+    "expected": {
+      "plannedFromSkillId": "U1-S5A",
+      "recommendedNextSkillIds": [
+        "U1-S3",
+        "U1-S5A"
+      ],
+      "firstLessonStepId": "STEP-U1-S3-REWRITE-CLEANLY",
+      "stepCount": 2
+    }
+  },
+  {
+    "name": "plan-next-session-from-completed-s5c-transcript",
+    "transcriptFile": "app/domain/evidence/unit1-tutor-transcripts.example.json",
+    "transcriptId": "u1-s5c-gcd-lcm-ko-text-only-active-session",
+    "expected": {
+      "plannedFromSkillId": "U1-S5C",
+      "recommendedNextSkillIds": [
+        "U1-S3",
+        "U1-S5C"
+      ],
+      "firstLessonStepId": "STEP-U1-S3-REWRITE-CLEANLY",
+      "stepCount": 2
+    }
+  },
+  {
+    "name": "plan-next-session-from-completed-s5b-transcript",
+    "transcriptFile": "app/domain/evidence/unit1-tutor-transcripts.example.json",
+    "transcriptId": "u1-s5b-square-number-ko-text-only-active-session",
+    "expected": {
+      "plannedFromSkillId": "U1-S5B",
+      "recommendedNextSkillIds": [
+        "U1-S3",
+        "U1-S5B"
+      ],
+      "firstLessonStepId": "STEP-U1-S3-REWRITE-CLEANLY",
+      "stepCount": 2
+    }
+  },
+  {
+    "name": "plan-next-session-from-completed-s5d-transcript",
+    "transcriptFile": "app/domain/evidence/unit1-tutor-transcripts.example.json",
+    "transcriptId": "u1-s5d-relevant-part-ko-text-only-active-session",
+    "expected": {
+      "plannedFromSkillId": "U1-S5D",
+      "recommendedNextSkillIds": [
+        "U1-S3",
+        "U1-S5D"
+      ],
+      "firstLessonStepId": "STEP-U1-S3-REWRITE-CLEANLY",
+      "stepCount": 2
+    }
   }
 ]

@@ -5,6 +5,11 @@
     "requiredSignals": [
       "replace_required_signal"
     ],
+    "signalTextHints": {
+      "replace_required_signal": [
+        "replace signal-level text hint"
+      ]
+    },
     "optionalTextHints": [
       "replace optional text hint"
     ],

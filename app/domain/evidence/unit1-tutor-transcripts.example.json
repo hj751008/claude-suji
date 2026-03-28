@@ -1,0 +1,544 @@
+[
+  {
+    "transcriptId": "u1-s2-entry-bridge-ko-text-only-live",
+    "name": "Live S2 entry bridge log with Korean text-only observation",
+    "skillId": "U1-S2",
+    "tags": [
+      "unit1",
+      "entry",
+      "ko",
+      "text-only",
+      "live"
+    ],
+    "learnerFile": "app/domain/evidence/learner-record-with-live-session.example.json",
+    "turns": [
+      {
+        "turnIndex": 1,
+        "lessonStepId": "STEP-U1-S2-ENTRY-BRIDGE",
+        "messages": [
+          {
+            "speaker": "tutor",
+            "text": "지금은 전체 트리를 다 하지 말고, 먼저 가장 쉬운 시작만 찾자."
+          },
+          {
+            "speaker": "tutor",
+            "text": "24에서 제일 먼저 시험해 볼 쉬운 약수는 뭐야?"
+          },
+          {
+            "speaker": "learner",
+            "text": "24는 짝수니까 2부터 나눠 보면 돼."
+          }
+        ],
+        "operatorNote": "튜터가 체크박스를 비워 두고 자유서술만 남겼다.",
+        "observationFormInput": {
+          "learnerResponse": "24는 짝수니까 2부터 나눠 보면 돼.",
+          "fieldValues": {
+            "starts_with_two": false,
+            "mentions_evenness": false
+          },
+          "tutorNote": "튜터가 체크박스를 비워 두고 자유서술만 남겼다.",
+          "timestamp": "2026-03-28T11:00:00+09:00"
+        }
+      }
+    ]
+  },
+  {
+    "transcriptId": "u1-s2-s3-bilingual-text-only-planned-session",
+    "name": "Planned S2 to S3 session replay with bilingual text-only logs",
+    "skillId": "U1-S3",
+    "tags": [
+      "unit1",
+      "bilingual",
+      "text-only",
+      "planned",
+      "multi-turn"
+    ],
+    "learnerFile": "app/domain/evidence/learner-record-with-summary.example.json",
+    "startBeforeTurns": true,
+    "turns": [
+      {
+        "turnIndex": 1,
+        "lessonStepId": "STEP-U1-S2-ENTRY-BRIDGE",
+        "messages": [
+          {
+            "speaker": "tutor",
+            "text": "Let's not solve the whole tree yet. What is the easiest divisor you can test first?"
+          },
+          {
+            "speaker": "learner",
+            "text": "24 is even, so I should start by dividing by 2 first."
+          }
+        ],
+        "operatorNote": "The tutor wrote only the learner quote and kept the checkboxes conservative.",
+        "observationFormInput": {
+          "learnerResponse": "24 is even, so I should start by dividing by 2 first.",
+          "fieldValues": {
+            "starts_with_two": false,
+            "mentions_evenness": false
+          },
+          "tutorNote": "The tutor wrote only the learner quote and kept the checkboxes conservative.",
+          "timestamp": "2026-03-27T09:30:00+09:00"
+        }
+      },
+      {
+        "turnIndex": 2,
+        "lessonStepId": "STEP-U1-S3-REWRITE-CLEANLY",
+        "messages": [
+          {
+            "speaker": "tutor",
+            "text": "이제 마지막 줄에는 무엇만 남아 있어야 할까?"
+          },
+          {
+            "speaker": "learner",
+            "text": "소수만 남겨서 2 x 2 x 3으로 다시 썼고 빠진 것은 없어."
+          }
+        ],
+        "operatorNote": "튜터가 발화 로그만 남겼고 체크박스는 누르지 않았다.",
+        "observationFormInput": {
+          "learnerResponse": "소수만 남겨서 2 x 2 x 3으로 다시 썼고 빠진 것은 없어.",
+          "fieldValues": {
+            "uses_only_prime_factors": false,
+            "keeps_all_factors": false
+          },
+          "tutorNote": "튜터가 발화 로그만 남겼고 체크박스는 누르지 않았다.",
+          "timestamp": "2026-03-27T09:33:00+09:00"
+        }
+      }
+    ]
+  },
+  {
+    "transcriptId": "u1-s4-verify-ko-text-only-active-session",
+    "name": "Resumed S4 verification log with Korean text-only observation",
+    "skillId": "U1-S4",
+    "tags": [
+      "unit1",
+      "verification",
+      "ko",
+      "text-only",
+      "active"
+    ],
+    "learnerFile": "app/domain/evidence/learner-record-with-active-session.example.json",
+    "turns": [
+      {
+        "turnIndex": 1,
+        "lessonStepId": "STEP-U1-S4-VERIFY-PRIME-FIRST",
+        "messages": [
+          {
+            "speaker": "tutor",
+            "text": "곱부터 보지 말고, 두 답 중 어느 쪽이 소수만 남아 있는지 먼저 말해 볼래?"
+          },
+          {
+            "speaker": "learner",
+            "text": "2 x 6은 소인수분해가 아니고 6은 소수가 아니야. 2 x 2 x 3이 소인수분해야."
+          }
+        ],
+        "operatorNote": "튜터가 자유서술만 적고 체크박스는 비워 두었다.",
+        "observationFormInput": {
+          "learnerResponse": "2 x 6은 소인수분해가 아니고 6은 소수가 아니야. 2 x 2 x 3이 소인수분해야.",
+          "fieldValues": {
+            "rejects_composite_factor_answer": false,
+            "selects_all_prime_answer": false
+          },
+          "tutorNote": "튜터가 자유서술만 적고 체크박스는 비워 두었다.",
+          "timestamp": "2026-03-28T11:10:00+09:00"
+        }
+      }
+    ]
+  },
+  {
+    "transcriptId": "u1-s3-rewrite-missing-factor-ko-followup",
+    "name": "Active S3 rewrite log where one factor is dropped",
+    "skillId": "U1-S3",
+    "tags": [
+      "unit1",
+      "rewrite",
+      "ko",
+      "text-only",
+      "active",
+      "follow-up"
+    ],
+    "learnerFile": "app/domain/evidence/learner-record-with-active-session-u1-s3.example.json",
+    "turns": [
+      {
+        "turnIndex": 1,
+        "lessonStepId": "STEP-U1-S3-REWRITE-CLEANLY",
+        "messages": [
+          {
+            "speaker": "tutor",
+            "text": "마지막 줄에는 소수만 남겨야 해. 지금 남겨야 할 것을 다시 말해 볼래?"
+          },
+          {
+            "speaker": "learner",
+            "text": "소수만 남겨서 2 x 3으로 쓰면 돼."
+          }
+        ],
+        "operatorNote": "튜터는 소수만 남긴 점은 들었지만 반복된 2가 빠진 상태로 기록했다.",
+        "observationFormInput": {
+          "learnerResponse": "소수만 남겨서 2 x 3으로 쓰면 돼.",
+          "fieldValues": {
+            "uses_only_prime_factors": false,
+            "keeps_all_factors": false
+          },
+          "tutorNote": "튜터는 소수만 남긴 점은 들었지만 반복된 2가 빠진 상태로 기록했다.",
+          "timestamp": "2026-03-28T11:28:00+09:00"
+        }
+      }
+    ]
+  },
+  {
+    "transcriptId": "u1-s4-verification-product-only-ko-uncertain",
+    "name": "Active S4 verification log that checks only the product",
+    "skillId": "U1-S4",
+    "tags": [
+      "unit1",
+      "verification",
+      "ko",
+      "text-only",
+      "active",
+      "uncertain"
+    ],
+    "learnerFile": "app/domain/evidence/learner-record-with-active-session.example.json",
+    "turns": [
+      {
+        "turnIndex": 1,
+        "lessonStepId": "STEP-U1-S4-VERIFY-PRIME-FIRST",
+        "messages": [
+          {
+            "speaker": "tutor",
+            "text": "곱부터 보지 말고 소수인지 먼저 보자. 지금은 어떻게 생각해?"
+          },
+          {
+            "speaker": "learner",
+            "text": "2 x 6도 12가 되니까 맞는 것 같아."
+          }
+        ],
+        "operatorNote": "튜터가 곱만 맞는다는 반응을 들었고 primeness 기준은 잡히지 않았다고 적었다.",
+        "observationFormInput": {
+          "learnerResponse": "2 x 6도 12가 되니까 맞는 것 같아.",
+          "fieldValues": {
+            "rejects_composite_factor_answer": false,
+            "selects_all_prime_answer": false
+          },
+          "tutorNote": "튜터가 곱만 맞는다는 반응을 들었고 primeness 기준은 잡히지 않았다고 적었다.",
+          "timestamp": "2026-03-28T11:31:00+09:00"
+        }
+      }
+    ]
+  },
+  {
+    "transcriptId": "u1-s5c-gcd-lcm-ko-text-only-active-session",
+    "name": "Active S5C transfer log with Korean text-only observation",
+    "skillId": "U1-S5C",
+    "tags": [
+      "unit1",
+      "transfer",
+      "ko",
+      "text-only",
+      "active"
+    ],
+    "learnerFile": "app/domain/evidence/learner-record-with-active-session-u1-s5c.example.json",
+    "turns": [
+      {
+        "turnIndex": 1,
+        "lessonStepId": "STEP-U1-S5C-GCD-LCM-SORT",
+        "messages": [
+          {
+            "speaker": "tutor",
+            "text": "계산하기 전에, 이 문제가 겹치는 쪽인지 둘을 다 담는 쪽인지 먼저 말해 볼래?"
+          },
+          {
+            "speaker": "learner",
+            "text": "이건 공배수라서 둘을 다 담는 쪽을 먼저 보고, 계산은 그다음에 해야 해."
+          }
+        ],
+        "operatorNote": "튜터가 구조 구분 발화만 기록하고 체크박스는 비워 두었다.",
+        "observationFormInput": {
+          "learnerResponse": "이건 공배수라서 둘을 다 담는 쪽을 먼저 보고, 계산은 그다음에 해야 해.",
+          "fieldValues": {
+            "names_shared_vs_covering_structure": false,
+            "delays_calculation_until_structure_named": false
+          },
+          "tutorNote": "튜터가 구조 구분 발화만 기록하고 체크박스는 비워 두었다.",
+          "timestamp": "2026-03-28T11:20:00+09:00"
+        }
+      }
+    ]
+  },
+  {
+    "transcriptId": "u1-s5c-gcd-lcm-calculate-first-ko-uncertain",
+    "name": "Active S5C transfer log that jumps into calculation first",
+    "skillId": "U1-S5C",
+    "tags": [
+      "unit1",
+      "transfer",
+      "ko",
+      "text-only",
+      "active",
+      "uncertain"
+    ],
+    "learnerFile": "app/domain/evidence/learner-record-with-active-session-u1-s5c.example.json",
+    "turns": [
+      {
+        "turnIndex": 1,
+        "lessonStepId": "STEP-U1-S5C-GCD-LCM-SORT",
+        "messages": [
+          {
+            "speaker": "tutor",
+            "text": "먼저 어떤 구조인지 말해 볼래?"
+          },
+          {
+            "speaker": "learner",
+            "text": "일단 두 수를 곱해 보고 시작할래."
+          }
+        ],
+        "operatorNote": "튜터가 구조 구분 없이 calculation-first로 들어간 반응을 기록했다.",
+        "observationFormInput": {
+          "learnerResponse": "일단 두 수를 곱해 보고 시작할래.",
+          "fieldValues": {
+            "names_shared_vs_covering_structure": false,
+            "delays_calculation_until_structure_named": false
+          },
+          "tutorNote": "튜터가 구조 구분 없이 calculation-first로 들어간 반응을 기록했다.",
+          "timestamp": "2026-03-28T11:38:00+09:00"
+        }
+      }
+    ]
+  },
+  {
+    "transcriptId": "u1-s5a-divisor-count-ko-text-only-active-session",
+    "name": "Active S5A transfer log with Korean text-only observation",
+    "skillId": "U1-S5A",
+    "tags": [
+      "unit1",
+      "transfer",
+      "ko",
+      "text-only",
+      "active"
+    ],
+    "learnerFile": "app/domain/evidence/learner-record-with-active-session-u1-s5a.example.json",
+    "turns": [
+      {
+        "turnIndex": 1,
+        "lessonStepId": "STEP-U1-S5A-DIVISOR-COUNT-TRANSFER",
+        "messages": [
+          {
+            "speaker": "tutor",
+            "text": "약수를 하나씩 다 쓰기 전에, 이미 한 소인수분해에서 무엇을 바로 가져올 수 있을까?"
+          },
+          {
+            "speaker": "learner",
+            "text": "약수의 개수를 보는 문제니까 약수를 일일이 쓰지 말고 소인수분해 결과부터 써야 해."
+          }
+        ],
+        "operatorNote": "튜터가 factorization reuse 발화만 남기고 체크박스는 비워 두었다.",
+        "observationFormInput": {
+          "learnerResponse": "약수의 개수를 보는 문제니까 약수를 일일이 쓰지 말고 소인수분해 결과부터 써야 해.",
+          "fieldValues": {
+            "starts_from_factorization": false,
+            "avoids_blind_divisor_listing": false
+          },
+          "tutorNote": "튜터가 factorization reuse 발화만 남기고 체크박스는 비워 두었다.",
+          "timestamp": "2026-03-28T11:16:00+09:00"
+        }
+      }
+    ]
+  },
+  {
+    "transcriptId": "u1-s5a-divisor-count-blind-listing-ko-uncertain",
+    "name": "Active S5A transfer log that restarts with divisor listing",
+    "skillId": "U1-S5A",
+    "tags": [
+      "unit1",
+      "transfer",
+      "ko",
+      "text-only",
+      "active",
+      "uncertain"
+    ],
+    "learnerFile": "app/domain/evidence/learner-record-with-active-session-u1-s5a.example.json",
+    "turns": [
+      {
+        "turnIndex": 1,
+        "lessonStepId": "STEP-U1-S5A-DIVISOR-COUNT-TRANSFER",
+        "messages": [
+          {
+            "speaker": "tutor",
+            "text": "이미 한 소인수분해를 다시 쓸 수 있을까?"
+          },
+          {
+            "speaker": "learner",
+            "text": "일단 약수를 하나씩 다 써 보면 될 것 같아."
+          }
+        ],
+        "operatorNote": "튜터가 factorization reuse 대신 divisor listing으로 돌아간 반응을 기록했다.",
+        "observationFormInput": {
+          "learnerResponse": "일단 약수를 하나씩 다 써 보면 될 것 같아.",
+          "fieldValues": {
+            "starts_from_factorization": false,
+            "avoids_blind_divisor_listing": false
+          },
+          "tutorNote": "튜터가 factorization reuse 대신 divisor listing으로 돌아간 반응을 기록했다.",
+          "timestamp": "2026-03-28T11:34:00+09:00"
+        }
+      }
+    ]
+  },
+  {
+    "transcriptId": "u1-s5b-square-number-ko-text-only-active-session",
+    "name": "Active S5B transfer log with Korean text-only observation",
+    "skillId": "U1-S5B",
+    "tags": [
+      "unit1",
+      "transfer",
+      "ko",
+      "text-only",
+      "active"
+    ],
+    "learnerFile": "app/domain/evidence/learner-record-with-active-session-u1-s5b.example.json",
+    "turns": [
+      {
+        "turnIndex": 1,
+        "lessonStepId": "STEP-U1-S5B-SQUARE-NUMBER",
+        "messages": [
+          {
+            "speaker": "tutor",
+            "text": "지금 홀수인 소인수 개수 하나만 보고, 무엇을 더 곱해야 제곱수가 되는지 말해 볼래?"
+          },
+          {
+            "speaker": "learner",
+            "text": "3을 하나 더 곱하면 돼. 제곱수는 각 소수의 개수가 짝수가 되어야 하니까."
+          }
+        ],
+        "operatorNote": "튜터가 missing factor와 even-count 이유를 자유서술로만 남겼다.",
+        "observationFormInput": {
+          "learnerResponse": "3을 하나 더 곱하면 돼. 제곱수는 각 소수의 개수가 짝수가 되어야 하니까.",
+          "fieldValues": {
+            "identifies_missing_factor": false,
+            "explains_even_exponent_goal": false
+          },
+          "tutorNote": "튜터가 missing factor와 even-count 이유를 자유서술로만 남겼다.",
+          "timestamp": "2026-03-28T11:18:00+09:00"
+        }
+      }
+    ]
+  },
+  {
+    "transcriptId": "u1-s5b-square-number-random-guess-ko-uncertain",
+    "name": "Active S5B transfer log that guesses a multiplier",
+    "skillId": "U1-S5B",
+    "tags": [
+      "unit1",
+      "transfer",
+      "ko",
+      "text-only",
+      "active",
+      "uncertain"
+    ],
+    "learnerFile": "app/domain/evidence/learner-record-with-active-session-u1-s5b.example.json",
+    "turns": [
+      {
+        "turnIndex": 1,
+        "lessonStepId": "STEP-U1-S5B-SQUARE-NUMBER",
+        "messages": [
+          {
+            "speaker": "tutor",
+            "text": "홀수인 개수를 먼저 보자. 무엇을 더 곱할지 설명해 볼래?"
+          },
+          {
+            "speaker": "learner",
+            "text": "그냥 2를 곱해 볼래."
+          }
+        ],
+        "operatorNote": "튜터가 odd-count reasoning 없이 임의 추측으로 들었다고 기록했다.",
+        "observationFormInput": {
+          "learnerResponse": "그냥 2를 곱해 볼래.",
+          "fieldValues": {
+            "identifies_missing_factor": false,
+            "explains_even_exponent_goal": false
+          },
+          "tutorNote": "튜터가 odd-count reasoning 없이 임의 추측으로 들었다고 기록했다.",
+          "timestamp": "2026-03-28T11:36:00+09:00"
+        }
+      }
+    ]
+  },
+  {
+    "transcriptId": "u1-s5d-relevant-part-ko-text-only-active-session",
+    "name": "Active S5D transfer log with Korean text-only observation",
+    "skillId": "U1-S5D",
+    "tags": [
+      "unit1",
+      "transfer",
+      "ko",
+      "text-only",
+      "active"
+    ],
+    "learnerFile": "app/domain/evidence/learner-record-with-active-session-u1-s5d.example.json",
+    "turns": [
+      {
+        "turnIndex": 1,
+        "lessonStepId": "STEP-U1-S5D-RELEVANT-PART-EXPLAIN",
+        "messages": [
+          {
+            "speaker": "tutor",
+            "text": "소인수분해 전체를 다 읽지 말고, 이 문제에 먼저 필요한 부분 하나만 짚어 볼래?"
+          },
+          {
+            "speaker": "learner",
+            "text": "여기서는 2의 지수가 중요해. 이 문제는 2가 몇 번 있는지가 먼저 필요하기 때문이야."
+          }
+        ],
+        "operatorNote": "튜터가 관련 부분과 이유를 자유서술로만 남겼다.",
+        "observationFormInput": {
+          "learnerResponse": "여기서는 2의 지수가 중요해. 이 문제는 2가 몇 번 있는지가 먼저 필요하기 때문이야.",
+          "fieldValues": {
+            "points_to_relevant_part": false,
+            "explains_why_that_part_matters": false
+          },
+          "tutorNote": "튜터가 관련 부분과 이유를 자유서술로만 남겼다.",
+          "timestamp": "2026-03-28T11:24:00+09:00"
+        }
+      }
+    ]
+  },
+  {
+    "transcriptId": "u1-s5d-relevant-part-whole-read-ko-uncertain",
+    "name": "Active S5D transfer log that does not choose a relevant part",
+    "skillId": "U1-S5D",
+    "tags": [
+      "unit1",
+      "transfer",
+      "ko",
+      "text-only",
+      "active",
+      "uncertain"
+    ],
+    "learnerFile": "app/domain/evidence/learner-record-with-active-session-u1-s5d.example.json",
+    "turns": [
+      {
+        "turnIndex": 1,
+        "lessonStepId": "STEP-U1-S5D-RELEVANT-PART-EXPLAIN",
+        "messages": [
+          {
+            "speaker": "tutor",
+            "text": "이 문제에 먼저 필요한 부분 하나만 짚어 볼래?"
+          },
+          {
+            "speaker": "learner",
+            "text": "전체를 그냥 다 보면 될 것 같아."
+          }
+        ],
+        "operatorNote": "튜터가 relevant part를 고르지 못하고 전체를 막 읽으려는 반응으로 기록했다.",
+        "observationFormInput": {
+          "learnerResponse": "전체를 그냥 다 보면 될 것 같아.",
+          "fieldValues": {
+            "points_to_relevant_part": false,
+            "explains_why_that_part_matters": false
+          },
+          "tutorNote": "튜터가 relevant part를 고르지 못하고 전체를 막 읽으려는 반응으로 기록했다.",
+          "timestamp": "2026-03-28T11:40:00+09:00"
+        }
+      }
+    ]
+  }
+]

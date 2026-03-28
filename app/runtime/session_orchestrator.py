@@ -2,11 +2,15 @@ from __future__ import annotations
 
 from copy import deepcopy
 
-from app.runtime.learner_record import store_active_session
+from app.runtime.learner_record import store_active_session, validate_learner_record
 from app.runtime.session_planner import plan_next_session
 
 
 def resume_or_plan_session(learner_record: dict) -> dict:
+    validation_errors = validate_learner_record(learner_record)
+    if validation_errors:
+        raise ValueError("; ".join(validation_errors))
+
     learner_id = learner_record.get("learnerId")
     sessions = learner_record.get("sessions", [])
     if not isinstance(sessions, list):
@@ -51,7 +55,8 @@ def start_learning_session(learner_record: dict) -> dict:
         "action": orchestration_result.get("action"),
         "activeSession": active_session,
         "sessionStartGuide": {
-            "targetSkillId": active_session.get("targetSkillId"),
+            "sessionTargetSkillId": active_session.get("targetSkillId"),
+            "currentStepSkillId": current_step.get("skillId"),
             "currentLessonStepId": current_step.get("lessonStepId"),
             "currentActivityId": current_step.get("activityId"),
             "title": current_step.get("title"),
@@ -64,6 +69,14 @@ def start_learning_session(learner_record: dict) -> dict:
             "exampleLearnerResponse": current_step.get("exampleLearnerResponse"),
             "nextLessonStepId": next_step.get("lessonStepId"),
             "remainingStepCount": len(active_session.get("remainingStepIds", [])),
+        },
+        "plannedSessionPreview": None
+        if orchestration_result.get("action") != "plan_new_session"
+        else {
+            "plannedFromSkillId": orchestration_result.get("plannedSession", {}).get("plannedFromSkillId"),
+            "recommendedNextSkillIds": orchestration_result.get("plannedSession", {}).get("recommendedNextSkillIds", []),
+            "firstStepSkillId": current_step.get("skillId"),
+            "firstLessonStepId": current_step.get("lessonStepId"),
         },
         "learnerRecord": updated_record,
     }

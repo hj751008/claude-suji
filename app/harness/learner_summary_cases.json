@@ -171,5 +171,91 @@
         ]
       }
     }
+  },
+  {
+    "name": "positive-blocker-followup-reorders-to-u1-s3-while-keeping-s5a-stable",
+    "events": [
+      {
+        "eventId": "summary-case-201",
+        "learnerId": "summary-learner-3",
+        "kind": "session_history_observation",
+        "skillId": "U1-S5A",
+        "result": "correct",
+        "errorPatternIds": [],
+        "observations": [
+          "Learner starts divisor-count work from factorization."
+        ],
+        "confidenceSignal": "confident"
+      },
+      {
+        "eventId": "summary-case-202",
+        "learnerId": "summary-learner-3",
+        "kind": "session_history_observation",
+        "skillId": "U1-S3",
+        "result": "correct",
+        "errorPatternIds": [],
+        "observations": [
+          "Learner rewrites the final prime factorization cleanly."
+        ],
+        "confidenceSignal": "confident"
+      },
+      {
+        "eventId": "summary-case-203",
+        "learnerId": "summary-learner-3",
+        "kind": "session_history_observation",
+        "skillId": "U1-S5A",
+        "result": "correct",
+        "errorPatternIds": [],
+        "observations": [
+          "Learner again uses factorization instead of listing divisors."
+        ],
+        "confidenceSignal": "confident"
+      }
+    ],
+    "expected": {
+      "skillIds": [
+        "U1-S3",
+        "U1-S5A"
+      ],
+      "statuses": {
+        "U1-S3": "ready_for_next_step",
+        "U1-S5A": "ready_for_next_step"
+      },
+      "requiredBlockedSkills": [],
+      "helpfulBlockedSkills": [
+        "U1-S3"
+      ],
+      "recommendationSkillIds": [
+        "U1-S3",
+        "U1-S5A"
+      ],
+      "recommendedNextSkillIds": {
+        "U1-S3": [
+          "U1-S2",
+          "U1-S3"
+        ],
+        "U1-S5A": [
+          "U1-S5A"
+        ]
+      },
+      "recommendedActivitySequenceIds": {
+        "U1-S3": [
+          "ACT-U1-S2-ENTRY-BRIDGE",
+          "ACT-U1-S3-REWRITE-CLEANLY"
+        ],
+        "U1-S5A": [
+          "ACT-U1-S5A-DIVISOR-COUNT-TRANSFER"
+        ]
+      },
+      "sessionLessonStepIds": {
+        "U1-S3": [
+          "STEP-U1-S2-ENTRY-BRIDGE",
+          "STEP-U1-S3-REWRITE-CLEANLY"
+        ],
+        "U1-S5A": [
+          "STEP-U1-S5A-DIVISOR-COUNT-TRANSFER"
+        ]
+      }
+    }
   }
 ]

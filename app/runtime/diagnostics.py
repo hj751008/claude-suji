@@ -8,7 +8,7 @@ from app.runtime.content_loader import UnitContent
 SAFE_RESULTS = {"correct", "partial", "incorrect", "unknown"}
 SAFE_CONFIDENCE_SIGNALS = {"confident", "hesitant", "unknown"}
 PROVISIONAL_MASTERY_STATUSES = {
-    "evidence_positive_but_unapproved",
+    "ready_for_next_step",
     "developing",
     "needs_review",
     "insufficient_evidence",
@@ -95,7 +95,7 @@ def _status_priority(status: str) -> int:
         "developing": 0,
         "needs_review": 1,
         "insufficient_evidence": 2,
-        "evidence_positive_but_unapproved": 3,
+        "ready_for_next_step": 3,
     }
     return priorities.get(status, 99)
 
@@ -133,13 +133,13 @@ def _build_mastery(event: dict, primary_skill_id: str | None, matched_patterns: 
         status = "developing" if result in {"partial", "incorrect"} else "needs_review"
         explanations = [
             "Observed evidence matches one or more documented Unit 1 error patterns.",
-            "Numeric thresholds and approved mastery labels are still undecided, so this remains a provisional judgment.",
+            "This remains a conservative runtime judgment rather than a final mastered claim.",
         ]
     elif result == "correct":
-        status = "evidence_positive_but_unapproved"
+        status = "ready_for_next_step"
         explanations = [
-            "The current event is positive evidence for the targeted skill.",
-            "The repository does not yet approve a threshold for promoting this to mastered.",
+            "The current event satisfies the minimum Unit 1 rule for moving to the next guided step.",
+            "This supports conservative next-step planning, not a final mastered label.",
         ]
     else:
         status = "needs_review"
@@ -158,8 +158,8 @@ def _build_mastery(event: dict, primary_skill_id: str | None, matched_patterns: 
         "matchedErrorPatternIds": [pattern["id"] for pattern in matched_patterns],
         "explanations": explanations,
         "blockedBy": [
-            "mastery labels are not finalized in docs/mastery-rules.md",
-            "minimum evidence required for pass remains UNDECIDED",
+            "This status supports conservative tutoring flow only, not final mastery approval.",
+            "Unit-level mastered thresholds, reassessment rules, and overrides remain UNDECIDED.",
         ],
     }
 
@@ -247,7 +247,7 @@ def _build_recommendations(
                 "needsReview": True,
                 "reasonCodes": [
                     "documented_error_pattern_match" if matched_for_skill else "documented_skill_target",
-                    "mastery_thresholds_not_approved",
+                    "unit_mastery_threshold_pending",
                 ],
                 "summary": _recommendation_summary(skill_id, matched_for_skill, example_records),
                 "sourceDocs": _ordered_unique(

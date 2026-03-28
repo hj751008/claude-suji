@@ -170,7 +170,8 @@ def run_learning_turn(learner_record: dict, observation_form: dict, content) -> 
         next_step = active_session.get("nextStep") or {}
         turn_summary["nextAction"] = "continue_active_session"
         turn_summary["nextStepGuide"] = {
-            "targetSkillId": active_session.get("targetSkillId"),
+            "sessionTargetSkillId": active_session.get("targetSkillId"),
+            "currentStepSkillId": current_step.get("skillId"),
             "currentLessonStepId": current_step.get("lessonStepId"),
             "currentActivityId": current_step.get("activityId"),
             "title": current_step.get("title"),
@@ -191,7 +192,9 @@ def run_learning_turn(learner_record: dict, observation_form: dict, content) -> 
         first_step = steps[0] if steps and isinstance(steps[0], dict) else {}
         turn_summary["nextAction"] = "review_next_recommendation"
         turn_summary["nextRecommendedSession"] = {
-            "targetSkillId": None if not isinstance(next_recommendation, dict) else next_recommendation.get("targetSkillId"),
+            "plannedFromSkillId": None if not isinstance(next_recommendation, dict) else next_recommendation.get("targetSkillId"),
+            "recommendedNextSkillIds": [] if not isinstance(next_recommendation, dict) else next_recommendation.get("recommendedNextSkillIds", []),
+            "firstStepSkillId": first_step.get("skillId"),
             "firstLessonStepId": first_step.get("lessonStepId"),
             "firstTutorQuestion": first_step.get("firstTutorQuestion"),
             "watchFor": first_step.get("watchFor"),
@@ -306,24 +309,32 @@ def _validate_session_like(session_like: dict, learner_id: str | None, label: st
         errors.append(f"learnerRecord.{label}.currentStepIndex must point to an existing step.")
         return errors
 
+    is_completed = session_like.get("status") == "completed"
     current_step = session_like.get("currentStep")
-    expected_current = steps[current_step_index]
-    expected_current_id = expected_current.get("lessonStepId") if isinstance(expected_current, dict) else None
-    current_step_id = current_step.get("lessonStepId") if isinstance(current_step, dict) else None
-    if current_step_id != expected_current_id:
-        errors.append(f"learnerRecord.{label}.currentStep must match steps[currentStepIndex].")
-
     next_step = session_like.get("nextStep")
-    expected_next = steps[current_step_index + 1] if current_step_index + 1 < len(steps) else None
-    expected_next_id = expected_next.get("lessonStepId") if isinstance(expected_next, dict) else None
-    next_step_id = next_step.get("lessonStepId") if isinstance(next_step, dict) else None
-    if next_step_id != expected_next_id:
-        errors.append(f"learnerRecord.{label}.nextStep must match the next step in sequence or be null at the end.")
-
     remaining_step_ids = session_like.get("remainingStepIds")
     if not isinstance(remaining_step_ids, list):
         errors.append(f"learnerRecord.{label}.remainingStepIds must be a list.")
+    elif is_completed:
+        if current_step is not None:
+            errors.append(f"learnerRecord.{label}.currentStep must be null when the session is completed.")
+        if next_step is not None:
+            errors.append(f"learnerRecord.{label}.nextStep must be null when the session is completed.")
+        if remaining_step_ids:
+            errors.append(f"learnerRecord.{label}.remainingStepIds must be empty when the session is completed.")
     else:
+        expected_current = steps[current_step_index]
+        expected_current_id = expected_current.get("lessonStepId") if isinstance(expected_current, dict) else None
+        current_step_id = current_step.get("lessonStepId") if isinstance(current_step, dict) else None
+        if current_step_id != expected_current_id:
+            errors.append(f"learnerRecord.{label}.currentStep must match steps[currentStepIndex].")
+
+        expected_next = steps[current_step_index + 1] if current_step_index + 1 < len(steps) else None
+        expected_next_id = expected_next.get("lessonStepId") if isinstance(expected_next, dict) else None
+        next_step_id = next_step.get("lessonStepId") if isinstance(next_step, dict) else None
+        if next_step_id != expected_next_id:
+            errors.append(f"learnerRecord.{label}.nextStep must match the next step in sequence or be null at the end.")
+
         expected_remaining = [
             step.get("lessonStepId")
             for step in steps[current_step_index:]

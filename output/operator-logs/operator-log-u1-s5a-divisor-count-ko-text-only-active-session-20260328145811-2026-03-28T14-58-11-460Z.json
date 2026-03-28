@@ -1,0 +1,2326 @@
+{
+  "logFormatVersion": "unit1-operator-ui-pilot-v1",
+  "exportedAt": "2026-03-28T14:58:11.460Z",
+  "selectedTranscriptId": "u1-s5a-divisor-count-ko-text-only-active-session",
+  "transcriptFile": "app/domain/evidence/unit1-tutor-transcripts.example.json",
+  "loadedLearnerFile": "app/domain/evidence/learner-record-with-active-session-u1-s5a.example.json",
+  "pilotNote": "Pilot B\nTester: \nFocus: S5 transfer with blocker-first reopen\nNatural: \nAwkward: \nOperator hesitation: \nFixture realism: ",
+  "actionHistory": [
+    {
+      "actionAt": "2026-03-28T14:51:55.808Z",
+      "kind": "replay-transcript",
+      "detail": {
+        "transcriptId": "u1-s5a-divisor-count-ko-text-only-active-session",
+        "turnCount": 1,
+        "replayedTurnCount": 1,
+        "finalAction": "review_next_recommendation"
+      }
+    },
+    {
+      "actionAt": "2026-03-28T14:52:08.834Z",
+      "kind": "start-learning-session",
+      "detail": {
+        "action": "plan_new_session",
+        "sessionTargetSkillId": "U1-S5A",
+        "currentStepSkillId": "U1-S3",
+        "currentLessonStepId": "STEP-U1-S3-REWRITE-CLEANLY",
+        "plannedFromSkillId": "U1-S5A",
+        "recommendedNextSkillIds": [
+          "U1-S3",
+          "U1-S5A"
+        ]
+      }
+    },
+    {
+      "actionAt": "2026-03-28T14:56:42.072Z",
+      "kind": "prepare-observation-form",
+      "detail": {
+        "lessonStepId": "STEP-U1-S3-REWRITE-CLEANLY",
+        "fieldIds": [
+          "uses_only_prime_factors",
+          "keeps_all_factors"
+        ]
+      }
+    },
+    {
+      "actionAt": "2026-03-28T14:57:53.497Z",
+      "kind": "run-learning-turn",
+      "detail": {
+        "submittedLessonStepId": "STEP-U1-S3-REWRITE-CLEANLY",
+        "decision": "needs_follow_up",
+        "nextAction": "continue_active_session",
+        "sessionStatus": "in_progress",
+        "inputObservationForm": {
+          "lessonStepId": "STEP-U1-S3-REWRITE-CLEANLY",
+          "learnerResponse": "한글도 인식 할 수 있을려나",
+          "fieldValues": {
+            "uses_only_prime_factors": true,
+            "keeps_all_factors": false
+          },
+          "tutorNote": "",
+          "timestamp": ""
+        }
+      }
+    }
+  ],
+  "latestReplayResult": {
+    "transcriptId": "u1-s5a-divisor-count-ko-text-only-active-session",
+    "name": "Active S5A transfer log with Korean text-only observation",
+    "skillId": "U1-S5A",
+    "tags": [
+      "unit1",
+      "transfer",
+      "ko",
+      "text-only",
+      "active"
+    ],
+    "learnerFile": "app/domain/evidence/learner-record-with-active-session-u1-s5a.example.json",
+    "turnCount": 1,
+    "replayedTurnCount": 1,
+    "turnResults": [
+      {
+        "turnIndex": 1,
+        "lessonStepId": "STEP-U1-S5A-DIVISOR-COUNT-TRANSFER",
+        "messages": [
+          {
+            "speaker": "tutor",
+            "text": "약수를 하나씩 다 쓰기 전에, 이미 한 소인수분해에서 무엇을 바로 가져올 수 있을까?"
+          },
+          {
+            "speaker": "learner",
+            "text": "약수의 개수를 보는 문제니까 약수를 일일이 쓰지 말고 소인수분해 결과부터 써야 해."
+          }
+        ],
+        "operatorNote": "튜터가 factorization reuse 발화만 남기고 체크박스는 비워 두었다.",
+        "turnSummary": {
+          "learnerId": "sample-learner",
+          "submittedLessonStepId": "STEP-U1-S5A-DIVISOR-COUNT-TRANSFER",
+          "decision": "completed",
+          "sessionStatus": "completed",
+          "completedStepIds": [
+            "STEP-U1-S5A-DIVISOR-COUNT-TRANSFER"
+          ],
+          "latestRecommendationSkillIds": [
+            "U1-S5A"
+          ],
+          "nextAction": "review_next_recommendation",
+          "nextRecommendedSession": {
+            "plannedFromSkillId": "U1-S5A",
+            "recommendedNextSkillIds": [
+              "U1-S3",
+              "U1-S5A"
+            ],
+            "firstStepSkillId": "U1-S3",
+            "firstLessonStepId": "STEP-U1-S3-REWRITE-CLEANLY",
+            "firstTutorQuestion": "Which factors should still remain in the final line?",
+            "watchFor": [
+              "Learner keeps a composite factor like 6 in the final line.",
+              "Learner rewrites with only prime factors but drops one repeated factor."
+            ],
+            "exampleTutorMove": "Cover the scratch work and rebuild the last line only with prime factors that still remain.",
+            "stepCount": 2
+          }
+        }
+      }
+    ],
+    "finalLearnerRecord": {
+      "learnerId": "sample-learner",
+      "activeSession": null,
+      "sessions": [
+        {
+          "learnerId": "sample-learner",
+          "targetSkillId": "U1-S5A",
+          "status": "completed",
+          "currentStepIndex": 0,
+          "currentStep": null,
+          "nextStep": null,
+          "completedStepIds": [
+            "STEP-U1-S5A-DIVISOR-COUNT-TRANSFER"
+          ],
+          "remainingStepIds": [],
+          "steps": [
+            {
+              "activityId": "ACT-U1-S5A-DIVISOR-COUNT-TRANSFER",
+              "lessonStepId": "STEP-U1-S5A-DIVISOR-COUNT-TRANSFER",
+              "skillId": "U1-S5A",
+              "activityType": "dialogue-flow",
+              "title": "Reuse Factorization for Divisor Count",
+              "openingLine": "You do not need to restart from zero here; let's reuse what the factorization already tells us.",
+              "firstTutorQuestion": "In this problem, do you need the factorization itself or the number of divisors?",
+              "smallHint": "Write the prime factorization first, then use it instead of listing divisors one by one.",
+              "goodStoppingPoint": "Learner starts the divisor-count task from the factorization rather than restarting blindly."
+            }
+          ],
+          "completionRule": "complete_all_steps_in_order",
+          "lastEvaluation": {
+            "lessonStepId": "STEP-U1-S5A-DIVISOR-COUNT-TRANSFER",
+            "decision": "completed",
+            "matchedRequiredSignals": [
+              "starts_from_factorization",
+              "does_not_list_divisors_blindly"
+            ],
+            "missingRequiredSignals": [],
+            "matchedTextHints": [],
+            "matchedTextHintSignals": [
+              "starts_from_factorization",
+              "does_not_list_divisors_blindly"
+            ],
+            "canAutoAdvance": true
+          },
+          "history": [
+            {
+              "attemptIndex": 0,
+              "lessonStepId": "STEP-U1-S5A-DIVISOR-COUNT-TRANSFER",
+              "activityId": "ACT-U1-S5A-DIVISOR-COUNT-TRANSFER",
+              "learnerResponse": "약수의 개수를 보는 문제니까 약수를 일일이 쓰지 말고 소인수분해 결과부터 써야 해.",
+              "fieldValues": {
+                "starts_from_factorization": false,
+                "avoids_blind_divisor_listing": false
+              },
+              "tutorNote": "튜터가 factorization reuse 발화만 남기고 체크박스는 비워 두었다.",
+              "timestamp": "2026-03-28T11:16:00+09:00",
+              "evaluation": {
+                "lessonStepId": "STEP-U1-S5A-DIVISOR-COUNT-TRANSFER",
+                "decision": "completed",
+                "matchedRequiredSignals": [
+                  "starts_from_factorization",
+                  "does_not_list_divisors_blindly"
+                ],
+                "missingRequiredSignals": [],
+                "matchedTextHints": [],
+                "matchedTextHintSignals": [
+                  "starts_from_factorization",
+                  "does_not_list_divisors_blindly"
+                ],
+                "canAutoAdvance": true
+              }
+            }
+          ]
+        }
+      ],
+      "evidenceEvents": [
+        {
+          "eventId": "session-history-0-STEP-U1-S5A-DIVISOR-COUNT-TRANSFER",
+          "learnerId": "sample-learner",
+          "kind": "session_history_observation",
+          "skillId": "U1-S5A",
+          "result": "correct",
+          "errorPatternIds": [],
+          "observations": [
+            "약수의 개수를 보는 문제니까 약수를 일일이 쓰지 말고 소인수분해 결과부터 써야 해.",
+            "튜터가 factorization reuse 발화만 남기고 체크박스는 비워 두었다."
+          ],
+          "confidenceSignal": "confident",
+          "sourceDocs": [],
+          "derivedFrom": {
+            "lessonStepId": "STEP-U1-S5A-DIVISOR-COUNT-TRANSFER",
+            "activityId": "ACT-U1-S5A-DIVISOR-COUNT-TRANSFER",
+            "matchedRequiredSignals": [
+              "starts_from_factorization",
+              "does_not_list_divisors_blindly"
+            ],
+            "missingRequiredSignals": []
+          }
+        }
+      ],
+      "latestSkillSummaries": [
+        {
+          "learnerId": "sample-learner",
+          "skillId": "U1-S5A",
+          "status": "ready_for_next_step",
+          "statusApproval": "provisional",
+          "decisionType": "multi_event_rule_assisted_conservative",
+          "supportingEvidenceIds": [
+            "session-history-0-STEP-U1-S5A-DIVISOR-COUNT-TRANSFER"
+          ],
+          "matchedErrorPatternIds": [],
+          "explanations": [
+            "The current event satisfies the minimum Unit 1 rule for moving to the next guided step.",
+            "This supports conservative next-step planning, not a final mastered label."
+          ],
+          "blockedBy": [
+            "This status supports conservative tutoring flow only, not final mastery approval.",
+            "Unit-level mastered thresholds, reassessment rules, and overrides remain UNDECIDED."
+          ],
+          "eventCount": 1,
+          "blockedByPrerequisites": [
+            {
+              "prerequisiteSkillId": "U1-S3",
+              "relationship": "HELPFUL",
+              "approvalStatus": "draft-from-docs",
+              "sourceDocs": [
+                "docs/suji-subskills-prime-factorization.md"
+              ],
+              "whyBlocked": "Prerequisite skill U1-S3 does not yet have learner evidence, so progress on U1-S5A should stay conservative."
+            }
+          ],
+          "hasRequiredPrerequisiteBlocker": false
+        }
+      ],
+      "latestRecommendations": [
+        {
+          "learnerId": "sample-learner",
+          "targetSkillId": "U1-S5A",
+          "targetSkillTitle": "Use prime factorization to reason about divisor count",
+          "recommendationType": "practice",
+          "confidence": "limited",
+          "needsReview": true,
+          "reasonCodes": [
+            "documented_skill_target",
+            "unit_mastery_threshold_pending",
+            "helpful_prerequisite_blocker"
+          ],
+          "summary": "Learner restarts from scratch instead of using factorization to reason about divisor count.",
+          "sourceDocs": [
+            "docs/suji-subskills-prime-factorization.md",
+            "docs/suji-error-patterns-prime-factorization.md",
+            "docs/suji-tutor-dialogue-flow-prime-factorization.md"
+          ],
+          "recommendedActivities": [
+            {
+              "activityId": "ACT-U1-S5A-DIVISOR-COUNT-TRANSFER",
+              "skillId": "U1-S5A",
+              "activityType": "dialogue-flow",
+              "title": "Reuse Factorization for Divisor Count",
+              "goal": "Stop the learner from restarting divisor counting from scratch.",
+              "firstTutorQuestion": "In this problem, do you need the factorization itself or the number of divisors?",
+              "operatorFocus": "Keep the learner from listing every divisor one by one.",
+              "watchFor": [
+                "Learner abandons the factorization they already built.",
+                "Learner starts listing divisors without explaining what the task is asking for."
+              ],
+              "exampleTutorMove": "Ask what information the completed factorization already gives before allowing any divisor list."
+            }
+          ],
+          "sessionPayload": {
+            "learnerId": "sample-learner",
+            "targetSkillId": "U1-S5A",
+            "steps": [
+              {
+                "activityId": "ACT-U1-S3-REWRITE-CLEANLY",
+                "lessonStepId": "STEP-U1-S3-REWRITE-CLEANLY",
+                "skillId": "U1-S3",
+                "activityType": "dialogue-flow",
+                "title": "Rewrite the Final Factorization Cleanly",
+                "openingLine": "Your split-work is close; now let's turn it into one clean final factorization.",
+                "firstTutorQuestion": "Which factors should still remain in the final line?",
+                "smallHint": "Keep only prime factors in the last line, and make sure none were dropped.",
+                "goodStoppingPoint": "Learner writes one complete prime factorization with no missing or composite factor.",
+                "watchFor": [
+                  "Learner keeps a composite factor like 6 in the final line.",
+                  "Learner rewrites with only prime factors but drops one repeated factor."
+                ],
+                "exampleTutorMove": "Cover the scratch work and rebuild the last line only with prime factors that still remain.",
+                "exampleLearnerResponse": "The final line should keep 2, 2, and 3 because all of them are prime and none can be dropped."
+              },
+              {
+                "activityId": "ACT-U1-S5A-DIVISOR-COUNT-TRANSFER",
+                "lessonStepId": "STEP-U1-S5A-DIVISOR-COUNT-TRANSFER",
+                "skillId": "U1-S5A",
+                "activityType": "dialogue-flow",
+                "title": "Reuse Factorization for Divisor Count",
+                "openingLine": "You do not need to restart from zero here; let's reuse what the factorization already tells us.",
+                "firstTutorQuestion": "In this problem, do you need the factorization itself or the number of divisors?",
+                "smallHint": "Write the prime factorization first, then use it instead of listing divisors one by one.",
+                "goodStoppingPoint": "Learner starts the divisor-count task from the factorization rather than restarting blindly.",
+                "watchFor": [
+                  "Learner ignores an already completed factorization and restarts from scratch.",
+                  "Learner lists divisors one by one without naming what the task asks for."
+                ],
+                "exampleTutorMove": "Before listing anything, tell me what the factorization already gives you for this question.",
+                "exampleLearnerResponse": "I need the number of divisors, so I should use the factorization instead of listing every divisor."
+              }
+            ]
+          },
+          "sourceEventIds": [
+            "session-history-0-STEP-U1-S5A-DIVISOR-COUNT-TRANSFER"
+          ],
+          "blockedByPrerequisites": [
+            {
+              "prerequisiteSkillId": "U1-S3",
+              "relationship": "HELPFUL",
+              "approvalStatus": "draft-from-docs",
+              "sourceDocs": [
+                "docs/suji-subskills-prime-factorization.md"
+              ],
+              "whyBlocked": "Prerequisite skill U1-S3 does not yet have learner evidence, so progress on U1-S5A should stay conservative."
+            }
+          ],
+          "recommendedNextSkillIds": [
+            "U1-S3",
+            "U1-S5A"
+          ],
+          "recommendedActivitySequence": [
+            {
+              "activityId": "ACT-U1-S3-REWRITE-CLEANLY",
+              "skillId": "U1-S3",
+              "activityType": "dialogue-flow",
+              "title": "Rewrite the Final Factorization Cleanly",
+              "goal": "Stabilize the move from split-work to a complete final prime factorization.",
+              "firstTutorQuestion": "Which factors should still remain in the final line?",
+              "operatorFocus": "Push for one clean final line, not more splitting work.",
+              "watchFor": [
+                "Learner drops a repeated factor while rewriting.",
+                "Learner leaves a composite factor in the final line."
+              ],
+              "exampleTutorMove": "Cover the scratch work and ask the learner to rebuild only the final prime-factor line."
+            },
+            {
+              "activityId": "ACT-U1-S5A-DIVISOR-COUNT-TRANSFER",
+              "skillId": "U1-S5A",
+              "activityType": "dialogue-flow",
+              "title": "Reuse Factorization for Divisor Count",
+              "goal": "Stop the learner from restarting divisor counting from scratch.",
+              "firstTutorQuestion": "In this problem, do you need the factorization itself or the number of divisors?",
+              "operatorFocus": "Keep the learner from listing every divisor one by one.",
+              "watchFor": [
+                "Learner abandons the factorization they already built.",
+                "Learner starts listing divisors without explaining what the task is asking for."
+              ],
+              "exampleTutorMove": "Ask what information the completed factorization already gives before allowing any divisor list."
+            }
+          ]
+        }
+      ],
+      "updatedAt": "2026-03-28T11:16:00+09:00"
+    }
+  },
+  "latestStartSessionResult": {
+    "learnerId": "sample-learner",
+    "action": "plan_new_session",
+    "activeSession": {
+      "learnerId": "sample-learner",
+      "targetSkillId": "U1-S5A",
+      "status": "in_progress",
+      "currentStepIndex": 0,
+      "currentStep": {
+        "activityId": "ACT-U1-S3-REWRITE-CLEANLY",
+        "lessonStepId": "STEP-U1-S3-REWRITE-CLEANLY",
+        "skillId": "U1-S3",
+        "activityType": "dialogue-flow",
+        "title": "Rewrite the Final Factorization Cleanly",
+        "openingLine": "Your split-work is close; now let's turn it into one clean final factorization.",
+        "firstTutorQuestion": "Which factors should still remain in the final line?",
+        "smallHint": "Keep only prime factors in the last line, and make sure none were dropped.",
+        "goodStoppingPoint": "Learner writes one complete prime factorization with no missing or composite factor.",
+        "watchFor": [
+          "Learner keeps a composite factor like 6 in the final line.",
+          "Learner rewrites with only prime factors but drops one repeated factor."
+        ],
+        "exampleTutorMove": "Cover the scratch work and rebuild the last line only with prime factors that still remain.",
+        "exampleLearnerResponse": "The final line should keep 2, 2, and 3 because all of them are prime and none can be dropped."
+      },
+      "nextStep": {
+        "activityId": "ACT-U1-S5A-DIVISOR-COUNT-TRANSFER",
+        "lessonStepId": "STEP-U1-S5A-DIVISOR-COUNT-TRANSFER",
+        "skillId": "U1-S5A",
+        "activityType": "dialogue-flow",
+        "title": "Reuse Factorization for Divisor Count",
+        "openingLine": "You do not need to restart from zero here; let's reuse what the factorization already tells us.",
+        "firstTutorQuestion": "In this problem, do you need the factorization itself or the number of divisors?",
+        "smallHint": "Write the prime factorization first, then use it instead of listing divisors one by one.",
+        "goodStoppingPoint": "Learner starts the divisor-count task from the factorization rather than restarting blindly.",
+        "watchFor": [
+          "Learner ignores an already completed factorization and restarts from scratch.",
+          "Learner lists divisors one by one without naming what the task asks for."
+        ],
+        "exampleTutorMove": "Before listing anything, tell me what the factorization already gives you for this question.",
+        "exampleLearnerResponse": "I need the number of divisors, so I should use the factorization instead of listing every divisor."
+      },
+      "completedStepIds": [],
+      "remainingStepIds": [
+        "STEP-U1-S3-REWRITE-CLEANLY",
+        "STEP-U1-S5A-DIVISOR-COUNT-TRANSFER"
+      ],
+      "steps": [
+        {
+          "activityId": "ACT-U1-S3-REWRITE-CLEANLY",
+          "lessonStepId": "STEP-U1-S3-REWRITE-CLEANLY",
+          "skillId": "U1-S3",
+          "activityType": "dialogue-flow",
+          "title": "Rewrite the Final Factorization Cleanly",
+          "openingLine": "Your split-work is close; now let's turn it into one clean final factorization.",
+          "firstTutorQuestion": "Which factors should still remain in the final line?",
+          "smallHint": "Keep only prime factors in the last line, and make sure none were dropped.",
+          "goodStoppingPoint": "Learner writes one complete prime factorization with no missing or composite factor.",
+          "watchFor": [
+            "Learner keeps a composite factor like 6 in the final line.",
+            "Learner rewrites with only prime factors but drops one repeated factor."
+          ],
+          "exampleTutorMove": "Cover the scratch work and rebuild the last line only with prime factors that still remain.",
+          "exampleLearnerResponse": "The final line should keep 2, 2, and 3 because all of them are prime and none can be dropped."
+        },
+        {
+          "activityId": "ACT-U1-S5A-DIVISOR-COUNT-TRANSFER",
+          "lessonStepId": "STEP-U1-S5A-DIVISOR-COUNT-TRANSFER",
+          "skillId": "U1-S5A",
+          "activityType": "dialogue-flow",
+          "title": "Reuse Factorization for Divisor Count",
+          "openingLine": "You do not need to restart from zero here; let's reuse what the factorization already tells us.",
+          "firstTutorQuestion": "In this problem, do you need the factorization itself or the number of divisors?",
+          "smallHint": "Write the prime factorization first, then use it instead of listing divisors one by one.",
+          "goodStoppingPoint": "Learner starts the divisor-count task from the factorization rather than restarting blindly.",
+          "watchFor": [
+            "Learner ignores an already completed factorization and restarts from scratch.",
+            "Learner lists divisors one by one without naming what the task asks for."
+          ],
+          "exampleTutorMove": "Before listing anything, tell me what the factorization already gives you for this question.",
+          "exampleLearnerResponse": "I need the number of divisors, so I should use the factorization instead of listing every divisor."
+        }
+      ],
+      "completionRule": "complete_all_steps_in_order",
+      "lastEvaluation": null,
+      "history": []
+    },
+    "sessionStartGuide": {
+      "sessionTargetSkillId": "U1-S5A",
+      "currentStepSkillId": "U1-S3",
+      "currentLessonStepId": "STEP-U1-S3-REWRITE-CLEANLY",
+      "currentActivityId": "ACT-U1-S3-REWRITE-CLEANLY",
+      "title": "Rewrite the Final Factorization Cleanly",
+      "openingLine": "Your split-work is close; now let's turn it into one clean final factorization.",
+      "firstTutorQuestion": "Which factors should still remain in the final line?",
+      "smallHint": "Keep only prime factors in the last line, and make sure none were dropped.",
+      "goodStoppingPoint": "Learner writes one complete prime factorization with no missing or composite factor.",
+      "watchFor": [
+        "Learner keeps a composite factor like 6 in the final line.",
+        "Learner rewrites with only prime factors but drops one repeated factor."
+      ],
+      "exampleTutorMove": "Cover the scratch work and rebuild the last line only with prime factors that still remain.",
+      "exampleLearnerResponse": "The final line should keep 2, 2, and 3 because all of them are prime and none can be dropped.",
+      "nextLessonStepId": "STEP-U1-S5A-DIVISOR-COUNT-TRANSFER",
+      "remainingStepCount": 2
+    },
+    "plannedSessionPreview": {
+      "plannedFromSkillId": "U1-S5A",
+      "recommendedNextSkillIds": [
+        "U1-S3",
+        "U1-S5A"
+      ],
+      "firstStepSkillId": "U1-S3",
+      "firstLessonStepId": "STEP-U1-S3-REWRITE-CLEANLY"
+    },
+    "learnerRecord": {
+      "learnerId": "sample-learner",
+      "activeSession": {
+        "learnerId": "sample-learner",
+        "targetSkillId": "U1-S5A",
+        "status": "in_progress",
+        "currentStepIndex": 0,
+        "currentStep": {
+          "activityId": "ACT-U1-S3-REWRITE-CLEANLY",
+          "lessonStepId": "STEP-U1-S3-REWRITE-CLEANLY",
+          "skillId": "U1-S3",
+          "activityType": "dialogue-flow",
+          "title": "Rewrite the Final Factorization Cleanly",
+          "openingLine": "Your split-work is close; now let's turn it into one clean final factorization.",
+          "firstTutorQuestion": "Which factors should still remain in the final line?",
+          "smallHint": "Keep only prime factors in the last line, and make sure none were dropped.",
+          "goodStoppingPoint": "Learner writes one complete prime factorization with no missing or composite factor.",
+          "watchFor": [
+            "Learner keeps a composite factor like 6 in the final line.",
+            "Learner rewrites with only prime factors but drops one repeated factor."
+          ],
+          "exampleTutorMove": "Cover the scratch work and rebuild the last line only with prime factors that still remain.",
+          "exampleLearnerResponse": "The final line should keep 2, 2, and 3 because all of them are prime and none can be dropped."
+        },
+        "nextStep": {
+          "activityId": "ACT-U1-S5A-DIVISOR-COUNT-TRANSFER",
+          "lessonStepId": "STEP-U1-S5A-DIVISOR-COUNT-TRANSFER",
+          "skillId": "U1-S5A",
+          "activityType": "dialogue-flow",
+          "title": "Reuse Factorization for Divisor Count",
+          "openingLine": "You do not need to restart from zero here; let's reuse what the factorization already tells us.",
+          "firstTutorQuestion": "In this problem, do you need the factorization itself or the number of divisors?",
+          "smallHint": "Write the prime factorization first, then use it instead of listing divisors one by one.",
+          "goodStoppingPoint": "Learner starts the divisor-count task from the factorization rather than restarting blindly.",
+          "watchFor": [
+            "Learner ignores an already completed factorization and restarts from scratch.",
+            "Learner lists divisors one by one without naming what the task asks for."
+          ],
+          "exampleTutorMove": "Before listing anything, tell me what the factorization already gives you for this question.",
+          "exampleLearnerResponse": "I need the number of divisors, so I should use the factorization instead of listing every divisor."
+        },
+        "completedStepIds": [],
+        "remainingStepIds": [
+          "STEP-U1-S3-REWRITE-CLEANLY",
+          "STEP-U1-S5A-DIVISOR-COUNT-TRANSFER"
+        ],
+        "steps": [
+          {
+            "activityId": "ACT-U1-S3-REWRITE-CLEANLY",
+            "lessonStepId": "STEP-U1-S3-REWRITE-CLEANLY",
+            "skillId": "U1-S3",
+            "activityType": "dialogue-flow",
+            "title": "Rewrite the Final Factorization Cleanly",
+            "openingLine": "Your split-work is close; now let's turn it into one clean final factorization.",
+            "firstTutorQuestion": "Which factors should still remain in the final line?",
+            "smallHint": "Keep only prime factors in the last line, and make sure none were dropped.",
+            "goodStoppingPoint": "Learner writes one complete prime factorization with no missing or composite factor.",
+            "watchFor": [
+              "Learner keeps a composite factor like 6 in the final line.",
+              "Learner rewrites with only prime factors but drops one repeated factor."
+            ],
+            "exampleTutorMove": "Cover the scratch work and rebuild the last line only with prime factors that still remain.",
+            "exampleLearnerResponse": "The final line should keep 2, 2, and 3 because all of them are prime and none can be dropped."
+          },
+          {
+            "activityId": "ACT-U1-S5A-DIVISOR-COUNT-TRANSFER",
+            "lessonStepId": "STEP-U1-S5A-DIVISOR-COUNT-TRANSFER",
+            "skillId": "U1-S5A",
+            "activityType": "dialogue-flow",
+            "title": "Reuse Factorization for Divisor Count",
+            "openingLine": "You do not need to restart from zero here; let's reuse what the factorization already tells us.",
+            "firstTutorQuestion": "In this problem, do you need the factorization itself or the number of divisors?",
+            "smallHint": "Write the prime factorization first, then use it instead of listing divisors one by one.",
+            "goodStoppingPoint": "Learner starts the divisor-count task from the factorization rather than restarting blindly.",
+            "watchFor": [
+              "Learner ignores an already completed factorization and restarts from scratch.",
+              "Learner lists divisors one by one without naming what the task asks for."
+            ],
+            "exampleTutorMove": "Before listing anything, tell me what the factorization already gives you for this question.",
+            "exampleLearnerResponse": "I need the number of divisors, so I should use the factorization instead of listing every divisor."
+          }
+        ],
+        "completionRule": "complete_all_steps_in_order",
+        "lastEvaluation": null,
+        "history": []
+      },
+      "sessions": [
+        {
+          "learnerId": "sample-learner",
+          "targetSkillId": "U1-S5A",
+          "status": "completed",
+          "currentStepIndex": 0,
+          "currentStep": null,
+          "nextStep": null,
+          "completedStepIds": [
+            "STEP-U1-S5A-DIVISOR-COUNT-TRANSFER"
+          ],
+          "remainingStepIds": [],
+          "steps": [
+            {
+              "activityId": "ACT-U1-S5A-DIVISOR-COUNT-TRANSFER",
+              "lessonStepId": "STEP-U1-S5A-DIVISOR-COUNT-TRANSFER",
+              "skillId": "U1-S5A",
+              "activityType": "dialogue-flow",
+              "title": "Reuse Factorization for Divisor Count",
+              "openingLine": "You do not need to restart from zero here; let's reuse what the factorization already tells us.",
+              "firstTutorQuestion": "In this problem, do you need the factorization itself or the number of divisors?",
+              "smallHint": "Write the prime factorization first, then use it instead of listing divisors one by one.",
+              "goodStoppingPoint": "Learner starts the divisor-count task from the factorization rather than restarting blindly."
+            }
+          ],
+          "completionRule": "complete_all_steps_in_order",
+          "lastEvaluation": {
+            "lessonStepId": "STEP-U1-S5A-DIVISOR-COUNT-TRANSFER",
+            "decision": "completed",
+            "matchedRequiredSignals": [
+              "starts_from_factorization",
+              "does_not_list_divisors_blindly"
+            ],
+            "missingRequiredSignals": [],
+            "matchedTextHints": [],
+            "matchedTextHintSignals": [
+              "starts_from_factorization",
+              "does_not_list_divisors_blindly"
+            ],
+            "canAutoAdvance": true
+          },
+          "history": [
+            {
+              "attemptIndex": 0,
+              "lessonStepId": "STEP-U1-S5A-DIVISOR-COUNT-TRANSFER",
+              "activityId": "ACT-U1-S5A-DIVISOR-COUNT-TRANSFER",
+              "learnerResponse": "약수의 개수를 보는 문제니까 약수를 일일이 쓰지 말고 소인수분해 결과부터 써야 해.",
+              "fieldValues": {
+                "starts_from_factorization": false,
+                "avoids_blind_divisor_listing": false
+              },
+              "tutorNote": "튜터가 factorization reuse 발화만 남기고 체크박스는 비워 두었다.",
+              "timestamp": "2026-03-28T11:16:00+09:00",
+              "evaluation": {
+                "lessonStepId": "STEP-U1-S5A-DIVISOR-COUNT-TRANSFER",
+                "decision": "completed",
+                "matchedRequiredSignals": [
+                  "starts_from_factorization",
+                  "does_not_list_divisors_blindly"
+                ],
+                "missingRequiredSignals": [],
+                "matchedTextHints": [],
+                "matchedTextHintSignals": [
+                  "starts_from_factorization",
+                  "does_not_list_divisors_blindly"
+                ],
+                "canAutoAdvance": true
+              }
+            }
+          ]
+        }
+      ],
+      "evidenceEvents": [
+        {
+          "eventId": "session-history-0-STEP-U1-S5A-DIVISOR-COUNT-TRANSFER",
+          "learnerId": "sample-learner",
+          "kind": "session_history_observation",
+          "skillId": "U1-S5A",
+          "result": "correct",
+          "errorPatternIds": [],
+          "observations": [
+            "약수의 개수를 보는 문제니까 약수를 일일이 쓰지 말고 소인수분해 결과부터 써야 해.",
+            "튜터가 factorization reuse 발화만 남기고 체크박스는 비워 두었다."
+          ],
+          "confidenceSignal": "confident",
+          "sourceDocs": [],
+          "derivedFrom": {
+            "lessonStepId": "STEP-U1-S5A-DIVISOR-COUNT-TRANSFER",
+            "activityId": "ACT-U1-S5A-DIVISOR-COUNT-TRANSFER",
+            "matchedRequiredSignals": [
+              "starts_from_factorization",
+              "does_not_list_divisors_blindly"
+            ],
+            "missingRequiredSignals": []
+          }
+        }
+      ],
+      "latestSkillSummaries": [
+        {
+          "learnerId": "sample-learner",
+          "skillId": "U1-S5A",
+          "status": "ready_for_next_step",
+          "statusApproval": "provisional",
+          "decisionType": "multi_event_rule_assisted_conservative",
+          "supportingEvidenceIds": [
+            "session-history-0-STEP-U1-S5A-DIVISOR-COUNT-TRANSFER"
+          ],
+          "matchedErrorPatternIds": [],
+          "explanations": [
+            "The current event satisfies the minimum Unit 1 rule for moving to the next guided step.",
+            "This supports conservative next-step planning, not a final mastered label."
+          ],
+          "blockedBy": [
+            "This status supports conservative tutoring flow only, not final mastery approval.",
+            "Unit-level mastered thresholds, reassessment rules, and overrides remain UNDECIDED."
+          ],
+          "eventCount": 1,
+          "blockedByPrerequisites": [
+            {
+              "prerequisiteSkillId": "U1-S3",
+              "relationship": "HELPFUL",
+              "approvalStatus": "draft-from-docs",
+              "sourceDocs": [
+                "docs/suji-subskills-prime-factorization.md"
+              ],
+              "whyBlocked": "Prerequisite skill U1-S3 does not yet have learner evidence, so progress on U1-S5A should stay conservative."
+            }
+          ],
+          "hasRequiredPrerequisiteBlocker": false
+        }
+      ],
+      "latestRecommendations": [
+        {
+          "learnerId": "sample-learner",
+          "targetSkillId": "U1-S5A",
+          "targetSkillTitle": "Use prime factorization to reason about divisor count",
+          "recommendationType": "practice",
+          "confidence": "limited",
+          "needsReview": true,
+          "reasonCodes": [
+            "documented_skill_target",
+            "unit_mastery_threshold_pending",
+            "helpful_prerequisite_blocker"
+          ],
+          "summary": "Learner restarts from scratch instead of using factorization to reason about divisor count.",
+          "sourceDocs": [
+            "docs/suji-subskills-prime-factorization.md",
+            "docs/suji-error-patterns-prime-factorization.md",
+            "docs/suji-tutor-dialogue-flow-prime-factorization.md"
+          ],
+          "recommendedActivities": [
+            {
+              "activityId": "ACT-U1-S5A-DIVISOR-COUNT-TRANSFER",
+              "skillId": "U1-S5A",
+              "activityType": "dialogue-flow",
+              "title": "Reuse Factorization for Divisor Count",
+              "goal": "Stop the learner from restarting divisor counting from scratch.",
+              "firstTutorQuestion": "In this problem, do you need the factorization itself or the number of divisors?",
+              "operatorFocus": "Keep the learner from listing every divisor one by one.",
+              "watchFor": [
+                "Learner abandons the factorization they already built.",
+                "Learner starts listing divisors without explaining what the task is asking for."
+              ],
+              "exampleTutorMove": "Ask what information the completed factorization already gives before allowing any divisor list."
+            }
+          ],
+          "sessionPayload": {
+            "learnerId": "sample-learner",
+            "targetSkillId": "U1-S5A",
+            "steps": [
+              {
+                "activityId": "ACT-U1-S3-REWRITE-CLEANLY",
+                "lessonStepId": "STEP-U1-S3-REWRITE-CLEANLY",
+                "skillId": "U1-S3",
+                "activityType": "dialogue-flow",
+                "title": "Rewrite the Final Factorization Cleanly",
+                "openingLine": "Your split-work is close; now let's turn it into one clean final factorization.",
+                "firstTutorQuestion": "Which factors should still remain in the final line?",
+                "smallHint": "Keep only prime factors in the last line, and make sure none were dropped.",
+                "goodStoppingPoint": "Learner writes one complete prime factorization with no missing or composite factor.",
+                "watchFor": [
+                  "Learner keeps a composite factor like 6 in the final line.",
+                  "Learner rewrites with only prime factors but drops one repeated factor."
+                ],
+                "exampleTutorMove": "Cover the scratch work and rebuild the last line only with prime factors that still remain.",
+                "exampleLearnerResponse": "The final line should keep 2, 2, and 3 because all of them are prime and none can be dropped."
+              },
+              {
+                "activityId": "ACT-U1-S5A-DIVISOR-COUNT-TRANSFER",
+                "lessonStepId": "STEP-U1-S5A-DIVISOR-COUNT-TRANSFER",
+                "skillId": "U1-S5A",
+                "activityType": "dialogue-flow",
+                "title": "Reuse Factorization for Divisor Count",
+                "openingLine": "You do not need to restart from zero here; let's reuse what the factorization already tells us.",
+                "firstTutorQuestion": "In this problem, do you need the factorization itself or the number of divisors?",
+                "smallHint": "Write the prime factorization first, then use it instead of listing divisors one by one.",
+                "goodStoppingPoint": "Learner starts the divisor-count task from the factorization rather than restarting blindly.",
+                "watchFor": [
+                  "Learner ignores an already completed factorization and restarts from scratch.",
+                  "Learner lists divisors one by one without naming what the task asks for."
+                ],
+                "exampleTutorMove": "Before listing anything, tell me what the factorization already gives you for this question.",
+                "exampleLearnerResponse": "I need the number of divisors, so I should use the factorization instead of listing every divisor."
+              }
+            ]
+          },
+          "sourceEventIds": [
+            "session-history-0-STEP-U1-S5A-DIVISOR-COUNT-TRANSFER"
+          ],
+          "blockedByPrerequisites": [
+            {
+              "prerequisiteSkillId": "U1-S3",
+              "relationship": "HELPFUL",
+              "approvalStatus": "draft-from-docs",
+              "sourceDocs": [
+                "docs/suji-subskills-prime-factorization.md"
+              ],
+              "whyBlocked": "Prerequisite skill U1-S3 does not yet have learner evidence, so progress on U1-S5A should stay conservative."
+            }
+          ],
+          "recommendedNextSkillIds": [
+            "U1-S3",
+            "U1-S5A"
+          ],
+          "recommendedActivitySequence": [
+            {
+              "activityId": "ACT-U1-S3-REWRITE-CLEANLY",
+              "skillId": "U1-S3",
+              "activityType": "dialogue-flow",
+              "title": "Rewrite the Final Factorization Cleanly",
+              "goal": "Stabilize the move from split-work to a complete final prime factorization.",
+              "firstTutorQuestion": "Which factors should still remain in the final line?",
+              "operatorFocus": "Push for one clean final line, not more splitting work.",
+              "watchFor": [
+                "Learner drops a repeated factor while rewriting.",
+                "Learner leaves a composite factor in the final line."
+              ],
+              "exampleTutorMove": "Cover the scratch work and ask the learner to rebuild only the final prime-factor line."
+            },
+            {
+              "activityId": "ACT-U1-S5A-DIVISOR-COUNT-TRANSFER",
+              "skillId": "U1-S5A",
+              "activityType": "dialogue-flow",
+              "title": "Reuse Factorization for Divisor Count",
+              "goal": "Stop the learner from restarting divisor counting from scratch.",
+              "firstTutorQuestion": "In this problem, do you need the factorization itself or the number of divisors?",
+              "operatorFocus": "Keep the learner from listing every divisor one by one.",
+              "watchFor": [
+                "Learner abandons the factorization they already built.",
+                "Learner starts listing divisors without explaining what the task is asking for."
+              ],
+              "exampleTutorMove": "Ask what information the completed factorization already gives before allowing any divisor list."
+            }
+          ]
+        }
+      ],
+      "updatedAt": "2026-03-28T11:16:00+09:00"
+    },
+    "observationFormTemplate": {
+      "lessonStepId": "STEP-U1-S3-REWRITE-CLEANLY",
+      "learnerResponsePrompt": "Write the learner's clean final prime-factor line.",
+      "tutorNotePrompt": "Note whether the learner kept all repeated factors and removed composite factors.",
+      "fields": [
+        {
+          "fieldId": "uses_only_prime_factors",
+          "label": "Only prime factors",
+          "prompt": "Did the learner write the final line using only prime factors?",
+          "trueMeans": "The learner removed any composite factor from the final line."
+        },
+        {
+          "fieldId": "keeps_all_factors",
+          "label": "Keeps all factors",
+          "prompt": "Did the learner keep every needed factor, including repeats?",
+          "trueMeans": "The learner did not drop a repeated or needed factor."
+        }
+      ]
+    }
+  },
+  "latestPreparedObservationForm": {
+    "sourceLessonStepId": "STEP-U1-S3-REWRITE-CLEANLY",
+    "observationFormTemplate": {
+      "lessonStepId": "STEP-U1-S3-REWRITE-CLEANLY",
+      "learnerResponsePrompt": "Write the learner's clean final prime-factor line.",
+      "tutorNotePrompt": "Note whether the learner kept all repeated factors and removed composite factors.",
+      "fields": [
+        {
+          "fieldId": "uses_only_prime_factors",
+          "label": "Only prime factors",
+          "prompt": "Did the learner write the final line using only prime factors?",
+          "trueMeans": "The learner removed any composite factor from the final line."
+        },
+        {
+          "fieldId": "keeps_all_factors",
+          "label": "Keeps all factors",
+          "prompt": "Did the learner keep every needed factor, including repeats?",
+          "trueMeans": "The learner did not drop a repeated or needed factor."
+        }
+      ]
+    },
+    "observationForm": {
+      "lessonStepId": "STEP-U1-S3-REWRITE-CLEANLY",
+      "learnerResponse": "",
+      "fieldValues": {
+        "uses_only_prime_factors": false,
+        "keeps_all_factors": false
+      },
+      "tutorNote": "",
+      "timestamp": ""
+    }
+  },
+  "latestTurnResult": {
+    "learnerId": "sample-learner",
+    "turnSummary": {
+      "learnerId": "sample-learner",
+      "submittedLessonStepId": "STEP-U1-S3-REWRITE-CLEANLY",
+      "decision": "needs_follow_up",
+      "sessionStatus": "in_progress",
+      "completedStepIds": [],
+      "latestRecommendationSkillIds": [
+        "U1-S3",
+        "U1-S5A"
+      ],
+      "nextAction": "continue_active_session",
+      "nextStepGuide": {
+        "sessionTargetSkillId": "U1-S5A",
+        "currentStepSkillId": "U1-S3",
+        "currentLessonStepId": "STEP-U1-S3-REWRITE-CLEANLY",
+        "currentActivityId": "ACT-U1-S3-REWRITE-CLEANLY",
+        "title": "Rewrite the Final Factorization Cleanly",
+        "openingLine": "Your split-work is close; now let's turn it into one clean final factorization.",
+        "firstTutorQuestion": "Which factors should still remain in the final line?",
+        "smallHint": "Keep only prime factors in the last line, and make sure none were dropped.",
+        "goodStoppingPoint": "Learner writes one complete prime factorization with no missing or composite factor.",
+        "watchFor": [
+          "Learner keeps a composite factor like 6 in the final line.",
+          "Learner rewrites with only prime factors but drops one repeated factor."
+        ],
+        "exampleTutorMove": "Cover the scratch work and rebuild the last line only with prime factors that still remain.",
+        "exampleLearnerResponse": "The final line should keep 2, 2, and 3 because all of them are prime and none can be dropped.",
+        "nextLessonStepId": "STEP-U1-S5A-DIVISOR-COUNT-TRANSFER",
+        "remainingStepCount": 2
+      }
+    },
+    "learnerRecord": {
+      "learnerId": "sample-learner",
+      "activeSession": {
+        "learnerId": "sample-learner",
+        "targetSkillId": "U1-S5A",
+        "status": "in_progress",
+        "currentStepIndex": 0,
+        "currentStep": {
+          "activityId": "ACT-U1-S3-REWRITE-CLEANLY",
+          "lessonStepId": "STEP-U1-S3-REWRITE-CLEANLY",
+          "skillId": "U1-S3",
+          "activityType": "dialogue-flow",
+          "title": "Rewrite the Final Factorization Cleanly",
+          "openingLine": "Your split-work is close; now let's turn it into one clean final factorization.",
+          "firstTutorQuestion": "Which factors should still remain in the final line?",
+          "smallHint": "Keep only prime factors in the last line, and make sure none were dropped.",
+          "goodStoppingPoint": "Learner writes one complete prime factorization with no missing or composite factor.",
+          "watchFor": [
+            "Learner keeps a composite factor like 6 in the final line.",
+            "Learner rewrites with only prime factors but drops one repeated factor."
+          ],
+          "exampleTutorMove": "Cover the scratch work and rebuild the last line only with prime factors that still remain.",
+          "exampleLearnerResponse": "The final line should keep 2, 2, and 3 because all of them are prime and none can be dropped."
+        },
+        "nextStep": {
+          "activityId": "ACT-U1-S5A-DIVISOR-COUNT-TRANSFER",
+          "lessonStepId": "STEP-U1-S5A-DIVISOR-COUNT-TRANSFER",
+          "skillId": "U1-S5A",
+          "activityType": "dialogue-flow",
+          "title": "Reuse Factorization for Divisor Count",
+          "openingLine": "You do not need to restart from zero here; let's reuse what the factorization already tells us.",
+          "firstTutorQuestion": "In this problem, do you need the factorization itself or the number of divisors?",
+          "smallHint": "Write the prime factorization first, then use it instead of listing divisors one by one.",
+          "goodStoppingPoint": "Learner starts the divisor-count task from the factorization rather than restarting blindly.",
+          "watchFor": [
+            "Learner ignores an already completed factorization and restarts from scratch.",
+            "Learner lists divisors one by one without naming what the task asks for."
+          ],
+          "exampleTutorMove": "Before listing anything, tell me what the factorization already gives you for this question.",
+          "exampleLearnerResponse": "I need the number of divisors, so I should use the factorization instead of listing every divisor."
+        },
+        "completedStepIds": [],
+        "remainingStepIds": [
+          "STEP-U1-S3-REWRITE-CLEANLY",
+          "STEP-U1-S5A-DIVISOR-COUNT-TRANSFER"
+        ],
+        "steps": [
+          {
+            "activityId": "ACT-U1-S3-REWRITE-CLEANLY",
+            "lessonStepId": "STEP-U1-S3-REWRITE-CLEANLY",
+            "skillId": "U1-S3",
+            "activityType": "dialogue-flow",
+            "title": "Rewrite the Final Factorization Cleanly",
+            "openingLine": "Your split-work is close; now let's turn it into one clean final factorization.",
+            "firstTutorQuestion": "Which factors should still remain in the final line?",
+            "smallHint": "Keep only prime factors in the last line, and make sure none were dropped.",
+            "goodStoppingPoint": "Learner writes one complete prime factorization with no missing or composite factor.",
+            "watchFor": [
+              "Learner keeps a composite factor like 6 in the final line.",
+              "Learner rewrites with only prime factors but drops one repeated factor."
+            ],
+            "exampleTutorMove": "Cover the scratch work and rebuild the last line only with prime factors that still remain.",
+            "exampleLearnerResponse": "The final line should keep 2, 2, and 3 because all of them are prime and none can be dropped."
+          },
+          {
+            "activityId": "ACT-U1-S5A-DIVISOR-COUNT-TRANSFER",
+            "lessonStepId": "STEP-U1-S5A-DIVISOR-COUNT-TRANSFER",
+            "skillId": "U1-S5A",
+            "activityType": "dialogue-flow",
+            "title": "Reuse Factorization for Divisor Count",
+            "openingLine": "You do not need to restart from zero here; let's reuse what the factorization already tells us.",
+            "firstTutorQuestion": "In this problem, do you need the factorization itself or the number of divisors?",
+            "smallHint": "Write the prime factorization first, then use it instead of listing divisors one by one.",
+            "goodStoppingPoint": "Learner starts the divisor-count task from the factorization rather than restarting blindly.",
+            "watchFor": [
+              "Learner ignores an already completed factorization and restarts from scratch.",
+              "Learner lists divisors one by one without naming what the task asks for."
+            ],
+            "exampleTutorMove": "Before listing anything, tell me what the factorization already gives you for this question.",
+            "exampleLearnerResponse": "I need the number of divisors, so I should use the factorization instead of listing every divisor."
+          }
+        ],
+        "completionRule": "complete_all_steps_in_order",
+        "lastEvaluation": {
+          "lessonStepId": "STEP-U1-S3-REWRITE-CLEANLY",
+          "decision": "needs_follow_up",
+          "matchedRequiredSignals": [
+            "writes_only_prime_factors"
+          ],
+          "missingRequiredSignals": [
+            "keeps_all_factors"
+          ],
+          "matchedTextHints": [],
+          "matchedTextHintSignals": [],
+          "canAutoAdvance": false
+        },
+        "history": [
+          {
+            "attemptIndex": 0,
+            "lessonStepId": "STEP-U1-S3-REWRITE-CLEANLY",
+            "activityId": "ACT-U1-S3-REWRITE-CLEANLY",
+            "learnerResponse": "한글도 인식 할 수 있을려나",
+            "fieldValues": {
+              "uses_only_prime_factors": true,
+              "keeps_all_factors": false
+            },
+            "tutorNote": "",
+            "timestamp": "",
+            "evaluation": {
+              "lessonStepId": "STEP-U1-S3-REWRITE-CLEANLY",
+              "decision": "needs_follow_up",
+              "matchedRequiredSignals": [
+                "writes_only_prime_factors"
+              ],
+              "missingRequiredSignals": [
+                "keeps_all_factors"
+              ],
+              "matchedTextHints": [],
+              "matchedTextHintSignals": [],
+              "canAutoAdvance": false
+            }
+          }
+        ]
+      },
+      "sessions": [
+        {
+          "learnerId": "sample-learner",
+          "targetSkillId": "U1-S5A",
+          "status": "completed",
+          "currentStepIndex": 0,
+          "currentStep": null,
+          "nextStep": null,
+          "completedStepIds": [
+            "STEP-U1-S5A-DIVISOR-COUNT-TRANSFER"
+          ],
+          "remainingStepIds": [],
+          "steps": [
+            {
+              "activityId": "ACT-U1-S5A-DIVISOR-COUNT-TRANSFER",
+              "lessonStepId": "STEP-U1-S5A-DIVISOR-COUNT-TRANSFER",
+              "skillId": "U1-S5A",
+              "activityType": "dialogue-flow",
+              "title": "Reuse Factorization for Divisor Count",
+              "openingLine": "You do not need to restart from zero here; let's reuse what the factorization already tells us.",
+              "firstTutorQuestion": "In this problem, do you need the factorization itself or the number of divisors?",
+              "smallHint": "Write the prime factorization first, then use it instead of listing divisors one by one.",
+              "goodStoppingPoint": "Learner starts the divisor-count task from the factorization rather than restarting blindly."
+            }
+          ],
+          "completionRule": "complete_all_steps_in_order",
+          "lastEvaluation": {
+            "lessonStepId": "STEP-U1-S5A-DIVISOR-COUNT-TRANSFER",
+            "decision": "completed",
+            "matchedRequiredSignals": [
+              "starts_from_factorization",
+              "does_not_list_divisors_blindly"
+            ],
+            "missingRequiredSignals": [],
+            "matchedTextHints": [],
+            "matchedTextHintSignals": [
+              "starts_from_factorization",
+              "does_not_list_divisors_blindly"
+            ],
+            "canAutoAdvance": true
+          },
+          "history": [
+            {
+              "attemptIndex": 0,
+              "lessonStepId": "STEP-U1-S5A-DIVISOR-COUNT-TRANSFER",
+              "activityId": "ACT-U1-S5A-DIVISOR-COUNT-TRANSFER",
+              "learnerResponse": "약수의 개수를 보는 문제니까 약수를 일일이 쓰지 말고 소인수분해 결과부터 써야 해.",
+              "fieldValues": {
+                "starts_from_factorization": false,
+                "avoids_blind_divisor_listing": false
+              },
+              "tutorNote": "튜터가 factorization reuse 발화만 남기고 체크박스는 비워 두었다.",
+              "timestamp": "2026-03-28T11:16:00+09:00",
+              "evaluation": {
+                "lessonStepId": "STEP-U1-S5A-DIVISOR-COUNT-TRANSFER",
+                "decision": "completed",
+                "matchedRequiredSignals": [
+                  "starts_from_factorization",
+                  "does_not_list_divisors_blindly"
+                ],
+                "missingRequiredSignals": [],
+                "matchedTextHints": [],
+                "matchedTextHintSignals": [
+                  "starts_from_factorization",
+                  "does_not_list_divisors_blindly"
+                ],
+                "canAutoAdvance": true
+              }
+            }
+          ]
+        },
+        {
+          "learnerId": "sample-learner",
+          "targetSkillId": "U1-S5A",
+          "status": "in_progress",
+          "currentStepIndex": 0,
+          "currentStep": {
+            "activityId": "ACT-U1-S3-REWRITE-CLEANLY",
+            "lessonStepId": "STEP-U1-S3-REWRITE-CLEANLY",
+            "skillId": "U1-S3",
+            "activityType": "dialogue-flow",
+            "title": "Rewrite the Final Factorization Cleanly",
+            "openingLine": "Your split-work is close; now let's turn it into one clean final factorization.",
+            "firstTutorQuestion": "Which factors should still remain in the final line?",
+            "smallHint": "Keep only prime factors in the last line, and make sure none were dropped.",
+            "goodStoppingPoint": "Learner writes one complete prime factorization with no missing or composite factor.",
+            "watchFor": [
+              "Learner keeps a composite factor like 6 in the final line.",
+              "Learner rewrites with only prime factors but drops one repeated factor."
+            ],
+            "exampleTutorMove": "Cover the scratch work and rebuild the last line only with prime factors that still remain.",
+            "exampleLearnerResponse": "The final line should keep 2, 2, and 3 because all of them are prime and none can be dropped."
+          },
+          "nextStep": {
+            "activityId": "ACT-U1-S5A-DIVISOR-COUNT-TRANSFER",
+            "lessonStepId": "STEP-U1-S5A-DIVISOR-COUNT-TRANSFER",
+            "skillId": "U1-S5A",
+            "activityType": "dialogue-flow",
+            "title": "Reuse Factorization for Divisor Count",
+            "openingLine": "You do not need to restart from zero here; let's reuse what the factorization already tells us.",
+            "firstTutorQuestion": "In this problem, do you need the factorization itself or the number of divisors?",
+            "smallHint": "Write the prime factorization first, then use it instead of listing divisors one by one.",
+            "goodStoppingPoint": "Learner starts the divisor-count task from the factorization rather than restarting blindly.",
+            "watchFor": [
+              "Learner ignores an already completed factorization and restarts from scratch.",
+              "Learner lists divisors one by one without naming what the task asks for."
+            ],
+            "exampleTutorMove": "Before listing anything, tell me what the factorization already gives you for this question.",
+            "exampleLearnerResponse": "I need the number of divisors, so I should use the factorization instead of listing every divisor."
+          },
+          "completedStepIds": [],
+          "remainingStepIds": [
+            "STEP-U1-S3-REWRITE-CLEANLY",
+            "STEP-U1-S5A-DIVISOR-COUNT-TRANSFER"
+          ],
+          "steps": [
+            {
+              "activityId": "ACT-U1-S3-REWRITE-CLEANLY",
+              "lessonStepId": "STEP-U1-S3-REWRITE-CLEANLY",
+              "skillId": "U1-S3",
+              "activityType": "dialogue-flow",
+              "title": "Rewrite the Final Factorization Cleanly",
+              "openingLine": "Your split-work is close; now let's turn it into one clean final factorization.",
+              "firstTutorQuestion": "Which factors should still remain in the final line?",
+              "smallHint": "Keep only prime factors in the last line, and make sure none were dropped.",
+              "goodStoppingPoint": "Learner writes one complete prime factorization with no missing or composite factor.",
+              "watchFor": [
+                "Learner keeps a composite factor like 6 in the final line.",
+                "Learner rewrites with only prime factors but drops one repeated factor."
+              ],
+              "exampleTutorMove": "Cover the scratch work and rebuild the last line only with prime factors that still remain.",
+              "exampleLearnerResponse": "The final line should keep 2, 2, and 3 because all of them are prime and none can be dropped."
+            },
+            {
+              "activityId": "ACT-U1-S5A-DIVISOR-COUNT-TRANSFER",
+              "lessonStepId": "STEP-U1-S5A-DIVISOR-COUNT-TRANSFER",
+              "skillId": "U1-S5A",
+              "activityType": "dialogue-flow",
+              "title": "Reuse Factorization for Divisor Count",
+              "openingLine": "You do not need to restart from zero here; let's reuse what the factorization already tells us.",
+              "firstTutorQuestion": "In this problem, do you need the factorization itself or the number of divisors?",
+              "smallHint": "Write the prime factorization first, then use it instead of listing divisors one by one.",
+              "goodStoppingPoint": "Learner starts the divisor-count task from the factorization rather than restarting blindly.",
+              "watchFor": [
+                "Learner ignores an already completed factorization and restarts from scratch.",
+                "Learner lists divisors one by one without naming what the task asks for."
+              ],
+              "exampleTutorMove": "Before listing anything, tell me what the factorization already gives you for this question.",
+              "exampleLearnerResponse": "I need the number of divisors, so I should use the factorization instead of listing every divisor."
+            }
+          ],
+          "completionRule": "complete_all_steps_in_order",
+          "lastEvaluation": {
+            "lessonStepId": "STEP-U1-S3-REWRITE-CLEANLY",
+            "decision": "needs_follow_up",
+            "matchedRequiredSignals": [
+              "writes_only_prime_factors"
+            ],
+            "missingRequiredSignals": [
+              "keeps_all_factors"
+            ],
+            "matchedTextHints": [],
+            "matchedTextHintSignals": [],
+            "canAutoAdvance": false
+          },
+          "history": [
+            {
+              "attemptIndex": 0,
+              "lessonStepId": "STEP-U1-S3-REWRITE-CLEANLY",
+              "activityId": "ACT-U1-S3-REWRITE-CLEANLY",
+              "learnerResponse": "한글도 인식 할 수 있을려나",
+              "fieldValues": {
+                "uses_only_prime_factors": true,
+                "keeps_all_factors": false
+              },
+              "tutorNote": "",
+              "timestamp": "",
+              "evaluation": {
+                "lessonStepId": "STEP-U1-S3-REWRITE-CLEANLY",
+                "decision": "needs_follow_up",
+                "matchedRequiredSignals": [
+                  "writes_only_prime_factors"
+                ],
+                "missingRequiredSignals": [
+                  "keeps_all_factors"
+                ],
+                "matchedTextHints": [],
+                "matchedTextHintSignals": [],
+                "canAutoAdvance": false
+              }
+            }
+          ]
+        }
+      ],
+      "evidenceEvents": [
+        {
+          "eventId": "session-history-0-STEP-U1-S5A-DIVISOR-COUNT-TRANSFER",
+          "learnerId": "sample-learner",
+          "kind": "session_history_observation",
+          "skillId": "U1-S5A",
+          "result": "correct",
+          "errorPatternIds": [],
+          "observations": [
+            "약수의 개수를 보는 문제니까 약수를 일일이 쓰지 말고 소인수분해 결과부터 써야 해.",
+            "튜터가 factorization reuse 발화만 남기고 체크박스는 비워 두었다."
+          ],
+          "confidenceSignal": "confident",
+          "sourceDocs": [],
+          "derivedFrom": {
+            "lessonStepId": "STEP-U1-S5A-DIVISOR-COUNT-TRANSFER",
+            "activityId": "ACT-U1-S5A-DIVISOR-COUNT-TRANSFER",
+            "matchedRequiredSignals": [
+              "starts_from_factorization",
+              "does_not_list_divisors_blindly"
+            ],
+            "missingRequiredSignals": []
+          }
+        },
+        {
+          "eventId": "session-history-0-STEP-U1-S3-REWRITE-CLEANLY",
+          "learnerId": "sample-learner",
+          "kind": "session_history_observation",
+          "skillId": "U1-S3",
+          "result": "partial",
+          "errorPatternIds": [],
+          "observations": [
+            "한글도 인식 할 수 있을려나",
+            "Missing required signals: keeps_all_factors"
+          ],
+          "confidenceSignal": "hesitant",
+          "sourceDocs": [],
+          "derivedFrom": {
+            "lessonStepId": "STEP-U1-S3-REWRITE-CLEANLY",
+            "activityId": "ACT-U1-S3-REWRITE-CLEANLY",
+            "matchedRequiredSignals": [
+              "writes_only_prime_factors"
+            ],
+            "missingRequiredSignals": [
+              "keeps_all_factors"
+            ]
+          }
+        }
+      ],
+      "latestSkillSummaries": [
+        {
+          "learnerId": "sample-learner",
+          "skillId": "U1-S3",
+          "status": "needs_review",
+          "statusApproval": "provisional",
+          "decisionType": "multi_event_rule_assisted_conservative",
+          "supportingEvidenceIds": [
+            "session-history-0-STEP-U1-S3-REWRITE-CLEANLY"
+          ],
+          "matchedErrorPatternIds": [],
+          "explanations": [
+            "The event points to a skill, but there is not enough pattern-backed evidence for a stronger automated judgment.",
+            "A reviewer should inspect the learner work before changing progression behavior."
+          ],
+          "blockedBy": [
+            "This status supports conservative tutoring flow only, not final mastery approval.",
+            "Unit-level mastered thresholds, reassessment rules, and overrides remain UNDECIDED."
+          ],
+          "eventCount": 1,
+          "blockedByPrerequisites": [
+            {
+              "prerequisiteSkillId": "U1-S2",
+              "relationship": "HELPFUL",
+              "approvalStatus": "provisional",
+              "sourceDocs": [
+                "docs/prerequisite-map.md"
+              ],
+              "whyBlocked": "Prerequisite skill U1-S2 does not yet have learner evidence, so progress on U1-S3 should stay conservative."
+            }
+          ],
+          "hasRequiredPrerequisiteBlocker": false
+        },
+        {
+          "learnerId": "sample-learner",
+          "skillId": "U1-S5A",
+          "status": "ready_for_next_step",
+          "statusApproval": "provisional",
+          "decisionType": "multi_event_rule_assisted_conservative",
+          "supportingEvidenceIds": [
+            "session-history-0-STEP-U1-S5A-DIVISOR-COUNT-TRANSFER"
+          ],
+          "matchedErrorPatternIds": [],
+          "explanations": [
+            "The current event satisfies the minimum Unit 1 rule for moving to the next guided step.",
+            "This supports conservative next-step planning, not a final mastered label."
+          ],
+          "blockedBy": [
+            "This status supports conservative tutoring flow only, not final mastery approval.",
+            "Unit-level mastered thresholds, reassessment rules, and overrides remain UNDECIDED."
+          ],
+          "eventCount": 1,
+          "blockedByPrerequisites": [
+            {
+              "prerequisiteSkillId": "U1-S3",
+              "relationship": "HELPFUL",
+              "approvalStatus": "draft-from-docs",
+              "sourceDocs": [
+                "docs/suji-subskills-prime-factorization.md"
+              ],
+              "whyBlocked": "Prerequisite skill U1-S3 is currently needs_review, so progress on U1-S5A should stay conservative."
+            }
+          ],
+          "hasRequiredPrerequisiteBlocker": false
+        }
+      ],
+      "latestRecommendations": [
+        {
+          "learnerId": "sample-learner",
+          "targetSkillId": "U1-S3",
+          "targetSkillTitle": "Express a number in prime factorized form",
+          "recommendationType": "practice",
+          "confidence": "limited",
+          "needsReview": true,
+          "reasonCodes": [
+            "documented_skill_target",
+            "unit_mastery_threshold_pending",
+            "helpful_prerequisite_blocker"
+          ],
+          "summary": "Conservative follow-up practice is recommended pending more evidence.",
+          "sourceDocs": [
+            "docs/suji-tutor-dialogue-flow-prime-factorization.md",
+            "docs/suji-subskills-prime-factorization.md"
+          ],
+          "recommendedActivities": [
+            {
+              "activityId": "ACT-U1-S3-REWRITE-CLEANLY",
+              "skillId": "U1-S3",
+              "activityType": "dialogue-flow",
+              "title": "Rewrite the Final Factorization Cleanly",
+              "goal": "Stabilize the move from split-work to a complete final prime factorization.",
+              "firstTutorQuestion": "Which factors should still remain in the final line?",
+              "operatorFocus": "Push for one clean final line, not more splitting work.",
+              "watchFor": [
+                "Learner drops a repeated factor while rewriting.",
+                "Learner leaves a composite factor in the final line."
+              ],
+              "exampleTutorMove": "Cover the scratch work and ask the learner to rebuild only the final prime-factor line."
+            }
+          ],
+          "sessionPayload": {
+            "learnerId": "sample-learner",
+            "targetSkillId": "U1-S3",
+            "steps": [
+              {
+                "activityId": "ACT-U1-S2-ENTRY-BRIDGE",
+                "lessonStepId": "STEP-U1-S2-ENTRY-BRIDGE",
+                "skillId": "U1-S2",
+                "activityType": "worked-bridge",
+                "title": "Entry Bridge With 24",
+                "openingLine": "Let's just find one easy way into the problem instead of solving everything at once.",
+                "firstTutorQuestion": "What is the easiest divisor you can test first?",
+                "smallHint": "If the number is even, checking 2 is a calm first step.",
+                "goodStoppingPoint": "Learner starts with 2 for 24 and explains that 24 is even.",
+                "watchFor": [
+                  "Learner stalls because they think they need the whole tree immediately.",
+                  "Learner notices 24 is even but still does not choose 2."
+                ],
+                "exampleTutorMove": "You do not need the whole answer yet. What does the word 'even' let you try first?",
+                "exampleLearnerResponse": "24 is even, so trying 2 first is the easiest entry."
+              },
+              {
+                "activityId": "ACT-U1-S3-REWRITE-CLEANLY",
+                "lessonStepId": "STEP-U1-S3-REWRITE-CLEANLY",
+                "skillId": "U1-S3",
+                "activityType": "dialogue-flow",
+                "title": "Rewrite the Final Factorization Cleanly",
+                "openingLine": "Your split-work is close; now let's turn it into one clean final factorization.",
+                "firstTutorQuestion": "Which factors should still remain in the final line?",
+                "smallHint": "Keep only prime factors in the last line, and make sure none were dropped.",
+                "goodStoppingPoint": "Learner writes one complete prime factorization with no missing or composite factor.",
+                "watchFor": [
+                  "Learner keeps a composite factor like 6 in the final line.",
+                  "Learner rewrites with only prime factors but drops one repeated factor."
+                ],
+                "exampleTutorMove": "Cover the scratch work and rebuild the last line only with prime factors that still remain.",
+                "exampleLearnerResponse": "The final line should keep 2, 2, and 3 because all of them are prime and none can be dropped."
+              }
+            ]
+          },
+          "sourceEventIds": [
+            "session-history-0-STEP-U1-S3-REWRITE-CLEANLY"
+          ],
+          "blockedByPrerequisites": [
+            {
+              "prerequisiteSkillId": "U1-S2",
+              "relationship": "HELPFUL",
+              "approvalStatus": "provisional",
+              "sourceDocs": [
+                "docs/prerequisite-map.md"
+              ],
+              "whyBlocked": "Prerequisite skill U1-S2 does not yet have learner evidence, so progress on U1-S3 should stay conservative."
+            }
+          ],
+          "recommendedNextSkillIds": [
+            "U1-S2",
+            "U1-S3"
+          ],
+          "recommendedActivitySequence": [
+            {
+              "activityId": "ACT-U1-S2-ENTRY-BRIDGE",
+              "skillId": "U1-S2",
+              "activityType": "worked-bridge",
+              "title": "Entry Bridge With 24",
+              "goal": "Rebuild the habit of starting with an easy divisor pair instead of freezing.",
+              "firstTutorQuestion": "What is the easiest divisor you can test first?",
+              "operatorFocus": "Reward a calm starting move instead of speed.",
+              "watchFor": [
+                "Learner freezes because they think they must finish the whole factorization at once.",
+                "Learner chooses a hard divisor first even after noticing the number is even."
+              ],
+              "exampleTutorMove": "If the learner hesitates, point back to the word 'even' and ask what divisor that suggests."
+            },
+            {
+              "activityId": "ACT-U1-S3-REWRITE-CLEANLY",
+              "skillId": "U1-S3",
+              "activityType": "dialogue-flow",
+              "title": "Rewrite the Final Factorization Cleanly",
+              "goal": "Stabilize the move from split-work to a complete final prime factorization.",
+              "firstTutorQuestion": "Which factors should still remain in the final line?",
+              "operatorFocus": "Push for one clean final line, not more splitting work.",
+              "watchFor": [
+                "Learner drops a repeated factor while rewriting.",
+                "Learner leaves a composite factor in the final line."
+              ],
+              "exampleTutorMove": "Cover the scratch work and ask the learner to rebuild only the final prime-factor line."
+            }
+          ]
+        },
+        {
+          "learnerId": "sample-learner",
+          "targetSkillId": "U1-S5A",
+          "targetSkillTitle": "Use prime factorization to reason about divisor count",
+          "recommendationType": "practice",
+          "confidence": "limited",
+          "needsReview": true,
+          "reasonCodes": [
+            "documented_skill_target",
+            "unit_mastery_threshold_pending",
+            "helpful_prerequisite_blocker"
+          ],
+          "summary": "Learner restarts from scratch instead of using factorization to reason about divisor count.",
+          "sourceDocs": [
+            "docs/suji-subskills-prime-factorization.md",
+            "docs/suji-error-patterns-prime-factorization.md",
+            "docs/suji-tutor-dialogue-flow-prime-factorization.md"
+          ],
+          "recommendedActivities": [
+            {
+              "activityId": "ACT-U1-S5A-DIVISOR-COUNT-TRANSFER",
+              "skillId": "U1-S5A",
+              "activityType": "dialogue-flow",
+              "title": "Reuse Factorization for Divisor Count",
+              "goal": "Stop the learner from restarting divisor counting from scratch.",
+              "firstTutorQuestion": "In this problem, do you need the factorization itself or the number of divisors?",
+              "operatorFocus": "Keep the learner from listing every divisor one by one.",
+              "watchFor": [
+                "Learner abandons the factorization they already built.",
+                "Learner starts listing divisors without explaining what the task is asking for."
+              ],
+              "exampleTutorMove": "Ask what information the completed factorization already gives before allowing any divisor list."
+            }
+          ],
+          "sessionPayload": {
+            "learnerId": "sample-learner",
+            "targetSkillId": "U1-S5A",
+            "steps": [
+              {
+                "activityId": "ACT-U1-S3-REWRITE-CLEANLY",
+                "lessonStepId": "STEP-U1-S3-REWRITE-CLEANLY",
+                "skillId": "U1-S3",
+                "activityType": "dialogue-flow",
+                "title": "Rewrite the Final Factorization Cleanly",
+                "openingLine": "Your split-work is close; now let's turn it into one clean final factorization.",
+                "firstTutorQuestion": "Which factors should still remain in the final line?",
+                "smallHint": "Keep only prime factors in the last line, and make sure none were dropped.",
+                "goodStoppingPoint": "Learner writes one complete prime factorization with no missing or composite factor.",
+                "watchFor": [
+                  "Learner keeps a composite factor like 6 in the final line.",
+                  "Learner rewrites with only prime factors but drops one repeated factor."
+                ],
+                "exampleTutorMove": "Cover the scratch work and rebuild the last line only with prime factors that still remain.",
+                "exampleLearnerResponse": "The final line should keep 2, 2, and 3 because all of them are prime and none can be dropped."
+              },
+              {
+                "activityId": "ACT-U1-S5A-DIVISOR-COUNT-TRANSFER",
+                "lessonStepId": "STEP-U1-S5A-DIVISOR-COUNT-TRANSFER",
+                "skillId": "U1-S5A",
+                "activityType": "dialogue-flow",
+                "title": "Reuse Factorization for Divisor Count",
+                "openingLine": "You do not need to restart from zero here; let's reuse what the factorization already tells us.",
+                "firstTutorQuestion": "In this problem, do you need the factorization itself or the number of divisors?",
+                "smallHint": "Write the prime factorization first, then use it instead of listing divisors one by one.",
+                "goodStoppingPoint": "Learner starts the divisor-count task from the factorization rather than restarting blindly.",
+                "watchFor": [
+                  "Learner ignores an already completed factorization and restarts from scratch.",
+                  "Learner lists divisors one by one without naming what the task asks for."
+                ],
+                "exampleTutorMove": "Before listing anything, tell me what the factorization already gives you for this question.",
+                "exampleLearnerResponse": "I need the number of divisors, so I should use the factorization instead of listing every divisor."
+              }
+            ]
+          },
+          "sourceEventIds": [
+            "session-history-0-STEP-U1-S5A-DIVISOR-COUNT-TRANSFER"
+          ],
+          "blockedByPrerequisites": [
+            {
+              "prerequisiteSkillId": "U1-S3",
+              "relationship": "HELPFUL",
+              "approvalStatus": "draft-from-docs",
+              "sourceDocs": [
+                "docs/suji-subskills-prime-factorization.md"
+              ],
+              "whyBlocked": "Prerequisite skill U1-S3 is currently needs_review, so progress on U1-S5A should stay conservative."
+            }
+          ],
+          "recommendedNextSkillIds": [
+            "U1-S3",
+            "U1-S5A"
+          ],
+          "recommendedActivitySequence": [
+            {
+              "activityId": "ACT-U1-S3-REWRITE-CLEANLY",
+              "skillId": "U1-S3",
+              "activityType": "dialogue-flow",
+              "title": "Rewrite the Final Factorization Cleanly",
+              "goal": "Stabilize the move from split-work to a complete final prime factorization.",
+              "firstTutorQuestion": "Which factors should still remain in the final line?",
+              "operatorFocus": "Push for one clean final line, not more splitting work.",
+              "watchFor": [
+                "Learner drops a repeated factor while rewriting.",
+                "Learner leaves a composite factor in the final line."
+              ],
+              "exampleTutorMove": "Cover the scratch work and ask the learner to rebuild only the final prime-factor line."
+            },
+            {
+              "activityId": "ACT-U1-S5A-DIVISOR-COUNT-TRANSFER",
+              "skillId": "U1-S5A",
+              "activityType": "dialogue-flow",
+              "title": "Reuse Factorization for Divisor Count",
+              "goal": "Stop the learner from restarting divisor counting from scratch.",
+              "firstTutorQuestion": "In this problem, do you need the factorization itself or the number of divisors?",
+              "operatorFocus": "Keep the learner from listing every divisor one by one.",
+              "watchFor": [
+                "Learner abandons the factorization they already built.",
+                "Learner starts listing divisors without explaining what the task is asking for."
+              ],
+              "exampleTutorMove": "Ask what information the completed factorization already gives before allowing any divisor list."
+            }
+          ]
+        }
+      ],
+      "updatedAt": ""
+    },
+    "observationFormTemplate": {
+      "lessonStepId": "STEP-U1-S3-REWRITE-CLEANLY",
+      "learnerResponsePrompt": "Write the learner's clean final prime-factor line.",
+      "tutorNotePrompt": "Note whether the learner kept all repeated factors and removed composite factors.",
+      "fields": [
+        {
+          "fieldId": "uses_only_prime_factors",
+          "label": "Only prime factors",
+          "prompt": "Did the learner write the final line using only prime factors?",
+          "trueMeans": "The learner removed any composite factor from the final line."
+        },
+        {
+          "fieldId": "keeps_all_factors",
+          "label": "Keeps all factors",
+          "prompt": "Did the learner keep every needed factor, including repeats?",
+          "trueMeans": "The learner did not drop a repeated or needed factor."
+        }
+      ]
+    },
+    "observationForm": {
+      "lessonStepId": "STEP-U1-S3-REWRITE-CLEANLY",
+      "learnerResponse": "",
+      "fieldValues": {
+        "uses_only_prime_factors": false,
+        "keeps_all_factors": false
+      },
+      "tutorNote": "",
+      "timestamp": ""
+    }
+  },
+  "currentLearnerRecord": {
+    "learnerId": "sample-learner",
+    "activeSession": {
+      "learnerId": "sample-learner",
+      "targetSkillId": "U1-S5A",
+      "status": "in_progress",
+      "currentStepIndex": 0,
+      "currentStep": {
+        "activityId": "ACT-U1-S3-REWRITE-CLEANLY",
+        "lessonStepId": "STEP-U1-S3-REWRITE-CLEANLY",
+        "skillId": "U1-S3",
+        "activityType": "dialogue-flow",
+        "title": "Rewrite the Final Factorization Cleanly",
+        "openingLine": "Your split-work is close; now let's turn it into one clean final factorization.",
+        "firstTutorQuestion": "Which factors should still remain in the final line?",
+        "smallHint": "Keep only prime factors in the last line, and make sure none were dropped.",
+        "goodStoppingPoint": "Learner writes one complete prime factorization with no missing or composite factor.",
+        "watchFor": [
+          "Learner keeps a composite factor like 6 in the final line.",
+          "Learner rewrites with only prime factors but drops one repeated factor."
+        ],
+        "exampleTutorMove": "Cover the scratch work and rebuild the last line only with prime factors that still remain.",
+        "exampleLearnerResponse": "The final line should keep 2, 2, and 3 because all of them are prime and none can be dropped."
+      },
+      "nextStep": {
+        "activityId": "ACT-U1-S5A-DIVISOR-COUNT-TRANSFER",
+        "lessonStepId": "STEP-U1-S5A-DIVISOR-COUNT-TRANSFER",
+        "skillId": "U1-S5A",
+        "activityType": "dialogue-flow",
+        "title": "Reuse Factorization for Divisor Count",
+        "openingLine": "You do not need to restart from zero here; let's reuse what the factorization already tells us.",
+        "firstTutorQuestion": "In this problem, do you need the factorization itself or the number of divisors?",
+        "smallHint": "Write the prime factorization first, then use it instead of listing divisors one by one.",
+        "goodStoppingPoint": "Learner starts the divisor-count task from the factorization rather than restarting blindly.",
+        "watchFor": [
+          "Learner ignores an already completed factorization and restarts from scratch.",
+          "Learner lists divisors one by one without naming what the task asks for."
+        ],
+        "exampleTutorMove": "Before listing anything, tell me what the factorization already gives you for this question.",
+        "exampleLearnerResponse": "I need the number of divisors, so I should use the factorization instead of listing every divisor."
+      },
+      "completedStepIds": [],
+      "remainingStepIds": [
+        "STEP-U1-S3-REWRITE-CLEANLY",
+        "STEP-U1-S5A-DIVISOR-COUNT-TRANSFER"
+      ],
+      "steps": [
+        {
+          "activityId": "ACT-U1-S3-REWRITE-CLEANLY",
+          "lessonStepId": "STEP-U1-S3-REWRITE-CLEANLY",
+          "skillId": "U1-S3",
+          "activityType": "dialogue-flow",
+          "title": "Rewrite the Final Factorization Cleanly",
+          "openingLine": "Your split-work is close; now let's turn it into one clean final factorization.",
+          "firstTutorQuestion": "Which factors should still remain in the final line?",
+          "smallHint": "Keep only prime factors in the last line, and make sure none were dropped.",
+          "goodStoppingPoint": "Learner writes one complete prime factorization with no missing or composite factor.",
+          "watchFor": [
+            "Learner keeps a composite factor like 6 in the final line.",
+            "Learner rewrites with only prime factors but drops one repeated factor."
+          ],
+          "exampleTutorMove": "Cover the scratch work and rebuild the last line only with prime factors that still remain.",
+          "exampleLearnerResponse": "The final line should keep 2, 2, and 3 because all of them are prime and none can be dropped."
+        },
+        {
+          "activityId": "ACT-U1-S5A-DIVISOR-COUNT-TRANSFER",
+          "lessonStepId": "STEP-U1-S5A-DIVISOR-COUNT-TRANSFER",
+          "skillId": "U1-S5A",
+          "activityType": "dialogue-flow",
+          "title": "Reuse Factorization for Divisor Count",
+          "openingLine": "You do not need to restart from zero here; let's reuse what the factorization already tells us.",
+          "firstTutorQuestion": "In this problem, do you need the factorization itself or the number of divisors?",
+          "smallHint": "Write the prime factorization first, then use it instead of listing divisors one by one.",
+          "goodStoppingPoint": "Learner starts the divisor-count task from the factorization rather than restarting blindly.",
+          "watchFor": [
+            "Learner ignores an already completed factorization and restarts from scratch.",
+            "Learner lists divisors one by one without naming what the task asks for."
+          ],
+          "exampleTutorMove": "Before listing anything, tell me what the factorization already gives you for this question.",
+          "exampleLearnerResponse": "I need the number of divisors, so I should use the factorization instead of listing every divisor."
+        }
+      ],
+      "completionRule": "complete_all_steps_in_order",
+      "lastEvaluation": {
+        "lessonStepId": "STEP-U1-S3-REWRITE-CLEANLY",
+        "decision": "needs_follow_up",
+        "matchedRequiredSignals": [
+          "writes_only_prime_factors"
+        ],
+        "missingRequiredSignals": [
+          "keeps_all_factors"
+        ],
+        "matchedTextHints": [],
+        "matchedTextHintSignals": [],
+        "canAutoAdvance": false
+      },
+      "history": [
+        {
+          "attemptIndex": 0,
+          "lessonStepId": "STEP-U1-S3-REWRITE-CLEANLY",
+          "activityId": "ACT-U1-S3-REWRITE-CLEANLY",
+          "learnerResponse": "한글도 인식 할 수 있을려나",
+          "fieldValues": {
+            "uses_only_prime_factors": true,
+            "keeps_all_factors": false
+          },
+          "tutorNote": "",
+          "timestamp": "",
+          "evaluation": {
+            "lessonStepId": "STEP-U1-S3-REWRITE-CLEANLY",
+            "decision": "needs_follow_up",
+            "matchedRequiredSignals": [
+              "writes_only_prime_factors"
+            ],
+            "missingRequiredSignals": [
+              "keeps_all_factors"
+            ],
+            "matchedTextHints": [],
+            "matchedTextHintSignals": [],
+            "canAutoAdvance": false
+          }
+        }
+      ]
+    },
+    "sessions": [
+      {
+        "learnerId": "sample-learner",
+        "targetSkillId": "U1-S5A",
+        "status": "completed",
+        "currentStepIndex": 0,
+        "currentStep": null,
+        "nextStep": null,
+        "completedStepIds": [
+          "STEP-U1-S5A-DIVISOR-COUNT-TRANSFER"
+        ],
+        "remainingStepIds": [],
+        "steps": [
+          {
+            "activityId": "ACT-U1-S5A-DIVISOR-COUNT-TRANSFER",
+            "lessonStepId": "STEP-U1-S5A-DIVISOR-COUNT-TRANSFER",
+            "skillId": "U1-S5A",
+            "activityType": "dialogue-flow",
+            "title": "Reuse Factorization for Divisor Count",
+            "openingLine": "You do not need to restart from zero here; let's reuse what the factorization already tells us.",
+            "firstTutorQuestion": "In this problem, do you need the factorization itself or the number of divisors?",
+            "smallHint": "Write the prime factorization first, then use it instead of listing divisors one by one.",
+            "goodStoppingPoint": "Learner starts the divisor-count task from the factorization rather than restarting blindly."
+          }
+        ],
+        "completionRule": "complete_all_steps_in_order",
+        "lastEvaluation": {
+          "lessonStepId": "STEP-U1-S5A-DIVISOR-COUNT-TRANSFER",
+          "decision": "completed",
+          "matchedRequiredSignals": [
+            "starts_from_factorization",
+            "does_not_list_divisors_blindly"
+          ],
+          "missingRequiredSignals": [],
+          "matchedTextHints": [],
+          "matchedTextHintSignals": [
+            "starts_from_factorization",
+            "does_not_list_divisors_blindly"
+          ],
+          "canAutoAdvance": true
+        },
+        "history": [
+          {
+            "attemptIndex": 0,
+            "lessonStepId": "STEP-U1-S5A-DIVISOR-COUNT-TRANSFER",
+            "activityId": "ACT-U1-S5A-DIVISOR-COUNT-TRANSFER",
+            "learnerResponse": "약수의 개수를 보는 문제니까 약수를 일일이 쓰지 말고 소인수분해 결과부터 써야 해.",
+            "fieldValues": {
+              "starts_from_factorization": false,
+              "avoids_blind_divisor_listing": false
+            },
+            "tutorNote": "튜터가 factorization reuse 발화만 남기고 체크박스는 비워 두었다.",
+            "timestamp": "2026-03-28T11:16:00+09:00",
+            "evaluation": {
+              "lessonStepId": "STEP-U1-S5A-DIVISOR-COUNT-TRANSFER",
+              "decision": "completed",
+              "matchedRequiredSignals": [
+                "starts_from_factorization",
+                "does_not_list_divisors_blindly"
+              ],
+              "missingRequiredSignals": [],
+              "matchedTextHints": [],
+              "matchedTextHintSignals": [
+                "starts_from_factorization",
+                "does_not_list_divisors_blindly"
+              ],
+              "canAutoAdvance": true
+            }
+          }
+        ]
+      },
+      {
+        "learnerId": "sample-learner",
+        "targetSkillId": "U1-S5A",
+        "status": "in_progress",
+        "currentStepIndex": 0,
+        "currentStep": {
+          "activityId": "ACT-U1-S3-REWRITE-CLEANLY",
+          "lessonStepId": "STEP-U1-S3-REWRITE-CLEANLY",
+          "skillId": "U1-S3",
+          "activityType": "dialogue-flow",
+          "title": "Rewrite the Final Factorization Cleanly",
+          "openingLine": "Your split-work is close; now let's turn it into one clean final factorization.",
+          "firstTutorQuestion": "Which factors should still remain in the final line?",
+          "smallHint": "Keep only prime factors in the last line, and make sure none were dropped.",
+          "goodStoppingPoint": "Learner writes one complete prime factorization with no missing or composite factor.",
+          "watchFor": [
+            "Learner keeps a composite factor like 6 in the final line.",
+            "Learner rewrites with only prime factors but drops one repeated factor."
+          ],
+          "exampleTutorMove": "Cover the scratch work and rebuild the last line only with prime factors that still remain.",
+          "exampleLearnerResponse": "The final line should keep 2, 2, and 3 because all of them are prime and none can be dropped."
+        },
+        "nextStep": {
+          "activityId": "ACT-U1-S5A-DIVISOR-COUNT-TRANSFER",
+          "lessonStepId": "STEP-U1-S5A-DIVISOR-COUNT-TRANSFER",
+          "skillId": "U1-S5A",
+          "activityType": "dialogue-flow",
+          "title": "Reuse Factorization for Divisor Count",
+          "openingLine": "You do not need to restart from zero here; let's reuse what the factorization already tells us.",
+          "firstTutorQuestion": "In this problem, do you need the factorization itself or the number of divisors?",
+          "smallHint": "Write the prime factorization first, then use it instead of listing divisors one by one.",
+          "goodStoppingPoint": "Learner starts the divisor-count task from the factorization rather than restarting blindly.",
+          "watchFor": [
+            "Learner ignores an already completed factorization and restarts from scratch.",
+            "Learner lists divisors one by one without naming what the task asks for."
+          ],
+          "exampleTutorMove": "Before listing anything, tell me what the factorization already gives you for this question.",
+          "exampleLearnerResponse": "I need the number of divisors, so I should use the factorization instead of listing every divisor."
+        },
+        "completedStepIds": [],
+        "remainingStepIds": [
+          "STEP-U1-S3-REWRITE-CLEANLY",
+          "STEP-U1-S5A-DIVISOR-COUNT-TRANSFER"
+        ],
+        "steps": [
+          {
+            "activityId": "ACT-U1-S3-REWRITE-CLEANLY",
+            "lessonStepId": "STEP-U1-S3-REWRITE-CLEANLY",
+            "skillId": "U1-S3",
+            "activityType": "dialogue-flow",
+            "title": "Rewrite the Final Factorization Cleanly",
+            "openingLine": "Your split-work is close; now let's turn it into one clean final factorization.",
+            "firstTutorQuestion": "Which factors should still remain in the final line?",
+            "smallHint": "Keep only prime factors in the last line, and make sure none were dropped.",
+            "goodStoppingPoint": "Learner writes one complete prime factorization with no missing or composite factor.",
+            "watchFor": [
+              "Learner keeps a composite factor like 6 in the final line.",
+              "Learner rewrites with only prime factors but drops one repeated factor."
+            ],
+            "exampleTutorMove": "Cover the scratch work and rebuild the last line only with prime factors that still remain.",
+            "exampleLearnerResponse": "The final line should keep 2, 2, and 3 because all of them are prime and none can be dropped."
+          },
+          {
+            "activityId": "ACT-U1-S5A-DIVISOR-COUNT-TRANSFER",
+            "lessonStepId": "STEP-U1-S5A-DIVISOR-COUNT-TRANSFER",
+            "skillId": "U1-S5A",
+            "activityType": "dialogue-flow",
+            "title": "Reuse Factorization for Divisor Count",
+            "openingLine": "You do not need to restart from zero here; let's reuse what the factorization already tells us.",
+            "firstTutorQuestion": "In this problem, do you need the factorization itself or the number of divisors?",
+            "smallHint": "Write the prime factorization first, then use it instead of listing divisors one by one.",
+            "goodStoppingPoint": "Learner starts the divisor-count task from the factorization rather than restarting blindly.",
+            "watchFor": [
+              "Learner ignores an already completed factorization and restarts from scratch.",
+              "Learner lists divisors one by one without naming what the task asks for."
+            ],
+            "exampleTutorMove": "Before listing anything, tell me what the factorization already gives you for this question.",
+            "exampleLearnerResponse": "I need the number of divisors, so I should use the factorization instead of listing every divisor."
+          }
+        ],
+        "completionRule": "complete_all_steps_in_order",
+        "lastEvaluation": {
+          "lessonStepId": "STEP-U1-S3-REWRITE-CLEANLY",
+          "decision": "needs_follow_up",
+          "matchedRequiredSignals": [
+            "writes_only_prime_factors"
+          ],
+          "missingRequiredSignals": [
+            "keeps_all_factors"
+          ],
+          "matchedTextHints": [],
+          "matchedTextHintSignals": [],
+          "canAutoAdvance": false
+        },
+        "history": [
+          {
+            "attemptIndex": 0,
+            "lessonStepId": "STEP-U1-S3-REWRITE-CLEANLY",
+            "activityId": "ACT-U1-S3-REWRITE-CLEANLY",
+            "learnerResponse": "한글도 인식 할 수 있을려나",
+            "fieldValues": {
+              "uses_only_prime_factors": true,
+              "keeps_all_factors": false
+            },
+            "tutorNote": "",
+            "timestamp": "",
+            "evaluation": {
+              "lessonStepId": "STEP-U1-S3-REWRITE-CLEANLY",
+              "decision": "needs_follow_up",
+              "matchedRequiredSignals": [
+                "writes_only_prime_factors"
+              ],
+              "missingRequiredSignals": [
+                "keeps_all_factors"
+              ],
+              "matchedTextHints": [],
+              "matchedTextHintSignals": [],
+              "canAutoAdvance": false
+            }
+          }
+        ]
+      }
+    ],
+    "evidenceEvents": [
+      {
+        "eventId": "session-history-0-STEP-U1-S5A-DIVISOR-COUNT-TRANSFER",
+        "learnerId": "sample-learner",
+        "kind": "session_history_observation",
+        "skillId": "U1-S5A",
+        "result": "correct",
+        "errorPatternIds": [],
+        "observations": [
+          "약수의 개수를 보는 문제니까 약수를 일일이 쓰지 말고 소인수분해 결과부터 써야 해.",
+          "튜터가 factorization reuse 발화만 남기고 체크박스는 비워 두었다."
+        ],
+        "confidenceSignal": "confident",
+        "sourceDocs": [],
+        "derivedFrom": {
+          "lessonStepId": "STEP-U1-S5A-DIVISOR-COUNT-TRANSFER",
+          "activityId": "ACT-U1-S5A-DIVISOR-COUNT-TRANSFER",
+          "matchedRequiredSignals": [
+            "starts_from_factorization",
+            "does_not_list_divisors_blindly"
+          ],
+          "missingRequiredSignals": []
+        }
+      },
+      {
+        "eventId": "session-history-0-STEP-U1-S3-REWRITE-CLEANLY",
+        "learnerId": "sample-learner",
+        "kind": "session_history_observation",
+        "skillId": "U1-S3",
+        "result": "partial",
+        "errorPatternIds": [],
+        "observations": [
+          "한글도 인식 할 수 있을려나",
+          "Missing required signals: keeps_all_factors"
+        ],
+        "confidenceSignal": "hesitant",
+        "sourceDocs": [],
+        "derivedFrom": {
+          "lessonStepId": "STEP-U1-S3-REWRITE-CLEANLY",
+          "activityId": "ACT-U1-S3-REWRITE-CLEANLY",
+          "matchedRequiredSignals": [
+            "writes_only_prime_factors"
+          ],
+          "missingRequiredSignals": [
+            "keeps_all_factors"
+          ]
+        }
+      }
+    ],
+    "latestSkillSummaries": [
+      {
+        "learnerId": "sample-learner",
+        "skillId": "U1-S3",
+        "status": "needs_review",
+        "statusApproval": "provisional",
+        "decisionType": "multi_event_rule_assisted_conservative",
+        "supportingEvidenceIds": [
+          "session-history-0-STEP-U1-S3-REWRITE-CLEANLY"
+        ],
+        "matchedErrorPatternIds": [],
+        "explanations": [
+          "The event points to a skill, but there is not enough pattern-backed evidence for a stronger automated judgment.",
+          "A reviewer should inspect the learner work before changing progression behavior."
+        ],
+        "blockedBy": [
+          "This status supports conservative tutoring flow only, not final mastery approval.",
+          "Unit-level mastered thresholds, reassessment rules, and overrides remain UNDECIDED."
+        ],
+        "eventCount": 1,
+        "blockedByPrerequisites": [
+          {
+            "prerequisiteSkillId": "U1-S2",
+            "relationship": "HELPFUL",
+            "approvalStatus": "provisional",
+            "sourceDocs": [
+              "docs/prerequisite-map.md"
+            ],
+            "whyBlocked": "Prerequisite skill U1-S2 does not yet have learner evidence, so progress on U1-S3 should stay conservative."
+          }
+        ],
+        "hasRequiredPrerequisiteBlocker": false
+      },
+      {
+        "learnerId": "sample-learner",
+        "skillId": "U1-S5A",
+        "status": "ready_for_next_step",
+        "statusApproval": "provisional",
+        "decisionType": "multi_event_rule_assisted_conservative",
+        "supportingEvidenceIds": [
+          "session-history-0-STEP-U1-S5A-DIVISOR-COUNT-TRANSFER"
+        ],
+        "matchedErrorPatternIds": [],
+        "explanations": [
+          "The current event satisfies the minimum Unit 1 rule for moving to the next guided step.",
+          "This supports conservative next-step planning, not a final mastered label."
+        ],
+        "blockedBy": [
+          "This status supports conservative tutoring flow only, not final mastery approval.",
+          "Unit-level mastered thresholds, reassessment rules, and overrides remain UNDECIDED."
+        ],
+        "eventCount": 1,
+        "blockedByPrerequisites": [
+          {
+            "prerequisiteSkillId": "U1-S3",
+            "relationship": "HELPFUL",
+            "approvalStatus": "draft-from-docs",
+            "sourceDocs": [
+              "docs/suji-subskills-prime-factorization.md"
+            ],
+            "whyBlocked": "Prerequisite skill U1-S3 is currently needs_review, so progress on U1-S5A should stay conservative."
+          }
+        ],
+        "hasRequiredPrerequisiteBlocker": false
+      }
+    ],
+    "latestRecommendations": [
+      {
+        "learnerId": "sample-learner",
+        "targetSkillId": "U1-S3",
+        "targetSkillTitle": "Express a number in prime factorized form",
+        "recommendationType": "practice",
+        "confidence": "limited",
+        "needsReview": true,
+        "reasonCodes": [
+          "documented_skill_target",
+          "unit_mastery_threshold_pending",
+          "helpful_prerequisite_blocker"
+        ],
+        "summary": "Conservative follow-up practice is recommended pending more evidence.",
+        "sourceDocs": [
+          "docs/suji-tutor-dialogue-flow-prime-factorization.md",
+          "docs/suji-subskills-prime-factorization.md"
+        ],
+        "recommendedActivities": [
+          {
+            "activityId": "ACT-U1-S3-REWRITE-CLEANLY",
+            "skillId": "U1-S3",
+            "activityType": "dialogue-flow",
+            "title": "Rewrite the Final Factorization Cleanly",
+            "goal": "Stabilize the move from split-work to a complete final prime factorization.",
+            "firstTutorQuestion": "Which factors should still remain in the final line?",
+            "operatorFocus": "Push for one clean final line, not more splitting work.",
+            "watchFor": [
+              "Learner drops a repeated factor while rewriting.",
+              "Learner leaves a composite factor in the final line."
+            ],
+            "exampleTutorMove": "Cover the scratch work and ask the learner to rebuild only the final prime-factor line."
+          }
+        ],
+        "sessionPayload": {
+          "learnerId": "sample-learner",
+          "targetSkillId": "U1-S3",
+          "steps": [
+            {
+              "activityId": "ACT-U1-S2-ENTRY-BRIDGE",
+              "lessonStepId": "STEP-U1-S2-ENTRY-BRIDGE",
+              "skillId": "U1-S2",
+              "activityType": "worked-bridge",
+              "title": "Entry Bridge With 24",
+              "openingLine": "Let's just find one easy way into the problem instead of solving everything at once.",
+              "firstTutorQuestion": "What is the easiest divisor you can test first?",
+              "smallHint": "If the number is even, checking 2 is a calm first step.",
+              "goodStoppingPoint": "Learner starts with 2 for 24 and explains that 24 is even.",
+              "watchFor": [
+                "Learner stalls because they think they need the whole tree immediately.",
+                "Learner notices 24 is even but still does not choose 2."
+              ],
+              "exampleTutorMove": "You do not need the whole answer yet. What does the word 'even' let you try first?",
+              "exampleLearnerResponse": "24 is even, so trying 2 first is the easiest entry."
+            },
+            {
+              "activityId": "ACT-U1-S3-REWRITE-CLEANLY",
+              "lessonStepId": "STEP-U1-S3-REWRITE-CLEANLY",
+              "skillId": "U1-S3",
+              "activityType": "dialogue-flow",
+              "title": "Rewrite the Final Factorization Cleanly",
+              "openingLine": "Your split-work is close; now let's turn it into one clean final factorization.",
+              "firstTutorQuestion": "Which factors should still remain in the final line?",
+              "smallHint": "Keep only prime factors in the last line, and make sure none were dropped.",
+              "goodStoppingPoint": "Learner writes one complete prime factorization with no missing or composite factor.",
+              "watchFor": [
+                "Learner keeps a composite factor like 6 in the final line.",
+                "Learner rewrites with only prime factors but drops one repeated factor."
+              ],
+              "exampleTutorMove": "Cover the scratch work and rebuild the last line only with prime factors that still remain.",
+              "exampleLearnerResponse": "The final line should keep 2, 2, and 3 because all of them are prime and none can be dropped."
+            }
+          ]
+        },
+        "sourceEventIds": [
+          "session-history-0-STEP-U1-S3-REWRITE-CLEANLY"
+        ],
+        "blockedByPrerequisites": [
+          {
+            "prerequisiteSkillId": "U1-S2",
+            "relationship": "HELPFUL",
+            "approvalStatus": "provisional",
+            "sourceDocs": [
+              "docs/prerequisite-map.md"
+            ],
+            "whyBlocked": "Prerequisite skill U1-S2 does not yet have learner evidence, so progress on U1-S3 should stay conservative."
+          }
+        ],
+        "recommendedNextSkillIds": [
+          "U1-S2",
+          "U1-S3"
+        ],
+        "recommendedActivitySequence": [
+          {
+            "activityId": "ACT-U1-S2-ENTRY-BRIDGE",
+            "skillId": "U1-S2",
+            "activityType": "worked-bridge",
+            "title": "Entry Bridge With 24",
+            "goal": "Rebuild the habit of starting with an easy divisor pair instead of freezing.",
+            "firstTutorQuestion": "What is the easiest divisor you can test first?",
+            "operatorFocus": "Reward a calm starting move instead of speed.",
+            "watchFor": [
+              "Learner freezes because they think they must finish the whole factorization at once.",
+              "Learner chooses a hard divisor first even after noticing the number is even."
+            ],
+            "exampleTutorMove": "If the learner hesitates, point back to the word 'even' and ask what divisor that suggests."
+          },
+          {
+            "activityId": "ACT-U1-S3-REWRITE-CLEANLY",
+            "skillId": "U1-S3",
+            "activityType": "dialogue-flow",
+            "title": "Rewrite the Final Factorization Cleanly",
+            "goal": "Stabilize the move from split-work to a complete final prime factorization.",
+            "firstTutorQuestion": "Which factors should still remain in the final line?",
+            "operatorFocus": "Push for one clean final line, not more splitting work.",
+            "watchFor": [
+              "Learner drops a repeated factor while rewriting.",
+              "Learner leaves a composite factor in the final line."
+            ],
+            "exampleTutorMove": "Cover the scratch work and ask the learner to rebuild only the final prime-factor line."
+          }
+        ]
+      },
+      {
+        "learnerId": "sample-learner",
+        "targetSkillId": "U1-S5A",
+        "targetSkillTitle": "Use prime factorization to reason about divisor count",
+        "recommendationType": "practice",
+        "confidence": "limited",
+        "needsReview": true,
+        "reasonCodes": [
+          "documented_skill_target",
+          "unit_mastery_threshold_pending",
+          "helpful_prerequisite_blocker"
+        ],
+        "summary": "Learner restarts from scratch instead of using factorization to reason about divisor count.",
+        "sourceDocs": [
+          "docs/suji-subskills-prime-factorization.md",
+          "docs/suji-error-patterns-prime-factorization.md",
+          "docs/suji-tutor-dialogue-flow-prime-factorization.md"
+        ],
+        "recommendedActivities": [
+          {
+            "activityId": "ACT-U1-S5A-DIVISOR-COUNT-TRANSFER",
+            "skillId": "U1-S5A",
+            "activityType": "dialogue-flow",
+            "title": "Reuse Factorization for Divisor Count",
+            "goal": "Stop the learner from restarting divisor counting from scratch.",
+            "firstTutorQuestion": "In this problem, do you need the factorization itself or the number of divisors?",
+            "operatorFocus": "Keep the learner from listing every divisor one by one.",
+            "watchFor": [
+              "Learner abandons the factorization they already built.",
+              "Learner starts listing divisors without explaining what the task is asking for."
+            ],
+            "exampleTutorMove": "Ask what information the completed factorization already gives before allowing any divisor list."
+          }
+        ],
+        "sessionPayload": {
+          "learnerId": "sample-learner",
+          "targetSkillId": "U1-S5A",
+          "steps": [
+            {
+              "activityId": "ACT-U1-S3-REWRITE-CLEANLY",
+              "lessonStepId": "STEP-U1-S3-REWRITE-CLEANLY",
+              "skillId": "U1-S3",
+              "activityType": "dialogue-flow",
+              "title": "Rewrite the Final Factorization Cleanly",
+              "openingLine": "Your split-work is close; now let's turn it into one clean final factorization.",
+              "firstTutorQuestion": "Which factors should still remain in the final line?",
+              "smallHint": "Keep only prime factors in the last line, and make sure none were dropped.",
+              "goodStoppingPoint": "Learner writes one complete prime factorization with no missing or composite factor.",
+              "watchFor": [
+                "Learner keeps a composite factor like 6 in the final line.",
+                "Learner rewrites with only prime factors but drops one repeated factor."
+              ],
+              "exampleTutorMove": "Cover the scratch work and rebuild the last line only with prime factors that still remain.",
+              "exampleLearnerResponse": "The final line should keep 2, 2, and 3 because all of them are prime and none can be dropped."
+            },
+            {
+              "activityId": "ACT-U1-S5A-DIVISOR-COUNT-TRANSFER",
+              "lessonStepId": "STEP-U1-S5A-DIVISOR-COUNT-TRANSFER",
+              "skillId": "U1-S5A",
+              "activityType": "dialogue-flow",
+              "title": "Reuse Factorization for Divisor Count",
+              "openingLine": "You do not need to restart from zero here; let's reuse what the factorization already tells us.",
+              "firstTutorQuestion": "In this problem, do you need the factorization itself or the number of divisors?",
+              "smallHint": "Write the prime factorization first, then use it instead of listing divisors one by one.",
+              "goodStoppingPoint": "Learner starts the divisor-count task from the factorization rather than restarting blindly.",
+              "watchFor": [
+                "Learner ignores an already completed factorization and restarts from scratch.",
+                "Learner lists divisors one by one without naming what the task asks for."
+              ],
+              "exampleTutorMove": "Before listing anything, tell me what the factorization already gives you for this question.",
+              "exampleLearnerResponse": "I need the number of divisors, so I should use the factorization instead of listing every divisor."
+            }
+          ]
+        },
+        "sourceEventIds": [
+          "session-history-0-STEP-U1-S5A-DIVISOR-COUNT-TRANSFER"
+        ],
+        "blockedByPrerequisites": [
+          {
+            "prerequisiteSkillId": "U1-S3",
+            "relationship": "HELPFUL",
+            "approvalStatus": "draft-from-docs",
+            "sourceDocs": [
+              "docs/suji-subskills-prime-factorization.md"
+            ],
+            "whyBlocked": "Prerequisite skill U1-S3 is currently needs_review, so progress on U1-S5A should stay conservative."
+          }
+        ],
+        "recommendedNextSkillIds": [
+          "U1-S3",
+          "U1-S5A"
+        ],
+        "recommendedActivitySequence": [
+          {
+            "activityId": "ACT-U1-S3-REWRITE-CLEANLY",
+            "skillId": "U1-S3",
+            "activityType": "dialogue-flow",
+            "title": "Rewrite the Final Factorization Cleanly",
+            "goal": "Stabilize the move from split-work to a complete final prime factorization.",
+            "firstTutorQuestion": "Which factors should still remain in the final line?",
+            "operatorFocus": "Push for one clean final line, not more splitting work.",
+            "watchFor": [
+              "Learner drops a repeated factor while rewriting.",
+              "Learner leaves a composite factor in the final line."
+            ],
+            "exampleTutorMove": "Cover the scratch work and ask the learner to rebuild only the final prime-factor line."
+          },
+          {
+            "activityId": "ACT-U1-S5A-DIVISOR-COUNT-TRANSFER",
+            "skillId": "U1-S5A",
+            "activityType": "dialogue-flow",
+            "title": "Reuse Factorization for Divisor Count",
+            "goal": "Stop the learner from restarting divisor counting from scratch.",
+            "firstTutorQuestion": "In this problem, do you need the factorization itself or the number of divisors?",
+            "operatorFocus": "Keep the learner from listing every divisor one by one.",
+            "watchFor": [
+              "Learner abandons the factorization they already built.",
+              "Learner starts listing divisors without explaining what the task is asking for."
+            ],
+            "exampleTutorMove": "Ask what information the completed factorization already gives before allowing any divisor list."
+          }
+        ]
+      }
+    ],
+    "updatedAt": ""
+  }
+}

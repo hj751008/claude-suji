@@ -66,6 +66,148 @@
     }
   },
   {
+    "name": "text-only-s3-response-can-complete-when-both-signals-are-clear",
+    "sessionFile": "app/domain/evidence/session-state.example.json",
+    "evaluationInput": {
+      "learnerResponse": "I kept 2 x 2 x 3 because they are all prime factors and nothing got dropped.",
+      "observedSignals": []
+    },
+    "expectedEvaluation": {
+      "lessonStepId": "STEP-U1-S3-REWRITE-CLEANLY",
+      "decision": "completed",
+      "canAutoAdvance": true
+    },
+    "expectedAppliedState": {
+      "status": "in_progress",
+      "currentLessonStepId": "STEP-U1-S4-VERIFY-PRIME-FIRST",
+      "completedStepIds": [
+        "STEP-U1-S3-REWRITE-CLEANLY"
+      ]
+    }
+  },
+  {
+    "name": "korean-text-only-s2-response-can-complete-when-start-and-evenness-are-clear",
+    "sessionFile": "app/domain/evidence/session-state-u1-s2.example.json",
+    "evaluationInput": {
+      "learnerResponse": "24는 짝수니까 2부터 나눠 보면 돼.",
+      "observedSignals": []
+    },
+    "expectedEvaluation": {
+      "lessonStepId": "STEP-U1-S2-ENTRY-BRIDGE",
+      "decision": "completed",
+      "canAutoAdvance": true
+    },
+    "expectedAppliedState": {
+      "status": "in_progress",
+      "currentLessonStepId": "STEP-U1-S3-REWRITE-CLEANLY",
+      "completedStepIds": [
+        "STEP-U1-S2-ENTRY-BRIDGE"
+      ]
+    }
+  },
+  {
+    "name": "korean-text-only-s3-response-can-complete-when-prime-only-and-no-missing-factor-are-clear",
+    "sessionFile": "app/domain/evidence/session-state.example.json",
+    "evaluationInput": {
+      "learnerResponse": "마지막 줄은 소수만 남겨서 2 x 2 x 3으로 쓰면 되고 빠진 것은 없어.",
+      "observedSignals": []
+    },
+    "expectedEvaluation": {
+      "lessonStepId": "STEP-U1-S3-REWRITE-CLEANLY",
+      "decision": "completed",
+      "canAutoAdvance": true
+    },
+    "expectedAppliedState": {
+      "status": "in_progress",
+      "currentLessonStepId": "STEP-U1-S4-VERIFY-PRIME-FIRST",
+      "completedStepIds": [
+        "STEP-U1-S3-REWRITE-CLEANLY"
+      ]
+    }
+  },
+  {
+    "name": "text-only-s4-response-can-complete-when-rejection-and-selection-are-clear",
+    "sessionFile": "app/domain/evidence/session-state-with-history.example.json",
+    "evaluationInput": {
+      "learnerResponse": "2 x 6 is unfinished because 6 is composite, but 2 x 2 x 3 is the true prime factorization.",
+      "observedSignals": []
+    },
+    "expectedEvaluation": {
+      "lessonStepId": "STEP-U1-S4-VERIFY-PRIME-FIRST",
+      "decision": "completed",
+      "canAutoAdvance": true
+    },
+    "expectedAppliedState": {
+      "status": "completed",
+      "currentLessonStepId": null,
+      "completedStepIds": [
+        "STEP-U1-S3-REWRITE-CLEANLY",
+        "STEP-U1-S4-VERIFY-PRIME-FIRST"
+      ]
+    }
+  },
+  {
+    "name": "korean-text-only-s4-response-can-complete-when-composite-rejection-and-correct-answer-are-clear",
+    "sessionFile": "app/domain/evidence/session-state-with-history.example.json",
+    "evaluationInput": {
+      "learnerResponse": "2 x 6은 6이 소수가 아니라서 끝난 답이 아니고 2 x 2 x 3이 맞는 답이야.",
+      "observedSignals": []
+    },
+    "expectedEvaluation": {
+      "lessonStepId": "STEP-U1-S4-VERIFY-PRIME-FIRST",
+      "decision": "completed",
+      "canAutoAdvance": true
+    },
+    "expectedAppliedState": {
+      "status": "completed",
+      "currentLessonStepId": null,
+      "completedStepIds": [
+        "STEP-U1-S3-REWRITE-CLEANLY",
+        "STEP-U1-S4-VERIFY-PRIME-FIRST"
+      ]
+    }
+  },
+  {
+    "name": "korean-text-only-s5a-response-can-complete-when-factorization-reuse-is-clear",
+    "sessionFile": "app/domain/evidence/session-state-u1-s5a.example.json",
+    "evaluationInput": {
+      "learnerResponse": "약수의 개수를 보는 문제니까 약수를 일일이 쓰지 말고 소인수분해 결과부터 써야 해.",
+      "observedSignals": []
+    },
+    "expectedEvaluation": {
+      "lessonStepId": "STEP-U1-S5A-DIVISOR-COUNT-TRANSFER",
+      "decision": "completed",
+      "canAutoAdvance": true
+    },
+    "expectedAppliedState": {
+      "status": "completed",
+      "currentLessonStepId": null,
+      "completedStepIds": [
+        "STEP-U1-S5A-DIVISOR-COUNT-TRANSFER"
+      ]
+    }
+  },
+  {
+    "name": "korean-text-only-s5b-response-can-complete-when-missing-factor-and-even-count-goal-are-clear",
+    "sessionFile": "app/domain/evidence/session-state-u1-s5b.example.json",
+    "evaluationInput": {
+      "learnerResponse": "3을 하나 더 곱하면 돼. 제곱수는 각 소수의 개수가 짝수가 되어야 하니까.",
+      "observedSignals": []
+    },
+    "expectedEvaluation": {
+      "lessonStepId": "STEP-U1-S5B-SQUARE-NUMBER",
+      "decision": "completed",
+      "canAutoAdvance": true
+    },
+    "expectedAppliedState": {
+      "status": "completed",
+      "currentLessonStepId": null,
+      "completedStepIds": [
+        "STEP-U1-S5B-SQUARE-NUMBER"
+      ]
+    }
+  },
+  {
     "name": "s5c-needs-structure-and-delay-signals",
     "sessionFile": "app/domain/evidence/session-state-u1-s5c.example.json",
     "observationFormInput": {
@@ -89,6 +231,24 @@
     }
   },
   {
+    "name": "korean-text-only-s5c-response-stays-uncertain-when-learner-calculates-first",
+    "sessionFile": "app/domain/evidence/session-state-u1-s5c.example.json",
+    "evaluationInput": {
+      "learnerResponse": "일단 두 수를 곱해 보고 시작할래.",
+      "observedSignals": []
+    },
+    "expectedEvaluation": {
+      "lessonStepId": "STEP-U1-S5C-GCD-LCM-SORT",
+      "decision": "uncertain",
+      "canAutoAdvance": false
+    },
+    "expectedAppliedState": {
+      "status": "in_progress",
+      "currentLessonStepId": "STEP-U1-S5C-GCD-LCM-SORT",
+      "completedStepIds": []
+    }
+  },
+  {
     "name": "s5d-needs-part-and-reason-signals",
     "sessionFile": "app/domain/evidence/session-state-u1-s5d.example.json",
     "observationFormInput": {
@@ -109,6 +269,24 @@
       "completedStepIds": [
         "STEP-U1-S5D-RELEVANT-PART-EXPLAIN"
       ]
+    }
+  },
+  {
+    "name": "korean-text-only-s5d-response-stays-uncertain-when-learner-does-not-pick-a-part",
+    "sessionFile": "app/domain/evidence/session-state-u1-s5d.example.json",
+    "evaluationInput": {
+      "learnerResponse": "전체를 그냥 다 보면 될 것 같아.",
+      "observedSignals": []
+    },
+    "expectedEvaluation": {
+      "lessonStepId": "STEP-U1-S5D-RELEVANT-PART-EXPLAIN",
+      "decision": "uncertain",
+      "canAutoAdvance": false
+    },
+    "expectedAppliedState": {
+      "status": "in_progress",
+      "currentLessonStepId": "STEP-U1-S5D-RELEVANT-PART-EXPLAIN",
+      "completedStepIds": []
     }
   }
 ]

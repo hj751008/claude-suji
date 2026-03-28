@@ -22,5 +22,122 @@
       ],
       "learnerResponsePrompt": "Write how the learner compared 2 x 6 and 2 x 2 x 3."
     }
+  },
+  {
+    "name": "prepare observation form immediately after planning a new session",
+    "learnerFile": "app/domain/evidence/learner-record-with-summary.example.json",
+    "startBeforePrepare": true,
+    "expected": {
+      "lessonStepId": "STEP-U1-S2-ENTRY-BRIDGE",
+      "fieldIds": [
+        "starts_with_two",
+        "mentions_evenness"
+      ],
+      "learnerResponsePrompt": "Write the learner's first move for entering the factorization of 24."
+    }
+  },
+  {
+    "name": "prepare observation form from active s5a transfer session",
+    "learnerFile": "app/domain/evidence/learner-record-with-active-session-u1-s5a.example.json",
+    "expected": {
+      "lessonStepId": "STEP-U1-S5A-DIVISOR-COUNT-TRANSFER",
+      "fieldIds": [
+        "starts_from_factorization",
+        "avoids_blind_divisor_listing"
+      ],
+      "learnerResponsePrompt": "Write how the learner started the divisor-count transfer task."
+    }
+  },
+  {
+    "name": "prepare observation form after completed s5a transcript handoff",
+    "transcriptFile": "app/domain/evidence/unit1-tutor-transcripts.example.json",
+    "transcriptId": "u1-s5a-divisor-count-ko-text-only-active-session",
+    "startBeforePrepare": true,
+    "expected": {
+      "lessonStepId": "STEP-U1-S3-REWRITE-CLEANLY",
+      "fieldIds": [
+        "uses_only_prime_factors",
+        "keeps_all_factors"
+      ],
+      "learnerResponsePrompt": "Write the learner's clean final prime-factor line."
+    }
+  },
+  {
+    "name": "prepare observation form from active s5b transfer session",
+    "learnerFile": "app/domain/evidence/learner-record-with-active-session-u1-s5b.example.json",
+    "expected": {
+      "lessonStepId": "STEP-U1-S5B-SQUARE-NUMBER",
+      "fieldIds": [
+        "identifies_missing_factor",
+        "explains_even_exponent_goal"
+      ],
+      "learnerResponsePrompt": "Write how the learner found the missing factor for the square-number task."
+    }
+  },
+  {
+    "name": "prepare observation form after completed s5b transcript handoff",
+    "transcriptFile": "app/domain/evidence/unit1-tutor-transcripts.example.json",
+    "transcriptId": "u1-s5b-square-number-ko-text-only-active-session",
+    "startBeforePrepare": true,
+    "expected": {
+      "lessonStepId": "STEP-U1-S3-REWRITE-CLEANLY",
+      "fieldIds": [
+        "uses_only_prime_factors",
+        "keeps_all_factors"
+      ],
+      "learnerResponsePrompt": "Write the learner's clean final prime-factor line."
+    }
+  },
+  {
+    "name": "prepare observation form from active s5c transfer session",
+    "learnerFile": "app/domain/evidence/learner-record-with-active-session-u1-s5c.example.json",
+    "expected": {
+      "lessonStepId": "STEP-U1-S5C-GCD-LCM-SORT",
+      "fieldIds": [
+        "names_shared_vs_covering_structure",
+        "delays_calculation_until_structure_named"
+      ],
+      "learnerResponsePrompt": "Write how the learner described the difference between shared structure and covering structure."
+    }
+  },
+  {
+    "name": "prepare observation form from active s5d transfer session",
+    "learnerFile": "app/domain/evidence/learner-record-with-active-session-u1-s5d.example.json",
+    "expected": {
+      "lessonStepId": "STEP-U1-S5D-RELEVANT-PART-EXPLAIN",
+      "fieldIds": [
+        "points_to_relevant_part",
+        "explains_why_that_part_matters"
+      ],
+      "learnerResponsePrompt": "Write which part of the factorization the learner said matters first."
+    }
+  },
+  {
+    "name": "prepare observation form after completed s5d transcript handoff",
+    "transcriptFile": "app/domain/evidence/unit1-tutor-transcripts.example.json",
+    "transcriptId": "u1-s5d-relevant-part-ko-text-only-active-session",
+    "startBeforePrepare": true,
+    "expected": {
+      "lessonStepId": "STEP-U1-S3-REWRITE-CLEANLY",
+      "fieldIds": [
+        "uses_only_prime_factors",
+        "keeps_all_factors"
+      ],
+      "learnerResponsePrompt": "Write the learner's clean final prime-factor line."
+    }
+  },
+  {
+    "name": "prepare observation form after completed s5c transcript handoff",
+    "transcriptFile": "app/domain/evidence/unit1-tutor-transcripts.example.json",
+    "transcriptId": "u1-s5c-gcd-lcm-ko-text-only-active-session",
+    "startBeforePrepare": true,
+    "expected": {
+      "lessonStepId": "STEP-U1-S3-REWRITE-CLEANLY",
+      "fieldIds": [
+        "uses_only_prime_factors",
+        "keeps_all_factors"
+      ],
+      "learnerResponsePrompt": "Write the learner's clean final prime-factor line."
+    }
   }
 ]

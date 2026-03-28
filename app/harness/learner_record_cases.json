@@ -10,11 +10,41 @@
         "U1-S3"
       ],
       "latestStatuses": {
-        "U1-S3": "evidence_positive_but_unapproved"
+        "U1-S3": "ready_for_next_step"
       },
       "recommendationSkillIds": [
         "U1-S3"
       ]
+    }
+  },
+  {
+    "name": "remerge-same-session-keeps-single-snapshot-and-evidence",
+    "learnerFile": "app/domain/evidence/learner-record.example.json",
+    "sessionFiles": [
+      "app/domain/evidence/session-state-with-history.example.json",
+      "app/domain/evidence/session-state-with-history.example.json"
+    ],
+    "expected": {
+      "sessionCount": 1,
+      "sessionTargetSkillIds": [
+        "U1-S4"
+      ],
+      "evidenceEventCount": 1,
+      "latestSkillIds": [
+        "U1-S3"
+      ],
+      "latestStatuses": {
+        "U1-S3": "ready_for_next_step"
+      },
+      "recommendationSkillIds": [
+        "U1-S3"
+      ],
+      "recommendationNextSkillIds": {
+        "U1-S3": [
+          "U1-S2",
+          "U1-S3"
+        ]
+      }
     }
   }
 ]

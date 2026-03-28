@@ -22,5 +22,81 @@
       "nextLessonStepId": "STEP-U1-S3-REWRITE-CLEANLY",
       "remainingStepCount": 2
     }
+  },
+  {
+    "name": "start learning session after completed s5a transcript keeps session target but opens blocker step",
+    "transcriptFile": "app/domain/evidence/unit1-tutor-transcripts.example.json",
+    "transcriptId": "u1-s5a-divisor-count-ko-text-only-active-session",
+    "expected": {
+      "action": "plan_new_session",
+      "targetSkillId": "U1-S5A",
+      "currentStepSkillId": "U1-S3",
+      "currentLessonStepId": "STEP-U1-S3-REWRITE-CLEANLY",
+      "firstTutorQuestion": "Which factors should still remain in the final line?",
+      "nextLessonStepId": "STEP-U1-S5A-DIVISOR-COUNT-TRANSFER",
+      "remainingStepCount": 2,
+      "plannedFromSkillId": "U1-S5A",
+      "recommendedNextSkillIds": [
+        "U1-S3",
+        "U1-S5A"
+      ]
+    }
+  },
+  {
+    "name": "start learning session after completed s5c transcript keeps session target but opens blocker step",
+    "transcriptFile": "app/domain/evidence/unit1-tutor-transcripts.example.json",
+    "transcriptId": "u1-s5c-gcd-lcm-ko-text-only-active-session",
+    "expected": {
+      "action": "plan_new_session",
+      "targetSkillId": "U1-S5C",
+      "currentStepSkillId": "U1-S3",
+      "currentLessonStepId": "STEP-U1-S3-REWRITE-CLEANLY",
+      "firstTutorQuestion": "Which factors should still remain in the final line?",
+      "nextLessonStepId": "STEP-U1-S5C-GCD-LCM-SORT",
+      "remainingStepCount": 2,
+      "plannedFromSkillId": "U1-S5C",
+      "recommendedNextSkillIds": [
+        "U1-S3",
+        "U1-S5C"
+      ]
+    }
+  },
+  {
+    "name": "start learning session after completed s5b transcript keeps session target but opens blocker step",
+    "transcriptFile": "app/domain/evidence/unit1-tutor-transcripts.example.json",
+    "transcriptId": "u1-s5b-square-number-ko-text-only-active-session",
+    "expected": {
+      "action": "plan_new_session",
+      "targetSkillId": "U1-S5B",
+      "currentStepSkillId": "U1-S3",
+      "currentLessonStepId": "STEP-U1-S3-REWRITE-CLEANLY",
+      "firstTutorQuestion": "Which factors should still remain in the final line?",
+      "nextLessonStepId": "STEP-U1-S5B-SQUARE-NUMBER",
+      "remainingStepCount": 2,
+      "plannedFromSkillId": "U1-S5B",
+      "recommendedNextSkillIds": [
+        "U1-S3",
+        "U1-S5B"
+      ]
+    }
+  },
+  {
+    "name": "start learning session after completed s5d transcript keeps session target but opens blocker step",
+    "transcriptFile": "app/domain/evidence/unit1-tutor-transcripts.example.json",
+    "transcriptId": "u1-s5d-relevant-part-ko-text-only-active-session",
+    "expected": {
+      "action": "plan_new_session",
+      "targetSkillId": "U1-S5D",
+      "currentStepSkillId": "U1-S3",
+      "currentLessonStepId": "STEP-U1-S3-REWRITE-CLEANLY",
+      "firstTutorQuestion": "Which factors should still remain in the final line?",
+      "nextLessonStepId": "STEP-U1-S5D-RELEVANT-PART-EXPLAIN",
+      "remainingStepCount": 2,
+      "plannedFromSkillId": "U1-S5D",
+      "recommendedNextSkillIds": [
+        "U1-S3",
+        "U1-S5D"
+      ]
+    }
   }
 ]
