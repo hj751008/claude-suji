@@ -9,7 +9,7 @@ Use this skill to validate behavior in `sujimathAI` before calling work done.
 
 ## Check
 - Start with the smallest reproducible CLI or harness command that exercises the changed path.
-- Prefer existing checks first: `python app/cli.py validate-content` and `python app/cli.py run-harness`.
+- Prefer existing checks first: `python app/cli.py validate-content` and `python -m app.harness.run_harness`.
 - When session or learner-record behavior changed, run the exact CLI flow that a user or tool would execute.
 - Report what was run, what passed, and what was not verified.
 - If a change affects math or progression behavior, note whether the result is still provisional or document-backed.

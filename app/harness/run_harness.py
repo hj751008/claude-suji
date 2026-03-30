@@ -257,6 +257,11 @@ def _assert_learner_summary_case(case: dict, content) -> list[str]:
             failures.append(
                 f"{case['name']}: expected {record['skillId']} status {expected_status}, got {record['status']}."
             )
+        expected_event_count = expected.get("eventCounts", {}).get(record["skillId"])
+        if expected_event_count is not None and record.get("eventCount") != expected_event_count:
+            failures.append(
+                f"{case['name']}: expected {record['skillId']} event count {expected_event_count}, got {record.get('eventCount')}."
+            )
 
     actual_required_blocked = [
         record["skillId"] for record in result.skillSummaries if record.get("hasRequiredPrerequisiteBlocker")

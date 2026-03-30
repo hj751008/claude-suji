@@ -257,5 +257,377 @@
         ]
       }
     }
+  },
+  {
+    "name": "ranking-extension-tie-urgency-needs-review-before-ready-with-same-helpful-blocker",
+    "events": [
+      {
+        "eventId": "summary-case-301",
+        "learnerId": "summary-learner-4",
+        "kind": "session_history_observation",
+        "skillId": "U1-S5A",
+        "result": "correct",
+        "errorPatternIds": [],
+        "observations": [
+          "Learner finds the missing factor for a square-number task and explains the even-count idea."
+        ],
+        "confidenceSignal": "confident"
+      },
+      {
+        "eventId": "summary-case-302",
+        "learnerId": "summary-learner-4",
+        "kind": "session_history_observation",
+        "skillId": "U1-S5B",
+        "result": "correct",
+        "errorPatternIds": [
+          "u1-s5b-random-square-factor"
+        ],
+        "observations": [
+          "Learner lands on the answer but still guesses the multiplier before checking odd prime counts."
+        ],
+        "confidenceSignal": "hesitant"
+      }
+    ],
+    "expected": {
+      "skillIds": [
+        "U1-S5B",
+        "U1-S5A"
+      ],
+      "statuses": {
+        "U1-S5A": "ready_for_next_step",
+        "U1-S5B": "needs_review"
+      },
+      "eventCounts": {
+        "U1-S5A": 1,
+        "U1-S5B": 1
+      },
+      "requiredBlockedSkills": [],
+      "helpfulBlockedSkills": [
+        "U1-S5B",
+        "U1-S5A"
+      ],
+      "recommendationSkillIds": [
+        "U1-S5B",
+        "U1-S5A"
+      ],
+      "recommendedNextSkillIds": {
+        "U1-S5A": [
+          "U1-S3",
+          "U1-S5A"
+        ],
+        "U1-S5B": [
+          "U1-S3",
+          "U1-S5B"
+        ]
+      },
+      "recommendedActivitySequenceIds": {
+        "U1-S5A": [
+          "ACT-U1-S3-REWRITE-CLEANLY",
+          "ACT-U1-S5A-DIVISOR-COUNT-TRANSFER"
+        ],
+        "U1-S5B": [
+          "ACT-U1-S3-REWRITE-CLEANLY",
+          "ACT-U1-S5B-SQUARE-NUMBER"
+        ]
+      },
+      "sessionLessonStepIds": {
+        "U1-S5A": [
+          "STEP-U1-S3-REWRITE-CLEANLY",
+          "STEP-U1-S5A-DIVISOR-COUNT-TRANSFER"
+        ],
+        "U1-S5B": [
+          "STEP-U1-S3-REWRITE-CLEANLY",
+          "STEP-U1-S5B-SQUARE-NUMBER"
+        ]
+      }
+    }
+  },
+  {
+    "name": "ranking-extension-tie-repeated-developing-before-single-developing-with-same-helpful-blocker",
+    "events": [
+      {
+        "eventId": "summary-case-401",
+        "learnerId": "summary-learner-5",
+        "kind": "application_observation",
+        "skillId": "U1-S5A",
+        "result": "incorrect",
+        "errorPatternIds": [
+          "u1-s5a-divisor-count-restart"
+        ],
+        "observations": [
+          "Learner restarts divisor counting instead of using the factorization."
+        ],
+        "confidenceSignal": "hesitant"
+      },
+      {
+        "eventId": "summary-case-402",
+        "learnerId": "summary-learner-5",
+        "kind": "application_observation",
+        "skillId": "U1-S5B",
+        "result": "incorrect",
+        "errorPatternIds": [
+          "u1-s5b-random-square-factor"
+        ],
+        "observations": [
+          "Learner guesses a multiplier before checking which prime count is odd."
+        ],
+        "confidenceSignal": "hesitant"
+      },
+      {
+        "eventId": "summary-case-403",
+        "learnerId": "summary-learner-5",
+        "kind": "application_observation",
+        "skillId": "U1-S5B",
+        "result": "partial",
+        "errorPatternIds": [
+          "u1-s5b-random-square-factor"
+        ],
+        "observations": [
+          "Learner later identifies the odd count but still proposes the missing factor by trial and error."
+        ],
+        "confidenceSignal": "hesitant"
+      }
+    ],
+    "expected": {
+      "skillIds": [
+        "U1-S5A",
+        "U1-S5B"
+      ],
+      "statuses": {
+        "U1-S5A": "developing",
+        "U1-S5B": "developing"
+      },
+      "eventCounts": {
+        "U1-S5A": 1,
+        "U1-S5B": 2
+      },
+      "requiredBlockedSkills": [],
+      "helpfulBlockedSkills": [
+        "U1-S5A",
+        "U1-S5B"
+      ],
+      "recommendationSkillIds": [
+        "U1-S5B",
+        "U1-S5A"
+      ],
+      "recommendedNextSkillIds": {
+        "U1-S5A": [
+          "U1-S3",
+          "U1-S5A"
+        ],
+        "U1-S5B": [
+          "U1-S3",
+          "U1-S5B"
+        ]
+      },
+      "recommendedActivitySequenceIds": {
+        "U1-S5A": [
+          "ACT-U1-S3-REWRITE-CLEANLY",
+          "ACT-U1-S5A-DIVISOR-COUNT-TRANSFER"
+        ],
+        "U1-S5B": [
+          "ACT-U1-S3-REWRITE-CLEANLY",
+          "ACT-U1-S5B-SQUARE-NUMBER"
+        ]
+      },
+      "sessionLessonStepIds": {
+        "U1-S5A": [
+          "STEP-U1-S3-REWRITE-CLEANLY",
+          "STEP-U1-S5A-DIVISOR-COUNT-TRANSFER"
+        ],
+        "U1-S5B": [
+          "STEP-U1-S3-REWRITE-CLEANLY",
+          "STEP-U1-S5B-SQUARE-NUMBER"
+        ]
+      }
+    }
+  },
+  {
+    "name": "ranking-extension-tie-lower-positive-event-count-before-higher-positive-count-with-same-helpful-blocker",
+    "events": [
+      {
+        "eventId": "summary-case-501",
+        "learnerId": "summary-learner-6",
+        "kind": "session_history_observation",
+        "skillId": "U1-S5A",
+        "result": "correct",
+        "errorPatternIds": [],
+        "observations": [
+          "Learner uses the factorization structure instead of listing divisors."
+        ],
+        "confidenceSignal": "confident"
+      },
+      {
+        "eventId": "summary-case-502",
+        "learnerId": "summary-learner-6",
+        "kind": "session_history_observation",
+        "skillId": "U1-S5A",
+        "result": "correct",
+        "errorPatternIds": [],
+        "observations": [
+          "Learner repeats the same divisor-count strategy correctly."
+        ],
+        "confidenceSignal": "confident"
+      },
+      {
+        "eventId": "summary-case-503",
+        "learnerId": "summary-learner-6",
+        "kind": "session_history_observation",
+        "skillId": "U1-S5A",
+        "result": "correct",
+        "errorPatternIds": [],
+        "observations": [
+          "Learner again explains why the factorization is more useful than enumerating divisors."
+        ],
+        "confidenceSignal": "confident"
+      },
+      {
+        "eventId": "summary-case-504",
+        "learnerId": "summary-learner-6",
+        "kind": "session_history_observation",
+        "skillId": "U1-S5B",
+        "result": "correct",
+        "errorPatternIds": [],
+        "observations": [
+          "Learner identifies the odd prime count and supplies the missing factor."
+        ],
+        "confidenceSignal": "confident"
+      }
+    ],
+    "expected": {
+      "skillIds": [
+        "U1-S5A",
+        "U1-S5B"
+      ],
+      "statuses": {
+        "U1-S5A": "ready_for_next_step",
+        "U1-S5B": "ready_for_next_step"
+      },
+      "eventCounts": {
+        "U1-S5A": 3,
+        "U1-S5B": 1
+      },
+      "requiredBlockedSkills": [],
+      "helpfulBlockedSkills": [
+        "U1-S5A",
+        "U1-S5B"
+      ],
+      "recommendationSkillIds": [
+        "U1-S5B",
+        "U1-S5A"
+      ],
+      "recommendedNextSkillIds": {
+        "U1-S5A": [
+          "U1-S3",
+          "U1-S5A"
+        ],
+        "U1-S5B": [
+          "U1-S3",
+          "U1-S5B"
+        ]
+      },
+      "recommendedActivitySequenceIds": {
+        "U1-S5A": [
+          "ACT-U1-S3-REWRITE-CLEANLY",
+          "ACT-U1-S5A-DIVISOR-COUNT-TRANSFER"
+        ],
+        "U1-S5B": [
+          "ACT-U1-S3-REWRITE-CLEANLY",
+          "ACT-U1-S5B-SQUARE-NUMBER"
+        ]
+      },
+      "sessionLessonStepIds": {
+        "U1-S5A": [
+          "STEP-U1-S3-REWRITE-CLEANLY",
+          "STEP-U1-S5A-DIVISOR-COUNT-TRANSFER"
+        ],
+        "U1-S5B": [
+          "STEP-U1-S3-REWRITE-CLEANLY",
+          "STEP-U1-S5B-SQUARE-NUMBER"
+        ]
+      }
+    }
+  },
+  {
+    "name": "ranking-extension-tie-full-tie-falls-back-to-stable-skill-id",
+    "events": [
+      {
+        "eventId": "summary-case-601",
+        "learnerId": "summary-learner-7",
+        "kind": "session_history_observation",
+        "skillId": "U1-S5A",
+        "result": "correct",
+        "errorPatternIds": [],
+        "observations": [
+          "Learner explains the divisor-count transfer step using the factorization."
+        ],
+        "confidenceSignal": "confident"
+      },
+      {
+        "eventId": "summary-case-602",
+        "learnerId": "summary-learner-7",
+        "kind": "session_history_observation",
+        "skillId": "U1-S5B",
+        "result": "correct",
+        "errorPatternIds": [],
+        "observations": [
+          "Learner explains the missing-factor-for-square step using odd and even prime counts."
+        ],
+        "confidenceSignal": "confident"
+      }
+    ],
+    "expected": {
+      "skillIds": [
+        "U1-S5A",
+        "U1-S5B"
+      ],
+      "statuses": {
+        "U1-S5A": "ready_for_next_step",
+        "U1-S5B": "ready_for_next_step"
+      },
+      "eventCounts": {
+        "U1-S5A": 1,
+        "U1-S5B": 1
+      },
+      "requiredBlockedSkills": [],
+      "helpfulBlockedSkills": [
+        "U1-S5A",
+        "U1-S5B"
+      ],
+      "recommendationSkillIds": [
+        "U1-S5A",
+        "U1-S5B"
+      ],
+      "recommendedNextSkillIds": {
+        "U1-S5A": [
+          "U1-S3",
+          "U1-S5A"
+        ],
+        "U1-S5B": [
+          "U1-S3",
+          "U1-S5B"
+        ]
+      },
+      "recommendedActivitySequenceIds": {
+        "U1-S5A": [
+          "ACT-U1-S3-REWRITE-CLEANLY",
+          "ACT-U1-S5A-DIVISOR-COUNT-TRANSFER"
+        ],
+        "U1-S5B": [
+          "ACT-U1-S3-REWRITE-CLEANLY",
+          "ACT-U1-S5B-SQUARE-NUMBER"
+        ]
+      },
+      "sessionLessonStepIds": {
+        "U1-S5A": [
+          "STEP-U1-S3-REWRITE-CLEANLY",
+          "STEP-U1-S5A-DIVISOR-COUNT-TRANSFER"
+        ],
+        "U1-S5B": [
+          "STEP-U1-S3-REWRITE-CLEANLY",
+          "STEP-U1-S5B-SQUARE-NUMBER"
+        ]
+      }
+    }
   }
 ]

@@ -308,6 +308,21 @@ def _prerequisite_priority(relationship: str) -> int:
     return priorities.get(relationship, 99)
 
 
+def _recommendation_blocker_class_priority(blockers: list[dict]) -> int:
+    has_required = any(blocker["relationship"] == "REQUIRED" for blocker in blockers)
+    if has_required:
+        return 0
+    if blockers:
+        return 1
+    return 2
+
+
+def _recommendation_event_count_priority(status: str, event_count: int) -> int:
+    if status == "ready_for_next_step":
+        return event_count
+    return -event_count
+
+
 def _build_prerequisite_blockers(
     skill_summaries_by_skill: dict[str, dict],
     prerequisites_by_target: dict[str, list[dict]],
@@ -406,12 +421,21 @@ def _append_prerequisite_reason_codes(
         )
 
 
-def _sort_recommendations(recommendations: list[dict]) -> list[dict]:
+def _sort_recommendations(
+    recommendations: list[dict],
+    skill_summaries_by_skill: dict[str, dict],
+) -> list[dict]:
     def sort_key(record: dict):
         blockers = record.get("blockedByPrerequisites", [])
-        has_required = any(blocker["relationship"] == "REQUIRED" for blocker in blockers)
-        has_any = bool(blockers)
-        return (0 if has_required else 1 if has_any else 2, record["targetSkillId"])
+        summary = skill_summaries_by_skill.get(record["targetSkillId"], {})
+        status = summary.get("status", "")
+        event_count = summary.get("eventCount", 0)
+        return (
+            _recommendation_blocker_class_priority(blockers),
+            _status_priority(status),
+            _recommendation_event_count_priority(status, event_count),
+            record["targetSkillId"],
+        )
 
     return sorted(recommendations, key=sort_key)
 
@@ -518,7 +542,7 @@ def summarize_learner(content: UnitContent, events: list[dict]) -> LearnerSummar
             record["skillId"],
         ),
     )
-    recommendations = _sort_recommendations(list(recommendations_by_skill.values()))
+    recommendations = _sort_recommendations(list(recommendations_by_skill.values()), summaries_by_skill)
 
     return LearnerSummaryResult(
         learnerId=learner_id,

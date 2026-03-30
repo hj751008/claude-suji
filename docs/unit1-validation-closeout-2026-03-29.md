@@ -14,7 +14,7 @@
 
 - `python app/cli.py validate-content` has passed after the Unit 1 transcript,
   rubric, and handoff changes.
-- `python app/cli.py run-harness` has passed after the same changes.
+- `python -m app.harness.run_harness` has passed after the same changes.
 - The harness currently covers:
   - evaluator cases
   - learning-turn cases
