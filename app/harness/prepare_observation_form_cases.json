@@ -139,5 +139,17 @@
       ],
       "learnerResponsePrompt": "Write the learner's clean final prime-factor line."
     }
+  },
+  {
+    "name": "prepare observation form from active unit2 session",
+    "learnerFile": "app/domain/evidence/learner-record-with-active-session-unit2.example.json",
+    "expected": {
+      "lessonStepId": "STEP-U2-S1-CATEGORY-SORT",
+      "fieldIds": [
+        "classifies_zero_separately",
+        "states_integer_subset_of_rational"
+      ],
+      "learnerResponsePrompt": "Write how the learner classified zero, integers, and rational numbers."
+    }
   }
 ]

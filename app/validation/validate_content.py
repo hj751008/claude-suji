@@ -6,7 +6,17 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[2]
-CONTENT_DIR = ROOT / "app" / "content" / "unit1-prime-factorization"
+CONTENT_ROOT = ROOT / "app" / "content"
+REQUIRED_CONTENT_FILES = (
+    "skills.json",
+    "prerequisites.json",
+    "recommendation-examples.json",
+    "error-patterns.json",
+    "activity-recommendations.json",
+    "lesson-steps.json",
+    "evaluator-rubrics.json",
+    "observation-form-mappings.json",
+)
 
 
 def load_json(path: Path):
@@ -16,6 +26,18 @@ def load_json(path: Path):
 
 def add_error(errors: list[str], message: str) -> None:
     errors.append(message)
+
+
+def discover_content_dirs() -> list[Path]:
+    content_dirs: list[Path] = []
+    for path in sorted(CONTENT_ROOT.iterdir()):
+        if not path.is_dir():
+            continue
+        if path.name == "templates":
+            continue
+        if all((path / filename).exists() for filename in REQUIRED_CONTENT_FILES):
+            content_dirs.append(path)
+    return content_dirs
 
 
 def require_source_docs(record: dict, label: str, errors: list[str]) -> None:
@@ -244,26 +266,56 @@ def validate_observation_form_mappings(mappings: list[dict], lesson_step_ids: se
 
 def main() -> int:
     errors: list[str] = []
+    content_dirs = discover_content_dirs()
+    if not content_dirs:
+        add_error(errors, f"No content packs with the required schema were found under {CONTENT_ROOT}.")
 
-    skills = load_json(CONTENT_DIR / "skills.json")
-    prerequisites = load_json(CONTENT_DIR / "prerequisites.json")
-    recommendations = load_json(CONTENT_DIR / "recommendation-examples.json")
-    error_patterns = load_json(CONTENT_DIR / "error-patterns.json")
-    activities = load_json(CONTENT_DIR / "activity-recommendations.json")
-    lesson_steps = load_json(CONTENT_DIR / "lesson-steps.json")
-    evaluator_rubrics = load_json(CONTENT_DIR / "evaluator-rubrics.json")
-    observation_form_mappings = load_json(CONTENT_DIR / "observation-form-mappings.json")
+    total_counts = {
+        "skills": 0,
+        "prerequisites": 0,
+        "recommendations": 0,
+        "error_patterns": 0,
+        "activities": 0,
+        "lesson_steps": 0,
+        "evaluator_rubrics": 0,
+        "observation_form_mappings": 0,
+    }
 
-    skill_ids = validate_skills(skills, errors)
-    validate_prerequisites(prerequisites, skill_ids, errors)
-    validate_recommendations(recommendations, skill_ids, errors)
-    validate_error_patterns(error_patterns, skill_ids, errors)
-    validate_activity_recommendations(activities, skill_ids, errors)
-    activity_ids = {record["activityId"] for record in activities if isinstance(record.get("activityId"), str)}
-    validate_lesson_steps(lesson_steps, activity_ids, errors)
-    lesson_step_ids = {record["lessonStepId"] for record in lesson_steps if isinstance(record.get("lessonStepId"), str)}
-    validate_evaluator_rubrics(evaluator_rubrics, lesson_step_ids, errors)
-    validate_observation_form_mappings(observation_form_mappings, lesson_step_ids, errors)
+    for content_dir in content_dirs:
+        pack_errors: list[str] = []
+        pack_label = f"[{content_dir.name}]"
+
+        skills = load_json(content_dir / "skills.json")
+        prerequisites = load_json(content_dir / "prerequisites.json")
+        recommendations = load_json(content_dir / "recommendation-examples.json")
+        error_patterns = load_json(content_dir / "error-patterns.json")
+        activities = load_json(content_dir / "activity-recommendations.json")
+        lesson_steps = load_json(content_dir / "lesson-steps.json")
+        evaluator_rubrics = load_json(content_dir / "evaluator-rubrics.json")
+        observation_form_mappings = load_json(content_dir / "observation-form-mappings.json")
+
+        skill_ids = validate_skills(skills, pack_errors)
+        validate_prerequisites(prerequisites, skill_ids, pack_errors)
+        validate_recommendations(recommendations, skill_ids, pack_errors)
+        validate_error_patterns(error_patterns, skill_ids, pack_errors)
+        validate_activity_recommendations(activities, skill_ids, pack_errors)
+        activity_ids = {record["activityId"] for record in activities if isinstance(record.get("activityId"), str)}
+        validate_lesson_steps(lesson_steps, activity_ids, pack_errors)
+        lesson_step_ids = {record["lessonStepId"] for record in lesson_steps if isinstance(record.get("lessonStepId"), str)}
+        validate_evaluator_rubrics(evaluator_rubrics, lesson_step_ids, pack_errors)
+        validate_observation_form_mappings(observation_form_mappings, lesson_step_ids, pack_errors)
+
+        total_counts["skills"] += len(skills)
+        total_counts["prerequisites"] += len(prerequisites)
+        total_counts["recommendations"] += len(recommendations)
+        total_counts["error_patterns"] += len(error_patterns)
+        total_counts["activities"] += len(activities)
+        total_counts["lesson_steps"] += len(lesson_steps)
+        total_counts["evaluator_rubrics"] += len(evaluator_rubrics)
+        total_counts["observation_form_mappings"] += len(observation_form_mappings)
+
+        for message in pack_errors:
+            add_error(errors, f"{pack_label} {message}")
 
     if errors:
         print("Validation failed:")
@@ -272,14 +324,15 @@ def main() -> int:
         return 1
 
     print("Validation passed.")
-    print(f"Skills: {len(skills)}")
-    print(f"Prerequisite links: {len(prerequisites)}")
-    print(f"Recommendation examples: {len(recommendations)}")
-    print(f"Error patterns: {len(error_patterns)}")
-    print(f"Activity recommendations: {len(activities)}")
-    print(f"Lesson steps: {len(lesson_steps)}")
-    print(f"Evaluator rubrics: {len(evaluator_rubrics)}")
-    print(f"Observation form mappings: {len(observation_form_mappings)}")
+    print(f"Content packs: {len(content_dirs)}")
+    print(f"Skills: {total_counts['skills']}")
+    print(f"Prerequisite links: {total_counts['prerequisites']}")
+    print(f"Recommendation examples: {total_counts['recommendations']}")
+    print(f"Error patterns: {total_counts['error_patterns']}")
+    print(f"Activity recommendations: {total_counts['activities']}")
+    print(f"Lesson steps: {total_counts['lesson_steps']}")
+    print(f"Evaluator rubrics: {total_counts['evaluator_rubrics']}")
+    print(f"Observation form mappings: {total_counts['observation_form_mappings']}")
     return 0
 
 

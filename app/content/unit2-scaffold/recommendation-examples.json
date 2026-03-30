@@ -1,0 +1,57 @@
+[
+  {
+    "when": "Learner mixes up negative integers, zero, and rational numbers during classification items.",
+    "recommend": "U2-S1",
+    "confidence": "limited",
+    "needsReview": true,
+    "operatorNote": "Keep the discussion on category definitions instead of memorized labels.",
+    "sourceDocs": [
+      "docs/unit2-subskills-integers-rational-2026-03-30.md",
+      "docs/unit2-draft-learning-design-2026-03-30.md"
+    ]
+  },
+  {
+    "when": "Learner reads the numbers but reverses order on the number line, especially with negatives or fractions.",
+    "recommend": "U2-S2",
+    "confidence": "limited",
+    "needsReview": true,
+    "operatorNote": "Tie every comparison back to left-right position, midpoint, or interval.",
+    "sourceDocs": [
+      "docs/unit2-subskills-integers-rational-2026-03-30.md",
+      "docs/unit2-draft-learning-design-2026-03-30.md"
+    ]
+  },
+  {
+    "when": "Learner treats absolute value as a signed number instead of a distance.",
+    "recommend": "U2-S3",
+    "confidence": "limited",
+    "needsReview": true,
+    "operatorNote": "Return to distance from zero or distance between points before computing.",
+    "sourceDocs": [
+      "docs/unit2-subskills-integers-rational-2026-03-30.md",
+      "docs/unit2-draft-learning-design-2026-03-30.md"
+    ]
+  },
+  {
+    "when": "Learner can read a signed expression but cannot track direction or sign through addition and subtraction.",
+    "recommend": "U2-S4",
+    "confidence": "limited",
+    "needsReview": true,
+    "operatorNote": "Slow down the direction change before asking for the final numeric answer.",
+    "sourceDocs": [
+      "docs/unit2-subskills-integers-rational-2026-03-30.md",
+      "docs/unit2-draft-learning-design-2026-03-30.md"
+    ]
+  },
+  {
+    "when": "Learner starts a multiplicative expression but loses the sign, power meaning, or reciprocal relationship.",
+    "recommend": "U2-S5",
+    "confidence": "limited",
+    "needsReview": true,
+    "operatorNote": "Separate sign reasoning from magnitude reasoning before calculation.",
+    "sourceDocs": [
+      "docs/unit2-subskills-integers-rational-2026-03-30.md",
+      "docs/unit2-draft-learning-design-2026-03-30.md"
+    ]
+  }
+]

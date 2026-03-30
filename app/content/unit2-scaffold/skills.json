@@ -1,0 +1,49 @@
+[
+  {
+    "id": "U2-S1",
+    "status": "draft-from-docs",
+    "title": "Identify integers, rational numbers, positives, negatives, and zero",
+    "summary": "Draft Unit 2 classification skill extracted from observed source problems about positive and negative integers, zero, and rational numbers.",
+    "sourceDocs": [
+      "docs/unit2-source-note-2026-03-30.md",
+      "docs/unit2-subskills-integers-rational-2026-03-30.md"
+    ]
+  },
+  {
+    "id": "U2-S2",
+    "status": "draft-from-docs",
+    "title": "Compare and order integers and rational numbers on the number line",
+    "summary": "Draft Unit 2 comparison skill extracted from midpoint, interval, and ordering tasks on signed numbers and fractions.",
+    "sourceDocs": [
+      "docs/unit2-source-note-2026-03-30.md",
+      "docs/unit2-subskills-integers-rational-2026-03-30.md"
+    ]
+  },
+  {
+    "id": "U2-S3",
+    "status": "draft-from-docs",
+    "title": "Use absolute value to reason about distance and size",
+    "summary": "Draft Unit 2 absolute-value skill extracted from distance and size comparison tasks.",
+    "sourceDocs": [
+      "docs/unit2-subskills-integers-rational-2026-03-30.md"
+    ]
+  },
+  {
+    "id": "U2-S4",
+    "status": "draft-from-docs",
+    "title": "Add and subtract integers and rational numbers",
+    "summary": "Draft Unit 2 signed addition and subtraction skill extracted from symbolic and contextual change problems.",
+    "sourceDocs": [
+      "docs/unit2-subskills-integers-rational-2026-03-30.md"
+    ]
+  },
+  {
+    "id": "U2-S5",
+    "status": "draft-from-docs",
+    "title": "Multiply, divide, and simplify expressions with integers and rational numbers",
+    "summary": "Draft Unit 2 multiplicative expression skill extracted from multiplication, division, reciprocal, and power problems.",
+    "sourceDocs": [
+      "docs/unit2-subskills-integers-rational-2026-03-30.md"
+    ]
+  }
+]

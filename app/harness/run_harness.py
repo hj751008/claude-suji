@@ -3,7 +3,13 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
-from app.runtime.content_loader import load_unit1_content
+from app.runtime.content_inference import (
+    infer_unit_id_from_event,
+    infer_unit_id_from_events,
+    infer_unit_id_from_learner_record,
+    infer_unit_id_from_transcript,
+)
+from app.runtime.content_loader import load_content_for_unit, load_unit1_content, load_unit2_content
 from app.runtime.diagnostics import diagnose_event, summarize_learner, validate_evidence_event
 from app.runtime.learner_record import (
     merge_session_into_learner_record,
@@ -27,6 +33,20 @@ from app.runtime.session_runner import (
 
 
 HARNESS_ROOT = Path(__file__).resolve().parent
+REPO_ROOT = HARNESS_ROOT.parent.parent
+
+_CONTENT_CACHE = {
+    "U1": load_unit1_content,
+    "U2": load_unit2_content,
+}
+
+
+def _load_content(unit_id: str | None):
+    if unit_id in _CONTENT_CACHE:
+        return _CONTENT_CACHE[unit_id]()
+    if isinstance(unit_id, str):
+        return load_content_for_unit(unit_id)
+    return load_unit1_content()
 
 
 def _load_cases() -> list[dict]:
@@ -105,7 +125,7 @@ def _load_prepare_observation_form_cases() -> list[dict]:
 
 
 def _load_transcript_fixture(transcript_file: str, transcript_id: str) -> dict:
-    transcript_path = Path(HARNESS_ROOT.parent.parent, transcript_file)
+    transcript_path = Path(REPO_ROOT, transcript_file)
     with transcript_path.open("r", encoding="utf-8") as handle:
         transcripts = json.load(handle)
 
@@ -123,6 +143,50 @@ def _load_transcript_fixture(transcript_file: str, transcript_id: str) -> dict:
     if transcript is None:
         raise ValueError(f"Transcript fixture {transcript_file} is missing transcriptId {transcript_id}.")
     return transcript
+
+
+def _load_json_from_repo_path(path_str: str) -> dict:
+    path = Path(REPO_ROOT, path_str)
+    with path.open("r", encoding="utf-8") as handle:
+        return json.load(handle)
+
+
+def _infer_unit_id_from_case(case: dict) -> str | None:
+    event = case.get("event")
+    inferred = infer_unit_id_from_event(event) if isinstance(event, dict) else None
+    if inferred is not None:
+        return inferred
+
+    events = case.get("events")
+    inferred = infer_unit_id_from_events(events) if isinstance(events, list) else None
+    if inferred is not None:
+        return inferred
+
+    transcript_file = case.get("transcriptFile")
+    transcript_id = case.get("transcriptId")
+    if isinstance(transcript_file, str) and isinstance(transcript_id, str):
+        transcript = _load_transcript_fixture(transcript_file, transcript_id)
+        learner_record = None
+        learner_file = transcript.get("learnerFile")
+        if isinstance(learner_file, str) and learner_file:
+            learner_record = _load_json_from_repo_path(learner_file)
+        inferred = infer_unit_id_from_transcript(transcript, learner_record)
+        if inferred is not None:
+            return inferred
+
+    learner_file = case.get("learnerFile")
+    if isinstance(learner_file, str) and learner_file:
+        learner_record = _load_json_from_repo_path(learner_file)
+        inferred = infer_unit_id_from_learner_record(learner_record)
+        if inferred is not None:
+            return inferred
+
+    learner_record = case.get("learnerRecord")
+    return infer_unit_id_from_learner_record(learner_record) if isinstance(learner_record, dict) else None
+
+
+def _content_for_case(case: dict):
+    return _load_content(_infer_unit_id_from_case(case))
 
 
 def _turn_sequence_from_case(case: dict) -> tuple[str, bool, list[dict] | None, dict | None]:
@@ -965,7 +1029,6 @@ def _assert_prepare_observation_form_case(case: dict, content) -> list[str]:
 
 
 def main() -> int:
-    content = load_unit1_content()
     cases = _load_cases()
     learner_summary_cases = _load_learner_summary_cases()
     session_runner_cases = _load_session_runner_cases()
@@ -984,35 +1047,35 @@ def main() -> int:
 
     failures: list[str] = []
     for case in cases:
-        failures.extend(_assert_case(case, content))
+        failures.extend(_assert_case(case, _content_for_case(case)))
     for case in learner_summary_cases:
-        failures.extend(_assert_learner_summary_case(case, content))
+        failures.extend(_assert_learner_summary_case(case, _content_for_case(case)))
     for case in session_runner_cases:
         failures.extend(_assert_session_runner_case(case))
     for case in evaluator_cases:
-        failures.extend(_assert_evaluator_case(case, content))
+        failures.extend(_assert_evaluator_case(case, _content_for_case(case)))
     for case in observation_submission_cases:
-        failures.extend(_assert_observation_submission_case(case, content))
+        failures.extend(_assert_observation_submission_case(case, _content_for_case(case)))
     for case in session_history_summary_cases:
-        failures.extend(_assert_session_history_summary_case(case, content))
+        failures.extend(_assert_session_history_summary_case(case, _content_for_case(case)))
     for case in learner_record_cases:
-        failures.extend(_assert_learner_record_case(case, content))
+        failures.extend(_assert_learner_record_case(case, _content_for_case(case)))
     for case in session_planner_cases:
-        failures.extend(_assert_session_planner_case(case, content))
+        failures.extend(_assert_session_planner_case(case, _content_for_case(case)))
     for case in session_orchestrator_cases:
-        failures.extend(_assert_session_orchestrator_case(case, content))
+        failures.extend(_assert_session_orchestrator_case(case, _content_for_case(case)))
     for case in active_session_cases:
         failures.extend(_assert_active_session_case(case))
     for case in learner_record_submission_cases:
-        failures.extend(_assert_learner_record_submission_case(case, content))
+        failures.extend(_assert_learner_record_submission_case(case, _content_for_case(case)))
     for case in failure_cases:
-        failures.extend(_assert_failure_case(case, content))
+        failures.extend(_assert_failure_case(case, _content_for_case(case)))
     for case in start_learning_session_cases:
-        failures.extend(_assert_start_learning_session_case(case, content))
+        failures.extend(_assert_start_learning_session_case(case, _content_for_case(case)))
     for case in learning_turn_cases:
-        failures.extend(_assert_learning_turn_case(case, content))
+        failures.extend(_assert_learning_turn_case(case, _content_for_case(case)))
     for case in prepare_observation_form_cases:
-        failures.extend(_assert_prepare_observation_form_case(case, content))
+        failures.extend(_assert_prepare_observation_form_case(case, _content_for_case(case)))
 
     if failures:
         print("Harness failed:")

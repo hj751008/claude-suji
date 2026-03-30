@@ -501,5 +501,17 @@
       "targetSkillId": "U1-S3",
       "firstLessonStepId": "STEP-U1-S2-ENTRY-BRIDGE"
     }
+  },
+  {
+    "name": "replay transcript fixture for unit2 category sort handoff",
+    "transcriptFile": "app/domain/evidence/unit2-tutor-transcripts.example.json",
+    "transcriptId": "u2-s1-category-sort-ko-text-only-active-session",
+    "expected": {
+      "decision": "completed",
+      "nextAction": "continue_active_session",
+      "sessionStatus": "in_progress",
+      "currentLessonStepId": "STEP-U2-S2-NUMBER-LINE-ORDER",
+      "firstTutorQuestion": "Which of these two numbers is farther left on the number line?"
+    }
   }
 ]

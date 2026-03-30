@@ -1,0 +1,153 @@
+{
+  "learnerId": "unit2-sample-learner",
+  "activeSession": {
+    "learnerId": "unit2-sample-learner",
+    "targetSkillId": "U2-S5",
+    "status": "in_progress",
+    "currentStepIndex": 0,
+    "currentStep": {
+      "lessonStepId": "STEP-U2-S1-CATEGORY-SORT",
+      "activityId": "ACT-U2-S1-SORT-BY-TYPE",
+      "status": "draft-from-docs",
+      "openingLine": "Let's sort these numbers by meaning first so the labels stop feeling mixed together.",
+      "firstTutorQuestion": "What makes 0 its own case instead of a positive or negative integer?",
+      "smallHint": "Zero is an integer, but it is neither positive nor negative.",
+      "goodStoppingPoint": "Learner classifies zero separately and explains that integers are included in rational numbers.",
+      "watchFor": [
+        "Learner treats zero as positive because it is not negative.",
+        "Learner treats integers and rational numbers as completely separate groups."
+      ],
+      "exampleTutorMove": "Ask the learner to place -3, 0, 4, and 1/2 into category cards and explain one card at a time.",
+      "exampleLearnerResponse": "0 is an integer but not positive or negative, and integers still count as rational numbers because they can be written as fractions.",
+      "skillId": "U2-S1",
+      "activityType": "dialogue-flow",
+      "title": "Category Sort With Zero Included"
+    },
+    "nextStep": {
+      "lessonStepId": "STEP-U2-S2-NUMBER-LINE-ORDER",
+      "activityId": "ACT-U2-S2-NUMBER-LINE-BRIDGE",
+      "status": "draft-from-docs",
+      "openingLine": "Let's compare the positions first instead of trusting how big the numerals look.",
+      "firstTutorQuestion": "Which of these two numbers is farther left on the number line?",
+      "smallHint": "Farther left means smaller, even when the number has a larger absolute value.",
+      "goodStoppingPoint": "Learner orders negative numbers or fractions by position language and not by surface appearance alone.",
+      "watchFor": [
+        "Learner says -7 is greater than -3 because 7 is bigger than 3.",
+        "Learner can name endpoints but cannot place a midpoint or a number between two fractions."
+      ],
+      "exampleTutorMove": "Sketch a short number line with two labels and ask the learner to place one additional value before comparing.",
+      "exampleLearnerResponse": "-7 is farther left than -3, so it is smaller even though 7 has the larger absolute value.",
+      "skillId": "U2-S2",
+      "activityType": "dialogue-flow",
+      "title": "Number Line Ordering Before Symbol Tricks"
+    },
+    "completedStepIds": [],
+    "remainingStepIds": [
+      "STEP-U2-S1-CATEGORY-SORT",
+      "STEP-U2-S2-NUMBER-LINE-ORDER",
+      "STEP-U2-S3-ABSOLUTE-VALUE-DISTANCE",
+      "STEP-U2-S4-SIGNED-CHANGE",
+      "STEP-U2-S5-SIGN-FIRST-EXPRESSION"
+    ],
+    "steps": [
+      {
+        "lessonStepId": "STEP-U2-S1-CATEGORY-SORT",
+        "activityId": "ACT-U2-S1-SORT-BY-TYPE",
+        "status": "draft-from-docs",
+        "openingLine": "Let's sort these numbers by meaning first so the labels stop feeling mixed together.",
+        "firstTutorQuestion": "What makes 0 its own case instead of a positive or negative integer?",
+        "smallHint": "Zero is an integer, but it is neither positive nor negative.",
+        "goodStoppingPoint": "Learner classifies zero separately and explains that integers are included in rational numbers.",
+        "watchFor": [
+          "Learner treats zero as positive because it is not negative.",
+          "Learner treats integers and rational numbers as completely separate groups."
+        ],
+        "exampleTutorMove": "Ask the learner to place -3, 0, 4, and 1/2 into category cards and explain one card at a time.",
+        "exampleLearnerResponse": "0 is an integer but not positive or negative, and integers still count as rational numbers because they can be written as fractions.",
+        "skillId": "U2-S1",
+        "activityType": "dialogue-flow",
+        "title": "Category Sort With Zero Included"
+      },
+      {
+        "lessonStepId": "STEP-U2-S2-NUMBER-LINE-ORDER",
+        "activityId": "ACT-U2-S2-NUMBER-LINE-BRIDGE",
+        "status": "draft-from-docs",
+        "openingLine": "Let's compare the positions first instead of trusting how big the numerals look.",
+        "firstTutorQuestion": "Which of these two numbers is farther left on the number line?",
+        "smallHint": "Farther left means smaller, even when the number has a larger absolute value.",
+        "goodStoppingPoint": "Learner orders negative numbers or fractions by position language and not by surface appearance alone.",
+        "watchFor": [
+          "Learner says -7 is greater than -3 because 7 is bigger than 3.",
+          "Learner can name endpoints but cannot place a midpoint or a number between two fractions."
+        ],
+        "exampleTutorMove": "Sketch a short number line with two labels and ask the learner to place one additional value before comparing.",
+        "exampleLearnerResponse": "-7 is farther left than -3, so it is smaller even though 7 has the larger absolute value.",
+        "skillId": "U2-S2",
+        "activityType": "dialogue-flow",
+        "title": "Number Line Ordering Before Symbol Tricks"
+      },
+      {
+        "lessonStepId": "STEP-U2-S3-ABSOLUTE-VALUE-DISTANCE",
+        "activityId": "ACT-U2-S3-ABSOLUTE-VALUE-DISTANCE",
+        "status": "draft-from-docs",
+        "openingLine": "Let's turn absolute value back into distance before we touch the symbols.",
+        "firstTutorQuestion": "How far is this number from 0 on the number line?",
+        "smallHint": "Absolute value tells distance, so the answer itself is not negative.",
+        "goodStoppingPoint": "Learner explains absolute value as distance and uses that idea to compare values correctly.",
+        "watchFor": [
+          "Learner keeps the negative sign when writing an absolute-value answer.",
+          "Learner forgets that zero has the smallest absolute value."
+        ],
+        "exampleTutorMove": "Point to -4 on a number line and ask for the distance to 0 before asking for |-4|.",
+        "exampleLearnerResponse": "The distance from -4 to 0 is 4, so |-4| is 4, not -4.",
+        "skillId": "U2-S3",
+        "activityType": "dialogue-flow",
+        "title": "Absolute Value Means Distance"
+      },
+      {
+        "lessonStepId": "STEP-U2-S4-SIGNED-CHANGE",
+        "activityId": "ACT-U2-S4-SIGNED-CHANGE-BRIDGE",
+        "status": "draft-from-docs",
+        "openingLine": "Let's read the sign as direction of change before we calculate the final value.",
+        "firstTutorQuestion": "If you add this signed number, do you move left or right from where you started?",
+        "smallHint": "Positive change moves right and negative change moves left on the number line.",
+        "goodStoppingPoint": "Learner keeps direction and sign consistent through a signed addition or subtraction step.",
+        "watchFor": [
+          "Learner rewrites symbols mechanically but cannot explain the direction of change.",
+          "Learner can handle a simple sum but collapses when the same idea appears in a condition problem."
+        ],
+        "exampleTutorMove": "Translate one expression like 3 + (-5) into a move on the number line before asking for the numeric answer.",
+        "exampleLearnerResponse": "Adding -5 means moving 5 units left from 3, so the result should be -2.",
+        "skillId": "U2-S4",
+        "activityType": "dialogue-flow",
+        "title": "Signed Change as Directed Movement"
+      },
+      {
+        "lessonStepId": "STEP-U2-S5-SIGN-FIRST-EXPRESSION",
+        "activityId": "ACT-U2-S5-SIGN-FIRST-EXPRESSION",
+        "status": "draft-from-docs",
+        "openingLine": "Before calculating the size, let's hold onto the sign and structure of the whole expression.",
+        "firstTutorQuestion": "What sign should this whole expression have before you compute anything else?",
+        "smallHint": "Decide the sign first, then keep powers or reciprocals in place while finding the magnitude.",
+        "goodStoppingPoint": "Learner predicts sign first and keeps reciprocal or power structure stable through a short expression.",
+        "watchFor": [
+          "Learner gets the magnitudes right but drops or flips the sign during multiplication or division.",
+          "Learner remembers a power or reciprocal rule alone but loses it inside a multi-step expression."
+        ],
+        "exampleTutorMove": "Cover the arithmetic details and ask the learner to name the overall sign before simplifying the rest.",
+        "exampleLearnerResponse": "The sign should be negative first, and then I still need to keep the reciprocal instead of turning it into a subtraction.",
+        "skillId": "U2-S5",
+        "activityType": "dialogue-flow",
+        "title": "Sign First, Then Keep Structure"
+      }
+    ],
+    "completionRule": "complete_all_steps_in_order",
+    "lastEvaluation": null,
+    "history": []
+  },
+  "sessions": [],
+  "evidenceEvents": [],
+  "latestSkillSummaries": [],
+  "latestRecommendations": [],
+  "updatedAt": null
+}

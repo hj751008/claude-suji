@@ -51,6 +51,27 @@ Approved relationship set is not finalized.
 | `U1-S3 express in prime factorized form` | `U1-S4 validate prime-factor result` | `REQUIRED` | 미래엔 중단원마무리 03 requires checking whether an option contains the complete prime-factor set of a number | `provisional` |
 | `U1-S3 express in prime factorized form` | `U1-S5 use prime factorization in follow-up tasks` | `HELPFUL` | 미래엔 중단원마무리 05-08 and 발전 문제은행 05-20 reuse prime-factorization structure for divisor, square, GCD, and LCM applications | `provisional` |
 
+## Unit 2 Draft Example: Integers and Rational Numbers
+
+### Skill Breakdown
+- `U2-S1`: identify integers, rational numbers, positives, negatives, and zero
+- `U2-S2`: compare and order integers and rational numbers on the number line
+- `U2-S3`: use absolute value to reason about distance and size
+- `U2-S4`: add and subtract integers and rational numbers
+- `U2-S5`: multiply, divide, and simplify expressions with integers and rational numbers
+
+### Conservative Prerequisite Links
+| Prerequisite | Target | Relationship | Evidence | Status |
+| --- | --- | --- | --- | --- |
+| `U2-S1 identify sign/category language` | `U2-S2 compare and order on the number line` | `HELPFUL` | The Unit 2 draft design treats number-line ordering as a follow-up to stable positive/negative/zero classification language, and the source extraction groups classification tasks before ordering tasks in the same unit cluster | `draft-from-docs` |
+| `U2-S2 compare and order on the number line` | `U2-S3 use absolute value as distance` | `HELPFUL` | The Unit 2 draft design defines absolute value through distance on the number line, so number-line position reasoning supports the distance interpretation directly | `draft-from-docs` |
+| `U2-S1 identify sign/category language` | `U2-S4 add and subtract signed numbers` | `HELPFUL` | The Unit 2 draft signed-change lesson expects the learner to interpret positive and negative values before explaining left-right movement or result sign | `draft-from-docs` |
+| `U2-S2 compare and order on the number line` | `U2-S4 add and subtract signed numbers` | `HELPFUL` | The Unit 2 draft signed-change lesson explicitly translates signed addition and subtraction into number-line movement, so number-line direction reasoning supports this target skill | `draft-from-docs` |
+
+### Deliberately Unlinked For Now
+- `U2-S5` does not yet receive an internal prerequisite link.
+- Current docs support that signed multiplicative expressions belong in Unit 2, but they do not yet justify a specific intra-unit prerequisite chain strongly enough to mark one.
+
 ## Rules For Uncertain Links
 - Do not guess prerequisite chains.
 - Do not convert an uncertain link into `REQUIRED` or `HELPFUL` without evidence.

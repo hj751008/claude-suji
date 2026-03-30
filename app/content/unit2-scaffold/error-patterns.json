@@ -1,0 +1,77 @@
+[
+  {
+    "id": "u2-s1-zero-and-rational-category-mixup",
+    "skillId": "U2-S1",
+    "status": "draft-from-docs",
+    "summary": "Learner mixes up zero, negative integers, and rational-number category boundaries.",
+    "watchFor": [
+      "Learner says zero is positive or negative.",
+      "Learner forgets that integers still belong to the rational-number set."
+    ],
+    "operatorNote": "Return to category definitions and simple counterexamples before moving on.",
+    "sourceDocs": [
+      "docs/unit2-source-note-2026-03-30.md",
+      "docs/unit2-draft-learning-design-2026-03-30.md"
+    ]
+  },
+  {
+    "id": "u2-s2-negative-order-reversal",
+    "skillId": "U2-S2",
+    "status": "draft-from-docs",
+    "summary": "Learner reverses order on the number line when negatives or fractions are involved.",
+    "watchFor": [
+      "Learner says the number with larger absolute value is always greater, even for negatives.",
+      "Learner can name endpoints but misses the midpoint or a number between two fractions."
+    ],
+    "operatorNote": "Map each comparison to left-right position on the line before discussing symbols.",
+    "sourceDocs": [
+      "docs/unit2-subskills-integers-rational-2026-03-30.md",
+      "docs/unit2-draft-learning-design-2026-03-30.md"
+    ]
+  },
+  {
+    "id": "u2-s3-absolute-value-keeps-sign",
+    "skillId": "U2-S3",
+    "status": "draft-from-docs",
+    "summary": "Learner keeps the negative sign when writing absolute value or forgets that zero has the smallest absolute value.",
+    "watchFor": [
+      "Learner writes the absolute value of a negative number as still negative.",
+      "Learner treats 1 as the smallest possible absolute value instead of 0."
+    ],
+    "operatorNote": "Translate absolute value back into distance from zero before comparing answers.",
+    "sourceDocs": [
+      "docs/unit2-subskills-integers-rational-2026-03-30.md",
+      "docs/unit2-draft-learning-design-2026-03-30.md"
+    ]
+  },
+  {
+    "id": "u2-s4-signed-addition-direction-drift",
+    "skillId": "U2-S4",
+    "status": "draft-from-docs",
+    "summary": "Learner copies sign symbols mechanically in addition and subtraction without tracking direction or change.",
+    "watchFor": [
+      "Learner can rewrite the symbols but cannot explain whether the value should move left or right.",
+      "Learner stalls on conditions like 'add 5 is positive, add 3 is negative.'"
+    ],
+    "operatorNote": "Anchor the expression in movement, gain-loss language, or interval direction before calculating.",
+    "sourceDocs": [
+      "docs/unit2-subskills-integers-rational-2026-03-30.md",
+      "docs/unit2-draft-learning-design-2026-03-30.md"
+    ]
+  },
+  {
+    "id": "u2-s5-sign-first-structure-loss",
+    "skillId": "U2-S5",
+    "status": "draft-from-docs",
+    "summary": "Learner loses sign, power meaning, or reciprocal structure while simplifying multiplicative expressions.",
+    "watchFor": [
+      "Learner computes magnitudes first but drops the sign through multiplication or division.",
+      "Learner recalls a rule for powers or reciprocals in isolation but cannot hold it through a multi-step expression."
+    ],
+    "operatorNote": "Separate sign reasoning, operation choice, and magnitude calculation into different passes.",
+    "sourceDocs": [
+      "docs/unit2-subskills-integers-rational-2026-03-30.md",
+      "docs/unit2-draft-learning-design-2026-03-30.md"
+    ]
+  }
+]

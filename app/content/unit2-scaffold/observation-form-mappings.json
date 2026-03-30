@@ -1,0 +1,127 @@
+[
+  {
+    "lessonStepId": "STEP-U2-S1-CATEGORY-SORT",
+    "status": "draft-from-docs",
+    "learnerResponsePrompt": "Write how the learner classified zero, integers, and rational numbers.",
+    "tutorNotePrompt": "Note whether the learner separated zero correctly and explained how integers relate to rational numbers.",
+    "fields": [
+      {
+        "fieldId": "classifies_zero_separately",
+        "signalOnTrue": "classifies_zero_separately",
+        "label": "Separates zero",
+        "prompt": "Did the learner say that 0 is neither positive nor negative?",
+        "trueMeans": "The learner treated zero as its own category instead of forcing it into positive or negative."
+      },
+      {
+        "fieldId": "states_integer_subset_of_rational",
+        "signalOnTrue": "states_integer_subset_of_rational",
+        "label": "Links integers to rationals",
+        "prompt": "Did the learner explain that integers are included in the rational-number set?",
+        "trueMeans": "The learner used set-membership reasoning rather than memorized labels only."
+      }
+    ],
+    "sourceDocs": [
+      "docs/unit2-draft-learning-design-2026-03-30.md"
+    ]
+  },
+  {
+    "lessonStepId": "STEP-U2-S2-NUMBER-LINE-ORDER",
+    "status": "draft-from-docs",
+    "learnerResponsePrompt": "Write how the learner compared the numbers on the number line.",
+    "tutorNotePrompt": "Note whether the learner used left-right position and handled negative order correctly.",
+    "fields": [
+      {
+        "fieldId": "orders_by_left_right_position",
+        "signalOnTrue": "orders_by_left_right_position",
+        "label": "Uses left-right position",
+        "prompt": "Did the learner explain the comparison using left-right position on the number line?",
+        "trueMeans": "The learner anchored the comparison in position rather than only symbol size."
+      },
+      {
+        "fieldId": "explains_negative_order_without_abs_reversal",
+        "signalOnTrue": "explains_negative_order_without_abs_reversal",
+        "label": "Handles negative order",
+        "prompt": "Did the learner avoid reversing the order of negative numbers by absolute value alone?",
+        "trueMeans": "The learner kept the meaning of negative order stable."
+      }
+    ],
+    "sourceDocs": [
+      "docs/unit2-draft-learning-design-2026-03-30.md"
+    ]
+  },
+  {
+    "lessonStepId": "STEP-U2-S3-ABSOLUTE-VALUE-DISTANCE",
+    "status": "draft-from-docs",
+    "learnerResponsePrompt": "Write how the learner explained the absolute value of the number.",
+    "tutorNotePrompt": "Note whether the learner used distance language and removed the negative sign from the absolute-value result.",
+    "fields": [
+      {
+        "fieldId": "defines_absolute_value_as_distance",
+        "signalOnTrue": "defines_absolute_value_as_distance",
+        "label": "Uses distance meaning",
+        "prompt": "Did the learner explain absolute value as distance from zero?",
+        "trueMeans": "The learner connected notation to the distance idea."
+      },
+      {
+        "fieldId": "removes_negative_sign_from_absolute_value",
+        "signalOnTrue": "removes_negative_sign_from_absolute_value",
+        "label": "Drops negative sign",
+        "prompt": "Did the learner give a non-negative absolute-value answer for a negative input?",
+        "trueMeans": "The learner did not keep the original negative sign inside the answer."
+      }
+    ],
+    "sourceDocs": [
+      "docs/unit2-draft-learning-design-2026-03-30.md"
+    ]
+  },
+  {
+    "lessonStepId": "STEP-U2-S4-SIGNED-CHANGE",
+    "status": "draft-from-docs",
+    "learnerResponsePrompt": "Write how the learner described the signed addition or subtraction step.",
+    "tutorNotePrompt": "Note whether the learner tracked direction of change and kept the resulting sign consistent.",
+    "fields": [
+      {
+        "fieldId": "tracks_direction_of_signed_change",
+        "signalOnTrue": "tracks_direction_of_signed_change",
+        "label": "Tracks direction",
+        "prompt": "Did the learner describe the operation as moving left or right on the number line?",
+        "trueMeans": "The learner translated the sign into directed change."
+      },
+      {
+        "fieldId": "keeps_result_sign_consistent",
+        "signalOnTrue": "keeps_result_sign_consistent",
+        "label": "Keeps sign consistent",
+        "prompt": "Did the learner keep the final sign consistent with that direction of change?",
+        "trueMeans": "The learner connected movement reasoning to the final signed result."
+      }
+    ],
+    "sourceDocs": [
+      "docs/unit2-draft-learning-design-2026-03-30.md"
+    ]
+  },
+  {
+    "lessonStepId": "STEP-U2-S5-SIGN-FIRST-EXPRESSION",
+    "status": "draft-from-docs",
+    "learnerResponsePrompt": "Write how the learner predicted the sign and handled the expression structure.",
+    "tutorNotePrompt": "Note whether the learner named the overall sign first and preserved reciprocal or power structure while simplifying.",
+    "fields": [
+      {
+        "fieldId": "predicts_overall_sign_first",
+        "signalOnTrue": "predicts_overall_sign_first",
+        "label": "Predicts sign first",
+        "prompt": "Did the learner name the overall sign before computing the magnitude?",
+        "trueMeans": "The learner separated sign reasoning from the rest of the arithmetic."
+      },
+      {
+        "fieldId": "keeps_power_or_reciprocal_structure",
+        "signalOnTrue": "keeps_power_or_reciprocal_structure",
+        "label": "Keeps structure",
+        "prompt": "Did the learner preserve the reciprocal or exponent structure while simplifying?",
+        "trueMeans": "The learner did not flatten the expression into an incorrect form."
+      }
+    ],
+    "sourceDocs": [
+      "docs/unit2-draft-learning-design-2026-03-30.md"
+    ]
+  }
+]
