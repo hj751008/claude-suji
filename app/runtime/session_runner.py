@@ -1,5 +1,30 @@
 from __future__ import annotations
 
+import re
+
+
+def _normalize_hint_text(value: str) -> str:
+    normalized = value.lower()
+    normalized = normalized.replace("n't", " not")
+    normalized = normalized.replace("’", "'").replace("'", "")
+    for token in ("×", "✕", "·", "*"):
+        normalized = normalized.replace(token, " x ")
+    normalized = re.sub(r"[^0-9a-z\uac00-\ud7a3]+", " ", normalized)
+    normalized = re.sub(r"\s+", " ", normalized).strip()
+    return normalized
+
+
+def _match_text_hints(learner_response: str, hints: list[str]) -> list[str]:
+    normalized_response = _normalize_hint_text(learner_response)
+    matched: list[str] = []
+    for hint in hints:
+        if not isinstance(hint, str):
+            continue
+        normalized_hint = _normalize_hint_text(hint)
+        if normalized_hint and normalized_hint in normalized_response:
+            matched.append(hint)
+    return matched
+
 
 def build_observation_form_template(session_state: dict, observation_form_mappings: list[dict]) -> dict:
     current_step = session_state.get("currentStep")
@@ -11,19 +36,44 @@ def build_observation_form_template(session_state: dict, observation_form_mappin
     if mapping is None:
         raise ValueError(f"No observation form mapping found for lesson step {lesson_step_id}.")
 
+    learner_response_prompt = mapping.get("learnerResponsePrompt")
+    tutor_note_prompt = mapping.get("tutorNotePrompt")
+    fields = mapping.get("fields", [])
+    if not isinstance(learner_response_prompt, str) or not learner_response_prompt.strip():
+        raise ValueError(f"Observation form mapping for {lesson_step_id} is missing learnerResponsePrompt.")
+    if not isinstance(tutor_note_prompt, str) or not tutor_note_prompt.strip():
+        raise ValueError(f"Observation form mapping for {lesson_step_id} is missing tutorNotePrompt.")
+    if not isinstance(fields, list) or not fields:
+        raise ValueError(f"Observation form mapping for {lesson_step_id} must contain at least one field.")
+
+    normalized_fields = []
+    for field in fields:
+        field_id = field.get("fieldId")
+        label = field.get("label")
+        prompt = field.get("prompt")
+        true_means = field.get("trueMeans")
+        if not isinstance(field_id, str) or not field_id.strip():
+            raise ValueError(f"Observation form mapping for {lesson_step_id} contains a field without fieldId.")
+        if not isinstance(label, str) or not label.strip():
+            raise ValueError(f"Observation form mapping for {lesson_step_id}:{field_id} is missing label.")
+        if not isinstance(prompt, str) or not prompt.strip():
+            raise ValueError(f"Observation form mapping for {lesson_step_id}:{field_id} is missing prompt.")
+        if not isinstance(true_means, str) or not true_means.strip():
+            raise ValueError(f"Observation form mapping for {lesson_step_id}:{field_id} is missing trueMeans.")
+        normalized_fields.append(
+            {
+                "fieldId": field_id,
+                "label": label,
+                "prompt": prompt,
+                "trueMeans": true_means,
+            }
+        )
+
     return {
         "lessonStepId": lesson_step_id,
-        "learnerResponsePrompt": mapping.get("learnerResponsePrompt", "Record the learner response in plain language."),
-        "tutorNotePrompt": mapping.get("tutorNotePrompt", "Record a short tutor note if needed."),
-        "fields": [
-            {
-                "fieldId": field.get("fieldId"),
-                "label": field.get("label", field.get("fieldId")),
-                "prompt": field.get("prompt"),
-                "trueMeans": field.get("trueMeans"),
-            }
-            for field in mapping.get("fields", [])
-        ],
+        "learnerResponsePrompt": learner_response_prompt,
+        "tutorNotePrompt": tutor_note_prompt,
+        "fields": normalized_fields,
     }
 
 
@@ -113,13 +163,19 @@ def evaluate_current_step(session_state: dict, evaluation_input: dict, evaluator
         raise ValueError("Evaluation input learnerResponse must be a string.")
 
     required_signals = rubric.get("requiredSignals", [])
-    matched_required_signals = [signal for signal in required_signals if signal in observed_signals]
-    missing_required_signals = [signal for signal in required_signals if signal not in observed_signals]
-
-    lowered_response = learner_response.lower()
-    matched_text_hints = [
-        hint for hint in rubric.get("optionalTextHints", []) if isinstance(hint, str) and hint.lower() in lowered_response
+    signal_text_hints = rubric.get("signalTextHints", {})
+    inferred_text_signals = [
+        signal
+        for signal in required_signals
+        if signal not in observed_signals
+        and isinstance(signal_text_hints, dict)
+        and _match_text_hints(learner_response, signal_text_hints.get(signal, []))
     ]
+    matched_required_signals = [
+        signal for signal in required_signals if signal in observed_signals or signal in inferred_text_signals
+    ]
+    missing_required_signals = [signal for signal in required_signals if signal not in matched_required_signals]
+    matched_text_hints = _match_text_hints(learner_response, rubric.get("optionalTextHints", []))
 
     if not missing_required_signals:
         decision = "completed"
@@ -134,6 +190,7 @@ def evaluate_current_step(session_state: dict, evaluation_input: dict, evaluator
         "matchedRequiredSignals": matched_required_signals,
         "missingRequiredSignals": missing_required_signals,
         "matchedTextHints": matched_text_hints,
+        "matchedTextHintSignals": inferred_text_signals,
         "canAutoAdvance": decision == "completed",
     }
 

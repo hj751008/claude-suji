@@ -2,9 +2,10 @@
 
 This folder holds the first working app structure for `sujimathAI`.
 
-The current repository docs intentionally leave mastery thresholds, scoring cutoffs,
-and recommendation ranking rules as `UNDECIDED`. Because of that, this app
-structure is schema-first and explanation-first rather than scoring-first.
+The current repository docs intentionally leave numeric mastery thresholds,
+scoring cutoffs, and advanced recommendation weights as `UNDECIDED`. Because of
+that, this app structure is schema-first and explanation-first rather than
+scoring-first.
 
 ## Design Rules
 
@@ -17,6 +18,7 @@ structure is schema-first and explanation-first rather than scoring-first.
 
 - `domain/`: shared data models and reviewable rule shapes
 - `content/`: unit-specific skills, links, and recommendation examples
+- `content/templates/`: copy-safe scaffolds for future unit packs
 - `validation/`: lightweight checks and guardrails for doc-backed logic
 
 ## Current Scope
@@ -30,10 +32,23 @@ For the current CLI-first tutoring loop, the smallest practical flow is:
 
 1. `python app/cli.py start-learning-session --learner <learner-record.json>`
 2. Show the returned `sessionStartGuide` to the tutor.
-3. After the learner responds, run `python app/cli.py run-learning-turn --learner <learner-record.json> --input <observation-form.json>`.
-4. Read `turnSummary.nextAction`.
-5. If it says `continue_active_session`, stay in the current session and use `nextStepGuide`.
-6. If it says `review_next_recommendation`, the previous session is complete and the next session should be chosen from the recommendation summary.
+3. Run `python app/cli.py prepare-observation-form --learner <learner-record.json>` to get a strict observation draft from the current step and documented mappings only.
+4. After the learner responds, run `python app/cli.py run-learning-turn --learner <learner-record.json> --input <observation-form.json>`.
+5. Read `turnSummary.nextAction`.
+6. If it says `continue_active_session`, stay in the current session and use `nextStepGuide`.
+7. If it says `review_next_recommendation`, the previous session is complete and the next session should be chosen from the recommendation summary.
+
+For local inspection, there is also a lightweight browser surface:
+
+```bash
+python app/cli.py serve-operator-ui
+```
+
+This is a local QA tool for transcript replay, recommendation handoff, and
+single-turn operator inspection. It uses the same runtime functions as the CLI
+and does not introduce a separate policy layer. It can also load one of two
+quick pilot presets, then export or save a raw operator-log bundle for pilot
+review.
 
 Some app-facing records may split broad documented skills into draft child
 skills for diagnosis and recommendation. When that happens, keep the documented

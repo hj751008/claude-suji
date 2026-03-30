@@ -1,0 +1,20 @@
+[
+  {
+    "lessonStepId": "STEP-U?-S?-PLACEHOLDER",
+    "status": "draft-from-docs",
+    "requiredSignals": [
+      "replace_required_signal"
+    ],
+    "signalTextHints": {
+      "replace_required_signal": [
+        "replace signal-level text hint"
+      ]
+    },
+    "optionalTextHints": [
+      "replace optional text hint"
+    ],
+    "sourceDocs": [
+      "docs/replace-with-source.md"
+    ]
+  }
+]

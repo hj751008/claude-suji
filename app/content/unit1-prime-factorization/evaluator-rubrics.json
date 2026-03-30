@@ -22,6 +22,31 @@
       "chooses_two_as_start",
       "notes_even_number"
     ],
+    "signalTextHints": {
+      "chooses_two_as_start": [
+        "start with 2",
+        "divide by 2 first",
+        "try 2 first",
+        "start by dividing by 2",
+        "two first",
+        "2부터",
+        "2로 나눠",
+        "2로 먼저",
+        "2부터 볼",
+        "2부터 나눠"
+      ],
+      "notes_even_number": [
+        "24 is even",
+        "it is even",
+        "because it is even",
+        "because 24 is even",
+        "even number",
+        "24는 짝수",
+        "짝수니까",
+        "짝수라서",
+        "끝자리가 짝수"
+      ]
+    },
     "optionalTextHints": [
       "2",
       "even"
@@ -37,6 +62,32 @@
       "writes_only_prime_factors",
       "keeps_all_factors"
     ],
+    "signalTextHints": {
+      "writes_only_prime_factors": [
+        "only prime factors",
+        "all prime factors",
+        "2 x 2 x 3",
+        "2×2×3",
+        "every factor is prime",
+        "소수만",
+        "모두 소수",
+        "2 x 2 x 3으로",
+        "2 2 3만"
+      ],
+      "keeps_all_factors": [
+        "kept every factor",
+        "kept all factors",
+        "did not drop any factor",
+        "nothing got dropped",
+        "none were dropped",
+        "빠진 게 없",
+        "빠진 것 없",
+        "빠진 것은 없",
+        "빠진 것은 없어",
+        "하나도 안 빠",
+        "모두 옮겼"
+      ]
+    },
     "optionalTextHints": [
       "prime factors",
       "final line"
@@ -53,6 +104,31 @@
       "rejects_composite_factor_answer",
       "selects_all_prime_answer"
     ],
+    "signalTextHints": {
+      "rejects_composite_factor_answer": [
+        "6 is not prime",
+        "6 is composite",
+        "2 x 6 is not prime factorization",
+        "2×6 is not prime factorization",
+        "2 x 6 is unfinished",
+        "6은 소수가 아니",
+        "6이 소수가 아니",
+        "6은 합성수",
+        "2 x 6은 끝난 답이 아니",
+        "2 x 6은 소인수분해가 아니"
+      ],
+      "selects_all_prime_answer": [
+        "2 x 2 x 3",
+        "2×2×3",
+        "all the factors are prime",
+        "every factor is prime",
+        "true prime factorization",
+        "2 x 2 x 3이 맞",
+        "2 x 2 x 3이 정답",
+        "2 x 2 x 3이 소인수분해",
+        "맞는 답"
+      ]
+    },
     "optionalTextHints": [
       "6 is not prime",
       "2 x 2 x 3"
@@ -68,6 +144,28 @@
       "starts_from_factorization",
       "does_not_list_divisors_blindly"
     ],
+    "signalTextHints": {
+      "starts_from_factorization": [
+        "use the factorization",
+        "start from the factorization",
+        "prime factorization first",
+        "factorization first",
+        "소인수분해부터",
+        "소인수분해 결과",
+        "소인수분해를 쓰",
+        "인수분해 결과부터"
+      ],
+      "does_not_list_divisors_blindly": [
+        "instead of listing divisors",
+        "do not list every divisor",
+        "number of divisors",
+        "divisor count",
+        "약수를 다 쓰지",
+        "하나씩 쓰지",
+        "약수의 개수",
+        "일일이 쓰지"
+      ]
+    },
     "optionalTextHints": [
       "factorization",
       "divisor count"
@@ -84,6 +182,28 @@
       "identifies_missing_factor",
       "explains_even_exponent_goal"
     ],
+    "signalTextHints": {
+      "identifies_missing_factor": [
+        "multiply by 3",
+        "one more 3",
+        "the missing factor is 3",
+        "need one more 3",
+        "3을 하나 더",
+        "3을 곱하면",
+        "빠진 인수는 3",
+        "3이 하나 더"
+      ],
+      "explains_even_exponent_goal": [
+        "square numbers need even",
+        "make every prime count even",
+        "each prime factor count is even",
+        "even number of times",
+        "제곱수는",
+        "짝수가 되면",
+        "소인수 개수가 짝수",
+        "각 소수의 개수"
+      ]
+    },
     "optionalTextHints": [
       "missing factor",
       "even"
@@ -96,11 +216,39 @@
     "lessonStepId": "STEP-U1-S5C-GCD-LCM-SORT",
     "status": "draft-from-docs",
     "requiredSignals": [
-      "names_shared_vs_covering_structure"
+      "names_shared_vs_covering_structure",
+      "delays_calculation_until_structure_named"
     ],
+    "signalTextHints": {
+      "names_shared_vs_covering_structure": [
+        "shared structure",
+        "common multiple",
+        "common divisor",
+        "overlap",
+        "cover both",
+        "공약수",
+        "공배수",
+        "겹치는 부분",
+        "둘을 다 담는"
+      ],
+      "delays_calculation_until_structure_named": [
+        "before i calculate",
+        "before calculating",
+        "before doing arithmetic",
+        "first decide the task type",
+        "name the structure first",
+        "계산하기 전에",
+        "계산은 그다음",
+        "계산은 나중",
+        "먼저 보고",
+        "먼저 종류를",
+        "먼저 구조를",
+        "먼저 말하고"
+      ]
+    },
     "optionalTextHints": [
       "overlap",
-      "cover"
+      "cover both"
     ],
     "sourceDocs": [
       "docs/suji-tutor-dialogue-flow-prime-factorization.md"
@@ -110,11 +258,34 @@
     "lessonStepId": "STEP-U1-S5D-RELEVANT-PART-EXPLAIN",
     "status": "draft-from-docs",
     "requiredSignals": [
-      "points_to_relevant_part_before_solving"
+      "points_to_relevant_part_before_solving",
+      "explains_why_part_is_relevant"
     ],
+    "signalTextHints": {
+      "points_to_relevant_part_before_solving": [
+        "the exponent of 2 matters",
+        "this part matters",
+        "the 2s matter first",
+        "2의 지수",
+        "2가 몇 번",
+        "이 부분이 중요",
+        "여기서는 2",
+        "먼저 필요한 부분"
+      ],
+      "explains_why_part_is_relevant": [
+        "because this question depends on",
+        "because it matters for this question",
+        "because this question uses",
+        "왜냐하면",
+        "때문이야",
+        "필요하기 때문",
+        "이 문제는",
+        "먼저 필요"
+      ]
+    },
     "optionalTextHints": [
-      "this part",
-      "first"
+      "this part matters",
+      "because"
     ],
     "sourceDocs": [
       "docs/suji-tutor-dialogue-flow-prime-factorization.md"

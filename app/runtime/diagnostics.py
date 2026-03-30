@@ -8,7 +8,7 @@ from app.runtime.content_loader import UnitContent
 SAFE_RESULTS = {"correct", "partial", "incorrect", "unknown"}
 SAFE_CONFIDENCE_SIGNALS = {"confident", "hesitant", "unknown"}
 PROVISIONAL_MASTERY_STATUSES = {
-    "evidence_positive_but_unapproved",
+    "ready_for_next_step",
     "developing",
     "needs_review",
     "insufficient_evidence",
@@ -95,7 +95,7 @@ def _status_priority(status: str) -> int:
         "developing": 0,
         "needs_review": 1,
         "insufficient_evidence": 2,
-        "evidence_positive_but_unapproved": 3,
+        "ready_for_next_step": 3,
     }
     return priorities.get(status, 99)
 
@@ -133,13 +133,13 @@ def _build_mastery(event: dict, primary_skill_id: str | None, matched_patterns: 
         status = "developing" if result in {"partial", "incorrect"} else "needs_review"
         explanations = [
             "Observed evidence matches one or more documented Unit 1 error patterns.",
-            "Numeric thresholds and approved mastery labels are still undecided, so this remains a provisional judgment.",
+            "This remains a conservative runtime judgment rather than a final mastered claim.",
         ]
     elif result == "correct":
-        status = "evidence_positive_but_unapproved"
+        status = "ready_for_next_step"
         explanations = [
-            "The current event is positive evidence for the targeted skill.",
-            "The repository does not yet approve a threshold for promoting this to mastered.",
+            "The current event satisfies the minimum Unit 1 rule for moving to the next guided step.",
+            "This supports conservative next-step planning, not a final mastered label.",
         ]
     else:
         status = "needs_review"
@@ -158,8 +158,8 @@ def _build_mastery(event: dict, primary_skill_id: str | None, matched_patterns: 
         "matchedErrorPatternIds": [pattern["id"] for pattern in matched_patterns],
         "explanations": explanations,
         "blockedBy": [
-            "mastery labels are not finalized in docs/mastery-rules.md",
-            "minimum evidence required for pass remains UNDECIDED",
+            "This status supports conservative tutoring flow only, not final mastery approval.",
+            "Unit-level mastered thresholds, reassessment rules, and overrides remain UNDECIDED.",
         ],
     }
 
@@ -247,7 +247,7 @@ def _build_recommendations(
                 "needsReview": True,
                 "reasonCodes": [
                     "documented_error_pattern_match" if matched_for_skill else "documented_skill_target",
-                    "mastery_thresholds_not_approved",
+                    "unit_mastery_threshold_pending",
                 ],
                 "summary": _recommendation_summary(skill_id, matched_for_skill, example_records),
                 "sourceDocs": _ordered_unique(
@@ -306,6 +306,21 @@ def _prerequisite_priority(relationship: str) -> int:
         "UNDECIDED": 2,
     }
     return priorities.get(relationship, 99)
+
+
+def _recommendation_blocker_class_priority(blockers: list[dict]) -> int:
+    has_required = any(blocker["relationship"] == "REQUIRED" for blocker in blockers)
+    if has_required:
+        return 0
+    if blockers:
+        return 1
+    return 2
+
+
+def _recommendation_event_count_priority(status: str, event_count: int) -> int:
+    if status == "ready_for_next_step":
+        return event_count
+    return -event_count
 
 
 def _build_prerequisite_blockers(
@@ -406,12 +421,21 @@ def _append_prerequisite_reason_codes(
         )
 
 
-def _sort_recommendations(recommendations: list[dict]) -> list[dict]:
+def _sort_recommendations(
+    recommendations: list[dict],
+    skill_summaries_by_skill: dict[str, dict],
+) -> list[dict]:
     def sort_key(record: dict):
         blockers = record.get("blockedByPrerequisites", [])
-        has_required = any(blocker["relationship"] == "REQUIRED" for blocker in blockers)
-        has_any = bool(blockers)
-        return (0 if has_required else 1 if has_any else 2, record["targetSkillId"])
+        summary = skill_summaries_by_skill.get(record["targetSkillId"], {})
+        status = summary.get("status", "")
+        event_count = summary.get("eventCount", 0)
+        return (
+            _recommendation_blocker_class_priority(blockers),
+            _status_priority(status),
+            _recommendation_event_count_priority(status, event_count),
+            record["targetSkillId"],
+        )
 
     return sorted(recommendations, key=sort_key)
 
@@ -518,7 +542,7 @@ def summarize_learner(content: UnitContent, events: list[dict]) -> LearnerSummar
             record["skillId"],
         ),
     )
-    recommendations = _sort_recommendations(list(recommendations_by_skill.values()))
+    recommendations = _sort_recommendations(list(recommendations_by_skill.values()), summaries_by_skill)
 
     return LearnerSummaryResult(
         learnerId=learner_id,

@@ -7,6 +7,7 @@ from app.runtime.content_loader import load_unit1_content
 from app.runtime.diagnostics import diagnose_event, summarize_learner, validate_evidence_event
 from app.runtime.learner_record import (
     merge_session_into_learner_record,
+    prepare_observation_form_for_learner_record,
     run_learning_turn,
     store_active_session,
     submit_observation_to_learner_record,
@@ -98,6 +99,95 @@ def _load_learning_turn_cases() -> list[dict]:
         return json.load(handle)
 
 
+def _load_prepare_observation_form_cases() -> list[dict]:
+    with (HARNESS_ROOT / "prepare_observation_form_cases.json").open("r", encoding="utf-8") as handle:
+        return json.load(handle)
+
+
+def _load_transcript_fixture(transcript_file: str, transcript_id: str) -> dict:
+    transcript_path = Path(HARNESS_ROOT.parent.parent, transcript_file)
+    with transcript_path.open("r", encoding="utf-8") as handle:
+        transcripts = json.load(handle)
+
+    if not isinstance(transcripts, list):
+        raise ValueError(f"Transcript fixture {transcript_file} must be a JSON array.")
+
+    transcript = next(
+        (
+            record
+            for record in transcripts
+            if isinstance(record, dict) and record.get("transcriptId") == transcript_id
+        ),
+        None,
+    )
+    if transcript is None:
+        raise ValueError(f"Transcript fixture {transcript_file} is missing transcriptId {transcript_id}.")
+    return transcript
+
+
+def _turn_sequence_from_case(case: dict) -> tuple[str, bool, list[dict] | None, dict | None]:
+    transcript = None
+    learner_file = case.get("learnerFile")
+    start_before_turns = bool(case.get("startBeforeTurns"))
+    turn_sequence = case.get("turnSequence")
+
+    transcript_file = case.get("transcriptFile")
+    transcript_id = case.get("transcriptId")
+    if isinstance(transcript_file, str) and isinstance(transcript_id, str):
+        transcript = _load_transcript_fixture(transcript_file, transcript_id)
+        if learner_file is None:
+            learner_file = transcript.get("learnerFile")
+        start_before_turns = start_before_turns or bool(transcript.get("startBeforeTurns"))
+        if turn_sequence is None:
+            turns = transcript.get("turns", [])
+            if not isinstance(turns, list) or not turns:
+                raise ValueError(f"Transcript {transcript_id} must contain at least one turn.")
+            turn_sequence = []
+            for index, turn in enumerate(turns):
+                if not isinstance(turn, dict):
+                    raise ValueError(f"Transcript {transcript_id} turn {index} must be an object.")
+                observation_form = turn.get("observationFormInput")
+                if not isinstance(observation_form, dict):
+                    raise ValueError(
+                        f"Transcript {transcript_id} turn {index} is missing observationFormInput."
+                    )
+                turn_sequence.append(observation_form)
+
+    if not isinstance(learner_file, str) or not learner_file:
+        raise ValueError(f"{case['name']}: learnerFile is required.")
+
+    if not isinstance(turn_sequence, list) or not turn_sequence:
+        return learner_file, start_before_turns, None, transcript
+
+    return learner_file, start_before_turns, turn_sequence, transcript
+
+
+def _load_learner_record_from_case(case: dict, content=None) -> dict:
+    if "transcriptFile" not in case or "transcriptId" not in case:
+        learner_path = Path(HARNESS_ROOT.parent.parent, case["learnerFile"])
+        with learner_path.open("r", encoding="utf-8") as handle:
+            return json.load(handle)
+
+    if content is None:
+        raise ValueError(f"{case['name']}: transcript-backed case requires content.")
+
+    learner_file, start_before_turns, turn_sequence, _transcript = _turn_sequence_from_case(case)
+    learner_path = Path(HARNESS_ROOT.parent.parent, learner_file)
+    with learner_path.open("r", encoding="utf-8") as handle:
+        learner_record = json.load(handle)
+
+    if start_before_turns:
+        started = start_learning_session(learner_record)
+        learner_record = started["learnerRecord"]
+
+    if turn_sequence:
+        for observation_form in turn_sequence:
+            result = run_learning_turn(learner_record, observation_form, content)
+            learner_record = result["learnerRecord"]
+
+    return learner_record
+
+
 def _assert_case(case: dict, content) -> list[str]:
     failures: list[str] = []
     event = case["event"]
@@ -166,6 +256,11 @@ def _assert_learner_summary_case(case: dict, content) -> list[str]:
         if record["status"] != expected_status:
             failures.append(
                 f"{case['name']}: expected {record['skillId']} status {expected_status}, got {record['status']}."
+            )
+        expected_event_count = expected.get("eventCounts", {}).get(record["skillId"])
+        if expected_event_count is not None and record.get("eventCount") != expected_event_count:
+            failures.append(
+                f"{case['name']}: expected {record['skillId']} event count {expected_event_count}, got {record.get('eventCount')}."
             )
 
     actual_required_blocked = [
@@ -393,13 +488,18 @@ def _assert_session_history_summary_case(case: dict, content) -> list[str]:
 def _assert_learner_record_case(case: dict, content) -> list[str]:
     failures: list[str] = []
     learner_path = Path(HARNESS_ROOT.parent.parent, case["learnerFile"])
-    session_path = Path(HARNESS_ROOT.parent.parent, case["sessionFile"])
     with learner_path.open("r", encoding="utf-8") as handle:
         learner_record = json.load(handle)
-    with session_path.open("r", encoding="utf-8") as handle:
-        session_state = json.load(handle)
+    session_files = case.get("sessionFiles")
+    if not isinstance(session_files, list) or not session_files:
+        session_files = [case["sessionFile"]]
 
-    updated_record = merge_session_into_learner_record(learner_record, session_state, content)
+    updated_record = learner_record
+    for session_file in session_files:
+        session_path = Path(HARNESS_ROOT.parent.parent, session_file)
+        with session_path.open("r", encoding="utf-8") as handle:
+            session_state = json.load(handle)
+        updated_record = merge_session_into_learner_record(updated_record, session_state, content)
     expected = case["expected"]
 
     if len(updated_record.get("sessions", [])) != expected["sessionCount"]:
@@ -430,14 +530,36 @@ def _assert_learner_record_case(case: dict, content) -> list[str]:
             f"{case['name']}: expected recommendation skill ids {expected['recommendationSkillIds']}, got {actual_recommendation_skill_ids}."
         )
 
+    expected_session_target_skill_ids = expected.get("sessionTargetSkillIds")
+    if expected_session_target_skill_ids is not None:
+        actual_session_target_skill_ids = [
+            record.get("targetSkillId")
+            for record in updated_record.get("sessions", [])
+            if isinstance(record, dict)
+        ]
+        if actual_session_target_skill_ids != expected_session_target_skill_ids:
+            failures.append(
+                f"{case['name']}: expected session target skill ids {expected_session_target_skill_ids}, got {actual_session_target_skill_ids}."
+            )
+
+    expected_next_skill_ids = expected.get("recommendationNextSkillIds", {})
+    if expected_next_skill_ids:
+        actual_next_skill_ids = {
+            record.get("targetSkillId"): record.get("recommendedNextSkillIds", [])
+            for record in updated_record.get("latestRecommendations", [])
+            if isinstance(record, dict)
+        }
+        if actual_next_skill_ids != expected_next_skill_ids:
+            failures.append(
+                f"{case['name']}: expected recommendation next skill ids {expected_next_skill_ids}, got {actual_next_skill_ids}."
+            )
+
     return failures
 
 
-def _assert_session_planner_case(case: dict) -> list[str]:
+def _assert_session_planner_case(case: dict, content) -> list[str]:
     failures: list[str] = []
-    learner_path = Path(HARNESS_ROOT.parent.parent, case["learnerFile"])
-    with learner_path.open("r", encoding="utf-8") as handle:
-        learner_record = json.load(handle)
+    learner_record = _load_learner_record_from_case(case, content)
 
     planned = plan_next_session(learner_record)
     expected = case["expected"]
@@ -462,11 +584,9 @@ def _assert_session_planner_case(case: dict) -> list[str]:
     return failures
 
 
-def _assert_session_orchestrator_case(case: dict) -> list[str]:
+def _assert_session_orchestrator_case(case: dict, content) -> list[str]:
     failures: list[str] = []
-    learner_path = Path(HARNESS_ROOT.parent.parent, case["learnerFile"])
-    with learner_path.open("r", encoding="utf-8") as handle:
-        learner_record = json.load(handle)
+    learner_record = _load_learner_record_from_case(case, content)
 
     result = resume_or_plan_session(learner_record)
     expected = case["expected"]
@@ -494,6 +614,11 @@ def _assert_session_orchestrator_case(case: dict) -> list[str]:
         if planned.get("plannedFromSkillId") != expected["plannedFromSkillId"]:
             failures.append(
                 f"{case['name']}: expected planned skill {expected['plannedFromSkillId']}, got {planned.get('plannedFromSkillId')}."
+            )
+        expected_next_skill_ids = expected.get("recommendedNextSkillIds")
+        if expected_next_skill_ids is not None and planned.get("recommendedNextSkillIds") != expected_next_skill_ids:
+            failures.append(
+                f"{case['name']}: expected next skill ids {expected_next_skill_ids}, got {planned.get('recommendedNextSkillIds')}."
             )
         if preview.get("firstLessonStepId") != expected["firstLessonStepId"]:
             failures.append(
@@ -605,11 +730,9 @@ def _assert_failure_case(case: dict, content) -> list[str]:
     return [f"{case['name']}: expected ValueError but the call succeeded."]
 
 
-def _assert_start_learning_session_case(case: dict) -> list[str]:
+def _assert_start_learning_session_case(case: dict, content) -> list[str]:
     failures: list[str] = []
-    learner_path = Path(HARNESS_ROOT.parent.parent, case["learnerFile"])
-    with learner_path.open("r", encoding="utf-8") as handle:
-        learner_record = json.load(handle)
+    learner_record = _load_learner_record_from_case(case, content)
 
     result = start_learning_session(learner_record)
     expected = case["expected"]
@@ -618,9 +741,10 @@ def _assert_start_learning_session_case(case: dict) -> list[str]:
 
     if result.get("action") != expected["action"]:
         failures.append(f"{case['name']}: expected action {expected['action']}, got {result.get('action')}.")
-    if guide.get("targetSkillId") != expected["targetSkillId"]:
+    actual_session_target = guide.get("sessionTargetSkillId", guide.get("targetSkillId"))
+    if actual_session_target != expected["targetSkillId"]:
         failures.append(
-            f"{case['name']}: expected target skill {expected['targetSkillId']}, got {guide.get('targetSkillId')}."
+            f"{case['name']}: expected target skill {expected['targetSkillId']}, got {actual_session_target}."
         )
     if guide.get("currentLessonStepId") != expected["currentLessonStepId"]:
         failures.append(
@@ -638,9 +762,25 @@ def _assert_start_learning_session_case(case: dict) -> list[str]:
         failures.append(
             f"{case['name']}: expected remaining step count {expected['remainingStepCount']}, got {guide.get('remainingStepCount')}."
         )
+    expected_current_skill = expected.get("currentStepSkillId")
+    if expected_current_skill is not None and guide.get("currentStepSkillId") != expected_current_skill:
+        failures.append(
+            f"{case['name']}: expected current step skill {expected_current_skill}, got {guide.get('currentStepSkillId')}."
+        )
     if active_session.get("targetSkillId") != expected["targetSkillId"]:
         failures.append(
             f"{case['name']}: expected active target skill {expected['targetSkillId']}, got {active_session.get('targetSkillId')}."
+        )
+    planned_preview = result.get("plannedSessionPreview", {})
+    expected_planned_from = expected.get("plannedFromSkillId")
+    if expected_planned_from is not None and planned_preview.get("plannedFromSkillId") != expected_planned_from:
+        failures.append(
+            f"{case['name']}: expected planned-from skill {expected_planned_from}, got {planned_preview.get('plannedFromSkillId')}."
+        )
+    expected_next_skill_ids = expected.get("recommendedNextSkillIds")
+    if expected_next_skill_ids is not None and planned_preview.get("recommendedNextSkillIds") != expected_next_skill_ids:
+        failures.append(
+            f"{case['name']}: expected preview next skill ids {expected_next_skill_ids}, got {planned_preview.get('recommendedNextSkillIds')}."
         )
 
     return failures
@@ -648,11 +788,40 @@ def _assert_start_learning_session_case(case: dict) -> list[str]:
 
 def _assert_learning_turn_case(case: dict, content) -> list[str]:
     failures: list[str] = []
-    learner_path = Path(HARNESS_ROOT.parent.parent, case["learnerFile"])
+    try:
+        learner_file, start_before_turns, turn_sequence, _transcript = _turn_sequence_from_case(case)
+    except ValueError as exc:
+        return [f"{case['name']}: {exc}"]
+
+    learner_path = Path(HARNESS_ROOT.parent.parent, learner_file)
     with learner_path.open("r", encoding="utf-8") as handle:
         learner_record = json.load(handle)
 
-    result = run_learning_turn(learner_record, case["observationFormInput"], content)
+    if start_before_turns:
+        started = start_learning_session(learner_record)
+        learner_record = started["learnerRecord"]
+
+    result = None
+    if isinstance(turn_sequence, list) and turn_sequence:
+        for observation_form in turn_sequence:
+            result = run_learning_turn(learner_record, observation_form, content)
+            learner_record = result["learnerRecord"]
+    else:
+        result = run_learning_turn(learner_record, case["observationFormInput"], content)
+        learner_record = result["learnerRecord"]
+
+    follow_up_turns = case.get("followUpTurnSequence")
+    if case.get("restartAfterRecommendation"):
+        restarted = start_learning_session(learner_record)
+        learner_record = restarted["learnerRecord"]
+
+    if isinstance(follow_up_turns, list) and follow_up_turns:
+        for observation_form in follow_up_turns:
+            result = run_learning_turn(learner_record, observation_form, content)
+            learner_record = result["learnerRecord"]
+
+    assert result is not None
+
     expected = case["expected"]
     turn_summary = result.get("turnSummary", {})
 
@@ -681,14 +850,116 @@ def _assert_learning_turn_case(case: dict, content) -> list[str]:
             )
     else:
         next_session = turn_summary.get("nextRecommendedSession", {})
-        if next_session.get("targetSkillId") != expected["targetSkillId"]:
+        actual_planned_from = next_session.get("plannedFromSkillId", next_session.get("targetSkillId"))
+        if actual_planned_from != expected["targetSkillId"]:
             failures.append(
-                f"{case['name']}: expected next recommended target skill {expected['targetSkillId']}, got {next_session.get('targetSkillId')}."
+                f"{case['name']}: expected next recommended target skill {expected['targetSkillId']}, got {actual_planned_from}."
             )
         if next_session.get("firstLessonStepId") != expected["firstLessonStepId"]:
             failures.append(
                 f"{case['name']}: expected first lesson step {expected['firstLessonStepId']}, got {next_session.get('firstLessonStepId')}."
             )
+
+    final_session_count = expected.get("finalSessionCount")
+    if final_session_count is not None and len(learner_record.get("sessions", [])) != final_session_count:
+        failures.append(
+            f"{case['name']}: expected final session count {final_session_count}, got {len(learner_record.get('sessions', []))}."
+        )
+
+    final_session_target_skill_ids = expected.get("finalSessionTargetSkillIds")
+    if final_session_target_skill_ids is not None:
+        actual_session_target_skill_ids = [
+            record.get("targetSkillId")
+            for record in learner_record.get("sessions", [])
+            if isinstance(record, dict)
+        ]
+        if actual_session_target_skill_ids != final_session_target_skill_ids:
+            failures.append(
+                f"{case['name']}: expected final session target skill ids {final_session_target_skill_ids}, got {actual_session_target_skill_ids}."
+            )
+
+    final_evidence_event_count = expected.get("finalEvidenceEventCount")
+    if final_evidence_event_count is not None and len(learner_record.get("evidenceEvents", [])) != final_evidence_event_count:
+        failures.append(
+            f"{case['name']}: expected final evidence event count {final_evidence_event_count}, got {len(learner_record.get('evidenceEvents', []))}."
+        )
+
+    final_skill_ids = expected.get("finalSkillIds")
+    if final_skill_ids is not None:
+        actual_skill_ids = [
+            record.get("skillId")
+            for record in learner_record.get("latestSkillSummaries", [])
+            if isinstance(record, dict)
+        ]
+        if actual_skill_ids != final_skill_ids:
+            failures.append(
+                f"{case['name']}: expected final skill ids {final_skill_ids}, got {actual_skill_ids}."
+            )
+
+    final_supporting_evidence_counts = expected.get("finalSupportingEvidenceCounts")
+    if final_supporting_evidence_counts is not None:
+        actual_supporting_evidence_counts = {
+            record.get("skillId"): len(record.get("supportingEvidenceIds", []))
+            for record in learner_record.get("latestSkillSummaries", [])
+            if isinstance(record, dict)
+        }
+        if actual_supporting_evidence_counts != final_supporting_evidence_counts:
+            failures.append(
+                f"{case['name']}: expected final supporting evidence counts {final_supporting_evidence_counts}, got {actual_supporting_evidence_counts}."
+            )
+
+    final_recommendation_skill_ids = expected.get("finalRecommendationSkillIds")
+    if final_recommendation_skill_ids is not None:
+        actual_recommendation_skill_ids = [
+            record.get("targetSkillId")
+            for record in learner_record.get("latestRecommendations", [])
+            if isinstance(record, dict)
+        ]
+        if actual_recommendation_skill_ids != final_recommendation_skill_ids:
+            failures.append(
+                f"{case['name']}: expected final recommendation skill ids {final_recommendation_skill_ids}, got {actual_recommendation_skill_ids}."
+            )
+
+    final_recommendation_next_skill_ids = expected.get("finalRecommendationNextSkillIds")
+    if final_recommendation_next_skill_ids is not None:
+        actual_recommendation_next_skill_ids = {
+            record.get("targetSkillId"): record.get("recommendedNextSkillIds", [])
+            for record in learner_record.get("latestRecommendations", [])
+            if isinstance(record, dict)
+        }
+        if actual_recommendation_next_skill_ids != final_recommendation_next_skill_ids:
+            failures.append(
+                f"{case['name']}: expected final recommendation next skill ids {final_recommendation_next_skill_ids}, got {actual_recommendation_next_skill_ids}."
+            )
+
+    return failures
+
+
+def _assert_prepare_observation_form_case(case: dict, content) -> list[str]:
+    failures: list[str] = []
+    learner_record = _load_learner_record_from_case(case, content)
+
+    if case.get("startBeforePrepare"):
+        started = start_learning_session(learner_record)
+        learner_record = started["learnerRecord"]
+
+    prepared = prepare_observation_form_for_learner_record(learner_record, content.observation_form_mappings)
+    expected = case["expected"]
+    observation_form = prepared.get("observationForm", {})
+    template = prepared.get("observationFormTemplate", {})
+
+    if prepared.get("sourceLessonStepId") != expected["lessonStepId"]:
+        failures.append(
+            f"{case['name']}: expected lesson step {expected['lessonStepId']}, got {prepared.get('sourceLessonStepId')}."
+        )
+    if list(observation_form.get("fieldValues", {}).keys()) != expected["fieldIds"]:
+        failures.append(
+            f"{case['name']}: expected field ids {expected['fieldIds']}, got {list(observation_form.get('fieldValues', {}).keys())}."
+        )
+    if template.get("learnerResponsePrompt") != expected["learnerResponsePrompt"]:
+        failures.append(
+            f"{case['name']}: expected learner prompt {expected['learnerResponsePrompt']!r}, got {template.get('learnerResponsePrompt')!r}."
+        )
 
     return failures
 
@@ -709,6 +980,7 @@ def main() -> int:
     failure_cases = _load_failure_cases()
     start_learning_session_cases = _load_start_learning_session_cases()
     learning_turn_cases = _load_learning_turn_cases()
+    prepare_observation_form_cases = _load_prepare_observation_form_cases()
 
     failures: list[str] = []
     for case in cases:
@@ -726,9 +998,9 @@ def main() -> int:
     for case in learner_record_cases:
         failures.extend(_assert_learner_record_case(case, content))
     for case in session_planner_cases:
-        failures.extend(_assert_session_planner_case(case))
+        failures.extend(_assert_session_planner_case(case, content))
     for case in session_orchestrator_cases:
-        failures.extend(_assert_session_orchestrator_case(case))
+        failures.extend(_assert_session_orchestrator_case(case, content))
     for case in active_session_cases:
         failures.extend(_assert_active_session_case(case))
     for case in learner_record_submission_cases:
@@ -736,9 +1008,11 @@ def main() -> int:
     for case in failure_cases:
         failures.extend(_assert_failure_case(case, content))
     for case in start_learning_session_cases:
-        failures.extend(_assert_start_learning_session_case(case))
+        failures.extend(_assert_start_learning_session_case(case, content))
     for case in learning_turn_cases:
         failures.extend(_assert_learning_turn_case(case, content))
+    for case in prepare_observation_form_cases:
+        failures.extend(_assert_prepare_observation_form_case(case, content))
 
     if failures:
         print("Harness failed:")
@@ -761,6 +1035,7 @@ def main() -> int:
     print(f"Failure cases: {len(failure_cases)}")
     print(f"Start-learning-session cases: {len(start_learning_session_cases)}")
     print(f"Learning-turn cases: {len(learning_turn_cases)}")
+    print(f"Prepare-observation-form cases: {len(prepare_observation_form_cases)}")
     return 0
 
 

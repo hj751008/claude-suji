@@ -139,7 +139,7 @@
     {
       "learnerId": "sample-learner",
       "skillId": "U1-S3",
-      "status": "evidence_positive_but_unapproved",
+      "status": "ready_for_next_step",
       "statusApproval": "provisional",
       "decisionType": "multi_event_rule_assisted_conservative",
       "supportingEvidenceIds": [
@@ -147,12 +147,12 @@
       ],
       "matchedErrorPatternIds": [],
       "explanations": [
-        "The current event is positive evidence for the targeted skill.",
-        "The repository does not yet approve a threshold for promoting this to mastered."
+        "The current event satisfies the minimum Unit 1 rule for moving to the next guided step.",
+        "This supports conservative next-step planning, not a final mastered label."
       ],
       "blockedBy": [
-        "mastery labels are not finalized in docs/mastery-rules.md",
-        "minimum evidence required for pass remains UNDECIDED"
+        "This status supports conservative tutoring flow only, not final mastery approval.",
+        "Unit-level mastered thresholds, reassessment rules, and overrides remain UNDECIDED."
       ],
       "eventCount": 1,
       "blockedByPrerequisites": [
@@ -179,7 +179,7 @@
       "needsReview": true,
       "reasonCodes": [
         "documented_skill_target",
-        "mastery_thresholds_not_approved",
+        "unit_mastery_threshold_pending",
         "helpful_prerequisite_blocker"
       ],
       "summary": "Conservative follow-up practice is recommended pending more evidence.",

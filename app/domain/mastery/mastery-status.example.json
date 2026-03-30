@@ -1,18 +1,18 @@
 {
   "learnerId": "sample-learner",
-  "skillId": "U1-S4",
-  "status": "needs_more_evidence",
+  "skillId": "U1-S3",
+  "status": "ready_for_next_step",
   "statusApproval": "provisional",
-  "decisionType": "manual_or_rule_assisted",
+  "decisionType": "rule_assisted_conservative",
   "explanations": [
-    "Learner can inspect a proposed factorization, but current evidence does not show a stable check for prime-only factors.",
-    "No approved numeric threshold exists for auto-promotion to mastered."
+    "The current event satisfies the minimum Unit 1 rule for moving to the next guided step.",
+    "This supports conservative next-step planning, not a final mastered label."
   ],
   "supportingEvidenceIds": [
-    "example-u1-s4-check-001"
+    "example-u1-s3-correct-001"
   ],
   "blockedBy": [
-    "mastery labels are not finalized in docs/mastery-rules.md",
-    "minimum evidence required for pass remains UNDECIDED"
+    "This status supports conservative tutoring flow only, not final mastery approval.",
+    "Unit-level mastered thresholds, reassessment rules, and overrides remain UNDECIDED."
   ]
 }

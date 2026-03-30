@@ -1,19 +1,20 @@
 {
   "learnerId": "sample-learner",
-  "targetSkillId": "U1-S4",
+  "targetSkillId": "U1-S3",
   "recommendationType": "practice",
   "confidence": "limited",
   "reasonCodes": [
-    "documented_example_match",
-    "mastery_thresholds_not_approved"
+    "documented_skill_target",
+    "unit_mastery_threshold_pending",
+    "helpful_prerequisite_blocker"
   ],
-  "summary": "Recommend additional factorization-checking practice before broader application tasks.",
+  "summary": "Keep prime-factorization practice conservative and prepend the documented entry step before broader progression.",
   "sourceDocs": [
     "docs/recommendation-rules.md"
   ],
   "needsReview": true,
   "notes": [
     "Use conservative wording when evidence or ranking logic is incomplete.",
-    "Do not encode hidden weights or tie-break formulas."
+    "Prepend documented prerequisite blockers before the target skill instead of using hidden weights."
   ]
 }

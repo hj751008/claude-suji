@@ -12,6 +12,7 @@ from app.runtime.content_loader import load_unit1_content
 from app.runtime.diagnostics import diagnose_event, summarize_learner, validate_evidence_event
 from app.runtime.learner_record import (
     merge_session_into_learner_record,
+    prepare_observation_form_for_learner_record,
     run_learning_turn,
     store_active_session,
     submit_observation_to_learner_record,
@@ -94,6 +95,13 @@ def _build_parser() -> argparse.ArgumentParser:
     run_learning_turn_parser.add_argument("--input", required=True, help="Path to an observation form JSON file.")
     run_learning_turn_parser.add_argument("--write", action="store_true", help="Write the updated learner record back to the learner file.")
 
+    prepare_observation_form_parser = subparsers.add_parser(
+        "prepare-observation-form",
+        help="Build a strict observation form draft from the current learner-record step and documented mappings only.",
+    )
+    prepare_observation_form_parser.add_argument("--learner", required=True, help="Path to a learner record JSON file.")
+    prepare_observation_form_parser.add_argument("--output", help="Optional path to write the observation form draft JSON.")
+
     session_summary_parser = subparsers.add_parser("summarize-session-history", help="Convert session history to learner evidence and summarize it.")
     session_summary_parser.add_argument("--session", required=True, help="Path to a session state JSON file.")
 
@@ -124,6 +132,40 @@ def _build_parser() -> argparse.ArgumentParser:
     )
     start_learning_session_parser.add_argument("--learner", required=True, help="Path to a learner record JSON file.")
     start_learning_session_parser.add_argument("--write", action="store_true", help="Write the updated learner record back to the learner file.")
+
+    replay_transcript_parser = subparsers.add_parser(
+        "replay-transcript",
+        help="Replay a sample tutor transcript turn-by-turn against a learner record.",
+    )
+    replay_transcript_parser.add_argument("--transcript-file", required=True, help="Path to a transcript fixture JSON file.")
+    replay_transcript_parser.add_argument("--transcript-id", required=True, help="Transcript id to replay from the fixture.")
+    replay_transcript_parser.add_argument("--learner", help="Optional learner record path override.")
+    replay_transcript_parser.add_argument(
+        "--turn-limit",
+        type=int,
+        help="Optional maximum number of turns to replay from the start of the transcript.",
+    )
+    replay_transcript_parser.add_argument(
+        "--summary-only",
+        action="store_true",
+        help="Print transcript replay summaries without the final learner record payload.",
+    )
+    replay_transcript_parser.add_argument("--write", action="store_true", help="Write the updated learner record back to the learner file.")
+
+    list_transcripts_parser = subparsers.add_parser(
+        "list-transcripts",
+        help="List available sample tutor transcripts from a fixture file.",
+    )
+    list_transcripts_parser.add_argument("--transcript-file", required=True, help="Path to a transcript fixture JSON file.")
+    list_transcripts_parser.add_argument("--skill-id", help="Optional skill id filter.")
+    list_transcripts_parser.add_argument("--tag", help="Optional tag filter.")
+
+    serve_operator_ui_parser = subparsers.add_parser(
+        "serve-operator-ui",
+        help="Serve a local browser UI for transcript replay and operator handoff inspection.",
+    )
+    serve_operator_ui_parser.add_argument("--host", default="127.0.0.1", help="Host to bind the local UI server to.")
+    serve_operator_ui_parser.add_argument("--port", type=int, default=8765, help="Port for the local UI server.")
 
     subparsers.add_parser("run-harness", help="Run the first Unit 1 harness.")
     return parser
@@ -281,6 +323,22 @@ def run_learning_turn_command(learner_path: Path, input_path: Path, write_result
     return 0
 
 
+def run_prepare_observation_form(learner_path: Path, output_path: Path | None) -> int:
+    learner_record = _load_json(learner_path)
+    content = load_unit1_content()
+    try:
+        result = prepare_observation_form_for_learner_record(learner_record, content.observation_form_mappings)
+    except ValueError as exc:
+        print(f"Prepare-observation-form failed: {exc}")
+        return 1
+
+    if output_path is not None:
+        _dump_json(output_path, result["observationForm"])
+
+    print(json.dumps(result, ensure_ascii=False, indent=2))
+    return 0
+
+
 def run_summarize_session_history(session_path: Path) -> int:
     session_state = _load_json(session_path)
     content = load_unit1_content()
@@ -378,6 +436,144 @@ def run_start_learning_session(learner_path: Path, write_result: bool) -> int:
     return 0
 
 
+def run_replay_transcript(
+    transcript_path: Path,
+    transcript_id: str,
+    learner_override_path: Path | None,
+    turn_limit: int | None,
+    summary_only: bool,
+    write_result: bool,
+) -> int:
+    transcripts = _load_json(transcript_path)
+    if not isinstance(transcripts, list):
+        print("Replay-transcript failed: transcript fixture must be a JSON array.")
+        return 1
+
+    transcript = next(
+        (
+            record
+            for record in transcripts
+            if isinstance(record, dict) and record.get("transcriptId") == transcript_id
+        ),
+        None,
+    )
+    if transcript is None:
+        print(f"Replay-transcript failed: transcriptId {transcript_id!r} was not found.")
+        return 1
+
+    learner_file = learner_override_path
+    if learner_file is None:
+        transcript_learner = transcript.get("learnerFile")
+        if not isinstance(transcript_learner, str) or not transcript_learner:
+            print("Replay-transcript failed: transcript is missing learnerFile and no --learner override was provided.")
+            return 1
+        learner_file = Path(transcript_learner)
+
+    learner_path = learner_file
+    learner_record = _load_json(learner_path)
+    turns = transcript.get("turns", [])
+    if not isinstance(turns, list) or not turns:
+        print("Replay-transcript failed: transcript must contain at least one turn.")
+        return 1
+    if turn_limit is not None and turn_limit <= 0:
+        print("Replay-transcript failed: --turn-limit must be a positive integer.")
+        return 1
+    selected_turns = turns if turn_limit is None else turns[:turn_limit]
+
+    content = load_unit1_content()
+    turn_results: list[dict] = []
+
+    try:
+        if transcript.get("startBeforeTurns"):
+            started = start_learning_session(learner_record)
+            learner_record = started["learnerRecord"]
+
+        for index, turn in enumerate(selected_turns):
+            if not isinstance(turn, dict):
+                raise ValueError(f"Transcript turn {index} must be an object.")
+            observation_form = turn.get("observationFormInput")
+            if not isinstance(observation_form, dict):
+                raise ValueError(f"Transcript turn {index} is missing observationFormInput.")
+
+            result = run_learning_turn(learner_record, observation_form, content)
+            learner_record = result["learnerRecord"]
+            turn_results.append(
+                {
+                    "turnIndex": turn.get("turnIndex", index + 1),
+                    "lessonStepId": turn.get("lessonStepId"),
+                    "messages": turn.get("messages", []),
+                    "operatorNote": turn.get("operatorNote"),
+                    "turnSummary": result.get("turnSummary", {}),
+                }
+            )
+    except ValueError as exc:
+        print(f"Replay-transcript failed: {exc}")
+        return 1
+
+    if write_result:
+        _dump_json(learner_path, learner_record)
+
+    payload = {
+        "transcriptId": transcript.get("transcriptId"),
+        "name": transcript.get("name"),
+        "skillId": transcript.get("skillId"),
+        "tags": transcript.get("tags", []),
+        "learnerFile": str(learner_path),
+        "turnCount": len(turns),
+        "replayedTurnCount": len(turn_results),
+        "turnResults": turn_results,
+    }
+    if not summary_only:
+        payload["finalLearnerRecord"] = learner_record
+    print(json.dumps(payload, ensure_ascii=False, indent=2))
+    return 0
+
+
+def run_list_transcripts(transcript_path: Path, skill_id_filter: str | None, tag_filter: str | None) -> int:
+    transcripts = _load_json(transcript_path)
+    if not isinstance(transcripts, list):
+        print("List-transcripts failed: transcript fixture must be a JSON array.")
+        return 1
+
+    payload: list[dict] = []
+    for record in transcripts:
+        if not isinstance(record, dict):
+            continue
+        skill_id = record.get("skillId")
+        tags = record.get("tags", [])
+        if skill_id_filter is not None and skill_id != skill_id_filter:
+            continue
+        if tag_filter is not None:
+            if not isinstance(tags, list) or tag_filter not in tags:
+                continue
+        turns = record.get("turns", [])
+        payload.append(
+            {
+                "transcriptId": record.get("transcriptId"),
+                "name": record.get("name"),
+                "skillId": skill_id,
+                "tags": tags,
+                "learnerFile": record.get("learnerFile"),
+                "turnCount": len(turns) if isinstance(turns, list) else 0,
+                "startBeforeTurns": bool(record.get("startBeforeTurns")),
+            }
+        )
+
+    print(json.dumps(payload, ensure_ascii=False, indent=2))
+    return 0
+
+
+def run_serve_operator_ui(host: str, port: int) -> int:
+    from app.operator_ui_server import serve_operator_ui
+
+    try:
+        serve_operator_ui(host, port)
+    except OSError as exc:
+        print(f"Serve-operator-ui failed: {exc}")
+        return 1
+    return 0
+
+
 def run_summarize_learner(input_path: Path) -> int:
     events = _load_json(input_path)
     if not isinstance(events, list):
@@ -426,6 +622,11 @@ def main() -> int:
         return run_submit_observation_to_learner_record(Path(args.learner), Path(args.input), args.write)
     if args.command == "run-learning-turn":
         return run_learning_turn_command(Path(args.learner), Path(args.input), args.write)
+    if args.command == "prepare-observation-form":
+        return run_prepare_observation_form(
+            Path(args.learner),
+            None if args.output is None else Path(args.output),
+        )
     if args.command == "summarize-session-history":
         return run_summarize_session_history(Path(args.session))
     if args.command == "update-learner-record":
@@ -438,6 +639,19 @@ def main() -> int:
         return run_sync_active_session(Path(args.learner), args.write)
     if args.command == "start-learning-session":
         return run_start_learning_session(Path(args.learner), args.write)
+    if args.command == "replay-transcript":
+        return run_replay_transcript(
+            Path(args.transcript_file),
+            args.transcript_id,
+            None if args.learner is None else Path(args.learner),
+            args.turn_limit,
+            args.summary_only,
+            args.write,
+        )
+    if args.command == "list-transcripts":
+        return run_list_transcripts(Path(args.transcript_file), args.skill_id, args.tag)
+    if args.command == "serve-operator-ui":
+        return run_serve_operator_ui(args.host, args.port)
     if args.command == "run-harness":
         return run_harness()
 

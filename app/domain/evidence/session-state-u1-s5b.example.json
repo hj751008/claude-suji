@@ -1,0 +1,37 @@
+{
+  "learnerId": "sample-learner",
+  "targetSkillId": "U1-S5B",
+  "status": "in_progress",
+  "currentStepIndex": 0,
+  "currentStep": {
+    "activityId": "ACT-U1-S5B-SQUARE-NUMBER",
+    "lessonStepId": "STEP-U1-S5B-SQUARE-NUMBER",
+    "skillId": "U1-S5B",
+    "activityType": "dialogue-flow",
+    "title": "Find the Missing Factor for a Square",
+    "openingLine": "Let's look for the one missing factor that would make every prime count even.",
+    "firstTutorQuestion": "Which prime factor count is odd right now and needs one more?",
+    "smallHint": "Square numbers need each prime factor to appear an even number of times.",
+    "goodStoppingPoint": "Learner identifies the missing factor and explains why it completes the square structure."
+  },
+  "nextStep": null,
+  "completedStepIds": [],
+  "remainingStepIds": [
+    "STEP-U1-S5B-SQUARE-NUMBER"
+  ],
+  "steps": [
+    {
+      "activityId": "ACT-U1-S5B-SQUARE-NUMBER",
+      "lessonStepId": "STEP-U1-S5B-SQUARE-NUMBER",
+      "skillId": "U1-S5B",
+      "activityType": "dialogue-flow",
+      "title": "Find the Missing Factor for a Square",
+      "openingLine": "Let's look for the one missing factor that would make every prime count even.",
+      "firstTutorQuestion": "Which prime factor count is odd right now and needs one more?",
+      "smallHint": "Square numbers need each prime factor to appear an even number of times.",
+      "goodStoppingPoint": "Learner identifies the missing factor and explains why it completes the square structure."
+    }
+  ],
+  "completionRule": "complete_all_steps_in_order",
+  "history": []
+}

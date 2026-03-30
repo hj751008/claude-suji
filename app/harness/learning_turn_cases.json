@@ -38,5 +38,468 @@
       "targetSkillId": "U1-S3",
       "firstLessonStepId": "STEP-U1-S2-ENTRY-BRIDGE"
     }
+  },
+  {
+    "name": "run planned session from start to completion",
+    "learnerFile": "app/domain/evidence/learner-record-with-summary.example.json",
+    "startBeforeTurns": true,
+    "turnSequence": [
+      {
+        "learnerResponse": "24 is even, so I should start by dividing by 2 first.",
+        "fieldValues": {
+          "starts_with_two": true,
+          "mentions_evenness": true
+        },
+        "tutorNote": "Learner chose 2 as the first easy divisor for 24.",
+        "timestamp": "2026-03-27T09:30:00+09:00"
+      },
+      {
+        "learnerResponse": "I rewrote the final answer using only prime factors and kept every factor.",
+        "fieldValues": {
+          "uses_only_prime_factors": true,
+          "keeps_all_factors": true
+        },
+        "tutorNote": "Learner rewrote the factorization cleanly without dropping any factors.",
+        "timestamp": "2026-03-26T10:00:00+09:00"
+      }
+    ],
+    "expected": {
+      "decision": "completed",
+      "nextAction": "review_next_recommendation",
+      "sessionStatus": "completed",
+      "targetSkillId": "U1-S2",
+      "firstLessonStepId": "STEP-U1-S1-CONCEPT-CHECK"
+    }
+  },
+  {
+    "name": "run learning turn from korean text-only observation and continue",
+    "learnerFile": "app/domain/evidence/learner-record-with-live-session.example.json",
+    "observationFormInput": {
+      "learnerResponse": "24는 짝수니까 2부터 나눠 보면 돼.",
+      "fieldValues": {
+        "starts_with_two": false,
+        "mentions_evenness": false
+      },
+      "tutorNote": "튜터가 체크박스는 비워 두고 자유서술만 남겼다.",
+      "timestamp": "2026-03-28T11:00:00+09:00"
+    },
+    "expected": {
+      "decision": "completed",
+      "nextAction": "continue_active_session",
+      "sessionStatus": "in_progress",
+      "currentLessonStepId": "STEP-U1-S3-REWRITE-CLEANLY",
+      "firstTutorQuestion": "Which factors should still remain in the final line?"
+    }
+  },
+  {
+    "name": "replay transcript fixture for korean live entry bridge log",
+    "transcriptFile": "app/domain/evidence/unit1-tutor-transcripts.example.json",
+    "transcriptId": "u1-s2-entry-bridge-ko-text-only-live",
+    "expected": {
+      "decision": "completed",
+      "nextAction": "continue_active_session",
+      "sessionStatus": "in_progress",
+      "currentLessonStepId": "STEP-U1-S3-REWRITE-CLEANLY",
+      "firstTutorQuestion": "Which factors should still remain in the final line?"
+    }
+  },
+  {
+    "name": "replay transcript fixture for bilingual planned session completion",
+    "transcriptFile": "app/domain/evidence/unit1-tutor-transcripts.example.json",
+    "transcriptId": "u1-s2-s3-bilingual-text-only-planned-session",
+    "expected": {
+      "decision": "completed",
+      "nextAction": "review_next_recommendation",
+      "sessionStatus": "completed",
+      "targetSkillId": "U1-S2",
+      "firstLessonStepId": "STEP-U1-S1-CONCEPT-CHECK"
+    }
+  },
+  {
+    "name": "replay transcript fixture for korean verification completion",
+    "transcriptFile": "app/domain/evidence/unit1-tutor-transcripts.example.json",
+    "transcriptId": "u1-s4-verify-ko-text-only-active-session",
+    "expected": {
+      "decision": "completed",
+      "nextAction": "review_next_recommendation",
+      "sessionStatus": "completed",
+      "targetSkillId": "U1-S3",
+      "firstLessonStepId": "STEP-U1-S2-ENTRY-BRIDGE"
+    }
+  },
+  {
+    "name": "replay transcript fixture for s3 follow-up when a repeated factor is dropped",
+    "transcriptFile": "app/domain/evidence/unit1-tutor-transcripts.example.json",
+    "transcriptId": "u1-s3-rewrite-missing-factor-ko-followup",
+    "expected": {
+      "decision": "needs_follow_up",
+      "nextAction": "continue_active_session",
+      "sessionStatus": "in_progress",
+      "currentLessonStepId": "STEP-U1-S3-REWRITE-CLEANLY",
+      "firstTutorQuestion": "Which factors should still remain in the final line?"
+    }
+  },
+  {
+    "name": "replay transcript fixture for s4 uncertain when learner checks only the product",
+    "transcriptFile": "app/domain/evidence/unit1-tutor-transcripts.example.json",
+    "transcriptId": "u1-s4-verification-product-only-ko-uncertain",
+    "expected": {
+      "decision": "uncertain",
+      "nextAction": "continue_active_session",
+      "sessionStatus": "in_progress",
+      "currentLessonStepId": "STEP-U1-S4-VERIFY-PRIME-FIRST",
+      "firstTutorQuestion": "Before checking the product, are all the factors prime?"
+    }
+  },
+  {
+    "name": "replay transcript fixture for s5a transfer completion",
+    "transcriptFile": "app/domain/evidence/unit1-tutor-transcripts.example.json",
+    "transcriptId": "u1-s5a-divisor-count-ko-text-only-active-session",
+    "expected": {
+      "decision": "completed",
+      "nextAction": "review_next_recommendation",
+      "sessionStatus": "completed",
+      "targetSkillId": "U1-S5A",
+      "firstLessonStepId": "STEP-U1-S3-REWRITE-CLEANLY"
+    }
+  },
+  {
+    "name": "replay transcript fixture for s5a uncertain when learner restarts with divisor listing",
+    "transcriptFile": "app/domain/evidence/unit1-tutor-transcripts.example.json",
+    "transcriptId": "u1-s5a-divisor-count-blind-listing-ko-uncertain",
+    "expected": {
+      "decision": "uncertain",
+      "nextAction": "continue_active_session",
+      "sessionStatus": "in_progress",
+      "currentLessonStepId": "STEP-U1-S5A-DIVISOR-COUNT-TRANSFER",
+      "firstTutorQuestion": "In this problem, do you need the factorization itself or the number of divisors?"
+    }
+  },
+  {
+    "name": "replay transcript fixture for s5b transfer completion",
+    "transcriptFile": "app/domain/evidence/unit1-tutor-transcripts.example.json",
+    "transcriptId": "u1-s5b-square-number-ko-text-only-active-session",
+    "expected": {
+      "decision": "completed",
+      "nextAction": "review_next_recommendation",
+      "sessionStatus": "completed",
+      "targetSkillId": "U1-S5B",
+      "firstLessonStepId": "STEP-U1-S3-REWRITE-CLEANLY"
+    }
+  },
+  {
+    "name": "replay transcript fixture for s5b uncertain when learner guesses a multiplier",
+    "transcriptFile": "app/domain/evidence/unit1-tutor-transcripts.example.json",
+    "transcriptId": "u1-s5b-square-number-random-guess-ko-uncertain",
+    "expected": {
+      "decision": "uncertain",
+      "nextAction": "continue_active_session",
+      "sessionStatus": "in_progress",
+      "currentLessonStepId": "STEP-U1-S5B-SQUARE-NUMBER",
+      "firstTutorQuestion": "Which prime factor count is odd right now and needs one more?"
+    }
+  },
+  {
+    "name": "replay transcript fixture for s5c transfer completion",
+    "transcriptFile": "app/domain/evidence/unit1-tutor-transcripts.example.json",
+    "transcriptId": "u1-s5c-gcd-lcm-ko-text-only-active-session",
+    "expected": {
+      "decision": "completed",
+      "nextAction": "review_next_recommendation",
+      "sessionStatus": "completed",
+      "targetSkillId": "U1-S5C",
+      "firstLessonStepId": "STEP-U1-S3-REWRITE-CLEANLY"
+    }
+  },
+  {
+    "name": "replay transcript fixture for s5c uncertain when learner calculates first",
+    "transcriptFile": "app/domain/evidence/unit1-tutor-transcripts.example.json",
+    "transcriptId": "u1-s5c-gcd-lcm-calculate-first-ko-uncertain",
+    "expected": {
+      "decision": "uncertain",
+      "nextAction": "continue_active_session",
+      "sessionStatus": "in_progress",
+      "currentLessonStepId": "STEP-U1-S5C-GCD-LCM-SORT",
+      "firstTutorQuestion": "Are you looking for what overlaps or what covers both numbers?"
+    }
+  },
+  {
+    "name": "replay transcript fixture for s5d transfer completion",
+    "transcriptFile": "app/domain/evidence/unit1-tutor-transcripts.example.json",
+    "transcriptId": "u1-s5d-relevant-part-ko-text-only-active-session",
+    "expected": {
+      "decision": "completed",
+      "nextAction": "review_next_recommendation",
+      "sessionStatus": "completed",
+      "targetSkillId": "U1-S5D",
+      "firstLessonStepId": "STEP-U1-S3-REWRITE-CLEANLY"
+    }
+  },
+  {
+    "name": "replay transcript fixture for s5d uncertain when learner does not choose a relevant part",
+    "transcriptFile": "app/domain/evidence/unit1-tutor-transcripts.example.json",
+    "transcriptId": "u1-s5d-relevant-part-whole-read-ko-uncertain",
+    "expected": {
+      "decision": "uncertain",
+      "nextAction": "continue_active_session",
+      "sessionStatus": "in_progress",
+      "currentLessonStepId": "STEP-U1-S5D-RELEVANT-PART-EXPLAIN",
+      "firstTutorQuestion": "Which part of the factorization helps you answer this question first?"
+    }
+  },
+  {
+    "name": "replay completed s5a transcript then finish blocker-first u1-s3 step",
+    "transcriptFile": "app/domain/evidence/unit1-tutor-transcripts.example.json",
+    "transcriptId": "u1-s5a-divisor-count-ko-text-only-active-session",
+    "restartAfterRecommendation": true,
+    "followUpTurnSequence": [
+      {
+        "learnerResponse": "I rewrote the final answer using only prime factors and kept every factor.",
+        "fieldValues": {
+          "uses_only_prime_factors": true,
+          "keeps_all_factors": true
+        },
+        "tutorNote": "Learner rewrote the factorization cleanly without dropping any factors.",
+        "timestamp": "2026-03-28T11:30:00+09:00"
+      }
+    ],
+    "expected": {
+      "decision": "completed",
+      "nextAction": "continue_active_session",
+      "sessionStatus": "in_progress",
+      "currentLessonStepId": "STEP-U1-S5A-DIVISOR-COUNT-TRANSFER",
+      "firstTutorQuestion": "In this problem, do you need the factorization itself or the number of divisors?"
+    }
+  },
+  {
+    "name": "replay completed s5c transcript then finish blocker-first u1-s3 step",
+    "transcriptFile": "app/domain/evidence/unit1-tutor-transcripts.example.json",
+    "transcriptId": "u1-s5c-gcd-lcm-ko-text-only-active-session",
+    "restartAfterRecommendation": true,
+    "followUpTurnSequence": [
+      {
+        "learnerResponse": "I rewrote the final answer using only prime factors and kept every factor.",
+        "fieldValues": {
+          "uses_only_prime_factors": true,
+          "keeps_all_factors": true
+        },
+        "tutorNote": "Learner rewrote the factorization cleanly without dropping any factors.",
+        "timestamp": "2026-03-28T11:31:00+09:00"
+      }
+    ],
+    "expected": {
+      "decision": "completed",
+      "nextAction": "continue_active_session",
+      "sessionStatus": "in_progress",
+      "currentLessonStepId": "STEP-U1-S5C-GCD-LCM-SORT",
+      "firstTutorQuestion": "Are you looking for what overlaps or what covers both numbers?"
+    }
+  },
+  {
+    "name": "replay completed s5b transcript then finish blocker-first u1-s3 step",
+    "transcriptFile": "app/domain/evidence/unit1-tutor-transcripts.example.json",
+    "transcriptId": "u1-s5b-square-number-ko-text-only-active-session",
+    "restartAfterRecommendation": true,
+    "followUpTurnSequence": [
+      {
+        "learnerResponse": "I rewrote the final answer using only prime factors and kept every factor.",
+        "fieldValues": {
+          "uses_only_prime_factors": true,
+          "keeps_all_factors": true
+        },
+        "tutorNote": "Learner rewrote the factorization cleanly without dropping any factors.",
+        "timestamp": "2026-03-28T11:40:00+09:00"
+      }
+    ],
+    "expected": {
+      "decision": "completed",
+      "nextAction": "continue_active_session",
+      "sessionStatus": "in_progress",
+      "currentLessonStepId": "STEP-U1-S5B-SQUARE-NUMBER",
+      "firstTutorQuestion": "Which prime factor count is odd right now and needs one more?"
+    }
+  },
+  {
+    "name": "replay completed s5d transcript then finish blocker-first u1-s3 step",
+    "transcriptFile": "app/domain/evidence/unit1-tutor-transcripts.example.json",
+    "transcriptId": "u1-s5d-relevant-part-ko-text-only-active-session",
+    "restartAfterRecommendation": true,
+    "followUpTurnSequence": [
+      {
+        "learnerResponse": "I rewrote the final answer using only prime factors and kept every factor.",
+        "fieldValues": {
+          "uses_only_prime_factors": true,
+          "keeps_all_factors": true
+        },
+        "tutorNote": "Learner rewrote the factorization cleanly without dropping any factors.",
+        "timestamp": "2026-03-28T11:41:00+09:00"
+      }
+    ],
+    "expected": {
+      "decision": "completed",
+      "nextAction": "continue_active_session",
+      "sessionStatus": "in_progress",
+      "currentLessonStepId": "STEP-U1-S5D-RELEVANT-PART-EXPLAIN",
+      "firstTutorQuestion": "Which part of the factorization helps you answer this question first?"
+    }
+  },
+  {
+    "name": "replay completed s5a transcript then complete blocker-first session and reorder recommendation",
+    "transcriptFile": "app/domain/evidence/unit1-tutor-transcripts.example.json",
+    "transcriptId": "u1-s5a-divisor-count-ko-text-only-active-session",
+    "restartAfterRecommendation": true,
+    "followUpTurnSequence": [
+      {
+        "learnerResponse": "I rewrote the final answer using only prime factors and kept every factor.",
+        "fieldValues": {
+          "uses_only_prime_factors": true,
+          "keeps_all_factors": true
+        },
+        "tutorNote": "Learner rewrote the factorization cleanly without dropping any factors.",
+        "timestamp": "2026-03-28T11:42:00+09:00"
+      },
+      {
+        "learnerResponse": "약수의 개수를 보는 문제니까 약수를 일일이 쓰지 말고 소인수분해 결과부터 써야 해.",
+        "fieldValues": {
+          "starts_from_factorization": false,
+          "avoids_blind_divisor_listing": false
+        },
+        "tutorNote": "튜터가 factorization reuse 발화만 남기고 체크박스는 비워 두었다.",
+        "timestamp": "2026-03-28T11:43:00+09:00"
+      }
+    ],
+    "expected": {
+      "decision": "completed",
+      "nextAction": "review_next_recommendation",
+      "sessionStatus": "completed",
+      "targetSkillId": "U1-S3",
+      "firstLessonStepId": "STEP-U1-S2-ENTRY-BRIDGE",
+      "finalSessionCount": 2,
+      "finalSessionTargetSkillIds": [
+        "U1-S5A",
+        "U1-S5A"
+      ],
+      "finalEvidenceEventCount": 3,
+      "finalSkillIds": [
+        "U1-S3",
+        "U1-S5A"
+      ],
+      "finalSupportingEvidenceCounts": {
+        "U1-S3": 1,
+        "U1-S5A": 2
+      },
+      "finalRecommendationSkillIds": [
+        "U1-S3",
+        "U1-S5A"
+      ],
+      "finalRecommendationNextSkillIds": {
+        "U1-S3": [
+          "U1-S2",
+          "U1-S3"
+        ],
+        "U1-S5A": [
+          "U1-S5A"
+        ]
+      }
+    }
+  },
+  {
+    "name": "replay completed s5b transcript then complete blocker-first session and reorder recommendation",
+    "transcriptFile": "app/domain/evidence/unit1-tutor-transcripts.example.json",
+    "transcriptId": "u1-s5b-square-number-ko-text-only-active-session",
+    "restartAfterRecommendation": true,
+    "followUpTurnSequence": [
+      {
+        "learnerResponse": "I rewrote the final answer using only prime factors and kept every factor.",
+        "fieldValues": {
+          "uses_only_prime_factors": true,
+          "keeps_all_factors": true
+        },
+        "tutorNote": "Learner rewrote the factorization cleanly without dropping any factors.",
+        "timestamp": "2026-03-28T11:46:00+09:00"
+      },
+      {
+        "learnerResponse": "3을 하나 더 곱하면 돼. 제곱수는 각 소수의 개수가 짝수가 되어야 하니까.",
+        "fieldValues": {
+          "identifies_missing_factor": false,
+          "explains_even_exponent_goal": false
+        },
+        "tutorNote": "튜터가 missing factor와 even-count 이유를 자유서술로만 남겼다.",
+        "timestamp": "2026-03-28T11:47:00+09:00"
+      }
+    ],
+    "expected": {
+      "decision": "completed",
+      "nextAction": "review_next_recommendation",
+      "sessionStatus": "completed",
+      "targetSkillId": "U1-S3",
+      "firstLessonStepId": "STEP-U1-S2-ENTRY-BRIDGE"
+    }
+  },
+  {
+    "name": "replay completed s5c transcript then complete blocker-first session and reorder recommendation",
+    "transcriptFile": "app/domain/evidence/unit1-tutor-transcripts.example.json",
+    "transcriptId": "u1-s5c-gcd-lcm-ko-text-only-active-session",
+    "restartAfterRecommendation": true,
+    "followUpTurnSequence": [
+      {
+        "learnerResponse": "I rewrote the final answer using only prime factors and kept every factor.",
+        "fieldValues": {
+          "uses_only_prime_factors": true,
+          "keeps_all_factors": true
+        },
+        "tutorNote": "Learner rewrote the factorization cleanly without dropping any factors.",
+        "timestamp": "2026-03-28T11:44:00+09:00"
+      },
+      {
+        "learnerResponse": "이건 공배수라서 둘을 다 담는 쪽을 먼저 보고, 계산은 그다음에 해야 해.",
+        "fieldValues": {
+          "names_shared_vs_covering_structure": false,
+          "delays_calculation_until_structure_named": false
+        },
+        "tutorNote": "튜터가 구조 구분 발화만 기록하고 체크박스는 비워 두었다.",
+        "timestamp": "2026-03-28T11:45:00+09:00"
+      }
+    ],
+    "expected": {
+      "decision": "completed",
+      "nextAction": "review_next_recommendation",
+      "sessionStatus": "completed",
+      "targetSkillId": "U1-S3",
+      "firstLessonStepId": "STEP-U1-S2-ENTRY-BRIDGE"
+    }
+  },
+  {
+    "name": "replay completed s5d transcript then complete blocker-first session and reorder recommendation",
+    "transcriptFile": "app/domain/evidence/unit1-tutor-transcripts.example.json",
+    "transcriptId": "u1-s5d-relevant-part-ko-text-only-active-session",
+    "restartAfterRecommendation": true,
+    "followUpTurnSequence": [
+      {
+        "learnerResponse": "I rewrote the final answer using only prime factors and kept every factor.",
+        "fieldValues": {
+          "uses_only_prime_factors": true,
+          "keeps_all_factors": true
+        },
+        "tutorNote": "Learner rewrote the factorization cleanly without dropping any factors.",
+        "timestamp": "2026-03-28T11:48:00+09:00"
+      },
+      {
+        "learnerResponse": "여기서는 2의 지수가 중요해. 이 문제는 2가 몇 번 있는지가 먼저 필요하기 때문이야.",
+        "fieldValues": {
+          "points_to_relevant_part": false,
+          "explains_why_that_part_matters": false
+        },
+        "tutorNote": "튜터가 관련 부분과 이유를 자유서술로만 남겼다.",
+        "timestamp": "2026-03-28T11:49:00+09:00"
+      }
+    ],
+    "expected": {
+      "decision": "completed",
+      "nextAction": "review_next_recommendation",
+      "sessionStatus": "completed",
+      "targetSkillId": "U1-S3",
+      "firstLessonStepId": "STEP-U1-S2-ENTRY-BRIDGE"
+    }
   }
 ]

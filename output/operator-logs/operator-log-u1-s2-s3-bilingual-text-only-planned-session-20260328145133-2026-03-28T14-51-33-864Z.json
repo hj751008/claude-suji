@@ -1,0 +1,1868 @@
+{
+  "logFormatVersion": "unit1-operator-ui-pilot-v1",
+  "exportedAt": "2026-03-28T14:51:33.864Z",
+  "selectedTranscriptId": "u1-s2-s3-bilingual-text-only-planned-session",
+  "transcriptFile": "app/domain/evidence/unit1-tutor-transcripts.example.json",
+  "loadedLearnerFile": "app/domain/evidence/learner-record-with-summary.example.json",
+  "pilotNote": "Pilot A\nTester: \nFocus: S2-S4 bridge and verification flow\nNatural: \nAwkward: \nOperator hesitation: \nFixture realism: ",
+  "actionHistory": [
+    {
+      "actionAt": "2026-03-28T14:51:11.531Z",
+      "kind": "replay-transcript",
+      "detail": {
+        "transcriptId": "u1-s2-s3-bilingual-text-only-planned-session",
+        "turnCount": 2,
+        "replayedTurnCount": 2,
+        "finalAction": "review_next_recommendation"
+      }
+    },
+    {
+      "actionAt": "2026-03-28T14:51:22.178Z",
+      "kind": "start-learning-session",
+      "detail": {
+        "action": "plan_new_session",
+        "sessionTargetSkillId": "U1-S2",
+        "currentStepSkillId": "U1-S1",
+        "currentLessonStepId": "STEP-U1-S1-CONCEPT-CHECK",
+        "plannedFromSkillId": "U1-S2",
+        "recommendedNextSkillIds": [
+          "U1-S1",
+          "U1-S2"
+        ]
+      }
+    }
+  ],
+  "latestReplayResult": {
+    "transcriptId": "u1-s2-s3-bilingual-text-only-planned-session",
+    "name": "Planned S2 to S3 session replay with bilingual text-only logs",
+    "skillId": "U1-S3",
+    "tags": [
+      "unit1",
+      "bilingual",
+      "text-only",
+      "planned",
+      "multi-turn"
+    ],
+    "learnerFile": "app/domain/evidence/learner-record-with-summary.example.json",
+    "turnCount": 2,
+    "replayedTurnCount": 2,
+    "turnResults": [
+      {
+        "turnIndex": 1,
+        "lessonStepId": "STEP-U1-S2-ENTRY-BRIDGE",
+        "messages": [
+          {
+            "speaker": "tutor",
+            "text": "Let's not solve the whole tree yet. What is the easiest divisor you can test first?"
+          },
+          {
+            "speaker": "learner",
+            "text": "24 is even, so I should start by dividing by 2 first."
+          }
+        ],
+        "operatorNote": "The tutor wrote only the learner quote and kept the checkboxes conservative.",
+        "turnSummary": {
+          "learnerId": "sample-learner",
+          "submittedLessonStepId": "STEP-U1-S2-ENTRY-BRIDGE",
+          "decision": "completed",
+          "sessionStatus": "in_progress",
+          "completedStepIds": [
+            "STEP-U1-S2-ENTRY-BRIDGE"
+          ],
+          "latestRecommendationSkillIds": [
+            "U1-S2",
+            "U1-S3"
+          ],
+          "nextAction": "continue_active_session",
+          "nextStepGuide": {
+            "sessionTargetSkillId": "U1-S3",
+            "currentStepSkillId": "U1-S3",
+            "currentLessonStepId": "STEP-U1-S3-REWRITE-CLEANLY",
+            "currentActivityId": "ACT-U1-S3-REWRITE-CLEANLY",
+            "title": "Rewrite the Final Factorization Cleanly",
+            "openingLine": "Your split-work is close; now let's turn it into one clean final factorization.",
+            "firstTutorQuestion": "Which factors should still remain in the final line?",
+            "smallHint": "Keep only prime factors in the last line, and make sure none were dropped.",
+            "goodStoppingPoint": "Learner writes one complete prime factorization with no missing or composite factor.",
+            "watchFor": [
+              "Learner keeps a composite factor like 6 in the final line.",
+              "Learner rewrites with only prime factors but drops one repeated factor."
+            ],
+            "exampleTutorMove": "Cover the scratch work and rebuild the last line only with prime factors that still remain.",
+            "exampleLearnerResponse": "The final line should keep 2, 2, and 3 because all of them are prime and none can be dropped.",
+            "nextLessonStepId": null,
+            "remainingStepCount": 1
+          }
+        }
+      },
+      {
+        "turnIndex": 2,
+        "lessonStepId": "STEP-U1-S3-REWRITE-CLEANLY",
+        "messages": [
+          {
+            "speaker": "tutor",
+            "text": "이제 마지막 줄에는 무엇만 남아 있어야 할까?"
+          },
+          {
+            "speaker": "learner",
+            "text": "소수만 남겨서 2 x 2 x 3으로 다시 썼고 빠진 것은 없어."
+          }
+        ],
+        "operatorNote": "튜터가 발화 로그만 남겼고 체크박스는 누르지 않았다.",
+        "turnSummary": {
+          "learnerId": "sample-learner",
+          "submittedLessonStepId": "STEP-U1-S3-REWRITE-CLEANLY",
+          "decision": "completed",
+          "sessionStatus": "completed",
+          "completedStepIds": [
+            "STEP-U1-S2-ENTRY-BRIDGE",
+            "STEP-U1-S3-REWRITE-CLEANLY"
+          ],
+          "latestRecommendationSkillIds": [
+            "U1-S2",
+            "U1-S3"
+          ],
+          "nextAction": "review_next_recommendation",
+          "nextRecommendedSession": {
+            "plannedFromSkillId": "U1-S2",
+            "recommendedNextSkillIds": [
+              "U1-S1",
+              "U1-S2"
+            ],
+            "firstStepSkillId": "U1-S1",
+            "firstLessonStepId": "STEP-U1-S1-CONCEPT-CHECK",
+            "firstTutorQuestion": "How many divisors does 1 actually have?",
+            "watchFor": [
+              "Learner uses the word 'prime' as a memorized label without counting divisors.",
+              "Learner says 1 is prime because it is only divisible by 1."
+            ],
+            "exampleTutorMove": "Let's list the divisors of 1 out loud first, then decide the label.",
+            "stepCount": 2
+          }
+        }
+      }
+    ],
+    "finalLearnerRecord": {
+      "learnerId": "sample-learner",
+      "activeSession": null,
+      "sessions": [
+        {
+          "learnerId": "sample-learner",
+          "targetSkillId": "U1-S3",
+          "status": "completed",
+          "currentStepIndex": 1,
+          "currentStep": null,
+          "nextStep": null,
+          "completedStepIds": [
+            "STEP-U1-S2-ENTRY-BRIDGE",
+            "STEP-U1-S3-REWRITE-CLEANLY"
+          ],
+          "remainingStepIds": [],
+          "steps": [
+            {
+              "activityId": "ACT-U1-S2-ENTRY-BRIDGE",
+              "lessonStepId": "STEP-U1-S2-ENTRY-BRIDGE",
+              "skillId": "U1-S2",
+              "activityType": "worked-bridge",
+              "title": "Entry Bridge With 24",
+              "openingLine": "Let's just find one easy way into the problem instead of solving everything at once.",
+              "firstTutorQuestion": "What is the easiest divisor you can test first?",
+              "smallHint": "If the number is even, checking 2 is a calm first step.",
+              "goodStoppingPoint": "Learner starts with 2 for 24 and explains that 24 is even.",
+              "watchFor": [
+                "Learner stalls because they think they need the whole tree immediately.",
+                "Learner notices 24 is even but still does not choose 2."
+              ],
+              "exampleTutorMove": "You do not need the whole answer yet. What does the word 'even' let you try first?",
+              "exampleLearnerResponse": "24 is even, so trying 2 first is the easiest entry."
+            },
+            {
+              "activityId": "ACT-U1-S3-REWRITE-CLEANLY",
+              "lessonStepId": "STEP-U1-S3-REWRITE-CLEANLY",
+              "skillId": "U1-S3",
+              "activityType": "dialogue-flow",
+              "title": "Rewrite the Final Factorization Cleanly",
+              "openingLine": "Your split-work is close; now let's turn it into one clean final factorization.",
+              "firstTutorQuestion": "Which factors should still remain in the final line?",
+              "smallHint": "Keep only prime factors in the last line, and make sure none were dropped.",
+              "goodStoppingPoint": "Learner writes one complete prime factorization with no missing or composite factor.",
+              "watchFor": [
+                "Learner keeps a composite factor like 6 in the final line.",
+                "Learner rewrites with only prime factors but drops one repeated factor."
+              ],
+              "exampleTutorMove": "Cover the scratch work and rebuild the last line only with prime factors that still remain.",
+              "exampleLearnerResponse": "The final line should keep 2, 2, and 3 because all of them are prime and none can be dropped."
+            }
+          ],
+          "completionRule": "complete_all_steps_in_order",
+          "lastEvaluation": {
+            "lessonStepId": "STEP-U1-S3-REWRITE-CLEANLY",
+            "decision": "completed",
+            "matchedRequiredSignals": [
+              "writes_only_prime_factors",
+              "keeps_all_factors"
+            ],
+            "missingRequiredSignals": [],
+            "matchedTextHints": [],
+            "matchedTextHintSignals": [
+              "writes_only_prime_factors",
+              "keeps_all_factors"
+            ],
+            "canAutoAdvance": true
+          },
+          "history": [
+            {
+              "attemptIndex": 0,
+              "lessonStepId": "STEP-U1-S2-ENTRY-BRIDGE",
+              "activityId": "ACT-U1-S2-ENTRY-BRIDGE",
+              "learnerResponse": "24 is even, so I should start by dividing by 2 first.",
+              "fieldValues": {
+                "starts_with_two": false,
+                "mentions_evenness": false
+              },
+              "tutorNote": "The tutor wrote only the learner quote and kept the checkboxes conservative.",
+              "timestamp": "2026-03-27T09:30:00+09:00",
+              "evaluation": {
+                "lessonStepId": "STEP-U1-S2-ENTRY-BRIDGE",
+                "decision": "completed",
+                "matchedRequiredSignals": [
+                  "chooses_two_as_start",
+                  "notes_even_number"
+                ],
+                "missingRequiredSignals": [],
+                "matchedTextHints": [
+                  "2",
+                  "even"
+                ],
+                "matchedTextHintSignals": [
+                  "chooses_two_as_start",
+                  "notes_even_number"
+                ],
+                "canAutoAdvance": true
+              }
+            },
+            {
+              "attemptIndex": 1,
+              "lessonStepId": "STEP-U1-S3-REWRITE-CLEANLY",
+              "activityId": "ACT-U1-S3-REWRITE-CLEANLY",
+              "learnerResponse": "소수만 남겨서 2 x 2 x 3으로 다시 썼고 빠진 것은 없어.",
+              "fieldValues": {
+                "uses_only_prime_factors": false,
+                "keeps_all_factors": false
+              },
+              "tutorNote": "튜터가 발화 로그만 남겼고 체크박스는 누르지 않았다.",
+              "timestamp": "2026-03-27T09:33:00+09:00",
+              "evaluation": {
+                "lessonStepId": "STEP-U1-S3-REWRITE-CLEANLY",
+                "decision": "completed",
+                "matchedRequiredSignals": [
+                  "writes_only_prime_factors",
+                  "keeps_all_factors"
+                ],
+                "missingRequiredSignals": [],
+                "matchedTextHints": [],
+                "matchedTextHintSignals": [
+                  "writes_only_prime_factors",
+                  "keeps_all_factors"
+                ],
+                "canAutoAdvance": true
+              }
+            }
+          ]
+        }
+      ],
+      "evidenceEvents": [
+        {
+          "eventId": "session-history-0-STEP-U1-S3-REWRITE-CLEANLY",
+          "learnerId": "sample-learner",
+          "kind": "session_history_observation",
+          "skillId": "U1-S3",
+          "result": "correct",
+          "errorPatternIds": [],
+          "observations": [
+            "I rewrote the final answer using only prime factors and kept every factor.",
+            "Learner rewrote the factorization cleanly without dropping any factors."
+          ],
+          "confidenceSignal": "confident",
+          "sourceDocs": [],
+          "derivedFrom": {
+            "lessonStepId": "STEP-U1-S3-REWRITE-CLEANLY",
+            "activityId": "ACT-U1-S3-REWRITE-CLEANLY",
+            "matchedRequiredSignals": [
+              "writes_only_prime_factors",
+              "keeps_all_factors"
+            ],
+            "missingRequiredSignals": []
+          }
+        },
+        {
+          "eventId": "session-history-0-STEP-U1-S2-ENTRY-BRIDGE",
+          "learnerId": "sample-learner",
+          "kind": "session_history_observation",
+          "skillId": "U1-S2",
+          "result": "correct",
+          "errorPatternIds": [],
+          "observations": [
+            "24 is even, so I should start by dividing by 2 first.",
+            "The tutor wrote only the learner quote and kept the checkboxes conservative."
+          ],
+          "confidenceSignal": "confident",
+          "sourceDocs": [],
+          "derivedFrom": {
+            "lessonStepId": "STEP-U1-S2-ENTRY-BRIDGE",
+            "activityId": "ACT-U1-S2-ENTRY-BRIDGE",
+            "matchedRequiredSignals": [
+              "chooses_two_as_start",
+              "notes_even_number"
+            ],
+            "missingRequiredSignals": []
+          }
+        },
+        {
+          "eventId": "session-history-1-STEP-U1-S3-REWRITE-CLEANLY",
+          "learnerId": "sample-learner",
+          "kind": "session_history_observation",
+          "skillId": "U1-S3",
+          "result": "correct",
+          "errorPatternIds": [],
+          "observations": [
+            "소수만 남겨서 2 x 2 x 3으로 다시 썼고 빠진 것은 없어.",
+            "튜터가 발화 로그만 남겼고 체크박스는 누르지 않았다."
+          ],
+          "confidenceSignal": "confident",
+          "sourceDocs": [],
+          "derivedFrom": {
+            "lessonStepId": "STEP-U1-S3-REWRITE-CLEANLY",
+            "activityId": "ACT-U1-S3-REWRITE-CLEANLY",
+            "matchedRequiredSignals": [
+              "writes_only_prime_factors",
+              "keeps_all_factors"
+            ],
+            "missingRequiredSignals": []
+          }
+        }
+      ],
+      "latestSkillSummaries": [
+        {
+          "learnerId": "sample-learner",
+          "skillId": "U1-S2",
+          "status": "ready_for_next_step",
+          "statusApproval": "provisional",
+          "decisionType": "multi_event_rule_assisted_conservative",
+          "supportingEvidenceIds": [
+            "session-history-0-STEP-U1-S2-ENTRY-BRIDGE"
+          ],
+          "matchedErrorPatternIds": [],
+          "explanations": [
+            "The current event satisfies the minimum Unit 1 rule for moving to the next guided step.",
+            "This supports conservative next-step planning, not a final mastered label."
+          ],
+          "blockedBy": [
+            "This status supports conservative tutoring flow only, not final mastery approval.",
+            "Unit-level mastered thresholds, reassessment rules, and overrides remain UNDECIDED."
+          ],
+          "eventCount": 1,
+          "blockedByPrerequisites": [
+            {
+              "prerequisiteSkillId": "U1-S1",
+              "relationship": "HELPFUL",
+              "approvalStatus": "provisional",
+              "sourceDocs": [
+                "docs/prerequisite-map.md"
+              ],
+              "whyBlocked": "Prerequisite skill U1-S1 does not yet have learner evidence, so progress on U1-S2 should stay conservative."
+            }
+          ],
+          "hasRequiredPrerequisiteBlocker": false
+        },
+        {
+          "learnerId": "sample-learner",
+          "skillId": "U1-S3",
+          "status": "ready_for_next_step",
+          "statusApproval": "provisional",
+          "decisionType": "multi_event_rule_assisted_conservative",
+          "supportingEvidenceIds": [
+            "session-history-0-STEP-U1-S3-REWRITE-CLEANLY",
+            "session-history-1-STEP-U1-S3-REWRITE-CLEANLY"
+          ],
+          "matchedErrorPatternIds": [],
+          "explanations": [
+            "The current event satisfies the minimum Unit 1 rule for moving to the next guided step.",
+            "This supports conservative next-step planning, not a final mastered label."
+          ],
+          "blockedBy": [
+            "This status supports conservative tutoring flow only, not final mastery approval.",
+            "Unit-level mastered thresholds, reassessment rules, and overrides remain UNDECIDED."
+          ],
+          "eventCount": 2,
+          "blockedByPrerequisites": [],
+          "hasRequiredPrerequisiteBlocker": false
+        }
+      ],
+      "latestRecommendations": [
+        {
+          "learnerId": "sample-learner",
+          "targetSkillId": "U1-S2",
+          "targetSkillTitle": "Find the prime factors of a given natural number",
+          "recommendationType": "practice",
+          "confidence": "limited",
+          "needsReview": true,
+          "reasonCodes": [
+            "documented_skill_target",
+            "unit_mastery_threshold_pending",
+            "helpful_prerequisite_blocker"
+          ],
+          "summary": "Conservative follow-up practice is recommended pending more evidence.",
+          "sourceDocs": [
+            "docs/suji-worked-bridge-prime-factorization-entry.md",
+            "docs/suji-tutor-dialogue-flow-prime-factorization.md"
+          ],
+          "recommendedActivities": [
+            {
+              "activityId": "ACT-U1-S2-ENTRY-BRIDGE",
+              "skillId": "U1-S2",
+              "activityType": "worked-bridge",
+              "title": "Entry Bridge With 24",
+              "goal": "Rebuild the habit of starting with an easy divisor pair instead of freezing.",
+              "firstTutorQuestion": "What is the easiest divisor you can test first?",
+              "operatorFocus": "Reward a calm starting move instead of speed.",
+              "watchFor": [
+                "Learner freezes because they think they must finish the whole factorization at once.",
+                "Learner chooses a hard divisor first even after noticing the number is even."
+              ],
+              "exampleTutorMove": "If the learner hesitates, point back to the word 'even' and ask what divisor that suggests."
+            }
+          ],
+          "sessionPayload": {
+            "learnerId": "sample-learner",
+            "targetSkillId": "U1-S2",
+            "steps": [
+              {
+                "activityId": "ACT-U1-S1-CONCEPT-CHECK",
+                "lessonStepId": "STEP-U1-S1-CONCEPT-CHECK",
+                "skillId": "U1-S1",
+                "activityType": "dialogue-flow",
+                "title": "Prime, Composite, or Neither",
+                "openingLine": "Let's slow down and check what makes a number prime before we calculate anything.",
+                "firstTutorQuestion": "How many divisors does 1 actually have?",
+                "smallHint": "A prime number must have exactly two divisors: 1 and itself.",
+                "goodStoppingPoint": "Learner says 1 is neither prime nor composite and gives a divisor-based reason.",
+                "watchFor": [
+                  "Learner uses the word 'prime' as a memorized label without counting divisors.",
+                  "Learner says 1 is prime because it is only divisible by 1."
+                ],
+                "exampleTutorMove": "Let's list the divisors of 1 out loud first, then decide the label.",
+                "exampleLearnerResponse": "1 has only one divisor, so it cannot be prime because prime numbers need exactly two divisors."
+              },
+              {
+                "activityId": "ACT-U1-S2-ENTRY-BRIDGE",
+                "lessonStepId": "STEP-U1-S2-ENTRY-BRIDGE",
+                "skillId": "U1-S2",
+                "activityType": "worked-bridge",
+                "title": "Entry Bridge With 24",
+                "openingLine": "Let's just find one easy way into the problem instead of solving everything at once.",
+                "firstTutorQuestion": "What is the easiest divisor you can test first?",
+                "smallHint": "If the number is even, checking 2 is a calm first step.",
+                "goodStoppingPoint": "Learner starts with 2 for 24 and explains that 24 is even.",
+                "watchFor": [
+                  "Learner stalls because they think they need the whole tree immediately.",
+                  "Learner notices 24 is even but still does not choose 2."
+                ],
+                "exampleTutorMove": "You do not need the whole answer yet. What does the word 'even' let you try first?",
+                "exampleLearnerResponse": "24 is even, so trying 2 first is the easiest entry."
+              }
+            ]
+          },
+          "sourceEventIds": [
+            "session-history-0-STEP-U1-S2-ENTRY-BRIDGE"
+          ],
+          "blockedByPrerequisites": [
+            {
+              "prerequisiteSkillId": "U1-S1",
+              "relationship": "HELPFUL",
+              "approvalStatus": "provisional",
+              "sourceDocs": [
+                "docs/prerequisite-map.md"
+              ],
+              "whyBlocked": "Prerequisite skill U1-S1 does not yet have learner evidence, so progress on U1-S2 should stay conservative."
+            }
+          ],
+          "recommendedNextSkillIds": [
+            "U1-S1",
+            "U1-S2"
+          ],
+          "recommendedActivitySequence": [
+            {
+              "activityId": "ACT-U1-S1-CONCEPT-CHECK",
+              "skillId": "U1-S1",
+              "activityType": "dialogue-flow",
+              "title": "Prime, Composite, or Neither",
+              "goal": "Repair the idea that 1 is prime and rebuild divisor-based classification.",
+              "firstTutorQuestion": "How many divisors does 1 actually have?",
+              "operatorFocus": "Keep the learner on divisor count, not memorized labels.",
+              "watchFor": [
+                "Learner says '1 is prime because it is special' without using divisor reasoning.",
+                "Learner can repeat 'neither' but cannot explain why."
+              ],
+              "exampleTutorMove": "Ask the learner to list the divisors of 1 before naming the category."
+            },
+            {
+              "activityId": "ACT-U1-S2-ENTRY-BRIDGE",
+              "skillId": "U1-S2",
+              "activityType": "worked-bridge",
+              "title": "Entry Bridge With 24",
+              "goal": "Rebuild the habit of starting with an easy divisor pair instead of freezing.",
+              "firstTutorQuestion": "What is the easiest divisor you can test first?",
+              "operatorFocus": "Reward a calm starting move instead of speed.",
+              "watchFor": [
+                "Learner freezes because they think they must finish the whole factorization at once.",
+                "Learner chooses a hard divisor first even after noticing the number is even."
+              ],
+              "exampleTutorMove": "If the learner hesitates, point back to the word 'even' and ask what divisor that suggests."
+            }
+          ]
+        },
+        {
+          "learnerId": "sample-learner",
+          "targetSkillId": "U1-S3",
+          "targetSkillTitle": "Express a number in prime factorized form",
+          "recommendationType": "practice",
+          "confidence": "limited",
+          "needsReview": true,
+          "reasonCodes": [
+            "documented_skill_target",
+            "unit_mastery_threshold_pending"
+          ],
+          "summary": "Conservative follow-up practice is recommended pending more evidence.",
+          "sourceDocs": [
+            "docs/suji-tutor-dialogue-flow-prime-factorization.md",
+            "docs/suji-subskills-prime-factorization.md"
+          ],
+          "recommendedActivities": [
+            {
+              "activityId": "ACT-U1-S3-REWRITE-CLEANLY",
+              "skillId": "U1-S3",
+              "activityType": "dialogue-flow",
+              "title": "Rewrite the Final Factorization Cleanly",
+              "goal": "Stabilize the move from split-work to a complete final prime factorization.",
+              "firstTutorQuestion": "Which factors should still remain in the final line?",
+              "operatorFocus": "Push for one clean final line, not more splitting work.",
+              "watchFor": [
+                "Learner drops a repeated factor while rewriting.",
+                "Learner leaves a composite factor in the final line."
+              ],
+              "exampleTutorMove": "Cover the scratch work and ask the learner to rebuild only the final prime-factor line."
+            }
+          ],
+          "sessionPayload": {
+            "learnerId": "sample-learner",
+            "targetSkillId": "U1-S3",
+            "steps": [
+              {
+                "activityId": "ACT-U1-S3-REWRITE-CLEANLY",
+                "lessonStepId": "STEP-U1-S3-REWRITE-CLEANLY",
+                "skillId": "U1-S3",
+                "activityType": "dialogue-flow",
+                "title": "Rewrite the Final Factorization Cleanly",
+                "openingLine": "Your split-work is close; now let's turn it into one clean final factorization.",
+                "firstTutorQuestion": "Which factors should still remain in the final line?",
+                "smallHint": "Keep only prime factors in the last line, and make sure none were dropped.",
+                "goodStoppingPoint": "Learner writes one complete prime factorization with no missing or composite factor.",
+                "watchFor": [
+                  "Learner keeps a composite factor like 6 in the final line.",
+                  "Learner rewrites with only prime factors but drops one repeated factor."
+                ],
+                "exampleTutorMove": "Cover the scratch work and rebuild the last line only with prime factors that still remain.",
+                "exampleLearnerResponse": "The final line should keep 2, 2, and 3 because all of them are prime and none can be dropped."
+              }
+            ]
+          },
+          "sourceEventIds": [
+            "session-history-0-STEP-U1-S3-REWRITE-CLEANLY",
+            "session-history-1-STEP-U1-S3-REWRITE-CLEANLY"
+          ],
+          "blockedByPrerequisites": [],
+          "recommendedNextSkillIds": [
+            "U1-S3"
+          ],
+          "recommendedActivitySequence": [
+            {
+              "activityId": "ACT-U1-S3-REWRITE-CLEANLY",
+              "skillId": "U1-S3",
+              "activityType": "dialogue-flow",
+              "title": "Rewrite the Final Factorization Cleanly",
+              "goal": "Stabilize the move from split-work to a complete final prime factorization.",
+              "firstTutorQuestion": "Which factors should still remain in the final line?",
+              "operatorFocus": "Push for one clean final line, not more splitting work.",
+              "watchFor": [
+                "Learner drops a repeated factor while rewriting.",
+                "Learner leaves a composite factor in the final line."
+              ],
+              "exampleTutorMove": "Cover the scratch work and ask the learner to rebuild only the final prime-factor line."
+            }
+          ]
+        }
+      ],
+      "updatedAt": "2026-03-27T09:33:00+09:00"
+    }
+  },
+  "latestStartSessionResult": {
+    "learnerId": "sample-learner",
+    "action": "plan_new_session",
+    "activeSession": {
+      "learnerId": "sample-learner",
+      "targetSkillId": "U1-S2",
+      "status": "in_progress",
+      "currentStepIndex": 0,
+      "currentStep": {
+        "activityId": "ACT-U1-S1-CONCEPT-CHECK",
+        "lessonStepId": "STEP-U1-S1-CONCEPT-CHECK",
+        "skillId": "U1-S1",
+        "activityType": "dialogue-flow",
+        "title": "Prime, Composite, or Neither",
+        "openingLine": "Let's slow down and check what makes a number prime before we calculate anything.",
+        "firstTutorQuestion": "How many divisors does 1 actually have?",
+        "smallHint": "A prime number must have exactly two divisors: 1 and itself.",
+        "goodStoppingPoint": "Learner says 1 is neither prime nor composite and gives a divisor-based reason.",
+        "watchFor": [
+          "Learner uses the word 'prime' as a memorized label without counting divisors.",
+          "Learner says 1 is prime because it is only divisible by 1."
+        ],
+        "exampleTutorMove": "Let's list the divisors of 1 out loud first, then decide the label.",
+        "exampleLearnerResponse": "1 has only one divisor, so it cannot be prime because prime numbers need exactly two divisors."
+      },
+      "nextStep": {
+        "activityId": "ACT-U1-S2-ENTRY-BRIDGE",
+        "lessonStepId": "STEP-U1-S2-ENTRY-BRIDGE",
+        "skillId": "U1-S2",
+        "activityType": "worked-bridge",
+        "title": "Entry Bridge With 24",
+        "openingLine": "Let's just find one easy way into the problem instead of solving everything at once.",
+        "firstTutorQuestion": "What is the easiest divisor you can test first?",
+        "smallHint": "If the number is even, checking 2 is a calm first step.",
+        "goodStoppingPoint": "Learner starts with 2 for 24 and explains that 24 is even.",
+        "watchFor": [
+          "Learner stalls because they think they need the whole tree immediately.",
+          "Learner notices 24 is even but still does not choose 2."
+        ],
+        "exampleTutorMove": "You do not need the whole answer yet. What does the word 'even' let you try first?",
+        "exampleLearnerResponse": "24 is even, so trying 2 first is the easiest entry."
+      },
+      "completedStepIds": [],
+      "remainingStepIds": [
+        "STEP-U1-S1-CONCEPT-CHECK",
+        "STEP-U1-S2-ENTRY-BRIDGE"
+      ],
+      "steps": [
+        {
+          "activityId": "ACT-U1-S1-CONCEPT-CHECK",
+          "lessonStepId": "STEP-U1-S1-CONCEPT-CHECK",
+          "skillId": "U1-S1",
+          "activityType": "dialogue-flow",
+          "title": "Prime, Composite, or Neither",
+          "openingLine": "Let's slow down and check what makes a number prime before we calculate anything.",
+          "firstTutorQuestion": "How many divisors does 1 actually have?",
+          "smallHint": "A prime number must have exactly two divisors: 1 and itself.",
+          "goodStoppingPoint": "Learner says 1 is neither prime nor composite and gives a divisor-based reason.",
+          "watchFor": [
+            "Learner uses the word 'prime' as a memorized label without counting divisors.",
+            "Learner says 1 is prime because it is only divisible by 1."
+          ],
+          "exampleTutorMove": "Let's list the divisors of 1 out loud first, then decide the label.",
+          "exampleLearnerResponse": "1 has only one divisor, so it cannot be prime because prime numbers need exactly two divisors."
+        },
+        {
+          "activityId": "ACT-U1-S2-ENTRY-BRIDGE",
+          "lessonStepId": "STEP-U1-S2-ENTRY-BRIDGE",
+          "skillId": "U1-S2",
+          "activityType": "worked-bridge",
+          "title": "Entry Bridge With 24",
+          "openingLine": "Let's just find one easy way into the problem instead of solving everything at once.",
+          "firstTutorQuestion": "What is the easiest divisor you can test first?",
+          "smallHint": "If the number is even, checking 2 is a calm first step.",
+          "goodStoppingPoint": "Learner starts with 2 for 24 and explains that 24 is even.",
+          "watchFor": [
+            "Learner stalls because they think they need the whole tree immediately.",
+            "Learner notices 24 is even but still does not choose 2."
+          ],
+          "exampleTutorMove": "You do not need the whole answer yet. What does the word 'even' let you try first?",
+          "exampleLearnerResponse": "24 is even, so trying 2 first is the easiest entry."
+        }
+      ],
+      "completionRule": "complete_all_steps_in_order",
+      "lastEvaluation": null,
+      "history": []
+    },
+    "sessionStartGuide": {
+      "sessionTargetSkillId": "U1-S2",
+      "currentStepSkillId": "U1-S1",
+      "currentLessonStepId": "STEP-U1-S1-CONCEPT-CHECK",
+      "currentActivityId": "ACT-U1-S1-CONCEPT-CHECK",
+      "title": "Prime, Composite, or Neither",
+      "openingLine": "Let's slow down and check what makes a number prime before we calculate anything.",
+      "firstTutorQuestion": "How many divisors does 1 actually have?",
+      "smallHint": "A prime number must have exactly two divisors: 1 and itself.",
+      "goodStoppingPoint": "Learner says 1 is neither prime nor composite and gives a divisor-based reason.",
+      "watchFor": [
+        "Learner uses the word 'prime' as a memorized label without counting divisors.",
+        "Learner says 1 is prime because it is only divisible by 1."
+      ],
+      "exampleTutorMove": "Let's list the divisors of 1 out loud first, then decide the label.",
+      "exampleLearnerResponse": "1 has only one divisor, so it cannot be prime because prime numbers need exactly two divisors.",
+      "nextLessonStepId": "STEP-U1-S2-ENTRY-BRIDGE",
+      "remainingStepCount": 2
+    },
+    "plannedSessionPreview": {
+      "plannedFromSkillId": "U1-S2",
+      "recommendedNextSkillIds": [
+        "U1-S1",
+        "U1-S2"
+      ],
+      "firstStepSkillId": "U1-S1",
+      "firstLessonStepId": "STEP-U1-S1-CONCEPT-CHECK"
+    },
+    "learnerRecord": {
+      "learnerId": "sample-learner",
+      "activeSession": {
+        "learnerId": "sample-learner",
+        "targetSkillId": "U1-S2",
+        "status": "in_progress",
+        "currentStepIndex": 0,
+        "currentStep": {
+          "activityId": "ACT-U1-S1-CONCEPT-CHECK",
+          "lessonStepId": "STEP-U1-S1-CONCEPT-CHECK",
+          "skillId": "U1-S1",
+          "activityType": "dialogue-flow",
+          "title": "Prime, Composite, or Neither",
+          "openingLine": "Let's slow down and check what makes a number prime before we calculate anything.",
+          "firstTutorQuestion": "How many divisors does 1 actually have?",
+          "smallHint": "A prime number must have exactly two divisors: 1 and itself.",
+          "goodStoppingPoint": "Learner says 1 is neither prime nor composite and gives a divisor-based reason.",
+          "watchFor": [
+            "Learner uses the word 'prime' as a memorized label without counting divisors.",
+            "Learner says 1 is prime because it is only divisible by 1."
+          ],
+          "exampleTutorMove": "Let's list the divisors of 1 out loud first, then decide the label.",
+          "exampleLearnerResponse": "1 has only one divisor, so it cannot be prime because prime numbers need exactly two divisors."
+        },
+        "nextStep": {
+          "activityId": "ACT-U1-S2-ENTRY-BRIDGE",
+          "lessonStepId": "STEP-U1-S2-ENTRY-BRIDGE",
+          "skillId": "U1-S2",
+          "activityType": "worked-bridge",
+          "title": "Entry Bridge With 24",
+          "openingLine": "Let's just find one easy way into the problem instead of solving everything at once.",
+          "firstTutorQuestion": "What is the easiest divisor you can test first?",
+          "smallHint": "If the number is even, checking 2 is a calm first step.",
+          "goodStoppingPoint": "Learner starts with 2 for 24 and explains that 24 is even.",
+          "watchFor": [
+            "Learner stalls because they think they need the whole tree immediately.",
+            "Learner notices 24 is even but still does not choose 2."
+          ],
+          "exampleTutorMove": "You do not need the whole answer yet. What does the word 'even' let you try first?",
+          "exampleLearnerResponse": "24 is even, so trying 2 first is the easiest entry."
+        },
+        "completedStepIds": [],
+        "remainingStepIds": [
+          "STEP-U1-S1-CONCEPT-CHECK",
+          "STEP-U1-S2-ENTRY-BRIDGE"
+        ],
+        "steps": [
+          {
+            "activityId": "ACT-U1-S1-CONCEPT-CHECK",
+            "lessonStepId": "STEP-U1-S1-CONCEPT-CHECK",
+            "skillId": "U1-S1",
+            "activityType": "dialogue-flow",
+            "title": "Prime, Composite, or Neither",
+            "openingLine": "Let's slow down and check what makes a number prime before we calculate anything.",
+            "firstTutorQuestion": "How many divisors does 1 actually have?",
+            "smallHint": "A prime number must have exactly two divisors: 1 and itself.",
+            "goodStoppingPoint": "Learner says 1 is neither prime nor composite and gives a divisor-based reason.",
+            "watchFor": [
+              "Learner uses the word 'prime' as a memorized label without counting divisors.",
+              "Learner says 1 is prime because it is only divisible by 1."
+            ],
+            "exampleTutorMove": "Let's list the divisors of 1 out loud first, then decide the label.",
+            "exampleLearnerResponse": "1 has only one divisor, so it cannot be prime because prime numbers need exactly two divisors."
+          },
+          {
+            "activityId": "ACT-U1-S2-ENTRY-BRIDGE",
+            "lessonStepId": "STEP-U1-S2-ENTRY-BRIDGE",
+            "skillId": "U1-S2",
+            "activityType": "worked-bridge",
+            "title": "Entry Bridge With 24",
+            "openingLine": "Let's just find one easy way into the problem instead of solving everything at once.",
+            "firstTutorQuestion": "What is the easiest divisor you can test first?",
+            "smallHint": "If the number is even, checking 2 is a calm first step.",
+            "goodStoppingPoint": "Learner starts with 2 for 24 and explains that 24 is even.",
+            "watchFor": [
+              "Learner stalls because they think they need the whole tree immediately.",
+              "Learner notices 24 is even but still does not choose 2."
+            ],
+            "exampleTutorMove": "You do not need the whole answer yet. What does the word 'even' let you try first?",
+            "exampleLearnerResponse": "24 is even, so trying 2 first is the easiest entry."
+          }
+        ],
+        "completionRule": "complete_all_steps_in_order",
+        "lastEvaluation": null,
+        "history": []
+      },
+      "sessions": [
+        {
+          "learnerId": "sample-learner",
+          "targetSkillId": "U1-S3",
+          "status": "completed",
+          "currentStepIndex": 1,
+          "currentStep": null,
+          "nextStep": null,
+          "completedStepIds": [
+            "STEP-U1-S2-ENTRY-BRIDGE",
+            "STEP-U1-S3-REWRITE-CLEANLY"
+          ],
+          "remainingStepIds": [],
+          "steps": [
+            {
+              "activityId": "ACT-U1-S2-ENTRY-BRIDGE",
+              "lessonStepId": "STEP-U1-S2-ENTRY-BRIDGE",
+              "skillId": "U1-S2",
+              "activityType": "worked-bridge",
+              "title": "Entry Bridge With 24",
+              "openingLine": "Let's just find one easy way into the problem instead of solving everything at once.",
+              "firstTutorQuestion": "What is the easiest divisor you can test first?",
+              "smallHint": "If the number is even, checking 2 is a calm first step.",
+              "goodStoppingPoint": "Learner starts with 2 for 24 and explains that 24 is even.",
+              "watchFor": [
+                "Learner stalls because they think they need the whole tree immediately.",
+                "Learner notices 24 is even but still does not choose 2."
+              ],
+              "exampleTutorMove": "You do not need the whole answer yet. What does the word 'even' let you try first?",
+              "exampleLearnerResponse": "24 is even, so trying 2 first is the easiest entry."
+            },
+            {
+              "activityId": "ACT-U1-S3-REWRITE-CLEANLY",
+              "lessonStepId": "STEP-U1-S3-REWRITE-CLEANLY",
+              "skillId": "U1-S3",
+              "activityType": "dialogue-flow",
+              "title": "Rewrite the Final Factorization Cleanly",
+              "openingLine": "Your split-work is close; now let's turn it into one clean final factorization.",
+              "firstTutorQuestion": "Which factors should still remain in the final line?",
+              "smallHint": "Keep only prime factors in the last line, and make sure none were dropped.",
+              "goodStoppingPoint": "Learner writes one complete prime factorization with no missing or composite factor.",
+              "watchFor": [
+                "Learner keeps a composite factor like 6 in the final line.",
+                "Learner rewrites with only prime factors but drops one repeated factor."
+              ],
+              "exampleTutorMove": "Cover the scratch work and rebuild the last line only with prime factors that still remain.",
+              "exampleLearnerResponse": "The final line should keep 2, 2, and 3 because all of them are prime and none can be dropped."
+            }
+          ],
+          "completionRule": "complete_all_steps_in_order",
+          "lastEvaluation": {
+            "lessonStepId": "STEP-U1-S3-REWRITE-CLEANLY",
+            "decision": "completed",
+            "matchedRequiredSignals": [
+              "writes_only_prime_factors",
+              "keeps_all_factors"
+            ],
+            "missingRequiredSignals": [],
+            "matchedTextHints": [],
+            "matchedTextHintSignals": [
+              "writes_only_prime_factors",
+              "keeps_all_factors"
+            ],
+            "canAutoAdvance": true
+          },
+          "history": [
+            {
+              "attemptIndex": 0,
+              "lessonStepId": "STEP-U1-S2-ENTRY-BRIDGE",
+              "activityId": "ACT-U1-S2-ENTRY-BRIDGE",
+              "learnerResponse": "24 is even, so I should start by dividing by 2 first.",
+              "fieldValues": {
+                "starts_with_two": false,
+                "mentions_evenness": false
+              },
+              "tutorNote": "The tutor wrote only the learner quote and kept the checkboxes conservative.",
+              "timestamp": "2026-03-27T09:30:00+09:00",
+              "evaluation": {
+                "lessonStepId": "STEP-U1-S2-ENTRY-BRIDGE",
+                "decision": "completed",
+                "matchedRequiredSignals": [
+                  "chooses_two_as_start",
+                  "notes_even_number"
+                ],
+                "missingRequiredSignals": [],
+                "matchedTextHints": [
+                  "2",
+                  "even"
+                ],
+                "matchedTextHintSignals": [
+                  "chooses_two_as_start",
+                  "notes_even_number"
+                ],
+                "canAutoAdvance": true
+              }
+            },
+            {
+              "attemptIndex": 1,
+              "lessonStepId": "STEP-U1-S3-REWRITE-CLEANLY",
+              "activityId": "ACT-U1-S3-REWRITE-CLEANLY",
+              "learnerResponse": "소수만 남겨서 2 x 2 x 3으로 다시 썼고 빠진 것은 없어.",
+              "fieldValues": {
+                "uses_only_prime_factors": false,
+                "keeps_all_factors": false
+              },
+              "tutorNote": "튜터가 발화 로그만 남겼고 체크박스는 누르지 않았다.",
+              "timestamp": "2026-03-27T09:33:00+09:00",
+              "evaluation": {
+                "lessonStepId": "STEP-U1-S3-REWRITE-CLEANLY",
+                "decision": "completed",
+                "matchedRequiredSignals": [
+                  "writes_only_prime_factors",
+                  "keeps_all_factors"
+                ],
+                "missingRequiredSignals": [],
+                "matchedTextHints": [],
+                "matchedTextHintSignals": [
+                  "writes_only_prime_factors",
+                  "keeps_all_factors"
+                ],
+                "canAutoAdvance": true
+              }
+            }
+          ]
+        }
+      ],
+      "evidenceEvents": [
+        {
+          "eventId": "session-history-0-STEP-U1-S3-REWRITE-CLEANLY",
+          "learnerId": "sample-learner",
+          "kind": "session_history_observation",
+          "skillId": "U1-S3",
+          "result": "correct",
+          "errorPatternIds": [],
+          "observations": [
+            "I rewrote the final answer using only prime factors and kept every factor.",
+            "Learner rewrote the factorization cleanly without dropping any factors."
+          ],
+          "confidenceSignal": "confident",
+          "sourceDocs": [],
+          "derivedFrom": {
+            "lessonStepId": "STEP-U1-S3-REWRITE-CLEANLY",
+            "activityId": "ACT-U1-S3-REWRITE-CLEANLY",
+            "matchedRequiredSignals": [
+              "writes_only_prime_factors",
+              "keeps_all_factors"
+            ],
+            "missingRequiredSignals": []
+          }
+        },
+        {
+          "eventId": "session-history-0-STEP-U1-S2-ENTRY-BRIDGE",
+          "learnerId": "sample-learner",
+          "kind": "session_history_observation",
+          "skillId": "U1-S2",
+          "result": "correct",
+          "errorPatternIds": [],
+          "observations": [
+            "24 is even, so I should start by dividing by 2 first.",
+            "The tutor wrote only the learner quote and kept the checkboxes conservative."
+          ],
+          "confidenceSignal": "confident",
+          "sourceDocs": [],
+          "derivedFrom": {
+            "lessonStepId": "STEP-U1-S2-ENTRY-BRIDGE",
+            "activityId": "ACT-U1-S2-ENTRY-BRIDGE",
+            "matchedRequiredSignals": [
+              "chooses_two_as_start",
+              "notes_even_number"
+            ],
+            "missingRequiredSignals": []
+          }
+        },
+        {
+          "eventId": "session-history-1-STEP-U1-S3-REWRITE-CLEANLY",
+          "learnerId": "sample-learner",
+          "kind": "session_history_observation",
+          "skillId": "U1-S3",
+          "result": "correct",
+          "errorPatternIds": [],
+          "observations": [
+            "소수만 남겨서 2 x 2 x 3으로 다시 썼고 빠진 것은 없어.",
+            "튜터가 발화 로그만 남겼고 체크박스는 누르지 않았다."
+          ],
+          "confidenceSignal": "confident",
+          "sourceDocs": [],
+          "derivedFrom": {
+            "lessonStepId": "STEP-U1-S3-REWRITE-CLEANLY",
+            "activityId": "ACT-U1-S3-REWRITE-CLEANLY",
+            "matchedRequiredSignals": [
+              "writes_only_prime_factors",
+              "keeps_all_factors"
+            ],
+            "missingRequiredSignals": []
+          }
+        }
+      ],
+      "latestSkillSummaries": [
+        {
+          "learnerId": "sample-learner",
+          "skillId": "U1-S2",
+          "status": "ready_for_next_step",
+          "statusApproval": "provisional",
+          "decisionType": "multi_event_rule_assisted_conservative",
+          "supportingEvidenceIds": [
+            "session-history-0-STEP-U1-S2-ENTRY-BRIDGE"
+          ],
+          "matchedErrorPatternIds": [],
+          "explanations": [
+            "The current event satisfies the minimum Unit 1 rule for moving to the next guided step.",
+            "This supports conservative next-step planning, not a final mastered label."
+          ],
+          "blockedBy": [
+            "This status supports conservative tutoring flow only, not final mastery approval.",
+            "Unit-level mastered thresholds, reassessment rules, and overrides remain UNDECIDED."
+          ],
+          "eventCount": 1,
+          "blockedByPrerequisites": [
+            {
+              "prerequisiteSkillId": "U1-S1",
+              "relationship": "HELPFUL",
+              "approvalStatus": "provisional",
+              "sourceDocs": [
+                "docs/prerequisite-map.md"
+              ],
+              "whyBlocked": "Prerequisite skill U1-S1 does not yet have learner evidence, so progress on U1-S2 should stay conservative."
+            }
+          ],
+          "hasRequiredPrerequisiteBlocker": false
+        },
+        {
+          "learnerId": "sample-learner",
+          "skillId": "U1-S3",
+          "status": "ready_for_next_step",
+          "statusApproval": "provisional",
+          "decisionType": "multi_event_rule_assisted_conservative",
+          "supportingEvidenceIds": [
+            "session-history-0-STEP-U1-S3-REWRITE-CLEANLY",
+            "session-history-1-STEP-U1-S3-REWRITE-CLEANLY"
+          ],
+          "matchedErrorPatternIds": [],
+          "explanations": [
+            "The current event satisfies the minimum Unit 1 rule for moving to the next guided step.",
+            "This supports conservative next-step planning, not a final mastered label."
+          ],
+          "blockedBy": [
+            "This status supports conservative tutoring flow only, not final mastery approval.",
+            "Unit-level mastered thresholds, reassessment rules, and overrides remain UNDECIDED."
+          ],
+          "eventCount": 2,
+          "blockedByPrerequisites": [],
+          "hasRequiredPrerequisiteBlocker": false
+        }
+      ],
+      "latestRecommendations": [
+        {
+          "learnerId": "sample-learner",
+          "targetSkillId": "U1-S2",
+          "targetSkillTitle": "Find the prime factors of a given natural number",
+          "recommendationType": "practice",
+          "confidence": "limited",
+          "needsReview": true,
+          "reasonCodes": [
+            "documented_skill_target",
+            "unit_mastery_threshold_pending",
+            "helpful_prerequisite_blocker"
+          ],
+          "summary": "Conservative follow-up practice is recommended pending more evidence.",
+          "sourceDocs": [
+            "docs/suji-worked-bridge-prime-factorization-entry.md",
+            "docs/suji-tutor-dialogue-flow-prime-factorization.md"
+          ],
+          "recommendedActivities": [
+            {
+              "activityId": "ACT-U1-S2-ENTRY-BRIDGE",
+              "skillId": "U1-S2",
+              "activityType": "worked-bridge",
+              "title": "Entry Bridge With 24",
+              "goal": "Rebuild the habit of starting with an easy divisor pair instead of freezing.",
+              "firstTutorQuestion": "What is the easiest divisor you can test first?",
+              "operatorFocus": "Reward a calm starting move instead of speed.",
+              "watchFor": [
+                "Learner freezes because they think they must finish the whole factorization at once.",
+                "Learner chooses a hard divisor first even after noticing the number is even."
+              ],
+              "exampleTutorMove": "If the learner hesitates, point back to the word 'even' and ask what divisor that suggests."
+            }
+          ],
+          "sessionPayload": {
+            "learnerId": "sample-learner",
+            "targetSkillId": "U1-S2",
+            "steps": [
+              {
+                "activityId": "ACT-U1-S1-CONCEPT-CHECK",
+                "lessonStepId": "STEP-U1-S1-CONCEPT-CHECK",
+                "skillId": "U1-S1",
+                "activityType": "dialogue-flow",
+                "title": "Prime, Composite, or Neither",
+                "openingLine": "Let's slow down and check what makes a number prime before we calculate anything.",
+                "firstTutorQuestion": "How many divisors does 1 actually have?",
+                "smallHint": "A prime number must have exactly two divisors: 1 and itself.",
+                "goodStoppingPoint": "Learner says 1 is neither prime nor composite and gives a divisor-based reason.",
+                "watchFor": [
+                  "Learner uses the word 'prime' as a memorized label without counting divisors.",
+                  "Learner says 1 is prime because it is only divisible by 1."
+                ],
+                "exampleTutorMove": "Let's list the divisors of 1 out loud first, then decide the label.",
+                "exampleLearnerResponse": "1 has only one divisor, so it cannot be prime because prime numbers need exactly two divisors."
+              },
+              {
+                "activityId": "ACT-U1-S2-ENTRY-BRIDGE",
+                "lessonStepId": "STEP-U1-S2-ENTRY-BRIDGE",
+                "skillId": "U1-S2",
+                "activityType": "worked-bridge",
+                "title": "Entry Bridge With 24",
+                "openingLine": "Let's just find one easy way into the problem instead of solving everything at once.",
+                "firstTutorQuestion": "What is the easiest divisor you can test first?",
+                "smallHint": "If the number is even, checking 2 is a calm first step.",
+                "goodStoppingPoint": "Learner starts with 2 for 24 and explains that 24 is even.",
+                "watchFor": [
+                  "Learner stalls because they think they need the whole tree immediately.",
+                  "Learner notices 24 is even but still does not choose 2."
+                ],
+                "exampleTutorMove": "You do not need the whole answer yet. What does the word 'even' let you try first?",
+                "exampleLearnerResponse": "24 is even, so trying 2 first is the easiest entry."
+              }
+            ]
+          },
+          "sourceEventIds": [
+            "session-history-0-STEP-U1-S2-ENTRY-BRIDGE"
+          ],
+          "blockedByPrerequisites": [
+            {
+              "prerequisiteSkillId": "U1-S1",
+              "relationship": "HELPFUL",
+              "approvalStatus": "provisional",
+              "sourceDocs": [
+                "docs/prerequisite-map.md"
+              ],
+              "whyBlocked": "Prerequisite skill U1-S1 does not yet have learner evidence, so progress on U1-S2 should stay conservative."
+            }
+          ],
+          "recommendedNextSkillIds": [
+            "U1-S1",
+            "U1-S2"
+          ],
+          "recommendedActivitySequence": [
+            {
+              "activityId": "ACT-U1-S1-CONCEPT-CHECK",
+              "skillId": "U1-S1",
+              "activityType": "dialogue-flow",
+              "title": "Prime, Composite, or Neither",
+              "goal": "Repair the idea that 1 is prime and rebuild divisor-based classification.",
+              "firstTutorQuestion": "How many divisors does 1 actually have?",
+              "operatorFocus": "Keep the learner on divisor count, not memorized labels.",
+              "watchFor": [
+                "Learner says '1 is prime because it is special' without using divisor reasoning.",
+                "Learner can repeat 'neither' but cannot explain why."
+              ],
+              "exampleTutorMove": "Ask the learner to list the divisors of 1 before naming the category."
+            },
+            {
+              "activityId": "ACT-U1-S2-ENTRY-BRIDGE",
+              "skillId": "U1-S2",
+              "activityType": "worked-bridge",
+              "title": "Entry Bridge With 24",
+              "goal": "Rebuild the habit of starting with an easy divisor pair instead of freezing.",
+              "firstTutorQuestion": "What is the easiest divisor you can test first?",
+              "operatorFocus": "Reward a calm starting move instead of speed.",
+              "watchFor": [
+                "Learner freezes because they think they must finish the whole factorization at once.",
+                "Learner chooses a hard divisor first even after noticing the number is even."
+              ],
+              "exampleTutorMove": "If the learner hesitates, point back to the word 'even' and ask what divisor that suggests."
+            }
+          ]
+        },
+        {
+          "learnerId": "sample-learner",
+          "targetSkillId": "U1-S3",
+          "targetSkillTitle": "Express a number in prime factorized form",
+          "recommendationType": "practice",
+          "confidence": "limited",
+          "needsReview": true,
+          "reasonCodes": [
+            "documented_skill_target",
+            "unit_mastery_threshold_pending"
+          ],
+          "summary": "Conservative follow-up practice is recommended pending more evidence.",
+          "sourceDocs": [
+            "docs/suji-tutor-dialogue-flow-prime-factorization.md",
+            "docs/suji-subskills-prime-factorization.md"
+          ],
+          "recommendedActivities": [
+            {
+              "activityId": "ACT-U1-S3-REWRITE-CLEANLY",
+              "skillId": "U1-S3",
+              "activityType": "dialogue-flow",
+              "title": "Rewrite the Final Factorization Cleanly",
+              "goal": "Stabilize the move from split-work to a complete final prime factorization.",
+              "firstTutorQuestion": "Which factors should still remain in the final line?",
+              "operatorFocus": "Push for one clean final line, not more splitting work.",
+              "watchFor": [
+                "Learner drops a repeated factor while rewriting.",
+                "Learner leaves a composite factor in the final line."
+              ],
+              "exampleTutorMove": "Cover the scratch work and ask the learner to rebuild only the final prime-factor line."
+            }
+          ],
+          "sessionPayload": {
+            "learnerId": "sample-learner",
+            "targetSkillId": "U1-S3",
+            "steps": [
+              {
+                "activityId": "ACT-U1-S3-REWRITE-CLEANLY",
+                "lessonStepId": "STEP-U1-S3-REWRITE-CLEANLY",
+                "skillId": "U1-S3",
+                "activityType": "dialogue-flow",
+                "title": "Rewrite the Final Factorization Cleanly",
+                "openingLine": "Your split-work is close; now let's turn it into one clean final factorization.",
+                "firstTutorQuestion": "Which factors should still remain in the final line?",
+                "smallHint": "Keep only prime factors in the last line, and make sure none were dropped.",
+                "goodStoppingPoint": "Learner writes one complete prime factorization with no missing or composite factor.",
+                "watchFor": [
+                  "Learner keeps a composite factor like 6 in the final line.",
+                  "Learner rewrites with only prime factors but drops one repeated factor."
+                ],
+                "exampleTutorMove": "Cover the scratch work and rebuild the last line only with prime factors that still remain.",
+                "exampleLearnerResponse": "The final line should keep 2, 2, and 3 because all of them are prime and none can be dropped."
+              }
+            ]
+          },
+          "sourceEventIds": [
+            "session-history-0-STEP-U1-S3-REWRITE-CLEANLY",
+            "session-history-1-STEP-U1-S3-REWRITE-CLEANLY"
+          ],
+          "blockedByPrerequisites": [],
+          "recommendedNextSkillIds": [
+            "U1-S3"
+          ],
+          "recommendedActivitySequence": [
+            {
+              "activityId": "ACT-U1-S3-REWRITE-CLEANLY",
+              "skillId": "U1-S3",
+              "activityType": "dialogue-flow",
+              "title": "Rewrite the Final Factorization Cleanly",
+              "goal": "Stabilize the move from split-work to a complete final prime factorization.",
+              "firstTutorQuestion": "Which factors should still remain in the final line?",
+              "operatorFocus": "Push for one clean final line, not more splitting work.",
+              "watchFor": [
+                "Learner drops a repeated factor while rewriting.",
+                "Learner leaves a composite factor in the final line."
+              ],
+              "exampleTutorMove": "Cover the scratch work and ask the learner to rebuild only the final prime-factor line."
+            }
+          ]
+        }
+      ],
+      "updatedAt": "2026-03-27T09:33:00+09:00"
+    },
+    "observationFormTemplate": {
+      "lessonStepId": "STEP-U1-S1-CONCEPT-CHECK",
+      "learnerResponsePrompt": "Write the learner's explanation about whether 1 is prime, composite, or neither.",
+      "tutorNotePrompt": "Note whether the learner used divisor reasoning or only repeated a label.",
+      "fields": [
+        {
+          "fieldId": "classifies_one_correctly",
+          "label": "Says 1 is neither",
+          "prompt": "Did the learner correctly say that 1 is neither prime nor composite?",
+          "trueMeans": "The learner gave the correct category for 1."
+        },
+        {
+          "fieldId": "uses_divisor_reason",
+          "label": "Uses divisor reason",
+          "prompt": "Did the learner explain the answer using the number of divisors?",
+          "trueMeans": "The learner justified the category using divisor-based reasoning."
+        }
+      ]
+    }
+  },
+  "latestPreparedObservationForm": {
+    "observationFormTemplate": {
+      "lessonStepId": "STEP-U1-S1-CONCEPT-CHECK",
+      "learnerResponsePrompt": "Write the learner's explanation about whether 1 is prime, composite, or neither.",
+      "tutorNotePrompt": "Note whether the learner used divisor reasoning or only repeated a label.",
+      "fields": [
+        {
+          "fieldId": "classifies_one_correctly",
+          "label": "Says 1 is neither",
+          "prompt": "Did the learner correctly say that 1 is neither prime nor composite?",
+          "trueMeans": "The learner gave the correct category for 1."
+        },
+        {
+          "fieldId": "uses_divisor_reason",
+          "label": "Uses divisor reason",
+          "prompt": "Did the learner explain the answer using the number of divisors?",
+          "trueMeans": "The learner justified the category using divisor-based reasoning."
+        }
+      ]
+    },
+    "observationForm": {
+      "lessonStepId": "STEP-U1-S1-CONCEPT-CHECK",
+      "learnerResponse": "",
+      "fieldValues": {
+        "classifies_one_correctly": false,
+        "uses_divisor_reason": false
+      },
+      "tutorNote": "",
+      "timestamp": "2026-03-28T14:51:22.178Z"
+    }
+  },
+  "latestTurnResult": null,
+  "currentLearnerRecord": {
+    "learnerId": "sample-learner",
+    "activeSession": {
+      "learnerId": "sample-learner",
+      "targetSkillId": "U1-S2",
+      "status": "in_progress",
+      "currentStepIndex": 0,
+      "currentStep": {
+        "activityId": "ACT-U1-S1-CONCEPT-CHECK",
+        "lessonStepId": "STEP-U1-S1-CONCEPT-CHECK",
+        "skillId": "U1-S1",
+        "activityType": "dialogue-flow",
+        "title": "Prime, Composite, or Neither",
+        "openingLine": "Let's slow down and check what makes a number prime before we calculate anything.",
+        "firstTutorQuestion": "How many divisors does 1 actually have?",
+        "smallHint": "A prime number must have exactly two divisors: 1 and itself.",
+        "goodStoppingPoint": "Learner says 1 is neither prime nor composite and gives a divisor-based reason.",
+        "watchFor": [
+          "Learner uses the word 'prime' as a memorized label without counting divisors.",
+          "Learner says 1 is prime because it is only divisible by 1."
+        ],
+        "exampleTutorMove": "Let's list the divisors of 1 out loud first, then decide the label.",
+        "exampleLearnerResponse": "1 has only one divisor, so it cannot be prime because prime numbers need exactly two divisors."
+      },
+      "nextStep": {
+        "activityId": "ACT-U1-S2-ENTRY-BRIDGE",
+        "lessonStepId": "STEP-U1-S2-ENTRY-BRIDGE",
+        "skillId": "U1-S2",
+        "activityType": "worked-bridge",
+        "title": "Entry Bridge With 24",
+        "openingLine": "Let's just find one easy way into the problem instead of solving everything at once.",
+        "firstTutorQuestion": "What is the easiest divisor you can test first?",
+        "smallHint": "If the number is even, checking 2 is a calm first step.",
+        "goodStoppingPoint": "Learner starts with 2 for 24 and explains that 24 is even.",
+        "watchFor": [
+          "Learner stalls because they think they need the whole tree immediately.",
+          "Learner notices 24 is even but still does not choose 2."
+        ],
+        "exampleTutorMove": "You do not need the whole answer yet. What does the word 'even' let you try first?",
+        "exampleLearnerResponse": "24 is even, so trying 2 first is the easiest entry."
+      },
+      "completedStepIds": [],
+      "remainingStepIds": [
+        "STEP-U1-S1-CONCEPT-CHECK",
+        "STEP-U1-S2-ENTRY-BRIDGE"
+      ],
+      "steps": [
+        {
+          "activityId": "ACT-U1-S1-CONCEPT-CHECK",
+          "lessonStepId": "STEP-U1-S1-CONCEPT-CHECK",
+          "skillId": "U1-S1",
+          "activityType": "dialogue-flow",
+          "title": "Prime, Composite, or Neither",
+          "openingLine": "Let's slow down and check what makes a number prime before we calculate anything.",
+          "firstTutorQuestion": "How many divisors does 1 actually have?",
+          "smallHint": "A prime number must have exactly two divisors: 1 and itself.",
+          "goodStoppingPoint": "Learner says 1 is neither prime nor composite and gives a divisor-based reason.",
+          "watchFor": [
+            "Learner uses the word 'prime' as a memorized label without counting divisors.",
+            "Learner says 1 is prime because it is only divisible by 1."
+          ],
+          "exampleTutorMove": "Let's list the divisors of 1 out loud first, then decide the label.",
+          "exampleLearnerResponse": "1 has only one divisor, so it cannot be prime because prime numbers need exactly two divisors."
+        },
+        {
+          "activityId": "ACT-U1-S2-ENTRY-BRIDGE",
+          "lessonStepId": "STEP-U1-S2-ENTRY-BRIDGE",
+          "skillId": "U1-S2",
+          "activityType": "worked-bridge",
+          "title": "Entry Bridge With 24",
+          "openingLine": "Let's just find one easy way into the problem instead of solving everything at once.",
+          "firstTutorQuestion": "What is the easiest divisor you can test first?",
+          "smallHint": "If the number is even, checking 2 is a calm first step.",
+          "goodStoppingPoint": "Learner starts with 2 for 24 and explains that 24 is even.",
+          "watchFor": [
+            "Learner stalls because they think they need the whole tree immediately.",
+            "Learner notices 24 is even but still does not choose 2."
+          ],
+          "exampleTutorMove": "You do not need the whole answer yet. What does the word 'even' let you try first?",
+          "exampleLearnerResponse": "24 is even, so trying 2 first is the easiest entry."
+        }
+      ],
+      "completionRule": "complete_all_steps_in_order",
+      "lastEvaluation": null,
+      "history": []
+    },
+    "sessions": [
+      {
+        "learnerId": "sample-learner",
+        "targetSkillId": "U1-S3",
+        "status": "completed",
+        "currentStepIndex": 1,
+        "currentStep": null,
+        "nextStep": null,
+        "completedStepIds": [
+          "STEP-U1-S2-ENTRY-BRIDGE",
+          "STEP-U1-S3-REWRITE-CLEANLY"
+        ],
+        "remainingStepIds": [],
+        "steps": [
+          {
+            "activityId": "ACT-U1-S2-ENTRY-BRIDGE",
+            "lessonStepId": "STEP-U1-S2-ENTRY-BRIDGE",
+            "skillId": "U1-S2",
+            "activityType": "worked-bridge",
+            "title": "Entry Bridge With 24",
+            "openingLine": "Let's just find one easy way into the problem instead of solving everything at once.",
+            "firstTutorQuestion": "What is the easiest divisor you can test first?",
+            "smallHint": "If the number is even, checking 2 is a calm first step.",
+            "goodStoppingPoint": "Learner starts with 2 for 24 and explains that 24 is even.",
+            "watchFor": [
+              "Learner stalls because they think they need the whole tree immediately.",
+              "Learner notices 24 is even but still does not choose 2."
+            ],
+            "exampleTutorMove": "You do not need the whole answer yet. What does the word 'even' let you try first?",
+            "exampleLearnerResponse": "24 is even, so trying 2 first is the easiest entry."
+          },
+          {
+            "activityId": "ACT-U1-S3-REWRITE-CLEANLY",
+            "lessonStepId": "STEP-U1-S3-REWRITE-CLEANLY",
+            "skillId": "U1-S3",
+            "activityType": "dialogue-flow",
+            "title": "Rewrite the Final Factorization Cleanly",
+            "openingLine": "Your split-work is close; now let's turn it into one clean final factorization.",
+            "firstTutorQuestion": "Which factors should still remain in the final line?",
+            "smallHint": "Keep only prime factors in the last line, and make sure none were dropped.",
+            "goodStoppingPoint": "Learner writes one complete prime factorization with no missing or composite factor.",
+            "watchFor": [
+              "Learner keeps a composite factor like 6 in the final line.",
+              "Learner rewrites with only prime factors but drops one repeated factor."
+            ],
+            "exampleTutorMove": "Cover the scratch work and rebuild the last line only with prime factors that still remain.",
+            "exampleLearnerResponse": "The final line should keep 2, 2, and 3 because all of them are prime and none can be dropped."
+          }
+        ],
+        "completionRule": "complete_all_steps_in_order",
+        "lastEvaluation": {
+          "lessonStepId": "STEP-U1-S3-REWRITE-CLEANLY",
+          "decision": "completed",
+          "matchedRequiredSignals": [
+            "writes_only_prime_factors",
+            "keeps_all_factors"
+          ],
+          "missingRequiredSignals": [],
+          "matchedTextHints": [],
+          "matchedTextHintSignals": [
+            "writes_only_prime_factors",
+            "keeps_all_factors"
+          ],
+          "canAutoAdvance": true
+        },
+        "history": [
+          {
+            "attemptIndex": 0,
+            "lessonStepId": "STEP-U1-S2-ENTRY-BRIDGE",
+            "activityId": "ACT-U1-S2-ENTRY-BRIDGE",
+            "learnerResponse": "24 is even, so I should start by dividing by 2 first.",
+            "fieldValues": {
+              "starts_with_two": false,
+              "mentions_evenness": false
+            },
+            "tutorNote": "The tutor wrote only the learner quote and kept the checkboxes conservative.",
+            "timestamp": "2026-03-27T09:30:00+09:00",
+            "evaluation": {
+              "lessonStepId": "STEP-U1-S2-ENTRY-BRIDGE",
+              "decision": "completed",
+              "matchedRequiredSignals": [
+                "chooses_two_as_start",
+                "notes_even_number"
+              ],
+              "missingRequiredSignals": [],
+              "matchedTextHints": [
+                "2",
+                "even"
+              ],
+              "matchedTextHintSignals": [
+                "chooses_two_as_start",
+                "notes_even_number"
+              ],
+              "canAutoAdvance": true
+            }
+          },
+          {
+            "attemptIndex": 1,
+            "lessonStepId": "STEP-U1-S3-REWRITE-CLEANLY",
+            "activityId": "ACT-U1-S3-REWRITE-CLEANLY",
+            "learnerResponse": "소수만 남겨서 2 x 2 x 3으로 다시 썼고 빠진 것은 없어.",
+            "fieldValues": {
+              "uses_only_prime_factors": false,
+              "keeps_all_factors": false
+            },
+            "tutorNote": "튜터가 발화 로그만 남겼고 체크박스는 누르지 않았다.",
+            "timestamp": "2026-03-27T09:33:00+09:00",
+            "evaluation": {
+              "lessonStepId": "STEP-U1-S3-REWRITE-CLEANLY",
+              "decision": "completed",
+              "matchedRequiredSignals": [
+                "writes_only_prime_factors",
+                "keeps_all_factors"
+              ],
+              "missingRequiredSignals": [],
+              "matchedTextHints": [],
+              "matchedTextHintSignals": [
+                "writes_only_prime_factors",
+                "keeps_all_factors"
+              ],
+              "canAutoAdvance": true
+            }
+          }
+        ]
+      }
+    ],
+    "evidenceEvents": [
+      {
+        "eventId": "session-history-0-STEP-U1-S3-REWRITE-CLEANLY",
+        "learnerId": "sample-learner",
+        "kind": "session_history_observation",
+        "skillId": "U1-S3",
+        "result": "correct",
+        "errorPatternIds": [],
+        "observations": [
+          "I rewrote the final answer using only prime factors and kept every factor.",
+          "Learner rewrote the factorization cleanly without dropping any factors."
+        ],
+        "confidenceSignal": "confident",
+        "sourceDocs": [],
+        "derivedFrom": {
+          "lessonStepId": "STEP-U1-S3-REWRITE-CLEANLY",
+          "activityId": "ACT-U1-S3-REWRITE-CLEANLY",
+          "matchedRequiredSignals": [
+            "writes_only_prime_factors",
+            "keeps_all_factors"
+          ],
+          "missingRequiredSignals": []
+        }
+      },
+      {
+        "eventId": "session-history-0-STEP-U1-S2-ENTRY-BRIDGE",
+        "learnerId": "sample-learner",
+        "kind": "session_history_observation",
+        "skillId": "U1-S2",
+        "result": "correct",
+        "errorPatternIds": [],
+        "observations": [
+          "24 is even, so I should start by dividing by 2 first.",
+          "The tutor wrote only the learner quote and kept the checkboxes conservative."
+        ],
+        "confidenceSignal": "confident",
+        "sourceDocs": [],
+        "derivedFrom": {
+          "lessonStepId": "STEP-U1-S2-ENTRY-BRIDGE",
+          "activityId": "ACT-U1-S2-ENTRY-BRIDGE",
+          "matchedRequiredSignals": [
+            "chooses_two_as_start",
+            "notes_even_number"
+          ],
+          "missingRequiredSignals": []
+        }
+      },
+      {
+        "eventId": "session-history-1-STEP-U1-S3-REWRITE-CLEANLY",
+        "learnerId": "sample-learner",
+        "kind": "session_history_observation",
+        "skillId": "U1-S3",
+        "result": "correct",
+        "errorPatternIds": [],
+        "observations": [
+          "소수만 남겨서 2 x 2 x 3으로 다시 썼고 빠진 것은 없어.",
+          "튜터가 발화 로그만 남겼고 체크박스는 누르지 않았다."
+        ],
+        "confidenceSignal": "confident",
+        "sourceDocs": [],
+        "derivedFrom": {
+          "lessonStepId": "STEP-U1-S3-REWRITE-CLEANLY",
+          "activityId": "ACT-U1-S3-REWRITE-CLEANLY",
+          "matchedRequiredSignals": [
+            "writes_only_prime_factors",
+            "keeps_all_factors"
+          ],
+          "missingRequiredSignals": []
+        }
+      }
+    ],
+    "latestSkillSummaries": [
+      {
+        "learnerId": "sample-learner",
+        "skillId": "U1-S2",
+        "status": "ready_for_next_step",
+        "statusApproval": "provisional",
+        "decisionType": "multi_event_rule_assisted_conservative",
+        "supportingEvidenceIds": [
+          "session-history-0-STEP-U1-S2-ENTRY-BRIDGE"
+        ],
+        "matchedErrorPatternIds": [],
+        "explanations": [
+          "The current event satisfies the minimum Unit 1 rule for moving to the next guided step.",
+          "This supports conservative next-step planning, not a final mastered label."
+        ],
+        "blockedBy": [
+          "This status supports conservative tutoring flow only, not final mastery approval.",
+          "Unit-level mastered thresholds, reassessment rules, and overrides remain UNDECIDED."
+        ],
+        "eventCount": 1,
+        "blockedByPrerequisites": [
+          {
+            "prerequisiteSkillId": "U1-S1",
+            "relationship": "HELPFUL",
+            "approvalStatus": "provisional",
+            "sourceDocs": [
+              "docs/prerequisite-map.md"
+            ],
+            "whyBlocked": "Prerequisite skill U1-S1 does not yet have learner evidence, so progress on U1-S2 should stay conservative."
+          }
+        ],
+        "hasRequiredPrerequisiteBlocker": false
+      },
+      {
+        "learnerId": "sample-learner",
+        "skillId": "U1-S3",
+        "status": "ready_for_next_step",
+        "statusApproval": "provisional",
+        "decisionType": "multi_event_rule_assisted_conservative",
+        "supportingEvidenceIds": [
+          "session-history-0-STEP-U1-S3-REWRITE-CLEANLY",
+          "session-history-1-STEP-U1-S3-REWRITE-CLEANLY"
+        ],
+        "matchedErrorPatternIds": [],
+        "explanations": [
+          "The current event satisfies the minimum Unit 1 rule for moving to the next guided step.",
+          "This supports conservative next-step planning, not a final mastered label."
+        ],
+        "blockedBy": [
+          "This status supports conservative tutoring flow only, not final mastery approval.",
+          "Unit-level mastered thresholds, reassessment rules, and overrides remain UNDECIDED."
+        ],
+        "eventCount": 2,
+        "blockedByPrerequisites": [],
+        "hasRequiredPrerequisiteBlocker": false
+      }
+    ],
+    "latestRecommendations": [
+      {
+        "learnerId": "sample-learner",
+        "targetSkillId": "U1-S2",
+        "targetSkillTitle": "Find the prime factors of a given natural number",
+        "recommendationType": "practice",
+        "confidence": "limited",
+        "needsReview": true,
+        "reasonCodes": [
+          "documented_skill_target",
+          "unit_mastery_threshold_pending",
+          "helpful_prerequisite_blocker"
+        ],
+        "summary": "Conservative follow-up practice is recommended pending more evidence.",
+        "sourceDocs": [
+          "docs/suji-worked-bridge-prime-factorization-entry.md",
+          "docs/suji-tutor-dialogue-flow-prime-factorization.md"
+        ],
+        "recommendedActivities": [
+          {
+            "activityId": "ACT-U1-S2-ENTRY-BRIDGE",
+            "skillId": "U1-S2",
+            "activityType": "worked-bridge",
+            "title": "Entry Bridge With 24",
+            "goal": "Rebuild the habit of starting with an easy divisor pair instead of freezing.",
+            "firstTutorQuestion": "What is the easiest divisor you can test first?",
+            "operatorFocus": "Reward a calm starting move instead of speed.",
+            "watchFor": [
+              "Learner freezes because they think they must finish the whole factorization at once.",
+              "Learner chooses a hard divisor first even after noticing the number is even."
+            ],
+            "exampleTutorMove": "If the learner hesitates, point back to the word 'even' and ask what divisor that suggests."
+          }
+        ],
+        "sessionPayload": {
+          "learnerId": "sample-learner",
+          "targetSkillId": "U1-S2",
+          "steps": [
+            {
+              "activityId": "ACT-U1-S1-CONCEPT-CHECK",
+              "lessonStepId": "STEP-U1-S1-CONCEPT-CHECK",
+              "skillId": "U1-S1",
+              "activityType": "dialogue-flow",
+              "title": "Prime, Composite, or Neither",
+              "openingLine": "Let's slow down and check what makes a number prime before we calculate anything.",
+              "firstTutorQuestion": "How many divisors does 1 actually have?",
+              "smallHint": "A prime number must have exactly two divisors: 1 and itself.",
+              "goodStoppingPoint": "Learner says 1 is neither prime nor composite and gives a divisor-based reason.",
+              "watchFor": [
+                "Learner uses the word 'prime' as a memorized label without counting divisors.",
+                "Learner says 1 is prime because it is only divisible by 1."
+              ],
+              "exampleTutorMove": "Let's list the divisors of 1 out loud first, then decide the label.",
+              "exampleLearnerResponse": "1 has only one divisor, so it cannot be prime because prime numbers need exactly two divisors."
+            },
+            {
+              "activityId": "ACT-U1-S2-ENTRY-BRIDGE",
+              "lessonStepId": "STEP-U1-S2-ENTRY-BRIDGE",
+              "skillId": "U1-S2",
+              "activityType": "worked-bridge",
+              "title": "Entry Bridge With 24",
+              "openingLine": "Let's just find one easy way into the problem instead of solving everything at once.",
+              "firstTutorQuestion": "What is the easiest divisor you can test first?",
+              "smallHint": "If the number is even, checking 2 is a calm first step.",
+              "goodStoppingPoint": "Learner starts with 2 for 24 and explains that 24 is even.",
+              "watchFor": [
+                "Learner stalls because they think they need the whole tree immediately.",
+                "Learner notices 24 is even but still does not choose 2."
+              ],
+              "exampleTutorMove": "You do not need the whole answer yet. What does the word 'even' let you try first?",
+              "exampleLearnerResponse": "24 is even, so trying 2 first is the easiest entry."
+            }
+          ]
+        },
+        "sourceEventIds": [
+          "session-history-0-STEP-U1-S2-ENTRY-BRIDGE"
+        ],
+        "blockedByPrerequisites": [
+          {
+            "prerequisiteSkillId": "U1-S1",
+            "relationship": "HELPFUL",
+            "approvalStatus": "provisional",
+            "sourceDocs": [
+              "docs/prerequisite-map.md"
+            ],
+            "whyBlocked": "Prerequisite skill U1-S1 does not yet have learner evidence, so progress on U1-S2 should stay conservative."
+          }
+        ],
+        "recommendedNextSkillIds": [
+          "U1-S1",
+          "U1-S2"
+        ],
+        "recommendedActivitySequence": [
+          {
+            "activityId": "ACT-U1-S1-CONCEPT-CHECK",
+            "skillId": "U1-S1",
+            "activityType": "dialogue-flow",
+            "title": "Prime, Composite, or Neither",
+            "goal": "Repair the idea that 1 is prime and rebuild divisor-based classification.",
+            "firstTutorQuestion": "How many divisors does 1 actually have?",
+            "operatorFocus": "Keep the learner on divisor count, not memorized labels.",
+            "watchFor": [
+              "Learner says '1 is prime because it is special' without using divisor reasoning.",
+              "Learner can repeat 'neither' but cannot explain why."
+            ],
+            "exampleTutorMove": "Ask the learner to list the divisors of 1 before naming the category."
+          },
+          {
+            "activityId": "ACT-U1-S2-ENTRY-BRIDGE",
+            "skillId": "U1-S2",
+            "activityType": "worked-bridge",
+            "title": "Entry Bridge With 24",
+            "goal": "Rebuild the habit of starting with an easy divisor pair instead of freezing.",
+            "firstTutorQuestion": "What is the easiest divisor you can test first?",
+            "operatorFocus": "Reward a calm starting move instead of speed.",
+            "watchFor": [
+              "Learner freezes because they think they must finish the whole factorization at once.",
+              "Learner chooses a hard divisor first even after noticing the number is even."
+            ],
+            "exampleTutorMove": "If the learner hesitates, point back to the word 'even' and ask what divisor that suggests."
+          }
+        ]
+      },
+      {
+        "learnerId": "sample-learner",
+        "targetSkillId": "U1-S3",
+        "targetSkillTitle": "Express a number in prime factorized form",
+        "recommendationType": "practice",
+        "confidence": "limited",
+        "needsReview": true,
+        "reasonCodes": [
+          "documented_skill_target",
+          "unit_mastery_threshold_pending"
+        ],
+        "summary": "Conservative follow-up practice is recommended pending more evidence.",
+        "sourceDocs": [
+          "docs/suji-tutor-dialogue-flow-prime-factorization.md",
+          "docs/suji-subskills-prime-factorization.md"
+        ],
+        "recommendedActivities": [
+          {
+            "activityId": "ACT-U1-S3-REWRITE-CLEANLY",
+            "skillId": "U1-S3",
+            "activityType": "dialogue-flow",
+            "title": "Rewrite the Final Factorization Cleanly",
+            "goal": "Stabilize the move from split-work to a complete final prime factorization.",
+            "firstTutorQuestion": "Which factors should still remain in the final line?",
+            "operatorFocus": "Push for one clean final line, not more splitting work.",
+            "watchFor": [
+              "Learner drops a repeated factor while rewriting.",
+              "Learner leaves a composite factor in the final line."
+            ],
+            "exampleTutorMove": "Cover the scratch work and ask the learner to rebuild only the final prime-factor line."
+          }
+        ],
+        "sessionPayload": {
+          "learnerId": "sample-learner",
+          "targetSkillId": "U1-S3",
+          "steps": [
+            {
+              "activityId": "ACT-U1-S3-REWRITE-CLEANLY",
+              "lessonStepId": "STEP-U1-S3-REWRITE-CLEANLY",
+              "skillId": "U1-S3",
+              "activityType": "dialogue-flow",
+              "title": "Rewrite the Final Factorization Cleanly",
+              "openingLine": "Your split-work is close; now let's turn it into one clean final factorization.",
+              "firstTutorQuestion": "Which factors should still remain in the final line?",
+              "smallHint": "Keep only prime factors in the last line, and make sure none were dropped.",
+              "goodStoppingPoint": "Learner writes one complete prime factorization with no missing or composite factor.",
+              "watchFor": [
+                "Learner keeps a composite factor like 6 in the final line.",
+                "Learner rewrites with only prime factors but drops one repeated factor."
+              ],
+              "exampleTutorMove": "Cover the scratch work and rebuild the last line only with prime factors that still remain.",
+              "exampleLearnerResponse": "The final line should keep 2, 2, and 3 because all of them are prime and none can be dropped."
+            }
+          ]
+        },
+        "sourceEventIds": [
+          "session-history-0-STEP-U1-S3-REWRITE-CLEANLY",
+          "session-history-1-STEP-U1-S3-REWRITE-CLEANLY"
+        ],
+        "blockedByPrerequisites": [],
+        "recommendedNextSkillIds": [
+          "U1-S3"
+        ],
+        "recommendedActivitySequence": [
+          {
+            "activityId": "ACT-U1-S3-REWRITE-CLEANLY",
+            "skillId": "U1-S3",
+            "activityType": "dialogue-flow",
+            "title": "Rewrite the Final Factorization Cleanly",
+            "goal": "Stabilize the move from split-work to a complete final prime factorization.",
+            "firstTutorQuestion": "Which factors should still remain in the final line?",
+            "operatorFocus": "Push for one clean final line, not more splitting work.",
+            "watchFor": [
+              "Learner drops a repeated factor while rewriting.",
+              "Learner leaves a composite factor in the final line."
+            ],
+            "exampleTutorMove": "Cover the scratch work and ask the learner to rebuild only the final prime-factor line."
+          }
+        ]
+      }
+    ],
+    "updatedAt": "2026-03-27T09:33:00+09:00"
+  }
+}

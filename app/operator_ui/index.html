@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SujiMathAI Operator QA Surface</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="shell">
+      <header class="hero">
+        <div>
+          <p class="eyebrow">Local Operator QA Surface</p>
+          <h1>Transcript replay, recommendation handoff, and live turn inspection.</h1>
+        </div>
+        <div class="hero-meta">
+          <span class="chip">Unit 1</span>
+          <span class="chip">CLI-backed</span>
+          <span class="chip">No file writes</span>
+        </div>
+      </header>
+
+      <main class="layout">
+        <aside class="sidebar">
+          <section class="sidebar-section">
+            <h2>Quick Pilot Presets</h2>
+            <div class="preset-list">
+              <button
+                type="button"
+                class="transcript-item preset-item"
+                data-preset-id="pilot-s2-s4"
+              >
+                <strong>Pilot A</strong>
+                <div>S2-S4 bridge and verification flow</div>
+                <div class="transcript-meta">
+                  <span>u1-s2-s3-bilingual...</span>
+                  <span>planned session</span>
+                </div>
+              </button>
+              <button
+                type="button"
+                class="transcript-item preset-item"
+                data-preset-id="pilot-s5-transfer"
+              >
+                <strong>Pilot B</strong>
+                <div>S5 transfer with blocker-first reopen</div>
+                <div class="transcript-meta">
+                  <span>u1-s5a-divisor-count...</span>
+                  <span>transfer</span>
+                </div>
+              </button>
+              <button
+                type="button"
+                class="transcript-item preset-item"
+                data-preset-id="pilot-s5c-transfer"
+              >
+                <strong>Pilot C</strong>
+                <div>S5C transfer with gcd/lcm blocker-first reopen</div>
+                <div class="transcript-meta">
+                  <span>u1-s5c-gcd-lcm...</span>
+                  <span>transfer</span>
+                </div>
+              </button>
+            </div>
+          </section>
+
+          <section class="sidebar-section">
+            <h2>Transcripts</h2>
+            <label class="field">
+              <span>Skill filter</span>
+              <input id="skill-filter" type="text" placeholder="U1-S5A" />
+            </label>
+            <label class="field">
+              <span>Tag filter</span>
+              <input id="tag-filter" type="text" placeholder="transfer" />
+            </label>
+            <div id="transcript-list" class="transcript-list"></div>
+          </section>
+
+          <section class="sidebar-section">
+            <h2>Learner Records</h2>
+            <div class="inline-row">
+              <select id="learner-file-select"></select>
+              <button id="load-learner-button" class="button secondary">Load</button>
+            </div>
+          </section>
+        </aside>
+
+        <section class="workspace">
+          <section class="workspace-section">
+            <div class="section-heading">
+              <div>
+                <p class="section-kicker">Step 0</p>
+                <h2>Capture a raw operator log</h2>
+              </div>
+              <div class="inline-row">
+                <button id="export-log-button" class="button secondary">Export JSON</button>
+                <button id="save-log-button" class="button">Save raw log</button>
+              </div>
+            </div>
+
+            <div class="field">
+              <span>Pilot note</span>
+              <textarea id="pilot-note" placeholder="Who tested, what was unusual, where the operator hesitated, what should be compared later."></textarea>
+            </div>
+            <div id="log-meta" class="result-grid"></div>
+            <pre id="log-json" class="code-block"></pre>
+          </section>
+
+          <section class="workspace-section">
+            <div class="section-heading">
+              <div>
+                <p class="section-kicker">Step 1</p>
+                <h2>Replay a transcript fixture</h2>
+              </div>
+              <div class="inline-row">
+                <label class="field compact">
+                  <span>Turn limit</span>
+                  <input id="turn-limit" type="number" min="1" placeholder="all" />
+                </label>
+                <button id="replay-button" class="button">Replay transcript</button>
+              </div>
+            </div>
+
+            <div id="selected-transcript" class="selected-transcript empty-state">
+              Choose a transcript from the left.
+            </div>
+            <div id="replay-summary" class="result-grid"></div>
+            <div id="turn-results" class="turn-results"></div>
+          </section>
+
+          <section class="workspace-section">
+            <div class="section-heading">
+              <div>
+                <p class="section-kicker">Step 2</p>
+                <h2>Inspect the next session handoff</h2>
+              </div>
+              <button id="start-session-button" class="button secondary">Start from current learner state</button>
+            </div>
+
+            <div id="handoff-summary" class="result-grid"></div>
+            <pre id="handoff-json" class="code-block"></pre>
+          </section>
+
+          <section class="workspace-section">
+            <div class="section-heading">
+              <div>
+                <p class="section-kicker">Step 3</p>
+                <h2>Simulate one operator turn</h2>
+              </div>
+              <div class="inline-row">
+                <button id="prepare-form-button" class="button secondary">Refresh observation form</button>
+                <button id="submit-turn-button" class="button">Submit turn</button>
+              </div>
+            </div>
+
+            <div id="form-meta" class="result-grid"></div>
+            <div id="observation-form-area" class="form-area empty-state">
+              Start or load a learner state first.
+            </div>
+            <div id="turn-summary" class="result-grid"></div>
+            <pre id="turn-json" class="code-block"></pre>
+          </section>
+        </section>
+      </main>
+    </div>
+
+    <div id="toast" class="toast" hidden></div>
+    <script src="/app.js" type="module"></script>
+  </body>
+  </html>

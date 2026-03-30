@@ -23,5 +23,30 @@
       ],
       "evidenceEventCount": 2
     }
+  },
+  {
+    "name": "submit korean text-only observation through learner record active session",
+    "learnerFile": "app/domain/evidence/learner-record-with-live-session.example.json",
+    "observationFormInput": {
+      "learnerResponse": "24는 짝수니까 2부터 나눠 보면 돼.",
+      "fieldValues": {
+        "starts_with_two": false,
+        "mentions_evenness": false
+      },
+      "tutorNote": "튜터가 체크박스는 비워 두고 자유서술만 남겼다.",
+      "timestamp": "2026-03-28T11:00:00+09:00"
+    },
+    "expected": {
+      "activeTargetSkillId": "U1-S3",
+      "activeCurrentLessonStepId": "STEP-U1-S3-REWRITE-CLEANLY",
+      "activeCompletedStepIds": [
+        "STEP-U1-S2-ENTRY-BRIDGE"
+      ],
+      "latestRecommendationSkillIds": [
+        "U1-S2",
+        "U1-S3"
+      ],
+      "evidenceEventCount": 2
+    }
   }
 ]
