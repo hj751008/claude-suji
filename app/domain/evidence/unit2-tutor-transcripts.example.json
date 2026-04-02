@@ -29,11 +29,367 @@
         "observationFormInput": {
           "learnerResponse": "0은 양수도 음수도 아니고 정수도 분수로 쓸 수 있어서 유리수에 포함돼.",
           "fieldValues": {
-            "classifies_zero_separately": true,
-            "states_integer_subset_of_rational": true
+            "classifies_zero_separately": false,
+            "states_integer_subset_of_rational": false
           },
           "tutorNote": "튜터가 체크박스 없이 발화만 남겼다.",
           "timestamp": "2026-03-30T15:10:00+09:00"
+        }
+      }
+    ]
+  },
+  {
+    "transcriptId": "u2-s1-category-sort-zero-is-positive-ko-uncertain",
+    "name": "Unit 2 category sort log where zero is forced into the positive side",
+    "skillId": "U2-S1",
+    "tags": [
+      "unit2",
+      "category",
+      "ko",
+      "text-only",
+      "active",
+      "uncertain"
+    ],
+    "learnerFile": "app/domain/evidence/learner-record-with-active-session-unit2.example.json",
+    "turns": [
+      {
+        "turnIndex": 1,
+        "lessonStepId": "STEP-U2-S1-CATEGORY-SORT",
+        "messages": [
+          {
+            "speaker": "tutor",
+            "text": "0을 어떤 칸에 두어야 하는지 이유와 같이 말해 볼래?"
+          },
+          {
+            "speaker": "learner",
+            "text": "0은 음수는 아니니까 양수 쪽에 두면 될 것 같아."
+          }
+        ],
+        "operatorNote": "튜터가 0을 positive 쪽으로 밀어 넣는 반응으로 들었다고 적었다.",
+        "observationFormInput": {
+          "learnerResponse": "0은 음수는 아니니까 양수 쪽에 두면 될 것 같아.",
+          "fieldValues": {
+            "classifies_zero_separately": false,
+            "states_integer_subset_of_rational": false
+          },
+          "tutorNote": "튜터가 0을 positive 쪽으로 밀어 넣는 반응으로 들었다고 적었다.",
+          "timestamp": "2026-04-02T14:10:00+09:00"
+        }
+      }
+    ]
+  },
+  {
+    "transcriptId": "u2-s2-number-line-order-ko-text-only-active-session",
+    "name": "Unit 2 number-line order log with Korean text-only observation",
+    "skillId": "U2-S2",
+    "tags": [
+      "unit2",
+      "number-line",
+      "ko",
+      "text-only",
+      "active"
+    ],
+    "learnerFile": "app/domain/evidence/learner-record-with-active-session-u2-s2.example.json",
+    "turns": [
+      {
+        "turnIndex": 1,
+        "lessonStepId": "STEP-U2-S2-NUMBER-LINE-ORDER",
+        "messages": [
+          {
+            "speaker": "tutor",
+            "text": "-7과 -3 중에서 수직선에서 더 왼쪽에 있는 수는 어느 쪽일까?"
+          },
+          {
+            "speaker": "learner",
+            "text": "-7이 더 왼쪽이라서 더 작아. 절댓값이 더 크다고 큰 수는 아니야."
+          }
+        ],
+        "operatorNote": "튜터가 left-right 설명만 남기고 체크박스는 비워 두었다.",
+        "observationFormInput": {
+          "learnerResponse": "-7이 더 왼쪽이라서 더 작아. 절댓값이 더 크다고 큰 수는 아니야.",
+          "fieldValues": {
+            "orders_by_left_right_position": false,
+            "explains_negative_order_without_abs_reversal": false
+          },
+          "tutorNote": "튜터가 left-right 설명만 남기고 체크박스는 비워 두었다.",
+          "timestamp": "2026-04-02T14:12:00+09:00"
+        }
+      }
+    ]
+  },
+  {
+    "transcriptId": "u2-s2-number-line-abs-reversal-ko-uncertain",
+    "name": "Unit 2 number-line order log that reverses negative order by absolute value",
+    "skillId": "U2-S2",
+    "tags": [
+      "unit2",
+      "number-line",
+      "ko",
+      "text-only",
+      "active",
+      "uncertain"
+    ],
+    "learnerFile": "app/domain/evidence/learner-record-with-active-session-u2-s2.example.json",
+    "turns": [
+      {
+        "turnIndex": 1,
+        "lessonStepId": "STEP-U2-S2-NUMBER-LINE-ORDER",
+        "messages": [
+          {
+            "speaker": "tutor",
+            "text": "-7과 -3 중에서 어떤 수가 더 큰지 수직선으로 설명해 볼래?"
+          },
+          {
+            "speaker": "learner",
+            "text": "7이 더 크니까 -7이 더 큰 수 같아."
+          }
+        ],
+        "operatorNote": "튜터가 절댓값 크기로 negative order를 뒤집는 반응으로 기록했다.",
+        "observationFormInput": {
+          "learnerResponse": "7이 더 크니까 -7이 더 큰 수 같아.",
+          "fieldValues": {
+            "orders_by_left_right_position": false,
+            "explains_negative_order_without_abs_reversal": false
+          },
+          "tutorNote": "튜터가 절댓값 크기로 negative order를 뒤집는 반응으로 기록했다.",
+          "timestamp": "2026-04-02T14:13:00+09:00"
+        }
+      }
+    ]
+  },
+  {
+    "transcriptId": "u2-s3-absolute-value-distance-ko-text-only-active-session",
+    "name": "Unit 2 absolute-value distance log with Korean text-only observation",
+    "skillId": "U2-S3",
+    "tags": [
+      "unit2",
+      "absolute-value",
+      "ko",
+      "text-only",
+      "active"
+    ],
+    "learnerFile": "app/domain/evidence/learner-record-with-active-session-u2-s3.example.json",
+    "turns": [
+      {
+        "turnIndex": 1,
+        "lessonStepId": "STEP-U2-S3-ABSOLUTE-VALUE-DISTANCE",
+        "messages": [
+          {
+            "speaker": "tutor",
+            "text": "-4에서 0까지의 거리가 얼마인지 먼저 말해 볼래?"
+          },
+          {
+            "speaker": "learner",
+            "text": "거리는 4니까 절댓값도 4야. -4가 아니라 4야."
+          }
+        ],
+        "operatorNote": "튜터가 distance 설명만 남기고 체크박스는 비워 두었다.",
+        "observationFormInput": {
+          "learnerResponse": "거리는 4니까 절댓값도 4야. -4가 아니라 4야.",
+          "fieldValues": {
+            "defines_absolute_value_as_distance": false,
+            "removes_negative_sign_from_absolute_value": false
+          },
+          "tutorNote": "튜터가 distance 설명만 남기고 체크박스는 비워 두었다.",
+          "timestamp": "2026-04-02T14:15:00+09:00"
+        }
+      }
+    ]
+  },
+  {
+    "transcriptId": "u2-s3-absolute-value-keeps-negative-sign-ko-uncertain",
+    "name": "Unit 2 absolute-value log that keeps the original negative sign",
+    "skillId": "U2-S3",
+    "tags": [
+      "unit2",
+      "absolute-value",
+      "ko",
+      "text-only",
+      "active",
+      "uncertain"
+    ],
+    "learnerFile": "app/domain/evidence/learner-record-with-active-session-u2-s3.example.json",
+    "turns": [
+      {
+        "turnIndex": 1,
+        "lessonStepId": "STEP-U2-S3-ABSOLUTE-VALUE-DISTANCE",
+        "messages": [
+          {
+            "speaker": "tutor",
+            "text": "-4의 절댓값을 거리로 설명해 볼래?"
+          },
+          {
+            "speaker": "learner",
+            "text": "원래 수가 -4니까 절댓값도 -4라고 쓰면 될 것 같아."
+          }
+        ],
+        "operatorNote": "튜터가 distance 뜻보다 원래 부호를 그대로 가져오는 반응으로 적었다.",
+        "observationFormInput": {
+          "learnerResponse": "원래 수가 -4니까 절댓값도 -4라고 쓰면 될 것 같아.",
+          "fieldValues": {
+            "defines_absolute_value_as_distance": false,
+            "removes_negative_sign_from_absolute_value": false
+          },
+          "tutorNote": "튜터가 distance 뜻보다 원래 부호를 그대로 가져오는 반응으로 적었다.",
+          "timestamp": "2026-04-02T14:16:00+09:00"
+        }
+      }
+    ]
+  },
+  {
+    "transcriptId": "u2-s4-signed-change-ko-text-only-active-session",
+    "name": "Unit 2 signed-change log with Korean text-only observation",
+    "skillId": "U2-S4",
+    "tags": [
+      "unit2",
+      "signed-change",
+      "ko",
+      "text-only",
+      "active"
+    ],
+    "learnerFile": "app/domain/evidence/learner-record-with-active-session-u2-s4.example.json",
+    "turns": [
+      {
+        "turnIndex": 1,
+        "lessonStepId": "STEP-U2-S4-SIGNED-CHANGE",
+        "messages": [
+          {
+            "speaker": "tutor",
+            "text": "3에서 -5를 더하면 수직선에서 어느 방향으로 움직인다고 볼 수 있을까?"
+          },
+          {
+            "speaker": "learner",
+            "text": "왼쪽으로 5만큼 가니까 결과는 -2야."
+          }
+        ],
+        "operatorNote": "튜터가 direction 설명만 남기고 체크박스는 비워 두었다.",
+        "observationFormInput": {
+          "learnerResponse": "왼쪽으로 5만큼 가니까 결과는 -2야.",
+          "fieldValues": {
+            "tracks_direction_of_signed_change": false,
+            "keeps_result_sign_consistent": false
+          },
+          "tutorNote": "튜터가 direction 설명만 남기고 체크박스는 비워 두었다.",
+          "timestamp": "2026-04-02T14:18:00+09:00"
+        }
+      }
+    ]
+  },
+  {
+    "transcriptId": "u2-s4-signed-change-sign-flip-ko-uncertain",
+    "name": "Unit 2 signed-change log that loses direction and flips the sign",
+    "skillId": "U2-S4",
+    "tags": [
+      "unit2",
+      "signed-change",
+      "ko",
+      "text-only",
+      "active",
+      "uncertain"
+    ],
+    "learnerFile": "app/domain/evidence/learner-record-with-active-session-u2-s4.example.json",
+    "turns": [
+      {
+        "turnIndex": 1,
+        "lessonStepId": "STEP-U2-S4-SIGNED-CHANGE",
+        "messages": [
+          {
+            "speaker": "tutor",
+            "text": "3에서 -5를 더하면 어떻게 움직인다고 생각해?"
+          },
+          {
+            "speaker": "learner",
+            "text": "빼기처럼 보여서 그냥 8이라고 생각했어."
+          }
+        ],
+        "operatorNote": "튜터가 movement 설명 없이 sign을 뒤집는 계산으로 들었다고 기록했다.",
+        "observationFormInput": {
+          "learnerResponse": "빼기처럼 보여서 그냥 8이라고 생각했어.",
+          "fieldValues": {
+            "tracks_direction_of_signed_change": false,
+            "keeps_result_sign_consistent": false
+          },
+          "tutorNote": "튜터가 movement 설명 없이 sign을 뒤집는 계산으로 들었다고 기록했다.",
+          "timestamp": "2026-04-02T14:19:00+09:00"
+        }
+      }
+    ]
+  },
+  {
+    "transcriptId": "u2-s5-sign-first-expression-ko-text-only-active-session",
+    "name": "Unit 2 sign-first expression log with Korean text-only observation",
+    "skillId": "U2-S5",
+    "tags": [
+      "unit2",
+      "sign-first",
+      "ko",
+      "text-only",
+      "active"
+    ],
+    "learnerFile": "app/domain/evidence/learner-record-with-active-session-u2-s5.example.json",
+    "turns": [
+      {
+        "turnIndex": 1,
+        "lessonStepId": "STEP-U2-S5-SIGN-FIRST-EXPRESSION",
+        "messages": [
+          {
+            "speaker": "tutor",
+            "text": "계산하기 전에 전체 식의 부호부터 어떻게 될지 말해 볼래?"
+          },
+          {
+            "speaker": "learner",
+            "text": "먼저 전체 부호는 음수야. 역수 유지하고 구조를 유지한 채 계산해야 해."
+          }
+        ],
+        "operatorNote": "튜터가 sign-first 설명만 남기고 체크박스는 비워 두었다.",
+        "observationFormInput": {
+          "learnerResponse": "먼저 전체 부호는 음수야. 역수 유지하고 구조를 유지한 채 계산해야 해.",
+          "fieldValues": {
+            "predicts_overall_sign_first": false,
+            "keeps_power_or_reciprocal_structure": false
+          },
+          "tutorNote": "튜터가 sign-first 설명만 남기고 체크박스는 비워 두었다.",
+          "timestamp": "2026-04-02T14:21:00+09:00"
+        }
+      }
+    ]
+  },
+  {
+    "transcriptId": "u2-s5-sign-first-expression-structure-loss-ko-uncertain",
+    "name": "Unit 2 sign-first expression log that flattens the structure too early",
+    "skillId": "U2-S5",
+    "tags": [
+      "unit2",
+      "sign-first",
+      "ko",
+      "text-only",
+      "active",
+      "uncertain"
+    ],
+    "learnerFile": "app/domain/evidence/learner-record-with-active-session-u2-s5.example.json",
+    "turns": [
+      {
+        "turnIndex": 1,
+        "lessonStepId": "STEP-U2-S5-SIGN-FIRST-EXPRESSION",
+        "messages": [
+          {
+            "speaker": "tutor",
+            "text": "전체 부호와 구조를 먼저 어떻게 볼지 말해 볼래?"
+          },
+          {
+            "speaker": "learner",
+            "text": "그냥 역수나 거듭제곱은 지우고 숫자만 모아서 계산하면 될 것 같아."
+          }
+        ],
+        "operatorNote": "튜터가 sign-first 없이 구조를 납작하게 만드는 반응으로 적었다.",
+        "observationFormInput": {
+          "learnerResponse": "그냥 역수나 거듭제곱은 지우고 숫자만 모아서 계산하면 될 것 같아.",
+          "fieldValues": {
+            "predicts_overall_sign_first": false,
+            "keeps_power_or_reciprocal_structure": false
+          },
+          "tutorNote": "튜터가 sign-first 없이 구조를 납작하게 만드는 반응으로 적었다.",
+          "timestamp": "2026-04-02T14:22:00+09:00"
         }
       }
     ]

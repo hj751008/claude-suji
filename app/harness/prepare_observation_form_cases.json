@@ -151,5 +151,53 @@
       ],
       "learnerResponsePrompt": "Write how the learner classified zero, integers, and rational numbers."
     }
+  },
+  {
+    "name": "prepare observation form from active unit2 s2 session",
+    "learnerFile": "app/domain/evidence/learner-record-with-active-session-u2-s2.example.json",
+    "expected": {
+      "lessonStepId": "STEP-U2-S2-NUMBER-LINE-ORDER",
+      "fieldIds": [
+        "orders_by_left_right_position",
+        "explains_negative_order_without_abs_reversal"
+      ],
+      "learnerResponsePrompt": "Write how the learner compared the numbers on the number line."
+    }
+  },
+  {
+    "name": "prepare observation form from active unit2 s3 session",
+    "learnerFile": "app/domain/evidence/learner-record-with-active-session-u2-s3.example.json",
+    "expected": {
+      "lessonStepId": "STEP-U2-S3-ABSOLUTE-VALUE-DISTANCE",
+      "fieldIds": [
+        "defines_absolute_value_as_distance",
+        "removes_negative_sign_from_absolute_value"
+      ],
+      "learnerResponsePrompt": "Write how the learner explained the absolute value of the number."
+    }
+  },
+  {
+    "name": "prepare observation form from active unit2 s4 session",
+    "learnerFile": "app/domain/evidence/learner-record-with-active-session-u2-s4.example.json",
+    "expected": {
+      "lessonStepId": "STEP-U2-S4-SIGNED-CHANGE",
+      "fieldIds": [
+        "tracks_direction_of_signed_change",
+        "keeps_result_sign_consistent"
+      ],
+      "learnerResponsePrompt": "Write how the learner described the signed addition or subtraction step."
+    }
+  },
+  {
+    "name": "prepare observation form from active unit2 s5 session",
+    "learnerFile": "app/domain/evidence/learner-record-with-active-session-u2-s5.example.json",
+    "expected": {
+      "lessonStepId": "STEP-U2-S5-SIGN-FIRST-EXPRESSION",
+      "fieldIds": [
+        "predicts_overall_sign_first",
+        "keeps_power_or_reciprocal_structure"
+      ],
+      "learnerResponsePrompt": "Write how the learner predicted the sign and handled the expression structure."
+    }
   }
 ]

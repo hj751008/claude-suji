@@ -513,5 +513,113 @@
       "currentLessonStepId": "STEP-U2-S2-NUMBER-LINE-ORDER",
       "firstTutorQuestion": "Which of these two numbers is farther left on the number line?"
     }
+  },
+  {
+    "name": "replay transcript fixture for unit2 category uncertainty when zero is treated as positive",
+    "transcriptFile": "app/domain/evidence/unit2-tutor-transcripts.example.json",
+    "transcriptId": "u2-s1-category-sort-zero-is-positive-ko-uncertain",
+    "expected": {
+      "decision": "uncertain",
+      "nextAction": "continue_active_session",
+      "sessionStatus": "in_progress",
+      "currentLessonStepId": "STEP-U2-S1-CATEGORY-SORT",
+      "firstTutorQuestion": "What makes 0 its own case instead of a positive or negative integer?"
+    }
+  },
+  {
+    "name": "replay transcript fixture for unit2 number-line completion",
+    "transcriptFile": "app/domain/evidence/unit2-tutor-transcripts.example.json",
+    "transcriptId": "u2-s2-number-line-order-ko-text-only-active-session",
+    "expected": {
+      "decision": "completed",
+      "nextAction": "review_next_recommendation",
+      "sessionStatus": "completed",
+      "targetSkillId": "U2-S2",
+      "firstLessonStepId": "STEP-U2-S1-CATEGORY-SORT"
+    }
+  },
+  {
+    "name": "replay transcript fixture for unit2 number-line uncertainty when negative order is reversed",
+    "transcriptFile": "app/domain/evidence/unit2-tutor-transcripts.example.json",
+    "transcriptId": "u2-s2-number-line-abs-reversal-ko-uncertain",
+    "expected": {
+      "decision": "uncertain",
+      "nextAction": "continue_active_session",
+      "sessionStatus": "in_progress",
+      "currentLessonStepId": "STEP-U2-S2-NUMBER-LINE-ORDER",
+      "firstTutorQuestion": "Which of these two numbers is farther left on the number line?"
+    }
+  },
+  {
+    "name": "replay transcript fixture for unit2 absolute-value completion",
+    "transcriptFile": "app/domain/evidence/unit2-tutor-transcripts.example.json",
+    "transcriptId": "u2-s3-absolute-value-distance-ko-text-only-active-session",
+    "expected": {
+      "decision": "completed",
+      "nextAction": "review_next_recommendation",
+      "sessionStatus": "completed",
+      "targetSkillId": "U2-S3",
+      "firstLessonStepId": "STEP-U2-S2-NUMBER-LINE-ORDER"
+    }
+  },
+  {
+    "name": "replay transcript fixture for unit2 absolute-value uncertainty when the negative sign is kept",
+    "transcriptFile": "app/domain/evidence/unit2-tutor-transcripts.example.json",
+    "transcriptId": "u2-s3-absolute-value-keeps-negative-sign-ko-uncertain",
+    "expected": {
+      "decision": "uncertain",
+      "nextAction": "continue_active_session",
+      "sessionStatus": "in_progress",
+      "currentLessonStepId": "STEP-U2-S3-ABSOLUTE-VALUE-DISTANCE",
+      "firstTutorQuestion": "How far is this number from 0 on the number line?"
+    }
+  },
+  {
+    "name": "replay transcript fixture for unit2 signed-change completion",
+    "transcriptFile": "app/domain/evidence/unit2-tutor-transcripts.example.json",
+    "transcriptId": "u2-s4-signed-change-ko-text-only-active-session",
+    "expected": {
+      "decision": "completed",
+      "nextAction": "review_next_recommendation",
+      "sessionStatus": "completed",
+      "targetSkillId": "U2-S4",
+      "firstLessonStepId": "STEP-U2-S1-CATEGORY-SORT"
+    }
+  },
+  {
+    "name": "replay transcript fixture for unit2 signed-change uncertainty when sign is flipped",
+    "transcriptFile": "app/domain/evidence/unit2-tutor-transcripts.example.json",
+    "transcriptId": "u2-s4-signed-change-sign-flip-ko-uncertain",
+    "expected": {
+      "decision": "uncertain",
+      "nextAction": "continue_active_session",
+      "sessionStatus": "in_progress",
+      "currentLessonStepId": "STEP-U2-S4-SIGNED-CHANGE",
+      "firstTutorQuestion": "If you add this signed number, do you move left or right from where you started?"
+    }
+  },
+  {
+    "name": "replay transcript fixture for unit2 sign-first completion",
+    "transcriptFile": "app/domain/evidence/unit2-tutor-transcripts.example.json",
+    "transcriptId": "u2-s5-sign-first-expression-ko-text-only-active-session",
+    "expected": {
+      "decision": "completed",
+      "nextAction": "review_next_recommendation",
+      "sessionStatus": "completed",
+      "targetSkillId": "U2-S5",
+      "firstLessonStepId": "STEP-U2-S5-SIGN-FIRST-EXPRESSION"
+    }
+  },
+  {
+    "name": "replay transcript fixture for unit2 sign-first uncertainty when structure is flattened",
+    "transcriptFile": "app/domain/evidence/unit2-tutor-transcripts.example.json",
+    "transcriptId": "u2-s5-sign-first-expression-structure-loss-ko-uncertain",
+    "expected": {
+      "decision": "uncertain",
+      "nextAction": "continue_active_session",
+      "sessionStatus": "in_progress",
+      "currentLessonStepId": "STEP-U2-S5-SIGN-FIRST-EXPRESSION",
+      "firstTutorQuestion": "What sign should this whole expression have before you compute anything else?"
+    }
   }
 ]

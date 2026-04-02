@@ -1,0 +1,113 @@
+{
+  "learnerId": "unit2-sample-learner",
+  "activeSession": {
+    "learnerId": "unit2-sample-learner",
+    "targetSkillId": "U2-S3",
+    "status": "in_progress",
+    "currentStepIndex": 0,
+    "currentStep": {
+      "lessonStepId": "STEP-U2-S3-ABSOLUTE-VALUE-DISTANCE",
+      "activityId": "ACT-U2-S3-ABSOLUTE-VALUE-DISTANCE",
+      "status": "provisional",
+      "openingLine": "Let's turn absolute value back into distance before we touch the symbols.",
+      "firstTutorQuestion": "How far is this number from 0 on the number line?",
+      "smallHint": "Absolute value tells distance, so the answer itself is not negative.",
+      "goodStoppingPoint": "Learner explains absolute value as distance and uses that idea to compare values correctly.",
+      "watchFor": [
+        "Learner keeps the negative sign when writing an absolute-value answer.",
+        "Learner forgets that zero has the smallest absolute value."
+      ],
+      "exampleTutorMove": "Point to -4 on a number line and ask for the distance to 0 before asking for |-4|.",
+      "exampleLearnerResponse": "The distance from -4 to 0 is 4, so |-4| is 4, not -4.",
+      "skillId": "U2-S3",
+      "activityType": "dialogue-flow",
+      "title": "Reframe Absolute Value as Distance"
+    },
+    "nextStep": null,
+    "completedStepIds": [],
+    "remainingStepIds": [
+      "STEP-U2-S3-ABSOLUTE-VALUE-DISTANCE"
+    ],
+    "steps": [
+      {
+        "lessonStepId": "STEP-U2-S3-ABSOLUTE-VALUE-DISTANCE",
+        "activityId": "ACT-U2-S3-ABSOLUTE-VALUE-DISTANCE",
+        "status": "provisional",
+        "openingLine": "Let's turn absolute value back into distance before we touch the symbols.",
+        "firstTutorQuestion": "How far is this number from 0 on the number line?",
+        "smallHint": "Absolute value tells distance, so the answer itself is not negative.",
+        "goodStoppingPoint": "Learner explains absolute value as distance and uses that idea to compare values correctly.",
+        "watchFor": [
+          "Learner keeps the negative sign when writing an absolute-value answer.",
+          "Learner forgets that zero has the smallest absolute value."
+        ],
+        "exampleTutorMove": "Point to -4 on a number line and ask for the distance to 0 before asking for |-4|.",
+        "exampleLearnerResponse": "The distance from -4 to 0 is 4, so |-4| is 4, not -4.",
+        "skillId": "U2-S3",
+        "activityType": "dialogue-flow",
+        "title": "Reframe Absolute Value as Distance"
+      }
+    ],
+    "completionRule": "complete_all_steps_in_order",
+    "lastEvaluation": null,
+    "history": []
+  },
+  "sessions": [
+    {
+      "learnerId": "unit2-sample-learner",
+      "targetSkillId": "U2-S3",
+      "status": "in_progress",
+      "currentStepIndex": 0,
+      "currentStep": {
+        "lessonStepId": "STEP-U2-S3-ABSOLUTE-VALUE-DISTANCE",
+        "activityId": "ACT-U2-S3-ABSOLUTE-VALUE-DISTANCE",
+        "status": "provisional",
+        "openingLine": "Let's turn absolute value back into distance before we touch the symbols.",
+        "firstTutorQuestion": "How far is this number from 0 on the number line?",
+        "smallHint": "Absolute value tells distance, so the answer itself is not negative.",
+        "goodStoppingPoint": "Learner explains absolute value as distance and uses that idea to compare values correctly.",
+        "watchFor": [
+          "Learner keeps the negative sign when writing an absolute-value answer.",
+          "Learner forgets that zero has the smallest absolute value."
+        ],
+        "exampleTutorMove": "Point to -4 on a number line and ask for the distance to 0 before asking for |-4|.",
+        "exampleLearnerResponse": "The distance from -4 to 0 is 4, so |-4| is 4, not -4.",
+        "skillId": "U2-S3",
+        "activityType": "dialogue-flow",
+        "title": "Reframe Absolute Value as Distance"
+      },
+      "nextStep": null,
+      "completedStepIds": [],
+      "remainingStepIds": [
+        "STEP-U2-S3-ABSOLUTE-VALUE-DISTANCE"
+      ],
+      "steps": [
+        {
+          "lessonStepId": "STEP-U2-S3-ABSOLUTE-VALUE-DISTANCE",
+          "activityId": "ACT-U2-S3-ABSOLUTE-VALUE-DISTANCE",
+          "status": "provisional",
+          "openingLine": "Let's turn absolute value back into distance before we touch the symbols.",
+          "firstTutorQuestion": "How far is this number from 0 on the number line?",
+          "smallHint": "Absolute value tells distance, so the answer itself is not negative.",
+          "goodStoppingPoint": "Learner explains absolute value as distance and uses that idea to compare values correctly.",
+          "watchFor": [
+            "Learner keeps the negative sign when writing an absolute-value answer.",
+            "Learner forgets that zero has the smallest absolute value."
+          ],
+          "exampleTutorMove": "Point to -4 on a number line and ask for the distance to 0 before asking for |-4|.",
+          "exampleLearnerResponse": "The distance from -4 to 0 is 4, so |-4| is 4, not -4.",
+          "skillId": "U2-S3",
+          "activityType": "dialogue-flow",
+          "title": "Reframe Absolute Value as Distance"
+        }
+      ],
+      "completionRule": "complete_all_steps_in_order",
+      "lastEvaluation": null,
+      "history": []
+    }
+  ],
+  "evidenceEvents": [],
+  "latestSkillSummaries": [],
+  "latestRecommendations": [],
+  "updatedAt": null
+}
