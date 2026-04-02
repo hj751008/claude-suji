@@ -2,7 +2,7 @@
   {
     "activityId": "ACT-U2-S1-SORT-BY-TYPE",
     "skillId": "U2-S1",
-    "status": "draft-from-docs",
+    "status": "provisional",
     "activityType": "dialogue-flow",
     "title": "Sort by Sign and Number Type",
     "goal": "Distinguish positive integers, negative integers, zero, integers, and rational numbers without label-memorizing shortcuts.",
@@ -15,14 +15,14 @@
     "exampleTutorMove": "Ask the learner to sort a short list into 'positive integer', 'negative integer', 'zero', and 'rational number' with reasons.",
     "successSignal": "Learner can classify zero, negative integers, and simple fractions with a definition-based explanation.",
     "sourceDocs": [
-      "docs/unit2-source-note-2026-03-30.md",
+      "docs/unit2-source-evidence-teaching-records-2026-04-02.md",
       "docs/unit2-draft-learning-design-2026-03-30.md"
     ]
   },
   {
     "activityId": "ACT-U2-S2-NUMBER-LINE-BRIDGE",
     "skillId": "U2-S2",
-    "status": "draft-from-docs",
+    "status": "provisional",
     "activityType": "worked-bridge",
     "title": "Compare and Place on the Number Line",
     "goal": "Compare signed numbers and fractions by position, midpoint, and interval instead of by surface appearance.",
@@ -35,14 +35,14 @@
     "exampleTutorMove": "Draw a short line segment with two labeled endpoints and ask the learner to place one more number before comparing.",
     "successSignal": "Learner explains order or midpoint using position language rather than only symbol rules.",
     "sourceDocs": [
-      "docs/unit2-subskills-integers-rational-2026-03-30.md",
+      "docs/unit2-source-evidence-teaching-records-2026-04-02.md",
       "docs/unit2-draft-learning-design-2026-03-30.md"
     ]
   },
   {
     "activityId": "ACT-U2-S3-ABSOLUTE-VALUE-DISTANCE",
     "skillId": "U2-S3",
-    "status": "draft-from-docs",
+    "status": "provisional",
     "activityType": "dialogue-flow",
     "title": "Reframe Absolute Value as Distance",
     "goal": "Make absolute value a distance idea rather than a sign-copying rule.",
@@ -55,14 +55,14 @@
     "exampleTutorMove": "Point to two positions on a number line and ask for distance first, then connect that to absolute value notation.",
     "successSignal": "Learner explains absolute value as distance and uses that idea to compare sizes correctly.",
     "sourceDocs": [
-      "docs/unit2-subskills-integers-rational-2026-03-30.md",
+      "docs/unit2-source-evidence-teaching-records-2026-04-02.md",
       "docs/unit2-draft-learning-design-2026-03-30.md"
     ]
   },
   {
     "activityId": "ACT-U2-S4-SIGNED-CHANGE-BRIDGE",
     "skillId": "U2-S4",
-    "status": "draft-from-docs",
+    "status": "provisional",
     "activityType": "worked-bridge",
     "title": "Rewrite Signed Addition as Directed Change",
     "goal": "Move between expression form, number-line movement, and inequality constraints in signed addition and subtraction.",
@@ -75,14 +75,14 @@
     "exampleTutorMove": "Translate one signed addition into a number-line move, then map the same reasoning to a short inequality condition.",
     "successSignal": "Learner can explain a signed add/subtract step as directed change and keep the sign consistent.",
     "sourceDocs": [
-      "docs/unit2-subskills-integers-rational-2026-03-30.md",
+      "docs/unit2-source-evidence-teaching-records-2026-04-02.md",
       "docs/unit2-draft-learning-design-2026-03-30.md"
     ]
   },
   {
     "activityId": "ACT-U2-S5-SIGN-FIRST-EXPRESSION",
     "skillId": "U2-S5",
-    "status": "draft-from-docs",
+    "status": "provisional",
     "activityType": "dialogue-flow",
     "title": "Track Sign Before Calculating",
     "goal": "Separate sign reasoning, power meaning, reciprocal meaning, and magnitude calculation in multiplicative expressions.",
@@ -95,7 +95,7 @@
     "exampleTutorMove": "Cover the arithmetic details and ask the learner to predict the sign first, then return to the magnitude.",
     "successSignal": "Learner keeps sign, reciprocal, and power structure stable through a short multi-step expression.",
     "sourceDocs": [
-      "docs/unit2-subskills-integers-rational-2026-03-30.md",
+      "docs/unit2-source-evidence-teaching-records-2026-04-02.md",
       "docs/unit2-draft-learning-design-2026-03-30.md"
     ]
   }

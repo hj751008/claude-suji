@@ -29,8 +29,8 @@
         "observationFormInput": {
           "learnerResponse": "0은 양수도 음수도 아니고 정수도 분수로 쓸 수 있어서 유리수에 포함돼.",
           "fieldValues": {
-            "classifies_zero_separately": false,
-            "states_integer_subset_of_rational": false
+            "classifies_zero_separately": true,
+            "states_integer_subset_of_rational": true
           },
           "tutorNote": "튜터가 체크박스 없이 발화만 남겼다.",
           "timestamp": "2026-03-30T15:10:00+09:00"

@@ -1,49 +1,52 @@
 [
   {
     "id": "U2-S1",
-    "status": "draft-from-docs",
+    "status": "provisional",
     "title": "Identify integers, rational numbers, positives, negatives, and zero",
-    "summary": "Draft Unit 2 classification skill extracted from observed source problems about positive and negative integers, zero, and rational numbers.",
+    "summary": "Unit 2 classification skill grounded in source-backed statement and category tasks about positive integers, negative integers, zero, integers, and rational numbers.",
     "sourceDocs": [
-      "docs/unit2-source-note-2026-03-30.md",
-      "docs/unit2-subskills-integers-rational-2026-03-30.md"
+      "docs/mastery-rules.md",
+      "docs/unit2-source-evidence-core-concepts-2026-04-02.md"
     ]
   },
   {
     "id": "U2-S2",
-    "status": "draft-from-docs",
+    "status": "provisional",
     "title": "Compare and order integers and rational numbers on the number line",
-    "summary": "Draft Unit 2 comparison skill extracted from midpoint, interval, and ordering tasks on signed numbers and fractions.",
+    "summary": "Unit 2 number-line comparison skill grounded in source-backed midpoint, interval, ordering, and signed inequality tasks.",
     "sourceDocs": [
-      "docs/unit2-source-note-2026-03-30.md",
-      "docs/unit2-subskills-integers-rational-2026-03-30.md"
+      "docs/mastery-rules.md",
+      "docs/unit2-source-evidence-core-concepts-2026-04-02.md"
     ]
   },
   {
     "id": "U2-S3",
-    "status": "draft-from-docs",
+    "status": "provisional",
     "title": "Use absolute value to reason about distance and size",
-    "summary": "Draft Unit 2 absolute-value skill extracted from distance and size comparison tasks.",
+    "summary": "Unit 2 absolute-value skill grounded in source-backed distance-from-origin and absolute-value interpretation tasks.",
     "sourceDocs": [
-      "docs/unit2-subskills-integers-rational-2026-03-30.md"
+      "docs/mastery-rules.md",
+      "docs/unit2-source-evidence-core-concepts-2026-04-02.md"
     ]
   },
   {
     "id": "U2-S4",
-    "status": "draft-from-docs",
+    "status": "provisional",
     "title": "Add and subtract integers and rational numbers",
-    "summary": "Draft Unit 2 signed addition and subtraction skill extracted from symbolic and contextual change problems.",
+    "summary": "Unit 2 signed addition and subtraction skill grounded in source-backed number-line translation, contextual signed-change, and direct computation tasks.",
     "sourceDocs": [
-      "docs/unit2-subskills-integers-rational-2026-03-30.md"
+      "docs/mastery-rules.md",
+      "docs/unit2-source-evidence-signed-change-2026-04-02.md"
     ]
   },
   {
     "id": "U2-S5",
-    "status": "draft-from-docs",
+    "status": "provisional",
     "title": "Multiply, divide, and simplify expressions with integers and rational numbers",
-    "summary": "Draft Unit 2 multiplicative expression skill extracted from multiplication, division, reciprocal, and power problems.",
+    "summary": "Unit 2 multiplicative expression skill grounded in source-backed signed product, quotient, reciprocal, even-power, and distributive-structure tasks.",
     "sourceDocs": [
-      "docs/unit2-subskills-integers-rational-2026-03-30.md"
+      "docs/mastery-rules.md",
+      "docs/unit2-source-evidence-multiplicative-structure-2026-04-02.md"
     ]
   }
 ]

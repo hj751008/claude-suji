@@ -3,10 +3,12 @@
 ## Status
 
 - These are draft transcript examples for operator review.
-- They are not replay-ready runtime fixtures because Unit 2 is still not
-  runtime-loaded.
+- Unit 2 is now runtime-loaded, but these examples are still not replay-ready
+  runtime fixtures.
+- They remain review artifacts until they are converted into normalized
+  validator-backed evidence files.
 - They exist to make the new lesson steps easier to review before loader,
-  validator, and harness work begins.
+  evidence-fixture cleanup is finished.
 
 ## Source Basis
 
@@ -100,5 +102,5 @@
 ## Current Use
 
 - Use these examples as review artifacts, not as executable runtime fixtures.
-- If Unit 2 becomes runtime-loaded later, convert these into the same evidence
-  shape used by Unit 1 transcript fixtures.
+- If replay-ready Unit 2 evidence is needed later, convert these into the same
+  normalized evidence shape used by the more mature Unit 1 flow.

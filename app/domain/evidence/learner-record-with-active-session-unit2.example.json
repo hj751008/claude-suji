@@ -8,7 +8,7 @@
     "currentStep": {
       "lessonStepId": "STEP-U2-S1-CATEGORY-SORT",
       "activityId": "ACT-U2-S1-SORT-BY-TYPE",
-      "status": "draft-from-docs",
+      "status": "provisional",
       "openingLine": "Let's sort these numbers by meaning first so the labels stop feeling mixed together.",
       "firstTutorQuestion": "What makes 0 its own case instead of a positive or negative integer?",
       "smallHint": "Zero is an integer, but it is neither positive nor negative.",
@@ -21,12 +21,12 @@
       "exampleLearnerResponse": "0 is an integer but not positive or negative, and integers still count as rational numbers because they can be written as fractions.",
       "skillId": "U2-S1",
       "activityType": "dialogue-flow",
-      "title": "Category Sort With Zero Included"
+      "title": "Sort by Sign and Number Type"
     },
     "nextStep": {
       "lessonStepId": "STEP-U2-S2-NUMBER-LINE-ORDER",
       "activityId": "ACT-U2-S2-NUMBER-LINE-BRIDGE",
-      "status": "draft-from-docs",
+      "status": "provisional",
       "openingLine": "Let's compare the positions first instead of trusting how big the numerals look.",
       "firstTutorQuestion": "Which of these two numbers is farther left on the number line?",
       "smallHint": "Farther left means smaller, even when the number has a larger absolute value.",
@@ -38,8 +38,8 @@
       "exampleTutorMove": "Sketch a short number line with two labels and ask the learner to place one additional value before comparing.",
       "exampleLearnerResponse": "-7 is farther left than -3, so it is smaller even though 7 has the larger absolute value.",
       "skillId": "U2-S2",
-      "activityType": "dialogue-flow",
-      "title": "Number Line Ordering Before Symbol Tricks"
+      "activityType": "worked-bridge",
+      "title": "Compare and Place on the Number Line"
     },
     "completedStepIds": [],
     "remainingStepIds": [
@@ -53,7 +53,7 @@
       {
         "lessonStepId": "STEP-U2-S1-CATEGORY-SORT",
         "activityId": "ACT-U2-S1-SORT-BY-TYPE",
-        "status": "draft-from-docs",
+        "status": "provisional",
         "openingLine": "Let's sort these numbers by meaning first so the labels stop feeling mixed together.",
         "firstTutorQuestion": "What makes 0 its own case instead of a positive or negative integer?",
         "smallHint": "Zero is an integer, but it is neither positive nor negative.",
@@ -66,12 +66,12 @@
         "exampleLearnerResponse": "0 is an integer but not positive or negative, and integers still count as rational numbers because they can be written as fractions.",
         "skillId": "U2-S1",
         "activityType": "dialogue-flow",
-        "title": "Category Sort With Zero Included"
+        "title": "Sort by Sign and Number Type"
       },
       {
         "lessonStepId": "STEP-U2-S2-NUMBER-LINE-ORDER",
         "activityId": "ACT-U2-S2-NUMBER-LINE-BRIDGE",
-        "status": "draft-from-docs",
+        "status": "provisional",
         "openingLine": "Let's compare the positions first instead of trusting how big the numerals look.",
         "firstTutorQuestion": "Which of these two numbers is farther left on the number line?",
         "smallHint": "Farther left means smaller, even when the number has a larger absolute value.",
@@ -83,13 +83,13 @@
         "exampleTutorMove": "Sketch a short number line with two labels and ask the learner to place one additional value before comparing.",
         "exampleLearnerResponse": "-7 is farther left than -3, so it is smaller even though 7 has the larger absolute value.",
         "skillId": "U2-S2",
-        "activityType": "dialogue-flow",
-        "title": "Number Line Ordering Before Symbol Tricks"
+        "activityType": "worked-bridge",
+        "title": "Compare and Place on the Number Line"
       },
       {
         "lessonStepId": "STEP-U2-S3-ABSOLUTE-VALUE-DISTANCE",
         "activityId": "ACT-U2-S3-ABSOLUTE-VALUE-DISTANCE",
-        "status": "draft-from-docs",
+        "status": "provisional",
         "openingLine": "Let's turn absolute value back into distance before we touch the symbols.",
         "firstTutorQuestion": "How far is this number from 0 on the number line?",
         "smallHint": "Absolute value tells distance, so the answer itself is not negative.",
@@ -102,12 +102,12 @@
         "exampleLearnerResponse": "The distance from -4 to 0 is 4, so |-4| is 4, not -4.",
         "skillId": "U2-S3",
         "activityType": "dialogue-flow",
-        "title": "Absolute Value Means Distance"
+        "title": "Reframe Absolute Value as Distance"
       },
       {
         "lessonStepId": "STEP-U2-S4-SIGNED-CHANGE",
         "activityId": "ACT-U2-S4-SIGNED-CHANGE-BRIDGE",
-        "status": "draft-from-docs",
+        "status": "provisional",
         "openingLine": "Let's read the sign as direction of change before we calculate the final value.",
         "firstTutorQuestion": "If you add this signed number, do you move left or right from where you started?",
         "smallHint": "Positive change moves right and negative change moves left on the number line.",
@@ -119,13 +119,13 @@
         "exampleTutorMove": "Translate one expression like 3 + (-5) into a move on the number line before asking for the numeric answer.",
         "exampleLearnerResponse": "Adding -5 means moving 5 units left from 3, so the result should be -2.",
         "skillId": "U2-S4",
-        "activityType": "dialogue-flow",
-        "title": "Signed Change as Directed Movement"
+        "activityType": "worked-bridge",
+        "title": "Rewrite Signed Addition as Directed Change"
       },
       {
         "lessonStepId": "STEP-U2-S5-SIGN-FIRST-EXPRESSION",
         "activityId": "ACT-U2-S5-SIGN-FIRST-EXPRESSION",
-        "status": "draft-from-docs",
+        "status": "provisional",
         "openingLine": "Before calculating the size, let's hold onto the sign and structure of the whole expression.",
         "firstTutorQuestion": "What sign should this whole expression have before you compute anything else?",
         "smallHint": "Decide the sign first, then keep powers or reciprocals in place while finding the magnitude.",
@@ -138,7 +138,7 @@
         "exampleLearnerResponse": "The sign should be negative first, and then I still need to keep the reciprocal instead of turning it into a subtraction.",
         "skillId": "U2-S5",
         "activityType": "dialogue-flow",
-        "title": "Sign First, Then Keep Structure"
+        "title": "Track Sign Before Calculating"
       }
     ],
     "completionRule": "complete_all_steps_in_order",
