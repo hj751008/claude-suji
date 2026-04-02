@@ -621,5 +621,79 @@
       "currentLessonStepId": "STEP-U2-S5-SIGN-FIRST-EXPRESSION",
       "firstTutorQuestion": "What sign should this whole expression have before you compute anything else?"
     }
+  },
+  {
+    "name": "replay completed unit2 signed-change transcript then complete blocker-first session and reorder recommendation",
+    "transcriptFile": "app/domain/evidence/unit2-tutor-transcripts.example.json",
+    "transcriptId": "u2-s4-signed-change-ko-text-only-active-session",
+    "restartAfterRecommendation": true,
+    "followUpTurnSequence": [
+      {
+        "learnerResponse": "0은 양수도 음수도 아니고 정수도 분수로 쓸 수 있어서 유리수에 포함돼.",
+        "fieldValues": {
+          "zero_called_positive": false,
+          "integer_vs_rational_confused": false
+        },
+        "tutorNote": "Learner treated 0 as its own sign case and placed it inside the rational-number set.",
+        "timestamp": "2026-04-02T16:22:00+09:00"
+      },
+      {
+        "learnerResponse": "-7이 더 왼쪽이라서 더 작아. 절댓값이 더 크다고 큰 수는 아니야.",
+        "fieldValues": {
+          "orders_by_left_right_position": false,
+          "uses_absolute_value_as_size_only": false
+        },
+        "tutorNote": "Learner compared the numbers by left-right order instead of absolute-value size.",
+        "timestamp": "2026-04-02T16:23:00+09:00"
+      },
+      {
+        "learnerResponse": "왼쪽으로 5만큼 가니까 결과는 -2야.",
+        "fieldValues": {
+          "matches_direction_from_signed_change": false,
+          "sign_flipped_after_move": false
+        },
+        "tutorNote": "Learner treated adding a negative as moving left 5 from 3 to -2.",
+        "timestamp": "2026-04-02T16:24:00+09:00"
+      }
+    ],
+    "expected": {
+      "decision": "completed",
+      "nextAction": "review_next_recommendation",
+      "sessionStatus": "completed",
+      "targetSkillId": "U2-S1",
+      "firstLessonStepId": "STEP-U2-S1-CATEGORY-SORT",
+      "finalSessionCount": 2,
+      "finalSessionTargetSkillIds": [
+        "U2-S4",
+        "U2-S4"
+      ],
+      "finalEvidenceEventCount": 4,
+      "finalSkillIds": [
+        "U2-S1",
+        "U2-S2",
+        "U2-S4"
+      ],
+      "finalSupportingEvidenceCounts": {
+        "U2-S1": 1,
+        "U2-S2": 1,
+        "U2-S4": 2
+      },
+      "finalRecommendationSkillIds": [
+        "U2-S1",
+        "U2-S2",
+        "U2-S4"
+      ],
+      "finalRecommendationNextSkillIds": {
+        "U2-S1": [
+          "U2-S1"
+        ],
+        "U2-S2": [
+          "U2-S2"
+        ],
+        "U2-S4": [
+          "U2-S4"
+        ]
+      }
+    }
   }
 ]
