@@ -85,6 +85,80 @@ The following remain intentionally undecided:
 - `ready_for_next_step` is approved as a conservative next-step judgment, not as final mastery.
 - Unit 1 scoring cutoffs, reassessment rules, and override rules remain `UNDECIDED`.
 
+## Unit 2 Worked Example: Core Signed-Number Concepts
+
+### Skill Breakdown
+- `U2-S1`: identify integers, rational numbers, positives, negatives, and zero
+- `U2-S2`: compare and order integers and rational numbers on the number line
+- `U2-S3`: use absolute value to reason about distance and size
+
+### Mastery Evidence Examples
+- `U2-S1`: learner can separate positive integers, negative integers, zero, integers, and rational numbers in statement-check or category-selection items; one correct skill-linked event may justify `ready_for_next_step`, but final mastery remains `UNDECIDED`
+- `U2-S2`: learner can compare signed values by number-line position, identify the midpoint between marked values, or read inequality language correctly in a signed-number context; one correct skill-linked event may justify `ready_for_next_step`, but final mastery remains `UNDECIDED`
+- `U2-S3`: learner can explain or use absolute value as distance from the origin, including ordering numbers by distance or recognizing that zero has the smallest absolute value; one correct skill-linked event may justify `ready_for_next_step`, but final mastery remains `UNDECIDED`
+
+### Evidence Notes For Unit 2
+- 미래엔 중단원마무리 01-02 support `U2-S1` with positive-integer filtering and integer/rational statement checks.
+- 미래엔 중단원마무리 03 and related explanation notes support `U2-S2` with midpoint reasoning on the number line.
+- 미래엔 중단원마무리 04-05 support `U2-S2` and `U2-S3` with ordering-by-distance and absolute-value interpretation.
+- `docs/unit2-source-evidence-core-concepts-2026-04-02.md` records the narrower source-backed rationale for this first Unit 2 slice.
+
+### Notes
+- Evidence basis for this worked example is limited to:
+  - `C:\MathFile\중1\중1_ 미래엔 중단원마무리_1_2_정수와_유리수.pdf`
+  - `C:\MathFile\중1\[수준별 문제은행_발전] Ⅰ-2. 정수와 유리수.pdf`
+- This worked example promotes only the Unit 2 conceptual cluster `U2-S1` to `U2-S3`.
+- These are evidence examples, not approved numeric thresholds.
+- `ready_for_next_step` is approved as a conservative next-step judgment, not as final mastery.
+- Unit 2 scoring cutoffs, reassessment rules, and override rules remain `UNDECIDED`.
+
+## Unit 2 Worked Example: Signed Addition And Subtraction
+
+### Skill Breakdown
+- `U2-S4`: add and subtract integers and rational numbers
+
+### Mastery Evidence Examples
+- `U2-S4`: learner can translate a signed addition or subtraction step into number-line movement, keep the direction of change consistent, or solve a contextual condition where adding signed quantities changes whether the result is positive or negative; one correct skill-linked event may justify `ready_for_next_step`, but final mastery remains `UNDECIDED`
+
+### Evidence Notes For Unit 2
+- 발전 문제은행 03 supports `U2-S4` with a contextual condition problem where adding signed quantities changes whether the result is positive or negative.
+- 미래엔 중단원마무리 page 2 supports `U2-S4` with a number-line item asking which signed expression the movement diagram represents.
+- 미래엔 중단원마무리 page 3 supports `U2-S4` with direct signed-computation checks.
+- `docs/unit2-source-evidence-signed-change-2026-04-02.md` records the narrower source-backed rationale for this Unit 2 operation slice.
+
+### Notes
+- Evidence basis for this worked example is limited to:
+  - `C:\MathFile\중1\중1_ 미래엔 중단원마무리_1_2_정수와_유리수.pdf`
+  - `C:\MathFile\중1\[수준별 문제은행_발전] Ⅰ-2. 정수와 유리수.pdf`
+- This worked example promotes only `U2-S4`.
+- These are evidence examples, not approved numeric thresholds.
+- `ready_for_next_step` is approved as a conservative next-step judgment, not as final mastery.
+- Unit 2 scoring cutoffs, reassessment rules, and override rules remain `UNDECIDED`.
+
+## Unit 2 Worked Example: Multiplicative Signed Expressions
+
+### Skill Breakdown
+- `U2-S5`: multiply, divide, and simplify expressions with integers and rational numbers
+
+### Mastery Evidence Examples
+- `U2-S5`: learner can keep sign rules consistent through signed products and quotients, rewrite or evaluate a reciprocal-based quotient-product expression, or compare structured signed expressions that rely on distributive-law or even-power reasoning; one correct skill-linked event may justify `ready_for_next_step`, but final mastery remains `UNDECIDED`
+
+### Evidence Notes For Unit 2
+- 미래엔 중단원마무리 page 3 supports `U2-S5` with direct signed multiplication and division result checks.
+- 미래엔 중단원마무리 page 3 and answer/explanation page 5 support `U2-S5` with reciprocal-based free-response computation.
+- 발전 문제은행 page 3 supports `U2-S5` with an even-power expression item and a reciprocal-of-reciprocal division item.
+- 발전 문제은행 page 5 supports `U2-S5` with distributive-law comparison and sign-pattern conditions across multiple numbers.
+- `docs/unit2-source-evidence-multiplicative-structure-2026-04-02.md` records the narrower source-backed rationale for this multiplicative slice.
+
+### Notes
+- Evidence basis for this worked example is limited to:
+  - `C:\MathFile\중1\중1_ 미래엔 중단원마무리_1_2_정수와_유리수.pdf`
+  - `C:\MathFile\중1\[수준별 문제은행_발전] Ⅰ-2. 정수와 유리수.pdf`
+- This worked example promotes only `U2-S5`.
+- These are evidence examples, not approved numeric thresholds.
+- `ready_for_next_step` is approved as a conservative next-step judgment, not as final mastery.
+- Unit 2 scoring cutoffs, reassessment rules, and override rules remain `UNDECIDED`.
+
 ## Change Policy
 - Do not silently change mastery thresholds, pass criteria, or scoring logic.
 - Any change to an approved rule must update this document in the same change.

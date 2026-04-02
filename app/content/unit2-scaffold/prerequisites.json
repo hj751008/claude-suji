@@ -3,40 +3,40 @@
     "prerequisiteSkillId": "U2-S1",
     "targetSkillId": "U2-S2",
     "relationship": "HELPFUL",
-    "approvalStatus": "draft-from-docs",
+    "approvalStatus": "provisional",
     "sourceDocs": [
       "docs/prerequisite-map.md",
-      "docs/unit2-draft-learning-design-2026-03-30.md"
+      "docs/unit2-source-evidence-prerequisites-2026-04-02.md"
     ]
   },
   {
     "prerequisiteSkillId": "U2-S2",
     "targetSkillId": "U2-S3",
     "relationship": "HELPFUL",
-    "approvalStatus": "draft-from-docs",
+    "approvalStatus": "provisional",
     "sourceDocs": [
       "docs/prerequisite-map.md",
-      "docs/unit2-draft-learning-design-2026-03-30.md"
+      "docs/unit2-source-evidence-prerequisites-2026-04-02.md"
     ]
   },
   {
     "prerequisiteSkillId": "U2-S1",
     "targetSkillId": "U2-S4",
     "relationship": "HELPFUL",
-    "approvalStatus": "draft-from-docs",
+    "approvalStatus": "provisional",
     "sourceDocs": [
       "docs/prerequisite-map.md",
-      "docs/unit2-draft-learning-design-2026-03-30.md"
+      "docs/unit2-source-evidence-prerequisites-2026-04-02.md"
     ]
   },
   {
     "prerequisiteSkillId": "U2-S2",
     "targetSkillId": "U2-S4",
     "relationship": "HELPFUL",
-    "approvalStatus": "draft-from-docs",
+    "approvalStatus": "provisional",
     "sourceDocs": [
       "docs/prerequisite-map.md",
-      "docs/unit2-draft-learning-design-2026-03-30.md"
+      "docs/unit2-source-evidence-prerequisites-2026-04-02.md"
     ]
   }
 ]

@@ -50,20 +50,20 @@
         {
           "prerequisiteSkillId": "U2-S1",
           "relationship": "HELPFUL",
-          "approvalStatus": "draft-from-docs",
+          "approvalStatus": "provisional",
           "sourceDocs": [
             "docs/prerequisite-map.md",
-            "docs/unit2-draft-learning-design-2026-03-30.md"
+            "docs/unit2-source-evidence-prerequisites-2026-04-02.md"
           ],
           "whyBlocked": "Prerequisite skill U2-S1 does not yet have learner evidence, so progress on U2-S4 should stay conservative."
         },
         {
           "prerequisiteSkillId": "U2-S2",
           "relationship": "HELPFUL",
-          "approvalStatus": "draft-from-docs",
+          "approvalStatus": "provisional",
           "sourceDocs": [
             "docs/prerequisite-map.md",
-            "docs/unit2-draft-learning-design-2026-03-30.md"
+            "docs/unit2-source-evidence-prerequisites-2026-04-02.md"
           ],
           "whyBlocked": "Prerequisite skill U2-S2 does not yet have learner evidence, so progress on U2-S4 should stay conservative."
         }
@@ -84,11 +84,11 @@
         "unit_mastery_threshold_pending",
         "helpful_prerequisite_blocker"
       ],
-      "summary": "Learner can read a signed expression but cannot track direction or sign through addition and subtraction.",
-      "sourceDocs": [
-        "docs/unit2-subskills-integers-rational-2026-03-30.md",
-        "docs/unit2-draft-learning-design-2026-03-30.md"
-      ],
+        "summary": "Learner can read a signed expression but cannot track direction or sign through addition and subtraction.",
+        "sourceDocs": [
+          "docs/unit2-source-evidence-teaching-records-2026-04-02.md",
+          "docs/unit2-draft-learning-design-2026-03-30.md"
+        ],
       "recommendedActivities": [
         {
           "activityId": "ACT-U2-S4-SIGNED-CHANGE-BRIDGE",
@@ -169,20 +169,20 @@
         {
           "prerequisiteSkillId": "U2-S1",
           "relationship": "HELPFUL",
-          "approvalStatus": "draft-from-docs",
+          "approvalStatus": "provisional",
           "sourceDocs": [
             "docs/prerequisite-map.md",
-            "docs/unit2-draft-learning-design-2026-03-30.md"
+            "docs/unit2-source-evidence-prerequisites-2026-04-02.md"
           ],
           "whyBlocked": "Prerequisite skill U2-S1 does not yet have learner evidence, so progress on U2-S4 should stay conservative."
         },
         {
           "prerequisiteSkillId": "U2-S2",
           "relationship": "HELPFUL",
-          "approvalStatus": "draft-from-docs",
+          "approvalStatus": "provisional",
           "sourceDocs": [
             "docs/prerequisite-map.md",
-            "docs/unit2-draft-learning-design-2026-03-30.md"
+            "docs/unit2-source-evidence-prerequisites-2026-04-02.md"
           ],
           "whyBlocked": "Prerequisite skill U2-S2 does not yet have learner evidence, so progress on U2-S4 should stay conservative."
         }

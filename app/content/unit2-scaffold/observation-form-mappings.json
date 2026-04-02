@@ -1,7 +1,7 @@
 [
   {
     "lessonStepId": "STEP-U2-S1-CATEGORY-SORT",
-    "status": "draft-from-docs",
+    "status": "provisional",
     "learnerResponsePrompt": "Write how the learner classified zero, integers, and rational numbers.",
     "tutorNotePrompt": "Note whether the learner separated zero correctly and explained how integers relate to rational numbers.",
     "fields": [
@@ -21,12 +21,13 @@
       }
     ],
     "sourceDocs": [
+      "docs/unit2-source-evidence-teaching-records-2026-04-02.md",
       "docs/unit2-draft-learning-design-2026-03-30.md"
     ]
   },
   {
     "lessonStepId": "STEP-U2-S2-NUMBER-LINE-ORDER",
-    "status": "draft-from-docs",
+    "status": "provisional",
     "learnerResponsePrompt": "Write how the learner compared the numbers on the number line.",
     "tutorNotePrompt": "Note whether the learner used left-right position and handled negative order correctly.",
     "fields": [
@@ -46,12 +47,13 @@
       }
     ],
     "sourceDocs": [
+      "docs/unit2-source-evidence-teaching-records-2026-04-02.md",
       "docs/unit2-draft-learning-design-2026-03-30.md"
     ]
   },
   {
     "lessonStepId": "STEP-U2-S3-ABSOLUTE-VALUE-DISTANCE",
-    "status": "draft-from-docs",
+    "status": "provisional",
     "learnerResponsePrompt": "Write how the learner explained the absolute value of the number.",
     "tutorNotePrompt": "Note whether the learner used distance language and removed the negative sign from the absolute-value result.",
     "fields": [
@@ -71,12 +73,13 @@
       }
     ],
     "sourceDocs": [
+      "docs/unit2-source-evidence-teaching-records-2026-04-02.md",
       "docs/unit2-draft-learning-design-2026-03-30.md"
     ]
   },
   {
     "lessonStepId": "STEP-U2-S4-SIGNED-CHANGE",
-    "status": "draft-from-docs",
+    "status": "provisional",
     "learnerResponsePrompt": "Write how the learner described the signed addition or subtraction step.",
     "tutorNotePrompt": "Note whether the learner tracked direction of change and kept the resulting sign consistent.",
     "fields": [
@@ -96,12 +99,13 @@
       }
     ],
     "sourceDocs": [
+      "docs/unit2-source-evidence-teaching-records-2026-04-02.md",
       "docs/unit2-draft-learning-design-2026-03-30.md"
     ]
   },
   {
     "lessonStepId": "STEP-U2-S5-SIGN-FIRST-EXPRESSION",
-    "status": "draft-from-docs",
+    "status": "provisional",
     "learnerResponsePrompt": "Write how the learner predicted the sign and handled the expression structure.",
     "tutorNotePrompt": "Note whether the learner named the overall sign first and preserved reciprocal or power structure while simplifying.",
     "fields": [
@@ -121,6 +125,7 @@
       }
     ],
     "sourceDocs": [
+      "docs/unit2-source-evidence-teaching-records-2026-04-02.md",
       "docs/unit2-draft-learning-design-2026-03-30.md"
     ]
   }

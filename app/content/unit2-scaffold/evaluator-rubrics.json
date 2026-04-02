@@ -1,7 +1,7 @@
 [
   {
     "lessonStepId": "STEP-U2-S1-CATEGORY-SORT",
-    "status": "draft-from-docs",
+    "status": "provisional",
     "requiredSignals": [
       "classifies_zero_separately",
       "states_integer_subset_of_rational"
@@ -32,12 +32,13 @@
       "rational"
     ],
     "sourceDocs": [
+      "docs/unit2-source-evidence-teaching-records-2026-04-02.md",
       "docs/unit2-draft-learning-design-2026-03-30.md"
     ]
   },
   {
     "lessonStepId": "STEP-U2-S2-NUMBER-LINE-ORDER",
-    "status": "draft-from-docs",
+    "status": "provisional",
     "requiredSignals": [
       "orders_by_left_right_position",
       "explains_negative_order_without_abs_reversal"
@@ -66,12 +67,13 @@
       "smaller"
     ],
     "sourceDocs": [
+      "docs/unit2-source-evidence-teaching-records-2026-04-02.md",
       "docs/unit2-draft-learning-design-2026-03-30.md"
     ]
   },
   {
     "lessonStepId": "STEP-U2-S3-ABSOLUTE-VALUE-DISTANCE",
-    "status": "draft-from-docs",
+    "status": "provisional",
     "requiredSignals": [
       "defines_absolute_value_as_distance",
       "removes_negative_sign_from_absolute_value"
@@ -100,12 +102,13 @@
       "absolute value"
     ],
     "sourceDocs": [
+      "docs/unit2-source-evidence-teaching-records-2026-04-02.md",
       "docs/unit2-draft-learning-design-2026-03-30.md"
     ]
   },
   {
     "lessonStepId": "STEP-U2-S4-SIGNED-CHANGE",
-    "status": "draft-from-docs",
+    "status": "provisional",
     "requiredSignals": [
       "tracks_direction_of_signed_change",
       "keeps_result_sign_consistent"
@@ -136,12 +139,13 @@
       "negative"
     ],
     "sourceDocs": [
+      "docs/unit2-source-evidence-teaching-records-2026-04-02.md",
       "docs/unit2-draft-learning-design-2026-03-30.md"
     ]
   },
   {
     "lessonStepId": "STEP-U2-S5-SIGN-FIRST-EXPRESSION",
-    "status": "draft-from-docs",
+    "status": "provisional",
     "requiredSignals": [
       "predicts_overall_sign_first",
       "keeps_power_or_reciprocal_structure"
@@ -173,6 +177,7 @@
       "reciprocal"
     ],
     "sourceDocs": [
+      "docs/unit2-source-evidence-teaching-records-2026-04-02.md",
       "docs/unit2-draft-learning-design-2026-03-30.md"
     ]
   }
