@@ -77,6 +77,17 @@ Current Unit 1 transcript coverage:
 These transcript fixtures are regression examples for the current runtime, not
 claims of final mastery policy.
 
+Current Unit 2 transcript coverage:
+
+- `U2-S1`: successful category sorting, plus `uncertain` when zero is treated as positive
+- `U2-S2`: successful number-line ordering, plus `uncertain` when negative order is reversed by absolute value
+- `U2-S3`: successful absolute-value distance explanation, plus `uncertain` when the learner keeps the negative sign
+- `U2-S4`: successful signed-change direction tracking, plus `uncertain` when sign or direction is flipped
+- `U2-S5`: successful sign-first expression reading, plus `uncertain` when the learner flattens structure too early
+
+These transcript fixtures are regression examples for the current runtime, not
+claims of final mastery policy.
+
 ## 3. Follow the Next Action
 
 If `nextAction` is `continue_active_session`:

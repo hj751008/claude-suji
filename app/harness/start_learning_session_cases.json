@@ -117,5 +117,43 @@
         "U2-S4"
       ]
     }
+  },
+  {
+    "name": "start learning session after completed u2-s4 transcript keeps session target but opens blocker step",
+    "transcriptFile": "app/domain/evidence/unit2-tutor-transcripts.example.json",
+    "transcriptId": "u2-s4-signed-change-ko-text-only-active-session",
+    "expected": {
+      "action": "plan_new_session",
+      "targetSkillId": "U2-S4",
+      "currentStepSkillId": "U2-S1",
+      "currentLessonStepId": "STEP-U2-S1-CATEGORY-SORT",
+      "firstTutorQuestion": "What makes 0 its own case instead of a positive or negative integer?",
+      "nextLessonStepId": "STEP-U2-S2-NUMBER-LINE-ORDER",
+      "remainingStepCount": 3,
+      "plannedFromSkillId": "U2-S4",
+      "recommendedNextSkillIds": [
+        "U2-S1",
+        "U2-S2",
+        "U2-S4"
+      ]
+    }
+  },
+  {
+    "name": "start learning session after completed u2-s5 transcript restarts the same single-step session",
+    "transcriptFile": "app/domain/evidence/unit2-tutor-transcripts.example.json",
+    "transcriptId": "u2-s5-sign-first-expression-ko-text-only-active-session",
+    "expected": {
+      "action": "plan_new_session",
+      "targetSkillId": "U2-S5",
+      "currentStepSkillId": "U2-S5",
+      "currentLessonStepId": "STEP-U2-S5-SIGN-FIRST-EXPRESSION",
+      "firstTutorQuestion": "What sign should this whole expression have before you compute anything else?",
+      "nextLessonStepId": null,
+      "remainingStepCount": 1,
+      "plannedFromSkillId": "U2-S5",
+      "recommendedNextSkillIds": [
+        "U2-S5"
+      ]
+    }
   }
 ]

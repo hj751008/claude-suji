@@ -67,5 +67,33 @@
       "firstLessonStepId": "STEP-U1-S3-REWRITE-CLEANLY",
       "stepCount": 2
     }
+  },
+  {
+    "name": "plan-next-session-from-completed-u2-s4-transcript",
+    "transcriptFile": "app/domain/evidence/unit2-tutor-transcripts.example.json",
+    "transcriptId": "u2-s4-signed-change-ko-text-only-active-session",
+    "expected": {
+      "plannedFromSkillId": "U2-S4",
+      "recommendedNextSkillIds": [
+        "U2-S1",
+        "U2-S2",
+        "U2-S4"
+      ],
+      "firstLessonStepId": "STEP-U2-S1-CATEGORY-SORT",
+      "stepCount": 3
+    }
+  },
+  {
+    "name": "plan-next-session-from-completed-u2-s5-transcript",
+    "transcriptFile": "app/domain/evidence/unit2-tutor-transcripts.example.json",
+    "transcriptId": "u2-s5-sign-first-expression-ko-text-only-active-session",
+    "expected": {
+      "plannedFromSkillId": "U2-S5",
+      "recommendedNextSkillIds": [
+        "U2-S5"
+      ],
+      "firstLessonStepId": "STEP-U2-S5-SIGN-FIRST-EXPRESSION",
+      "stepCount": 1
+    }
   }
 ]
