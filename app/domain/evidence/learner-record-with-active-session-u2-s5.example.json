@@ -1,0 +1,113 @@
+{
+  "learnerId": "unit2-sample-learner",
+  "activeSession": {
+    "learnerId": "unit2-sample-learner",
+    "targetSkillId": "U2-S5",
+    "status": "in_progress",
+    "currentStepIndex": 0,
+    "currentStep": {
+      "lessonStepId": "STEP-U2-S5-SIGN-FIRST-EXPRESSION",
+      "activityId": "ACT-U2-S5-SIGN-FIRST-EXPRESSION",
+      "status": "provisional",
+      "openingLine": "Before calculating the size, let's hold onto the sign and structure of the whole expression.",
+      "firstTutorQuestion": "What sign should this whole expression have before you compute anything else?",
+      "smallHint": "Decide the sign first, then keep powers or reciprocals in place while finding the magnitude.",
+      "goodStoppingPoint": "Learner predicts sign first and keeps reciprocal or power structure stable through a short expression.",
+      "watchFor": [
+        "Learner gets the magnitudes right but drops or flips the sign during multiplication or division.",
+        "Learner remembers a power or reciprocal rule alone but loses it inside a multi-step expression."
+      ],
+      "exampleTutorMove": "Cover the arithmetic details and ask the learner to name the overall sign before simplifying the rest.",
+      "exampleLearnerResponse": "The sign should be negative first, and then I still need to keep the reciprocal instead of turning it into a subtraction.",
+      "skillId": "U2-S5",
+      "activityType": "dialogue-flow",
+      "title": "Track Sign Before Calculating"
+    },
+    "nextStep": null,
+    "completedStepIds": [],
+    "remainingStepIds": [
+      "STEP-U2-S5-SIGN-FIRST-EXPRESSION"
+    ],
+    "steps": [
+      {
+        "lessonStepId": "STEP-U2-S5-SIGN-FIRST-EXPRESSION",
+        "activityId": "ACT-U2-S5-SIGN-FIRST-EXPRESSION",
+        "status": "provisional",
+        "openingLine": "Before calculating the size, let's hold onto the sign and structure of the whole expression.",
+        "firstTutorQuestion": "What sign should this whole expression have before you compute anything else?",
+        "smallHint": "Decide the sign first, then keep powers or reciprocals in place while finding the magnitude.",
+        "goodStoppingPoint": "Learner predicts sign first and keeps reciprocal or power structure stable through a short expression.",
+        "watchFor": [
+          "Learner gets the magnitudes right but drops or flips the sign during multiplication or division.",
+          "Learner remembers a power or reciprocal rule alone but loses it inside a multi-step expression."
+        ],
+        "exampleTutorMove": "Cover the arithmetic details and ask the learner to name the overall sign before simplifying the rest.",
+        "exampleLearnerResponse": "The sign should be negative first, and then I still need to keep the reciprocal instead of turning it into a subtraction.",
+        "skillId": "U2-S5",
+        "activityType": "dialogue-flow",
+        "title": "Track Sign Before Calculating"
+      }
+    ],
+    "completionRule": "complete_all_steps_in_order",
+    "lastEvaluation": null,
+    "history": []
+  },
+  "sessions": [
+    {
+      "learnerId": "unit2-sample-learner",
+      "targetSkillId": "U2-S5",
+      "status": "in_progress",
+      "currentStepIndex": 0,
+      "currentStep": {
+        "lessonStepId": "STEP-U2-S5-SIGN-FIRST-EXPRESSION",
+        "activityId": "ACT-U2-S5-SIGN-FIRST-EXPRESSION",
+        "status": "provisional",
+        "openingLine": "Before calculating the size, let's hold onto the sign and structure of the whole expression.",
+        "firstTutorQuestion": "What sign should this whole expression have before you compute anything else?",
+        "smallHint": "Decide the sign first, then keep powers or reciprocals in place while finding the magnitude.",
+        "goodStoppingPoint": "Learner predicts sign first and keeps reciprocal or power structure stable through a short expression.",
+        "watchFor": [
+          "Learner gets the magnitudes right but drops or flips the sign during multiplication or division.",
+          "Learner remembers a power or reciprocal rule alone but loses it inside a multi-step expression."
+        ],
+        "exampleTutorMove": "Cover the arithmetic details and ask the learner to name the overall sign before simplifying the rest.",
+        "exampleLearnerResponse": "The sign should be negative first, and then I still need to keep the reciprocal instead of turning it into a subtraction.",
+        "skillId": "U2-S5",
+        "activityType": "dialogue-flow",
+        "title": "Track Sign Before Calculating"
+      },
+      "nextStep": null,
+      "completedStepIds": [],
+      "remainingStepIds": [
+        "STEP-U2-S5-SIGN-FIRST-EXPRESSION"
+      ],
+      "steps": [
+        {
+          "lessonStepId": "STEP-U2-S5-SIGN-FIRST-EXPRESSION",
+          "activityId": "ACT-U2-S5-SIGN-FIRST-EXPRESSION",
+          "status": "provisional",
+          "openingLine": "Before calculating the size, let's hold onto the sign and structure of the whole expression.",
+          "firstTutorQuestion": "What sign should this whole expression have before you compute anything else?",
+          "smallHint": "Decide the sign first, then keep powers or reciprocals in place while finding the magnitude.",
+          "goodStoppingPoint": "Learner predicts sign first and keeps reciprocal or power structure stable through a short expression.",
+          "watchFor": [
+            "Learner gets the magnitudes right but drops or flips the sign during multiplication or division.",
+            "Learner remembers a power or reciprocal rule alone but loses it inside a multi-step expression."
+          ],
+          "exampleTutorMove": "Cover the arithmetic details and ask the learner to name the overall sign before simplifying the rest.",
+          "exampleLearnerResponse": "The sign should be negative first, and then I still need to keep the reciprocal instead of turning it into a subtraction.",
+          "skillId": "U2-S5",
+          "activityType": "dialogue-flow",
+          "title": "Track Sign Before Calculating"
+        }
+      ],
+      "completionRule": "complete_all_steps_in_order",
+      "lastEvaluation": null,
+      "history": []
+    }
+  ],
+  "evidenceEvents": [],
+  "latestSkillSummaries": [],
+  "latestRecommendations": [],
+  "updatedAt": null
+}

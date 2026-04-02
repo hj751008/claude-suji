@@ -25,6 +25,7 @@ Guardrails:
 - Recommendation examples, tutor activities, lesson steps, evaluator rubrics,
   observation-form mappings, and error patterns now have source-backed
   `provisional` approval.
-- Transcript examples still need a separate replay-ready evidence conversion if
-  the project wants executable Unit 2 transcript fixtures.
-- Harness expansion and stronger learner-state evidence are still pending.
+- Replay-ready Unit 2 transcript fixtures now exist for success and uncertain
+  regression coverage across `U2-S1` to `U2-S5`.
+- Stronger live-pilot realism and broader learner-state evidence are still
+  pending.
