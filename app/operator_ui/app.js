@@ -1,5 +1,6 @@
 const state = {
   transcripts: [],
+  transcriptFiles: [],
   learnerFiles: [],
   transcriptFile: "",
   selectedTranscriptId: null,
@@ -89,6 +90,7 @@ bootstrap().catch((error) => showToast(error.message));
 async function bootstrap() {
   const payload = await api("/api/bootstrap");
   state.transcripts = payload.transcripts ?? [];
+  state.transcriptFiles = payload.transcriptFiles ?? [];
   state.learnerFiles = payload.learnerFiles ?? [];
   state.transcriptFile = payload.transcriptFile;
   state.selectedTranscriptId = state.transcripts[0]?.transcriptId ?? null;
@@ -164,6 +166,7 @@ function renderSelectedTranscript() {
       <span>${escapeHtml((transcript.tags ?? []).join(", "))}</span>
     </div>
     <p>Source learner: <code>${escapeHtml(transcript.learnerFile ?? "-")}</code></p>
+    <p>Fixture file: <code>${escapeHtml(transcript.transcriptFile ?? state.transcriptFile ?? "-")}</code></p>
   `;
 }
 
@@ -198,7 +201,7 @@ async function replaySelectedTranscript() {
   const turnLimitValue = turnLimitInput.value.trim();
   const turnLimit = turnLimitValue ? Number(turnLimitValue) : null;
   const payload = await api("/api/replay-transcript", {
-    transcriptFile: state.transcriptFile,
+    transcriptFile: transcript.transcriptFile ?? state.transcriptFile,
     transcriptId: transcript.transcriptId,
     turnLimit,
   });
@@ -522,10 +525,11 @@ function recordAction(kind, detail) {
 
 function buildLogBundle() {
   return {
-    logFormatVersion: "unit1-operator-ui-pilot-v1",
+    logFormatVersion: "multi-unit-operator-ui-pilot-v1",
     exportedAt: nowIso(),
     selectedTranscriptId: state.selectedTranscriptId,
     transcriptFile: state.transcriptFile,
+    transcriptFiles: state.transcriptFiles,
     loadedLearnerFile: state.loadedLearnerFile,
     pilotNote: document.querySelector("#pilot-note")?.value ?? "",
     actionHistory: state.actionHistory,

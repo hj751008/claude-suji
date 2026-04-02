@@ -1,0 +1,42 @@
+[
+  {
+    "prerequisiteSkillId": "U2-S1",
+    "targetSkillId": "U2-S2",
+    "relationship": "HELPFUL",
+    "approvalStatus": "draft-from-docs",
+    "sourceDocs": [
+      "docs/prerequisite-map.md",
+      "docs/unit2-draft-learning-design-2026-03-30.md"
+    ]
+  },
+  {
+    "prerequisiteSkillId": "U2-S2",
+    "targetSkillId": "U2-S3",
+    "relationship": "HELPFUL",
+    "approvalStatus": "draft-from-docs",
+    "sourceDocs": [
+      "docs/prerequisite-map.md",
+      "docs/unit2-draft-learning-design-2026-03-30.md"
+    ]
+  },
+  {
+    "prerequisiteSkillId": "U2-S1",
+    "targetSkillId": "U2-S4",
+    "relationship": "HELPFUL",
+    "approvalStatus": "draft-from-docs",
+    "sourceDocs": [
+      "docs/prerequisite-map.md",
+      "docs/unit2-draft-learning-design-2026-03-30.md"
+    ]
+  },
+  {
+    "prerequisiteSkillId": "U2-S2",
+    "targetSkillId": "U2-S4",
+    "relationship": "HELPFUL",
+    "approvalStatus": "draft-from-docs",
+    "sourceDocs": [
+      "docs/prerequisite-map.md",
+      "docs/unit2-draft-learning-design-2026-03-30.md"
+    ]
+  }
+]

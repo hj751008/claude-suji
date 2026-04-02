@@ -1,0 +1,102 @@
+[
+  {
+    "activityId": "ACT-U2-S1-SORT-BY-TYPE",
+    "skillId": "U2-S1",
+    "status": "draft-from-docs",
+    "activityType": "dialogue-flow",
+    "title": "Sort by Sign and Number Type",
+    "goal": "Distinguish positive integers, negative integers, zero, integers, and rational numbers without label-memorizing shortcuts.",
+    "firstTutorQuestion": "What category does 0 belong to, and which categories does it definitely not belong to?",
+    "operatorFocus": "Keep the learner on category definitions and quick counterexamples.",
+    "watchFor": [
+      "Learner treats zero as positive because it is not negative.",
+      "Learner treats integers and rational numbers as disjoint sets."
+    ],
+    "exampleTutorMove": "Ask the learner to sort a short list into 'positive integer', 'negative integer', 'zero', and 'rational number' with reasons.",
+    "successSignal": "Learner can classify zero, negative integers, and simple fractions with a definition-based explanation.",
+    "sourceDocs": [
+      "docs/unit2-source-note-2026-03-30.md",
+      "docs/unit2-draft-learning-design-2026-03-30.md"
+    ]
+  },
+  {
+    "activityId": "ACT-U2-S2-NUMBER-LINE-BRIDGE",
+    "skillId": "U2-S2",
+    "status": "draft-from-docs",
+    "activityType": "worked-bridge",
+    "title": "Compare and Place on the Number Line",
+    "goal": "Compare signed numbers and fractions by position, midpoint, and interval instead of by surface appearance.",
+    "firstTutorQuestion": "Which number sits farther left on the number line, and why?",
+    "operatorFocus": "Tie every comparison back to left-right position, midpoint, or between-ness.",
+    "watchFor": [
+      "Learner compares two negative numbers by absolute value only.",
+      "Learner knows the endpoints but cannot locate the midpoint or a value between two fractions."
+    ],
+    "exampleTutorMove": "Draw a short line segment with two labeled endpoints and ask the learner to place one more number before comparing.",
+    "successSignal": "Learner explains order or midpoint using position language rather than only symbol rules.",
+    "sourceDocs": [
+      "docs/unit2-subskills-integers-rational-2026-03-30.md",
+      "docs/unit2-draft-learning-design-2026-03-30.md"
+    ]
+  },
+  {
+    "activityId": "ACT-U2-S3-ABSOLUTE-VALUE-DISTANCE",
+    "skillId": "U2-S3",
+    "status": "draft-from-docs",
+    "activityType": "dialogue-flow",
+    "title": "Reframe Absolute Value as Distance",
+    "goal": "Make absolute value a distance idea rather than a sign-copying rule.",
+    "firstTutorQuestion": "How far is this number from 0 on the number line?",
+    "operatorFocus": "Keep the learner on distance language before introducing notation.",
+    "watchFor": [
+      "Learner keeps the negative sign inside the absolute-value answer.",
+      "Learner forgets that 0 is closest to the origin."
+    ],
+    "exampleTutorMove": "Point to two positions on a number line and ask for distance first, then connect that to absolute value notation.",
+    "successSignal": "Learner explains absolute value as distance and uses that idea to compare sizes correctly.",
+    "sourceDocs": [
+      "docs/unit2-subskills-integers-rational-2026-03-30.md",
+      "docs/unit2-draft-learning-design-2026-03-30.md"
+    ]
+  },
+  {
+    "activityId": "ACT-U2-S4-SIGNED-CHANGE-BRIDGE",
+    "skillId": "U2-S4",
+    "status": "draft-from-docs",
+    "activityType": "worked-bridge",
+    "title": "Rewrite Signed Addition as Directed Change",
+    "goal": "Move between expression form, number-line movement, and inequality constraints in signed addition and subtraction.",
+    "firstTutorQuestion": "If you start here, does adding this number move you left or right?",
+    "operatorFocus": "Slow down the direction change before the final calculation.",
+    "watchFor": [
+      "Learner rewrites symbols correctly but cannot explain the direction of change.",
+      "Learner can compute one case but collapses when the same idea appears in a condition problem."
+    ],
+    "exampleTutorMove": "Translate one signed addition into a number-line move, then map the same reasoning to a short inequality condition.",
+    "successSignal": "Learner can explain a signed add/subtract step as directed change and keep the sign consistent.",
+    "sourceDocs": [
+      "docs/unit2-subskills-integers-rational-2026-03-30.md",
+      "docs/unit2-draft-learning-design-2026-03-30.md"
+    ]
+  },
+  {
+    "activityId": "ACT-U2-S5-SIGN-FIRST-EXPRESSION",
+    "skillId": "U2-S5",
+    "status": "draft-from-docs",
+    "activityType": "dialogue-flow",
+    "title": "Track Sign Before Calculating",
+    "goal": "Separate sign reasoning, power meaning, reciprocal meaning, and magnitude calculation in multiplicative expressions.",
+    "firstTutorQuestion": "Before you calculate the size, what sign should this whole expression have?",
+    "operatorFocus": "Split sign reasoning from magnitude reasoning instead of blending them too early.",
+    "watchFor": [
+      "Learner loses the sign during multiplication or division of signed numbers.",
+      "Learner mixes up exponent meaning or reciprocal meaning in multi-step expressions."
+    ],
+    "exampleTutorMove": "Cover the arithmetic details and ask the learner to predict the sign first, then return to the magnitude.",
+    "successSignal": "Learner keeps sign, reciprocal, and power structure stable through a short multi-step expression.",
+    "sourceDocs": [
+      "docs/unit2-subskills-integers-rational-2026-03-30.md",
+      "docs/unit2-draft-learning-design-2026-03-30.md"
+    ]
+  }
+]

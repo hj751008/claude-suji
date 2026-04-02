@@ -6,7 +6,8 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from urllib.parse import urlparse
 
-from app.runtime.content_loader import load_unit1_content
+from app.runtime.content_inference import infer_unit_id_from_learner_record, infer_unit_id_from_transcript
+from app.runtime.content_loader import load_content_for_unit, load_unit1_content, load_unit2_content
 from app.runtime.learner_record import prepare_observation_form_for_learner_record, run_learning_turn
 from app.runtime.session_orchestrator import start_learning_session
 
@@ -17,6 +18,12 @@ STATIC_ROOT = APP_ROOT / "operator_ui"
 DEFAULT_TRANSCRIPT_FILE = APP_ROOT / "domain" / "evidence" / "unit1-tutor-transcripts.example.json"
 EVIDENCE_ROOT = APP_ROOT / "domain" / "evidence"
 EXPORT_ROOT = REPO_ROOT / "output" / "operator-logs"
+TRANSCRIPT_GLOB = "*-tutor-transcripts.example.json"
+
+_CONTENT_CACHE = {
+    "U1": load_unit1_content,
+    "U2": load_unit2_content,
+}
 
 
 def serve_operator_ui(host: str, port: int) -> None:
@@ -126,11 +133,13 @@ class OperatorUiHandler(BaseHTTPRequestHandler):
             for path in sorted(EVIDENCE_ROOT.glob("learner-record*.json"))
             if path.is_file()
         ]
+        transcript_files = _discover_transcript_files()
         self._json_response(
             HTTPStatus.OK,
             {
                 "transcriptFile": str(DEFAULT_TRANSCRIPT_FILE.relative_to(REPO_ROOT)).replace("\\", "/"),
-                "transcripts": _list_transcripts(DEFAULT_TRANSCRIPT_FILE),
+                "transcriptFiles": transcript_files,
+                "transcripts": _list_all_transcripts(transcript_files),
                 "learnerFiles": learner_files,
             },
         )
@@ -171,7 +180,7 @@ class OperatorUiHandler(BaseHTTPRequestHandler):
         if not isinstance(learner_record, dict):
             raise ValueError("learnerRecord is required.")
 
-        content = load_unit1_content()
+        content = _load_content_for_learner_record(learner_record)
         result = start_learning_session(learner_record)
         result["observationFormTemplate"] = prepare_observation_form_for_learner_record(
             result["learnerRecord"],
@@ -183,7 +192,7 @@ class OperatorUiHandler(BaseHTTPRequestHandler):
         learner_record = payload.get("learnerRecord")
         if not isinstance(learner_record, dict):
             raise ValueError("learnerRecord is required.")
-        content = load_unit1_content()
+        content = _load_content_for_learner_record(learner_record)
         result = prepare_observation_form_for_learner_record(learner_record, content.observation_form_mappings)
         self._json_response(HTTPStatus.OK, result)
 
@@ -195,7 +204,7 @@ class OperatorUiHandler(BaseHTTPRequestHandler):
         if not isinstance(observation_form, dict):
             raise ValueError("observationForm is required.")
 
-        content = load_unit1_content()
+        content = _load_content_for_learner_record(learner_record)
         result = run_learning_turn(learner_record, observation_form, content)
         active_session = result["learnerRecord"].get("activeSession")
         if isinstance(active_session, dict):
@@ -273,6 +282,26 @@ def _resolve_repo_path(raw_path: str) -> Path:
     return resolved
 
 
+def _load_content(unit_id: str | None):
+    if unit_id in _CONTENT_CACHE:
+        return _CONTENT_CACHE[unit_id]()
+    if isinstance(unit_id, str):
+        return load_content_for_unit(unit_id)
+    return load_unit1_content()
+
+
+def _load_content_for_learner_record(learner_record: dict):
+    return _load_content(infer_unit_id_from_learner_record(learner_record))
+
+
+def _discover_transcript_files() -> list[str]:
+    return [
+        str(path.relative_to(REPO_ROOT)).replace("\\", "/")
+        for path in sorted(EVIDENCE_ROOT.glob(TRANSCRIPT_GLOB))
+        if path.is_file()
+    ]
+
+
 def _list_transcripts(transcript_path: Path) -> list[dict]:
     transcripts = _load_json(transcript_path)
     if not isinstance(transcripts, list):
@@ -285,6 +314,7 @@ def _list_transcripts(transcript_path: Path) -> list[dict]:
         turns = record.get("turns", [])
         payload.append(
             {
+                "transcriptFile": str(transcript_path.relative_to(REPO_ROOT)).replace("\\", "/"),
                 "transcriptId": record.get("transcriptId"),
                 "name": record.get("name"),
                 "skillId": record.get("skillId"),
@@ -294,6 +324,14 @@ def _list_transcripts(transcript_path: Path) -> list[dict]:
                 "startBeforeTurns": bool(record.get("startBeforeTurns")),
             }
         )
+    return payload
+
+
+def _list_all_transcripts(transcript_files: list[str]) -> list[dict]:
+    payload: list[dict] = []
+    for transcript_file in transcript_files:
+        transcript_path = _resolve_repo_path(transcript_file)
+        payload.extend(_list_transcripts(transcript_path))
     return payload
 
 
@@ -327,7 +365,7 @@ def _replay_transcript(transcript_path: Path, transcript_id: str, turn_limit: in
         raise ValueError("Transcript must contain at least one turn.")
     selected_turns = turns if turn_limit is None else turns[:turn_limit]
 
-    content = load_unit1_content()
+    content = _load_content(infer_unit_id_from_transcript(transcript, learner_record))
     turn_results: list[dict] = []
 
     if transcript.get("startBeforeTurns"):

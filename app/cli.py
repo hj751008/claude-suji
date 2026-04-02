@@ -8,7 +8,14 @@ from pathlib import Path
 if __package__ in {None, ""}:
     sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from app.runtime.content_loader import load_unit1_content
+from app.runtime.content_inference import (
+    infer_unit_id_from_event,
+    infer_unit_id_from_events,
+    infer_unit_id_from_learner_record,
+    infer_unit_id_from_session_state,
+    infer_unit_id_from_transcript,
+)
+from app.runtime.content_loader import load_content_for_unit, load_unit1_content, load_unit2_content
 from app.runtime.diagnostics import diagnose_event, summarize_learner, validate_evidence_event
 from app.runtime.learner_record import (
     merge_session_into_learner_record,
@@ -44,8 +51,42 @@ def _dump_json(path: Path, payload: dict) -> None:
         handle.write("\n")
 
 
+_CONTENT_CACHE = {
+    "U1": load_unit1_content,
+    "U2": load_unit2_content,
+}
+
+
+def _load_content(unit_id: str | None):
+    if unit_id in _CONTENT_CACHE:
+        return _CONTENT_CACHE[unit_id]()
+    if isinstance(unit_id, str):
+        return load_content_for_unit(unit_id)
+    return load_unit1_content()
+
+
+def _load_content_for_event(event: dict):
+    return _load_content(infer_unit_id_from_event(event))
+
+
+def _load_content_for_events(events: list[dict]):
+    return _load_content(infer_unit_id_from_events(events))
+
+
+def _load_content_for_session_state(session_state: dict):
+    return _load_content(infer_unit_id_from_session_state(session_state))
+
+
+def _load_content_for_learner_record(learner_record: dict):
+    return _load_content(infer_unit_id_from_learner_record(learner_record))
+
+
+def _load_content_for_transcript(transcript: dict, learner_record: dict | None = None):
+    return _load_content(infer_unit_id_from_transcript(transcript, learner_record))
+
+
 def _build_parser() -> argparse.ArgumentParser:
-    parser = argparse.ArgumentParser(description="Minimal CLI for Unit 1 content and diagnosis.")
+    parser = argparse.ArgumentParser(description="Minimal CLI for current content validation and learner diagnosis.")
     subparsers = parser.add_subparsers(dest="command", required=True)
 
     subparsers.add_parser("validate-content", help="Validate app content files.")
@@ -180,7 +221,7 @@ def run_diagnose(input_path: Path) -> int:
             print(f"- {message}")
         return 1
 
-    content = load_unit1_content()
+    content = _load_content_for_event(event)
     result = diagnose_event(content, event)
     payload = {
         "mastery": result.mastery,
@@ -236,7 +277,7 @@ def run_advance_session(input_path: Path, completed_step: str) -> int:
 def run_evaluate_step(session_path: Path, input_path: Path, apply_result: bool) -> int:
     session_state = _load_json(session_path)
     evaluation_input = _load_json(input_path)
-    content = load_unit1_content()
+    content = _load_content_for_session_state(session_state)
     try:
         evaluation_result = evaluate_current_step(session_state, evaluation_input, content.evaluator_rubrics)
         payload = evaluation_result if not apply_result else apply_evaluator_decision(session_state, evaluation_result)
@@ -251,7 +292,7 @@ def run_evaluate_step(session_path: Path, input_path: Path, apply_result: bool) 
 def run_evaluate_form(session_path: Path, input_path: Path, apply_result: bool) -> int:
     session_state = _load_json(session_path)
     observation_form = _load_json(input_path)
-    content = load_unit1_content()
+    content = _load_content_for_session_state(session_state)
     try:
         evaluation_input = observation_form_to_evaluation_input(session_state, observation_form, content.observation_form_mappings)
         evaluation_result = evaluate_current_step(session_state, evaluation_input, content.evaluator_rubrics)
@@ -267,7 +308,7 @@ def run_evaluate_form(session_path: Path, input_path: Path, apply_result: bool) 
 def run_submit_observation(session_path: Path, input_path: Path) -> int:
     session_state = _load_json(session_path)
     observation_form = _load_json(input_path)
-    content = load_unit1_content()
+    content = _load_content_for_session_state(session_state)
     try:
         updated_state = submit_observation(
             session_state,
@@ -286,7 +327,7 @@ def run_submit_observation(session_path: Path, input_path: Path) -> int:
 def run_submit_observation_to_learner_record(learner_path: Path, input_path: Path, write_result: bool) -> int:
     learner_record = _load_json(learner_path)
     observation_form = _load_json(input_path)
-    content = load_unit1_content()
+    content = _load_content_for_learner_record(learner_record)
     try:
         updated_record = submit_observation_to_learner_record(learner_record, observation_form, content)
     except ValueError as exc:
@@ -303,7 +344,7 @@ def run_submit_observation_to_learner_record(learner_path: Path, input_path: Pat
 def run_learning_turn_command(learner_path: Path, input_path: Path, write_result: bool) -> int:
     learner_record = _load_json(learner_path)
     observation_form = _load_json(input_path)
-    content = load_unit1_content()
+    content = _load_content_for_learner_record(learner_record)
     try:
         result = run_learning_turn(learner_record, observation_form, content)
         active_session = result["learnerRecord"].get("activeSession")
@@ -325,7 +366,7 @@ def run_learning_turn_command(learner_path: Path, input_path: Path, write_result
 
 def run_prepare_observation_form(learner_path: Path, output_path: Path | None) -> int:
     learner_record = _load_json(learner_path)
-    content = load_unit1_content()
+    content = _load_content_for_learner_record(learner_record)
     try:
         result = prepare_observation_form_for_learner_record(learner_record, content.observation_form_mappings)
     except ValueError as exc:
@@ -341,7 +382,7 @@ def run_prepare_observation_form(learner_path: Path, output_path: Path | None) -
 
 def run_summarize_session_history(session_path: Path) -> int:
     session_state = _load_json(session_path)
-    content = load_unit1_content()
+    content = _load_content_for_session_state(session_state)
     try:
         events = session_history_to_evidence_events(session_state)
         result = summarize_learner(content, events)
@@ -362,7 +403,7 @@ def run_summarize_session_history(session_path: Path) -> int:
 def run_update_learner_record(learner_path: Path, session_path: Path, write_result: bool) -> int:
     learner_record = _load_json(learner_path)
     session_state = _load_json(session_path)
-    content = load_unit1_content()
+    content = _load_content_for_session_state(session_state)
     try:
         updated_record = merge_session_into_learner_record(learner_record, session_state, content)
     except ValueError as exc:
@@ -418,7 +459,7 @@ def run_sync_active_session(learner_path: Path, write_result: bool) -> int:
 
 def run_start_learning_session(learner_path: Path, write_result: bool) -> int:
     learner_record = _load_json(learner_path)
-    content = load_unit1_content()
+    content = _load_content_for_learner_record(learner_record)
     try:
         result = start_learning_session(learner_record)
         result["observationFormTemplate"] = build_observation_form_template(
@@ -480,7 +521,7 @@ def run_replay_transcript(
         return 1
     selected_turns = turns if turn_limit is None else turns[:turn_limit]
 
-    content = load_unit1_content()
+    content = _load_content_for_transcript(transcript, learner_record)
     turn_results: list[dict] = []
 
     try:
@@ -580,7 +621,7 @@ def run_summarize_learner(input_path: Path) -> int:
         print("Learner summary input must be a JSON array of evidence events.")
         return 1
 
-    content = load_unit1_content()
+    content = _load_content_for_events(events)
     try:
         result = summarize_learner(content, events)
     except ValueError as exc:

@@ -1,0 +1,179 @@
+[
+  {
+    "lessonStepId": "STEP-U2-S1-CATEGORY-SORT",
+    "status": "draft-from-docs",
+    "requiredSignals": [
+      "classifies_zero_separately",
+      "states_integer_subset_of_rational"
+    ],
+    "signalTextHints": {
+      "classifies_zero_separately": [
+        "zero is neither positive nor negative",
+        "0 is neither positive nor negative",
+        "0 is its own case",
+        "0 is not positive or negative",
+        "0은 양수도 음수도 아니",
+        "영은 양수도 음수도 아니",
+        "0은 따로",
+        "영은 따로"
+      ],
+      "states_integer_subset_of_rational": [
+        "integers are rational numbers",
+        "an integer can be written as a fraction",
+        "integers are included in rational numbers",
+        "정수도 유리수",
+        "정수는 유리수에 포함",
+        "분수로 쓸 수 있",
+        "정수는 분수로"
+      ]
+    },
+    "optionalTextHints": [
+      "zero",
+      "rational"
+    ],
+    "sourceDocs": [
+      "docs/unit2-draft-learning-design-2026-03-30.md"
+    ]
+  },
+  {
+    "lessonStepId": "STEP-U2-S2-NUMBER-LINE-ORDER",
+    "status": "draft-from-docs",
+    "requiredSignals": [
+      "orders_by_left_right_position",
+      "explains_negative_order_without_abs_reversal"
+    ],
+    "signalTextHints": {
+      "orders_by_left_right_position": [
+        "farther left",
+        "to the left",
+        "on the left side",
+        "left on the number line",
+        "왼쪽",
+        "수직선에서 왼쪽",
+        "더 왼쪽"
+      ],
+      "explains_negative_order_without_abs_reversal": [
+        "-7 is smaller than -3",
+        "the one farther left is smaller",
+        "larger absolute value does not mean greater here",
+        "-7이 -3보다 작",
+        "절댓값이 커도 더 큰 수는 아니",
+        "왼쪽이라서 더 작"
+      ]
+    },
+    "optionalTextHints": [
+      "left",
+      "smaller"
+    ],
+    "sourceDocs": [
+      "docs/unit2-draft-learning-design-2026-03-30.md"
+    ]
+  },
+  {
+    "lessonStepId": "STEP-U2-S3-ABSOLUTE-VALUE-DISTANCE",
+    "status": "draft-from-docs",
+    "requiredSignals": [
+      "defines_absolute_value_as_distance",
+      "removes_negative_sign_from_absolute_value"
+    ],
+    "signalTextHints": {
+      "defines_absolute_value_as_distance": [
+        "distance from zero",
+        "distance to zero",
+        "how far from 0",
+        "distance",
+        "0에서 떨어진 거리",
+        "원점에서의 거리",
+        "거리"
+      ],
+      "removes_negative_sign_from_absolute_value": [
+        "|-4| is 4",
+        "the answer is 4 not -4",
+        "absolute value is not negative",
+        "절댓값은 4",
+        "-4가 아니라 4",
+        "절댓값은 음수가 아니"
+      ]
+    },
+    "optionalTextHints": [
+      "distance",
+      "absolute value"
+    ],
+    "sourceDocs": [
+      "docs/unit2-draft-learning-design-2026-03-30.md"
+    ]
+  },
+  {
+    "lessonStepId": "STEP-U2-S4-SIGNED-CHANGE",
+    "status": "draft-from-docs",
+    "requiredSignals": [
+      "tracks_direction_of_signed_change",
+      "keeps_result_sign_consistent"
+    ],
+    "signalTextHints": {
+      "tracks_direction_of_signed_change": [
+        "move left",
+        "move right",
+        "go left",
+        "go right",
+        "왼쪽으로",
+        "오른쪽으로",
+        "left from",
+        "right from"
+      ],
+      "keeps_result_sign_consistent": [
+        "3 plus negative 5 is -2",
+        "the result should be negative",
+        "sign stays negative",
+        "결과는 -2",
+        "결과는 음수",
+        "부호가 음수",
+        "왼쪽으로 가서 음수"
+      ]
+    },
+    "optionalTextHints": [
+      "left",
+      "negative"
+    ],
+    "sourceDocs": [
+      "docs/unit2-draft-learning-design-2026-03-30.md"
+    ]
+  },
+  {
+    "lessonStepId": "STEP-U2-S5-SIGN-FIRST-EXPRESSION",
+    "status": "draft-from-docs",
+    "requiredSignals": [
+      "predicts_overall_sign_first",
+      "keeps_power_or_reciprocal_structure"
+    ],
+    "signalTextHints": {
+      "predicts_overall_sign_first": [
+        "the whole sign is negative",
+        "negative first",
+        "sign first",
+        "overall sign",
+        "전체 부호는 음수",
+        "먼저 부호",
+        "부호부터",
+        "음수 먼저"
+      ],
+      "keeps_power_or_reciprocal_structure": [
+        "keep the reciprocal",
+        "do not drop the exponent",
+        "power stays",
+        "reciprocal stays",
+        "역수 유지",
+        "지수를 유지",
+        "거듭제곱을 유지",
+        "구조를 유지"
+      ]
+    },
+    "optionalTextHints": [
+      "sign first",
+      "reciprocal"
+    ],
+    "sourceDocs": [
+      "docs/unit2-draft-learning-design-2026-03-30.md"
+    ]
+  }
+]

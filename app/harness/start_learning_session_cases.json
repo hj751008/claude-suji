@@ -98,5 +98,24 @@
         "U1-S5D"
       ]
     }
+  },
+  {
+    "name": "start learning session from unit2 summary opens blocker-first signed-change path",
+    "learnerFile": "app/domain/evidence/learner-record-with-summary-unit2.example.json",
+    "expected": {
+      "action": "plan_new_session",
+      "targetSkillId": "U2-S4",
+      "currentStepSkillId": "U2-S1",
+      "currentLessonStepId": "STEP-U2-S1-CATEGORY-SORT",
+      "firstTutorQuestion": "What makes 0 its own case instead of a positive or negative integer?",
+      "nextLessonStepId": "STEP-U2-S2-NUMBER-LINE-ORDER",
+      "remainingStepCount": 3,
+      "plannedFromSkillId": "U2-S4",
+      "recommendedNextSkillIds": [
+        "U2-S1",
+        "U2-S2",
+        "U2-S4"
+      ]
+    }
   }
 ]

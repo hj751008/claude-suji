@@ -1,0 +1,41 @@
+[
+  {
+    "transcriptId": "u2-s1-category-sort-ko-text-only-active-session",
+    "name": "Unit 2 category sort log with Korean text-only observation",
+    "skillId": "U2-S1",
+    "tags": [
+      "unit2",
+      "category",
+      "ko",
+      "text-only",
+      "active"
+    ],
+    "learnerFile": "app/domain/evidence/learner-record-with-active-session-unit2.example.json",
+    "turns": [
+      {
+        "turnIndex": 1,
+        "lessonStepId": "STEP-U2-S1-CATEGORY-SORT",
+        "messages": [
+          {
+            "speaker": "tutor",
+            "text": "0을 어디에 놓아야 할지부터 차분히 말해 볼래?"
+          },
+          {
+            "speaker": "learner",
+            "text": "0은 양수도 음수도 아니고 정수도 분수로 쓸 수 있어서 유리수에 포함돼."
+          }
+        ],
+        "operatorNote": "튜터가 체크박스 없이 발화만 남겼다.",
+        "observationFormInput": {
+          "learnerResponse": "0은 양수도 음수도 아니고 정수도 분수로 쓸 수 있어서 유리수에 포함돼.",
+          "fieldValues": {
+            "classifies_zero_separately": false,
+            "states_integer_subset_of_rational": false
+          },
+          "tutorNote": "튜터가 체크박스 없이 발화만 남겼다.",
+          "timestamp": "2026-03-30T15:10:00+09:00"
+        }
+      }
+    ]
+  }
+]

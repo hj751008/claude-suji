@@ -1,0 +1,242 @@
+{
+  "learnerId": "unit2-summary-learner",
+  "activeSession": null,
+  "sessions": [],
+  "evidenceEvents": [
+    {
+      "eventId": "unit2-summary-case-001",
+      "learnerId": "unit2-summary-learner",
+      "kind": "session_history_observation",
+      "skillId": "U2-S4",
+      "result": "incorrect",
+      "errorPatternIds": [],
+      "observations": [
+        "Learner computed a signed change expression but could not explain left-right direction.",
+        "Learner flipped the sign after treating subtraction as magnitude only."
+      ],
+      "confidenceSignal": "hesitant",
+      "sourceDocs": [],
+      "derivedFrom": {
+        "lessonStepId": "STEP-U2-S4-SIGNED-CHANGE",
+        "activityId": "ACT-U2-S4-SIGNED-CHANGE-BRIDGE",
+        "matchedRequiredSignals": [],
+        "missingRequiredSignals": [
+          "keeps_direction_and_sign_consistent"
+        ]
+      }
+    }
+  ],
+  "latestSkillSummaries": [
+    {
+      "learnerId": "unit2-summary-learner",
+      "skillId": "U2-S4",
+      "status": "needs_review",
+      "statusApproval": "provisional",
+      "decisionType": "multi_event_rule_assisted_conservative",
+      "supportingEvidenceIds": [
+        "unit2-summary-case-001"
+      ],
+      "matchedErrorPatternIds": [],
+      "explanations": [
+        "The event points to a skill, but there is not enough pattern-backed evidence for a stronger automated judgment.",
+        "A reviewer should inspect the learner work before changing progression behavior."
+      ],
+      "blockedBy": [
+        "This status supports conservative tutoring flow only, not final mastery approval.",
+        "Unit-level mastered thresholds, reassessment rules, and overrides remain UNDECIDED."
+      ],
+      "eventCount": 1,
+      "blockedByPrerequisites": [
+        {
+          "prerequisiteSkillId": "U2-S1",
+          "relationship": "HELPFUL",
+          "approvalStatus": "draft-from-docs",
+          "sourceDocs": [
+            "docs/prerequisite-map.md",
+            "docs/unit2-draft-learning-design-2026-03-30.md"
+          ],
+          "whyBlocked": "Prerequisite skill U2-S1 does not yet have learner evidence, so progress on U2-S4 should stay conservative."
+        },
+        {
+          "prerequisiteSkillId": "U2-S2",
+          "relationship": "HELPFUL",
+          "approvalStatus": "draft-from-docs",
+          "sourceDocs": [
+            "docs/prerequisite-map.md",
+            "docs/unit2-draft-learning-design-2026-03-30.md"
+          ],
+          "whyBlocked": "Prerequisite skill U2-S2 does not yet have learner evidence, so progress on U2-S4 should stay conservative."
+        }
+      ],
+      "hasRequiredPrerequisiteBlocker": false
+    }
+  ],
+  "latestRecommendations": [
+    {
+      "learnerId": "unit2-summary-learner",
+      "targetSkillId": "U2-S4",
+      "targetSkillTitle": "Add and subtract integers and rational numbers",
+      "recommendationType": "practice",
+      "confidence": "limited",
+      "needsReview": true,
+      "reasonCodes": [
+        "documented_skill_target",
+        "unit_mastery_threshold_pending",
+        "helpful_prerequisite_blocker"
+      ],
+      "summary": "Learner can read a signed expression but cannot track direction or sign through addition and subtraction.",
+      "sourceDocs": [
+        "docs/unit2-subskills-integers-rational-2026-03-30.md",
+        "docs/unit2-draft-learning-design-2026-03-30.md"
+      ],
+      "recommendedActivities": [
+        {
+          "activityId": "ACT-U2-S4-SIGNED-CHANGE-BRIDGE",
+          "skillId": "U2-S4",
+          "activityType": "worked-bridge",
+          "title": "Rewrite Signed Addition as Directed Change",
+          "goal": "Move between expression form, number-line movement, and inequality constraints in signed addition and subtraction.",
+          "firstTutorQuestion": "If you start here, does adding this number move you left or right?",
+          "operatorFocus": "Slow down the direction change before the final calculation.",
+          "watchFor": [
+            "Learner rewrites symbols correctly but cannot explain the direction of change.",
+            "Learner can compute one case but collapses when the same idea appears in a condition problem."
+          ],
+          "exampleTutorMove": "Translate one signed addition into a number-line move, then map the same reasoning to a short inequality condition."
+        }
+      ],
+      "sessionPayload": {
+        "learnerId": "unit2-summary-learner",
+        "targetSkillId": "U2-S4",
+        "steps": [
+          {
+            "activityId": "ACT-U2-S1-SORT-BY-TYPE",
+            "lessonStepId": "STEP-U2-S1-CATEGORY-SORT",
+            "skillId": "U2-S1",
+            "activityType": "dialogue-flow",
+            "title": "Sort by Sign and Number Type",
+            "openingLine": "Let's sort these numbers by meaning first so the labels stop feeling mixed together.",
+            "firstTutorQuestion": "What makes 0 its own case instead of a positive or negative integer?",
+            "smallHint": "Zero is an integer, but it is neither positive nor negative.",
+            "goodStoppingPoint": "Learner classifies zero separately and explains that integers are included in rational numbers.",
+            "watchFor": [
+              "Learner treats zero as positive because it is not negative.",
+              "Learner treats integers and rational numbers as completely separate groups."
+            ],
+            "exampleTutorMove": "Ask the learner to place -3, 0, 4, and 1/2 into category cards and explain one card at a time.",
+            "exampleLearnerResponse": "0 is an integer but not positive or negative, and integers still count as rational numbers because they can be written as fractions."
+          },
+          {
+            "activityId": "ACT-U2-S2-NUMBER-LINE-BRIDGE",
+            "lessonStepId": "STEP-U2-S2-NUMBER-LINE-ORDER",
+            "skillId": "U2-S2",
+            "activityType": "worked-bridge",
+            "title": "Compare and Place on the Number Line",
+            "openingLine": "Let's compare the positions first instead of trusting how big the numerals look.",
+            "firstTutorQuestion": "Which of these two numbers is farther left on the number line?",
+            "smallHint": "Farther left means smaller, even when the number has a larger absolute value.",
+            "goodStoppingPoint": "Learner orders negative numbers or fractions by position language and not by surface appearance alone.",
+            "watchFor": [
+              "Learner says -7 is greater than -3 because 7 is bigger than 3.",
+              "Learner can name endpoints but cannot place a midpoint or a number between two fractions."
+            ],
+            "exampleTutorMove": "Sketch a short number line with two labels and ask the learner to place one additional value before comparing.",
+            "exampleLearnerResponse": "-7 is farther left than -3, so it is smaller even though 7 has the larger absolute value."
+          },
+          {
+            "activityId": "ACT-U2-S4-SIGNED-CHANGE-BRIDGE",
+            "lessonStepId": "STEP-U2-S4-SIGNED-CHANGE",
+            "skillId": "U2-S4",
+            "activityType": "worked-bridge",
+            "title": "Rewrite Signed Addition as Directed Change",
+            "openingLine": "Let's read the sign as direction of change before we calculate the final value.",
+            "firstTutorQuestion": "If you add this signed number, do you move left or right from where you started?",
+            "smallHint": "Positive change moves right and negative change moves left on the number line.",
+            "goodStoppingPoint": "Learner keeps direction and sign consistent through a signed addition or subtraction step.",
+            "watchFor": [
+              "Learner rewrites symbols mechanically but cannot explain the direction of change.",
+              "Learner can handle a simple sum but collapses when the same idea appears in a condition problem."
+            ],
+            "exampleTutorMove": "Translate one expression like 3 + (-5) into a move on the number line before asking for the numeric answer.",
+            "exampleLearnerResponse": "Adding -5 means moving 5 units left from 3, so the result should be -2."
+          }
+        ]
+      },
+      "sourceEventIds": [
+        "unit2-summary-case-001"
+      ],
+      "blockedByPrerequisites": [
+        {
+          "prerequisiteSkillId": "U2-S1",
+          "relationship": "HELPFUL",
+          "approvalStatus": "draft-from-docs",
+          "sourceDocs": [
+            "docs/prerequisite-map.md",
+            "docs/unit2-draft-learning-design-2026-03-30.md"
+          ],
+          "whyBlocked": "Prerequisite skill U2-S1 does not yet have learner evidence, so progress on U2-S4 should stay conservative."
+        },
+        {
+          "prerequisiteSkillId": "U2-S2",
+          "relationship": "HELPFUL",
+          "approvalStatus": "draft-from-docs",
+          "sourceDocs": [
+            "docs/prerequisite-map.md",
+            "docs/unit2-draft-learning-design-2026-03-30.md"
+          ],
+          "whyBlocked": "Prerequisite skill U2-S2 does not yet have learner evidence, so progress on U2-S4 should stay conservative."
+        }
+      ],
+      "recommendedNextSkillIds": [
+        "U2-S1",
+        "U2-S2",
+        "U2-S4"
+      ],
+      "recommendedActivitySequence": [
+        {
+          "activityId": "ACT-U2-S1-SORT-BY-TYPE",
+          "skillId": "U2-S1",
+          "activityType": "dialogue-flow",
+          "title": "Sort by Sign and Number Type",
+          "goal": "Distinguish positive integers, negative integers, zero, integers, and rational numbers without label-memorizing shortcuts.",
+          "firstTutorQuestion": "What category does 0 belong to, and which categories does it definitely not belong to?",
+          "operatorFocus": "Keep the learner on category definitions and quick counterexamples.",
+          "watchFor": [
+            "Learner treats zero as positive because it is not negative.",
+            "Learner treats integers and rational numbers as disjoint sets."
+          ],
+          "exampleTutorMove": "Ask the learner to sort a short list into 'positive integer', 'negative integer', 'zero', and 'rational number' with reasons."
+        },
+        {
+          "activityId": "ACT-U2-S2-NUMBER-LINE-BRIDGE",
+          "skillId": "U2-S2",
+          "activityType": "worked-bridge",
+          "title": "Compare and Place on the Number Line",
+          "goal": "Compare signed numbers and fractions by position, midpoint, and interval instead of by surface appearance.",
+          "firstTutorQuestion": "Which number sits farther left on the number line, and why?",
+          "operatorFocus": "Tie every comparison back to left-right position, midpoint, or between-ness.",
+          "watchFor": [
+            "Learner compares two negative numbers by absolute value only.",
+            "Learner knows the endpoints but cannot locate the midpoint or a value between two fractions."
+          ],
+          "exampleTutorMove": "Draw a short line segment with two labeled endpoints and ask the learner to place one more number before comparing."
+        },
+        {
+          "activityId": "ACT-U2-S4-SIGNED-CHANGE-BRIDGE",
+          "skillId": "U2-S4",
+          "activityType": "worked-bridge",
+          "title": "Rewrite Signed Addition as Directed Change",
+          "goal": "Move between expression form, number-line movement, and inequality constraints in signed addition and subtraction.",
+          "firstTutorQuestion": "If you start here, does adding this number move you left or right?",
+          "operatorFocus": "Slow down the direction change before the final calculation.",
+          "watchFor": [
+            "Learner rewrites symbols correctly but cannot explain the direction of change.",
+            "Learner can compute one case but collapses when the same idea appears in a condition problem."
+          ],
+          "exampleTutorMove": "Translate one signed addition into a number-line move, then map the same reasoning to a short inequality condition."
+        }
+      ]
+    }
+  ],
+  "updatedAt": "2026-03-30T23:58:00+09:00"
+}
