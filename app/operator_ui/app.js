@@ -53,6 +53,32 @@ const PILOT_PRESETS = {
       "Fixture realism: ",
     ].join("\n"),
   },
+  "pilot-u3-s4-blocker": {
+    transcriptId: "u3-s4-combine-like-terms-ko-text-only-active-session",
+    turnLimit: null,
+    pilotNote: [
+      "Pilot D",
+      "Tester: ",
+      "Focus: U3-S4 simplification with blocker-first reopen to U3-S2",
+      "Natural: ",
+      "Awkward: ",
+      "Operator hesitation: ",
+      "Fixture realism: ",
+    ].join("\n"),
+  },
+  "pilot-u3-s5-blocker": {
+    transcriptId: "u3-s5-model-then-simplify-ko-text-only-active-session",
+    turnLimit: null,
+    pilotNote: [
+      "Pilot E",
+      "Tester: ",
+      "Focus: U3-S5 contextual modeling with blocker-first reopen to U3-S1",
+      "Natural: ",
+      "Awkward: ",
+      "Operator hesitation: ",
+      "Fixture realism: ",
+    ].join("\n"),
+  },
 };
 
 const transcriptList = document.querySelector("#transcript-list");

@@ -14,9 +14,9 @@
           <h1>Transcript replay, recommendation handoff, and live turn inspection.</h1>
         </div>
         <div class="hero-meta">
-          <span class="chip">Unit 1</span>
+          <span class="chip">Multi-unit</span>
           <span class="chip">CLI-backed</span>
-          <span class="chip">No file writes</span>
+          <span class="chip">Optional log writes</span>
         </div>
       </header>
 
@@ -61,6 +61,30 @@
                   <span>transfer</span>
                 </div>
               </button>
+              <button
+                type="button"
+                class="transcript-item preset-item"
+                data-preset-id="pilot-u3-s4-blocker"
+              >
+                <strong>Pilot D</strong>
+                <div>U3-S4 simplification with blocker-first reopen</div>
+                <div class="transcript-meta">
+                  <span>u3-s4-combine-like-terms...</span>
+                  <span>active session</span>
+                </div>
+              </button>
+              <button
+                type="button"
+                class="transcript-item preset-item"
+                data-preset-id="pilot-u3-s5-blocker"
+              >
+                <strong>Pilot E</strong>
+                <div>U3-S5 modeling with blocker-first reopen</div>
+                <div class="transcript-meta">
+                  <span>u3-s5-model-then-simplify...</span>
+                  <span>active session</span>
+                </div>
+              </button>
             </div>
           </section>
 
@@ -68,11 +92,11 @@
             <h2>Transcripts</h2>
             <label class="field">
               <span>Skill filter</span>
-              <input id="skill-filter" type="text" placeholder="U1-S5A" />
+              <input id="skill-filter" type="text" placeholder="U3-S4" />
             </label>
             <label class="field">
               <span>Tag filter</span>
-              <input id="tag-filter" type="text" placeholder="transfer" />
+              <input id="tag-filter" type="text" placeholder="uncertain" />
             </label>
             <div id="transcript-list" class="transcript-list"></div>
           </section>
