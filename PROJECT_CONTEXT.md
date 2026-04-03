@@ -38,6 +38,6 @@ Build a Korean middle school math learning AI with strong math accuracy, honest 
 ### U3 `문자의 사용과 식`
 - Slug: `unit3-scaffold`
 - English label: `Using Variables and Expressions`
-- Auto-managed stage: `source-backed-provisional`
+- Auto-managed stage: `runtime-gate-passed`
 <!-- UNIT:U3 END -->
 <!-- AUTO-MANAGED-UNIT-PIPELINE END -->

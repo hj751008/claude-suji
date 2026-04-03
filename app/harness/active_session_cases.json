@@ -16,5 +16,14 @@
       "currentLessonStepId": "STEP-U1-S2-ENTRY-BRIDGE",
       "status": "in_progress"
     }
+  },
+  {
+    "name": "store resumed unit3 session as active session",
+    "learnerFile": "app/domain/evidence/learner-record-with-active-session-u3-s2.example.json",
+    "expected": {
+      "targetSkillId": "U3-S2",
+      "currentLessonStepId": "STEP-U3-S2-READ-TERM-STRUCTURE",
+      "status": "in_progress"
+    }
   }
 ]

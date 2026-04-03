@@ -24,6 +24,18 @@
     }
   },
   {
+    "name": "start learning session by resuming active unit3 structure work",
+    "learnerFile": "app/domain/evidence/learner-record-with-active-session-u3-s2.example.json",
+    "expected": {
+      "action": "resume_session",
+      "targetSkillId": "U3-S2",
+      "currentLessonStepId": "STEP-U3-S2-READ-TERM-STRUCTURE",
+      "firstTutorQuestion": "Which part of this expression is the coefficient, and which part is the constant term?",
+      "nextLessonStepId": null,
+      "remainingStepCount": 1
+    }
+  },
+  {
     "name": "start learning session after completed s5a transcript keeps session target but opens blocker step",
     "transcriptFile": "app/domain/evidence/unit1-tutor-transcripts.example.json",
     "transcriptId": "u1-s5a-divisor-count-ko-text-only-active-session",

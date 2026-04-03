@@ -1,0 +1,41 @@
+[
+  {
+    "transcriptId": "u3-s2-read-term-structure-ko-text-only-active-session",
+    "name": "Unit 3 structure-reading log with Korean text-only observation",
+    "skillId": "U3-S2",
+    "tags": [
+      "unit3",
+      "structure",
+      "ko",
+      "text-only",
+      "active"
+    ],
+    "learnerFile": "app/domain/evidence/learner-record-with-active-session-u3-s2.example.json",
+    "turns": [
+      {
+        "turnIndex": 1,
+        "lessonStepId": "STEP-U3-S2-READ-TERM-STRUCTURE",
+        "messages": [
+          {
+            "speaker": "tutor",
+            "text": "3x + 5 - 2x에서 계수와 상수항을 먼저 말해 볼래?"
+          },
+          {
+            "speaker": "learner",
+            "text": "3과 -2가 계수이고 5가 상수항이야. 3x와 -2x는 같은 문자 x가 있어서 동류항이야."
+          }
+        ],
+        "operatorNote": "튜터가 체크박스는 비워 두고 구조 읽기 설명만 남겼다.",
+        "observationFormInput": {
+          "learnerResponse": "3과 -2가 계수이고 5가 상수항이야. 3x와 -2x는 같은 문자 x가 있어서 동류항이야.",
+          "fieldValues": {
+            "identifies_coefficient_or_constant_correctly": false,
+            "distinguishes_like_terms_by_structure": false
+          },
+          "tutorNote": "튜터가 체크박스는 비워 두고 구조 읽기 설명만 남겼다.",
+          "timestamp": "2026-04-03T16:10:00+09:00"
+        }
+      }
+    ]
+  }
+]

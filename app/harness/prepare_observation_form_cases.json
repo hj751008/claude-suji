@@ -199,5 +199,17 @@
       ],
       "learnerResponsePrompt": "Write how the learner predicted the sign and handled the expression structure."
     }
+  },
+  {
+    "name": "prepare observation form from active unit3 s2 session",
+    "learnerFile": "app/domain/evidence/learner-record-with-active-session-u3-s2.example.json",
+    "expected": {
+      "lessonStepId": "STEP-U3-S2-READ-TERM-STRUCTURE",
+      "fieldIds": [
+        "identifies_coefficient_or_constant_correctly",
+        "distinguishes_like_terms_by_structure"
+      ],
+      "learnerResponsePrompt": "Write how the learner identified the coefficient, constant term, and like terms in the expression."
+    }
   }
 ]

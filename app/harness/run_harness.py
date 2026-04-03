@@ -9,7 +9,7 @@ from app.runtime.content_inference import (
     infer_unit_id_from_learner_record,
     infer_unit_id_from_transcript,
 )
-from app.runtime.content_loader import load_content_for_unit, load_unit1_content, load_unit2_content
+from app.runtime.content_loader import load_content_for_unit, load_unit1_content, load_unit2_content, load_unit3_content
 from app.runtime.diagnostics import diagnose_event, summarize_learner, validate_evidence_event
 from app.runtime.learner_record import (
     merge_session_into_learner_record,
@@ -38,6 +38,7 @@ REPO_ROOT = HARNESS_ROOT.parent.parent
 _CONTENT_CACHE = {
     "U1": load_unit1_content,
     "U2": load_unit2_content,
+    "U3": load_unit3_content,
 }
 
 
