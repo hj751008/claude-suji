@@ -1,57 +1,166 @@
 [
   {
     "lessonStepId": "STEP-U3-S1-DEFINE-VARIABLE-ROLE",
-    "status": "draft-from-docs",
+    "status": "provisional",
     "requiredSignals": [
       "defines_variable_meaning",
       "writes_matching_expression_from_context"
     ],
+    "signalTextHints": {
+      "defines_variable_meaning": [
+        "x means",
+        "the variable means",
+        "represents the number of",
+        "문자는",
+        "x는",
+        "나타내"
+      ],
+      "writes_matching_expression_from_context": [
+        "write the expression",
+        "the expression is",
+        "total is",
+        "식은",
+        "식으로",
+        "나타내면"
+      ]
+    },
+    "optionalTextHints": [
+      "variable",
+      "expression"
+    ],
     "sourceDocs": [
-      "docs\\u3-draft-learning-design-2026-04-02.md"
+      "docs/unit3-source-evidence-teaching-records-2026-04-03.md",
+      "docs/u3-draft-learning-design-2026-04-02.md"
     ]
   },
   {
     "lessonStepId": "STEP-U3-S2-READ-TERM-STRUCTURE",
-    "status": "draft-from-docs",
+    "status": "provisional",
     "requiredSignals": [
       "identifies_coefficient_or_constant_correctly",
       "distinguishes_like_terms_by_structure"
     ],
+    "signalTextHints": {
+      "identifies_coefficient_or_constant_correctly": [
+        "coefficient",
+        "constant term",
+        "the number in front",
+        "계수",
+        "상수항"
+      ],
+      "distinguishes_like_terms_by_structure": [
+        "like terms",
+        "same variable part",
+        "can combine",
+        "동류항",
+        "같은 문자"
+      ]
+    },
+    "optionalTextHints": [
+      "term",
+      "structure"
+    ],
     "sourceDocs": [
-      "docs\\u3-draft-learning-design-2026-04-02.md"
+      "docs/unit3-source-evidence-teaching-records-2026-04-03.md",
+      "docs/u3-draft-learning-design-2026-04-02.md"
     ]
   },
   {
     "lessonStepId": "STEP-U3-S3-SUBSTITUTE-WITH-STRUCTURE",
-    "status": "draft-from-docs",
+    "status": "provisional",
     "requiredSignals": [
       "substitutes_values_without_structure_loss",
       "keeps_sign_or_power_meaning_consistent"
     ],
+    "signalTextHints": {
+      "substitutes_values_without_structure_loss": [
+        "substitute",
+        "replace x with",
+        "write it first as",
+        "대입",
+        "넣으면"
+      ],
+      "keeps_sign_or_power_meaning_consistent": [
+        "keep the negative",
+        "the square still applies",
+        "parentheses stay",
+        "부호",
+        "제곱",
+        "괄호"
+      ]
+    },
+    "optionalTextHints": [
+      "structure",
+      "sign"
+    ],
     "sourceDocs": [
-      "docs\\u3-draft-learning-design-2026-04-02.md"
+      "docs/unit3-source-evidence-teaching-records-2026-04-03.md",
+      "docs/u3-draft-learning-design-2026-04-02.md"
     ]
   },
   {
     "lessonStepId": "STEP-U3-S4-COMBINE-LIKE-TERMS",
-    "status": "draft-from-docs",
+    "status": "provisional",
     "requiredSignals": [
       "distributes_or_removes_parentheses_correctly",
       "combines_only_like_terms"
     ],
+    "signalTextHints": {
+      "distributes_or_removes_parentheses_correctly": [
+        "distribute",
+        "remove the parentheses",
+        "change the sign inside",
+        "분배",
+        "괄호를 풀",
+        "부호를 바꿔"
+      ],
+      "combines_only_like_terms": [
+        "like terms",
+        "same variable part",
+        "cannot combine",
+        "동류항",
+        "같은 항"
+      ]
+    },
+    "optionalTextHints": [
+      "parentheses",
+      "combine"
+    ],
     "sourceDocs": [
-      "docs\\u3-draft-learning-design-2026-04-02.md"
+      "docs/unit3-source-evidence-teaching-records-2026-04-03.md",
+      "docs/u3-draft-learning-design-2026-04-02.md"
     ]
   },
   {
     "lessonStepId": "STEP-U3-S5-MODEL-THEN-SIMPLIFY",
-    "status": "draft-from-docs",
+    "status": "provisional",
     "requiredSignals": [
       "builds_expression_from_context_relationship",
       "simplifies_context_expression_consistently"
     ],
+    "signalTextHints": {
+      "builds_expression_from_context_relationship": [
+        "the relationship is",
+        "write the situation as",
+        "expression from the story",
+        "상황을 식으로",
+        "관계를 식으로"
+      ],
+      "simplifies_context_expression_consistently": [
+        "then simplify",
+        "combine the like terms",
+        "clean final expression",
+        "간단히",
+        "정리하면"
+      ]
+    },
+    "optionalTextHints": [
+      "context",
+      "model"
+    ],
     "sourceDocs": [
-      "docs\\u3-draft-learning-design-2026-04-02.md"
+      "docs/unit3-source-evidence-teaching-records-2026-04-03.md",
+      "docs/u3-draft-learning-design-2026-04-02.md"
     ]
   }
 ]

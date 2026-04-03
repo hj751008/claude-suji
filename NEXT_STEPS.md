@@ -30,8 +30,8 @@
 
 <!-- UNIT:U3 START -->
 ### U3 `unit3-scaffold`
-1. Current stage: `draft-records-generated`.
-2. Review generated drafts, then decide on prerequisites/runtime/harness work.
+1. Current stage: `source-backed-provisional`.
+2. Source-backed provisional records exist. Decide whether runtime wiring, transcript fixtures, and harness coverage should be added next.
 3. Run `python app/cli.py validate-content` after the next meaningful content change.
 <!-- UNIT:U3 END -->
 <!-- AUTO-MANAGED-UNIT-ACTIONS END -->

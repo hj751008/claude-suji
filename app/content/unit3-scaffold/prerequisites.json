@@ -1,1 +1,22 @@
-[]
+[
+  {
+    "prerequisiteSkillId": "U3-S1",
+    "targetSkillId": "U3-S5",
+    "relationship": "HELPFUL",
+    "approvalStatus": "provisional",
+    "sourceDocs": [
+      "docs/prerequisite-map.md",
+      "docs/unit3-source-evidence-prerequisites-2026-04-03.md"
+    ]
+  },
+  {
+    "prerequisiteSkillId": "U3-S2",
+    "targetSkillId": "U3-S4",
+    "relationship": "HELPFUL",
+    "approvalStatus": "provisional",
+    "sourceDocs": [
+      "docs/prerequisite-map.md",
+      "docs/unit3-source-evidence-prerequisites-2026-04-03.md"
+    ]
+  }
+]

@@ -1,52 +1,52 @@
 [
   {
     "id": "U3-S1",
-    "status": "draft-from-docs",
+    "status": "provisional",
     "title": "Use variables to represent quantities and simple relationships",
-    "summary": "Draft U3-S1 skill extracted from the source includes direct tasks on writing expressions for averages,.",
+    "summary": "Unit 3 variable-writing skill grounded in source-backed tasks on averages, prices, concentration, pattern rules, and quantity relationships.",
     "sourceDocs": [
-      "docs\\u3-source-note-2026-04-02.md",
-      "docs\\u3-subskills-unit3-scaffold-2026-04-02.md"
+      "docs/mastery-rules.md",
+      "docs/unit3-source-evidence-skills-2026-04-03.md"
     ]
   },
   {
     "id": "U3-S2",
-    "status": "draft-from-docs",
+    "status": "provisional",
     "title": "Read the structure of algebraic expressions",
-    "summary": "Draft U3-S2 skill extracted from the source includes direct questions about coefficients, constant terms,.",
+    "summary": "Unit 3 structure-reading skill grounded in source-backed questions about coefficients, constant terms, term counts, and like terms.",
     "sourceDocs": [
-      "docs\\u3-source-note-2026-04-02.md",
-      "docs\\u3-subskills-unit3-scaffold-2026-04-02.md"
+      "docs/mastery-rules.md",
+      "docs/unit3-source-evidence-skills-2026-04-03.md"
     ]
   },
   {
     "id": "U3-S3",
-    "status": "draft-from-docs",
+    "status": "provisional",
     "title": "Evaluate algebraic expressions by substitution",
-    "summary": "Draft U3-S3 skill extracted from the source includes substitution with signed numbers, fractions, powers,.",
+    "summary": "Unit 3 substitution skill grounded in source-backed evaluation tasks with signed numbers, fractions, powers, reciprocals, and grouping.",
     "sourceDocs": [
-      "docs\\u3-source-note-2026-04-02.md",
-      "docs\\u3-subskills-unit3-scaffold-2026-04-02.md"
+      "docs/mastery-rules.md",
+      "docs/unit3-source-evidence-skills-2026-04-03.md"
     ]
   },
   {
     "id": "U3-S4",
-    "status": "draft-from-docs",
+    "status": "provisional",
     "title": "Simplify linear expressions with variables",
-    "summary": "Draft U3-S4 skill extracted from the source includes removing operation symbols, using parentheses.",
+    "summary": "Unit 3 simplification skill grounded in source-backed tasks on parentheses, distributive structure, omitted operation symbols, and like-term combination.",
     "sourceDocs": [
-      "docs\\u3-source-note-2026-04-02.md",
-      "docs\\u3-subskills-unit3-scaffold-2026-04-02.md"
+      "docs/mastery-rules.md",
+      "docs/unit3-source-evidence-skills-2026-04-03.md"
     ]
   },
   {
     "id": "U3-S5",
-    "status": "draft-from-docs",
+    "status": "provisional",
     "title": "Model and simplify contextual expressions",
-    "summary": "Draft U3-S5 skill extracted from the source includes geometry, ratio, pattern, and word-problem situations.",
+    "summary": "Unit 3 contextual-modeling skill grounded in source-backed geometry, ratio, pattern, and word-problem expression tasks.",
     "sourceDocs": [
-      "docs\\u3-source-note-2026-04-02.md",
-      "docs\\u3-subskills-unit3-scaffold-2026-04-02.md"
+      "docs/mastery-rules.md",
+      "docs/unit3-source-evidence-skills-2026-04-03.md"
     ]
   }
 ]

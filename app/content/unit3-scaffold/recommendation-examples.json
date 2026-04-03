@@ -1,57 +1,57 @@
 [
   {
-    "when": "Recommend when the learner can describe a situation verbally but cannot",
+    "when": "Recommend when the learner can describe a situation verbally but cannot assign a variable meaning or write the matching expression.",
     "recommend": "U3-S1",
     "confidence": "limited",
     "needsReview": true,
-    "operatorNote": "keep the discussion on what each symbol stands for before simplifying",
+    "operatorNote": "Keep the discussion on what each symbol stands for before any simplification or substitution.",
     "sourceDocs": [
-      "docs\\u3-subskills-unit3-scaffold-2026-04-02.md",
-      "docs\\u3-draft-learning-design-2026-04-02.md"
+      "docs/unit3-source-evidence-teaching-records-2026-04-03.md",
+      "docs/u3-draft-learning-design-2026-04-02.md"
     ]
   },
   {
-    "when": "Recommend when the learner can copy an expression but cannot identify",
+    "when": "Recommend when the learner can copy an expression but cannot identify coefficient, constant term, or like terms reliably.",
     "recommend": "U3-S2",
     "confidence": "limited",
     "needsReview": true,
-    "operatorNote": "make the learner read each term aloud by role, not only by symbol",
+    "operatorNote": "Make the learner read each term aloud by role, not only by symbol shape.",
     "sourceDocs": [
-      "docs\\u3-subskills-unit3-scaffold-2026-04-02.md",
-      "docs\\u3-draft-learning-design-2026-04-02.md"
+      "docs/unit3-source-evidence-teaching-records-2026-04-03.md",
+      "docs/u3-draft-learning-design-2026-04-02.md"
     ]
   },
   {
-    "when": "Recommend when the learner substitutes values mechanically and loses sign,",
+    "when": "Recommend when the learner substitutes values mechanically and loses sign, exponent, reciprocal, or grouping structure.",
     "recommend": "U3-S3",
     "confidence": "limited",
     "needsReview": true,
-    "operatorNote": "separate substitution from simplification and check sign first",
+    "operatorNote": "Separate substitution from simplification and check the protected structure first.",
     "sourceDocs": [
-      "docs\\u3-subskills-unit3-scaffold-2026-04-02.md",
-      "docs\\u3-draft-learning-design-2026-04-02.md"
+      "docs/unit3-source-evidence-teaching-records-2026-04-03.md",
+      "docs/u3-draft-learning-design-2026-04-02.md"
     ]
   },
   {
-    "when": "Recommend when the learner can start simplification but drops parentheses,",
+    "when": "Recommend when the learner can start simplification but drops parentheses, distributes incorrectly, or combines unlike terms.",
     "recommend": "U3-S4",
     "confidence": "limited",
     "needsReview": true,
-    "operatorNote": "slow down structure changes before collecting terms",
+    "operatorNote": "Slow down structure changes before collecting terms into a final line.",
     "sourceDocs": [
-      "docs\\u3-subskills-unit3-scaffold-2026-04-02.md",
-      "docs\\u3-draft-learning-design-2026-04-02.md"
+      "docs/unit3-source-evidence-teaching-records-2026-04-03.md",
+      "docs/u3-draft-learning-design-2026-04-02.md"
     ]
   },
   {
-    "when": "Recommend when the learner can simplify a naked expression but cannot build",
+    "when": "Recommend when the learner can simplify a naked expression but cannot build the correct expression from a geometry, ratio, or story context.",
     "recommend": "U3-S5",
     "confidence": "limited",
     "needsReview": true,
-    "operatorNote": "translate the situation into named quantities first, then simplify",
+    "operatorNote": "Translate the situation into named quantities first, then simplify only after the relationship is correct.",
     "sourceDocs": [
-      "docs\\u3-subskills-unit3-scaffold-2026-04-02.md",
-      "docs\\u3-draft-learning-design-2026-04-02.md"
+      "docs/unit3-source-evidence-teaching-records-2026-04-03.md",
+      "docs/u3-draft-learning-design-2026-04-02.md"
     ]
   }
 ]

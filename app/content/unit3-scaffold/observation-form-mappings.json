@@ -1,9 +1,9 @@
 [
   {
     "lessonStepId": "STEP-U3-S1-DEFINE-VARIABLE-ROLE",
-    "status": "draft-from-docs",
-    "learnerResponsePrompt": "Write how the learner named the quantity each variable represents and.",
-    "tutorNotePrompt": "Note whether the learner named the quantity each variable represents and.",
+    "status": "provisional",
+    "learnerResponsePrompt": "Write how the learner named the quantity the variable represents and how they wrote the matching expression.",
+    "tutorNotePrompt": "Note whether the learner defined the variable clearly before writing the expression from the context.",
     "fields": [
       {
         "fieldId": "defines_variable_meaning",
@@ -21,14 +21,15 @@
       }
     ],
     "sourceDocs": [
-      "docs\\u3-draft-learning-design-2026-04-02.md"
+      "docs/unit3-source-evidence-teaching-records-2026-04-03.md",
+      "docs/u3-draft-learning-design-2026-04-02.md"
     ]
   },
   {
     "lessonStepId": "STEP-U3-S2-READ-TERM-STRUCTURE",
-    "status": "draft-from-docs",
-    "learnerResponsePrompt": "Write how the learner identified coefficient or constant term correctly.",
-    "tutorNotePrompt": "Note whether the learner identified coefficient or constant term correctly.",
+    "status": "provisional",
+    "learnerResponsePrompt": "Write how the learner identified the coefficient, constant term, and like terms in the expression.",
+    "tutorNotePrompt": "Note whether the learner read term roles correctly before trying to simplify the expression.",
     "fields": [
       {
         "fieldId": "identifies_coefficient_or_constant_correctly",
@@ -46,14 +47,15 @@
       }
     ],
     "sourceDocs": [
-      "docs\\u3-draft-learning-design-2026-04-02.md"
+      "docs/unit3-source-evidence-teaching-records-2026-04-03.md",
+      "docs/u3-draft-learning-design-2026-04-02.md"
     ]
   },
   {
     "lessonStepId": "STEP-U3-S3-SUBSTITUTE-WITH-STRUCTURE",
-    "status": "draft-from-docs",
-    "learnerResponsePrompt": "Write how the learner preserved sign, exponent, reciprocal, and.",
-    "tutorNotePrompt": "Note whether the learner preserved sign, exponent, reciprocal, and.",
+    "status": "provisional",
+    "learnerResponsePrompt": "Write how the learner substituted the values and whether they preserved sign, power, reciprocal, and grouping structure.",
+    "tutorNotePrompt": "Note whether the learner rewrote the substituted expression clearly before simplifying it.",
     "fields": [
       {
         "fieldId": "substitutes_values_without_structure_loss",
@@ -71,14 +73,15 @@
       }
     ],
     "sourceDocs": [
-      "docs\\u3-draft-learning-design-2026-04-02.md"
+      "docs/unit3-source-evidence-teaching-records-2026-04-03.md",
+      "docs/u3-draft-learning-design-2026-04-02.md"
     ]
   },
   {
     "lessonStepId": "STEP-U3-S4-COMBINE-LIKE-TERMS",
-    "status": "draft-from-docs",
-    "learnerResponsePrompt": "Write how the learner removed parentheses safely and combined only like.",
-    "tutorNotePrompt": "Note whether the learner removed parentheses safely and combined only like.",
+    "status": "provisional",
+    "learnerResponsePrompt": "Write how the learner removed parentheses, tracked the outside sign or factor, and combined only like terms.",
+    "tutorNotePrompt": "Note whether the learner changed the structure safely before collecting terms.",
     "fields": [
       {
         "fieldId": "distributes_or_removes_parentheses_correctly",
@@ -96,14 +99,15 @@
       }
     ],
     "sourceDocs": [
-      "docs\\u3-draft-learning-design-2026-04-02.md"
+      "docs/unit3-source-evidence-teaching-records-2026-04-03.md",
+      "docs/u3-draft-learning-design-2026-04-02.md"
     ]
   },
   {
     "lessonStepId": "STEP-U3-S5-MODEL-THEN-SIMPLIFY",
-    "status": "draft-from-docs",
-    "learnerResponsePrompt": "Write how the learner built the expression from the situation first and.",
-    "tutorNotePrompt": "Note whether the learner built the expression from the situation first and.",
+    "status": "provisional",
+    "learnerResponsePrompt": "Write how the learner built the expression from the situation and how they simplified it afterward.",
+    "tutorNotePrompt": "Note whether the learner matched the relationship in the story before simplifying the expression.",
     "fields": [
       {
         "fieldId": "builds_expression_from_context_relationship",
@@ -121,7 +125,8 @@
       }
     ],
     "sourceDocs": [
-      "docs\\u3-draft-learning-design-2026-04-02.md"
+      "docs/unit3-source-evidence-teaching-records-2026-04-03.md",
+      "docs/u3-draft-learning-design-2026-04-02.md"
     ]
   }
 ]
