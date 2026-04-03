@@ -9,6 +9,12 @@
 - Each step now has:
   - one confirmed completion fixture
   - one uncertain or follow-up fixture
+- `U3-S2` now also has an additional notes-only completion fixture where the
+  learner explanation is strong enough to justify completion even when the
+  operator leaves the checkboxes blank.
+- Equivalent notes-only completion is still not approved for `U3-S4` or
+  `U3-S5`; those blocker-first steps still rely on explicit observation
+  signals for completion.
 
 ## Source Basis
 
@@ -35,10 +41,14 @@
 - Lesson step: `STEP-U3-S2-READ-TERM-STRUCTURE`
 - Confirmed replay fixture:
   `u3-s2-read-term-structure-ko-text-only-active-session`
+- Notes-only completion fixture:
+  `u3-s2-read-term-structure-ko-notes-only-completion`
 - Uncertain replay fixture:
   `u3-s2-read-term-structure-role-swap-ko-uncertain`
 - Coverage:
   - learner identifies coefficient and constant term in words
+  - notes-only completion still distinguishes coefficient, constant term, and
+    like terms in operator free text
   - uncertain case swaps coefficient and constant roles and over-groups terms
 
 ### Substitute while preserving sign and grouping
@@ -61,6 +71,8 @@
   `u3-s4-combine-like-terms-distribution-slip-ko-uncertain`
 - Coverage:
   - learner rewrites the expression one line at a time
+  - completion still relies on explicit observation signals for safe
+    blocker-first replay behavior
   - uncertain case misses part of the distribution and then combines badly
 - Current replay note:
   - completion on `U3-S4` currently replans the next session as
@@ -75,6 +87,8 @@
   `u3-s5-model-then-simplify-operation-mismatch-ko-uncertain`
 - Coverage:
   - learner names the quantities and relationship before simplifying
+  - completion still relies on explicit observation signals for safe
+    blocker-first replay behavior
   - uncertain case notices quantities but misses the story relationship
 - Current replay note:
   - completion on `U3-S5` currently replans the next session as
@@ -83,7 +97,8 @@
 ## Current Limit
 
 - These fixtures are still one-turn examples, not multi-turn transcripts.
-- They are strong enough for current CLI replay and harness coverage, but not
-  for broader operator-flow realism claims.
+- They are strong enough for current CLI replay and harness coverage, including
+  a narrow notes-only completion path for `U3-S2`, but not for broader
+  operator-flow realism claims.
 - Additional replay-ready Unit 3 transcript examples can still be added later if
   operator UI QA or session-orchestrator coverage needs stronger evidence.

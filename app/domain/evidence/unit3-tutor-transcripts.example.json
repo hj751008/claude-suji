@@ -104,14 +104,14 @@
             "text": "3과 -2가 계수이고 5가 상수항이야. 3x와 -2x는 같은 문자 x가 있어서 동류항이야."
           }
         ],
-        "operatorNote": "튜터가 체크박스는 비워 두고 구조 읽기 설명만 남겼다.",
+        "operatorNote": "튜터가 계수, 상수항, 동류항 판단을 둘 다 확인해 체크했다.",
         "observationFormInput": {
           "learnerResponse": "3과 -2가 계수이고 5가 상수항이야. 3x와 -2x는 같은 문자 x가 있어서 동류항이야.",
           "fieldValues": {
-            "identifies_coefficient_or_constant_correctly": false,
-            "distinguishes_like_terms_by_structure": false
+            "identifies_coefficient_or_constant_correctly": true,
+            "distinguishes_like_terms_by_structure": true
           },
-          "tutorNote": "튜터가 체크박스는 비워 두고 구조 읽기 설명만 남겼다.",
+          "tutorNote": "튜터가 계수, 상수항, 동류항 판단을 둘 다 확인해 체크했다.",
           "timestamp": "2026-04-03T16:10:00+09:00"
         }
       }
@@ -155,11 +155,52 @@
           "timestamp": "2026-04-03T18:07:00+09:00"
         }
       }
-    ]
-  },
-  {
-    "transcriptId": "u3-s3-substitute-with-structure-ko-text-only-active-session",
-    "name": "Unit 3 substitution log with confirmed observation signals",
+      ]
+    },
+    {
+      "transcriptId": "u3-s2-read-term-structure-ko-notes-only-completion",
+      "name": "Unit 3 structure-reading log with notes-only completion evidence",
+      "skillId": "U3-S2",
+      "tags": [
+        "unit3",
+        "structure",
+        "ko",
+        "text-only",
+        "active",
+        "notes-only",
+        "completed"
+      ],
+      "learnerFile": "app/domain/evidence/learner-record-with-active-session-u3-s2.example.json",
+      "turns": [
+        {
+          "turnIndex": 1,
+          "lessonStepId": "STEP-U3-S2-READ-TERM-STRUCTURE",
+          "messages": [
+            {
+              "speaker": "tutor",
+              "text": "4a - 7 + 2a에서 계수, 상수항, 동류항을 설명해 볼래?"
+            },
+            {
+              "speaker": "learner",
+              "text": "4와 2가 a의 계수이고 -7은 상수항이야. 4a와 2a는 문자가 같아서 동류항이고 -7은 따로 봐야 해."
+            }
+          ],
+          "operatorNote": "튜터가 체크박스는 비워 두었지만 구조 역할을 정확히 설명하는 발화를 완료 증거로 남겼다.",
+          "observationFormInput": {
+            "learnerResponse": "4와 2가 a의 계수이고 -7은 상수항이야. 4a와 2a는 문자가 같아서 동류항이고 -7은 따로 봐야 해.",
+            "fieldValues": {
+              "identifies_coefficient_or_constant_correctly": false,
+              "distinguishes_like_terms_by_structure": false
+            },
+            "tutorNote": "튜터가 체크박스는 비워 두었지만 구조 역할을 정확히 설명하는 발화를 완료 증거로 남겼다.",
+            "timestamp": "2026-04-03T21:05:00+09:00"
+          }
+        }
+      ]
+    },
+    {
+      "transcriptId": "u3-s3-substitute-with-structure-ko-text-only-active-session",
+      "name": "Unit 3 substitution log with confirmed observation signals",
     "skillId": "U3-S3",
     "tags": [
       "unit3",
@@ -313,11 +354,11 @@
           "timestamp": "2026-04-03T18:11:00+09:00"
         }
       }
-    ]
-  },
-  {
-    "transcriptId": "u3-s5-model-then-simplify-ko-text-only-active-session",
-    "name": "Unit 3 contextual-modeling log with confirmed observation signals",
+      ]
+    },
+    {
+      "transcriptId": "u3-s5-model-then-simplify-ko-text-only-active-session",
+      "name": "Unit 3 contextual-modeling log with confirmed observation signals",
     "skillId": "U3-S5",
     "tags": [
       "unit3",
@@ -352,11 +393,11 @@
           "timestamp": "2026-04-03T18:12:00+09:00"
         }
       }
-    ]
-  },
-  {
-    "transcriptId": "u3-s5-model-then-simplify-operation-mismatch-ko-uncertain",
-    "name": "Unit 3 contextual-modeling log that picks the wrong relationship from the story",
+      ]
+    },
+    {
+      "transcriptId": "u3-s5-model-then-simplify-operation-mismatch-ko-uncertain",
+      "name": "Unit 3 contextual-modeling log that picks the wrong relationship from the story",
     "skillId": "U3-S5",
     "tags": [
       "unit3",
