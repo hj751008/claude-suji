@@ -27,4 +27,11 @@
 2. Review transcript-evidence and harness follow-up work for Unit 2.
 3. Run `python app/cli.py validate-content` after the next meaningful content change.
 <!-- UNIT:U2 END -->
+
+<!-- UNIT:U3 START -->
+### U3 `unit3-scaffold`
+1. Current stage: `draft-records-generated`.
+2. Review generated drafts, then decide on prerequisites/runtime/harness work.
+3. Run `python app/cli.py validate-content` after the next meaningful content change.
+<!-- UNIT:U3 END -->
 <!-- AUTO-MANAGED-UNIT-ACTIONS END -->

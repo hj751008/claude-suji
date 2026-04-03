@@ -1,0 +1,97 @@
+[
+  {
+    "lessonStepId": "STEP-U3-S1-DEFINE-VARIABLE-ROLE",
+    "activityId": "ACT-U3-S1-DEFINE-VARIABLE-ROLE",
+    "status": "draft-from-docs",
+    "openingLine": "ask what each variable stands for before writing the relationship",
+    "firstTutorQuestion": "Replace with the first tutor question.",
+    "smallHint": "Replace with a source-backed small hint.",
+    "goodStoppingPoint": "learner names the quantity and writes a matching simple expression",
+    "watchFor": [
+      "Learner uses the same variable for different quantities or does not define",
+      "Learner writes a number-only answer where the task still asks for an"
+    ],
+    "exampleTutorMove": "ask what each variable stands for before writing the relationship",
+    "exampleLearnerResponse": "Replace with a source-backed learner response.",
+    "sourceDocs": [
+      "docs\\u3-subskills-unit3-scaffold-2026-04-02.md",
+      "docs\\u3-draft-learning-design-2026-04-02.md"
+    ]
+  },
+  {
+    "lessonStepId": "STEP-U3-S2-READ-TERM-STRUCTURE",
+    "activityId": "ACT-U3-S2-READ-TERM-STRUCTURE",
+    "status": "draft-from-docs",
+    "openingLine": "read coefficient, variable part, and constant term separately before asking",
+    "firstTutorQuestion": "Replace with the first tutor question.",
+    "smallHint": "Replace with a source-backed small hint.",
+    "goodStoppingPoint": "learner identifies coefficient, constant term, and like terms without",
+    "watchFor": [
+      "Learner confuses coefficient with term count or constant term.",
+      "Learner treats terms of different degree or different variables as like terms."
+    ],
+    "exampleTutorMove": "read coefficient, variable part, and constant term separately before asking",
+    "exampleLearnerResponse": "Replace with a source-backed learner response.",
+    "sourceDocs": [
+      "docs\\u3-subskills-unit3-scaffold-2026-04-02.md",
+      "docs\\u3-draft-learning-design-2026-04-02.md"
+    ]
+  },
+  {
+    "lessonStepId": "STEP-U3-S3-SUBSTITUTE-WITH-STRUCTURE",
+    "activityId": "ACT-U3-S3-SUBSTITUTE-WITH-STRUCTURE",
+    "status": "draft-from-docs",
+    "openingLine": "substitute first, then hold sign and grouping structure while computing",
+    "firstTutorQuestion": "Replace with the first tutor question.",
+    "smallHint": "Replace with a source-backed small hint.",
+    "goodStoppingPoint": "learner evaluates a substituted expression without losing sign or power",
+    "watchFor": [
+      "Learner substitutes correctly but loses a negative sign, reciprocal, or power",
+      "Learner treats `x = 1` style evaluation as if the expression can be reordered"
+    ],
+    "exampleTutorMove": "substitute first, then hold sign and grouping structure while computing",
+    "exampleLearnerResponse": "Replace with a source-backed learner response.",
+    "sourceDocs": [
+      "docs\\u3-subskills-unit3-scaffold-2026-04-02.md",
+      "docs\\u3-draft-learning-design-2026-04-02.md"
+    ]
+  },
+  {
+    "lessonStepId": "STEP-U3-S4-COMBINE-LIKE-TERMS",
+    "activityId": "ACT-U3-S4-COMBINE-LIKE-TERMS",
+    "status": "draft-from-docs",
+    "openingLine": "remove parentheses carefully, then collect only like terms",
+    "firstTutorQuestion": "Replace with the first tutor question.",
+    "smallHint": "Replace with a source-backed small hint.",
+    "goodStoppingPoint": "learner simplifies a linear expression and can explain why unlike terms did",
+    "watchFor": [
+      "Learner removes parentheses without tracking the outer sign or factor.",
+      "Learner combines unlike terms or changes the coefficient while collecting"
+    ],
+    "exampleTutorMove": "remove parentheses carefully, then collect only like terms",
+    "exampleLearnerResponse": "Replace with a source-backed learner response.",
+    "sourceDocs": [
+      "docs\\u3-subskills-unit3-scaffold-2026-04-02.md",
+      "docs\\u3-draft-learning-design-2026-04-02.md"
+    ]
+  },
+  {
+    "lessonStepId": "STEP-U3-S5-MODEL-THEN-SIMPLIFY",
+    "activityId": "ACT-U3-S5-MODEL-THEN-SIMPLIFY",
+    "status": "draft-from-docs",
+    "openingLine": "translate the context into an expression before any arithmetic",
+    "firstTutorQuestion": "Replace with the first tutor question.",
+    "smallHint": "Replace with a source-backed small hint.",
+    "goodStoppingPoint": "learner writes a context-matching expression and simplifies it into a clean",
+    "watchFor": [
+      "Learner chooses the right quantities but writes the wrong operation",
+      "Learner can build the first expression but cannot simplify it into a usable"
+    ],
+    "exampleTutorMove": "translate the context into an expression before any arithmetic",
+    "exampleLearnerResponse": "Replace with a source-backed learner response.",
+    "sourceDocs": [
+      "docs\\u3-subskills-unit3-scaffold-2026-04-02.md",
+      "docs\\u3-draft-learning-design-2026-04-02.md"
+    ]
+  }
+]

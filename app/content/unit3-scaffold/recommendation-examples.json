@@ -1,0 +1,57 @@
+[
+  {
+    "when": "Recommend when the learner can describe a situation verbally but cannot",
+    "recommend": "U3-S1",
+    "confidence": "limited",
+    "needsReview": true,
+    "operatorNote": "keep the discussion on what each symbol stands for before simplifying",
+    "sourceDocs": [
+      "docs\\u3-subskills-unit3-scaffold-2026-04-02.md",
+      "docs\\u3-draft-learning-design-2026-04-02.md"
+    ]
+  },
+  {
+    "when": "Recommend when the learner can copy an expression but cannot identify",
+    "recommend": "U3-S2",
+    "confidence": "limited",
+    "needsReview": true,
+    "operatorNote": "make the learner read each term aloud by role, not only by symbol",
+    "sourceDocs": [
+      "docs\\u3-subskills-unit3-scaffold-2026-04-02.md",
+      "docs\\u3-draft-learning-design-2026-04-02.md"
+    ]
+  },
+  {
+    "when": "Recommend when the learner substitutes values mechanically and loses sign,",
+    "recommend": "U3-S3",
+    "confidence": "limited",
+    "needsReview": true,
+    "operatorNote": "separate substitution from simplification and check sign first",
+    "sourceDocs": [
+      "docs\\u3-subskills-unit3-scaffold-2026-04-02.md",
+      "docs\\u3-draft-learning-design-2026-04-02.md"
+    ]
+  },
+  {
+    "when": "Recommend when the learner can start simplification but drops parentheses,",
+    "recommend": "U3-S4",
+    "confidence": "limited",
+    "needsReview": true,
+    "operatorNote": "slow down structure changes before collecting terms",
+    "sourceDocs": [
+      "docs\\u3-subskills-unit3-scaffold-2026-04-02.md",
+      "docs\\u3-draft-learning-design-2026-04-02.md"
+    ]
+  },
+  {
+    "when": "Recommend when the learner can simplify a naked expression but cannot build",
+    "recommend": "U3-S5",
+    "confidence": "limited",
+    "needsReview": true,
+    "operatorNote": "translate the situation into named quantities first, then simplify",
+    "sourceDocs": [
+      "docs\\u3-subskills-unit3-scaffold-2026-04-02.md",
+      "docs\\u3-draft-learning-design-2026-04-02.md"
+    ]
+  }
+]

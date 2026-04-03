@@ -1,0 +1,52 @@
+[
+  {
+    "id": "U3-S1",
+    "status": "draft-from-docs",
+    "title": "Use variables to represent quantities and simple relationships",
+    "summary": "Draft U3-S1 skill extracted from the source includes direct tasks on writing expressions for averages,.",
+    "sourceDocs": [
+      "docs\\u3-source-note-2026-04-02.md",
+      "docs\\u3-subskills-unit3-scaffold-2026-04-02.md"
+    ]
+  },
+  {
+    "id": "U3-S2",
+    "status": "draft-from-docs",
+    "title": "Read the structure of algebraic expressions",
+    "summary": "Draft U3-S2 skill extracted from the source includes direct questions about coefficients, constant terms,.",
+    "sourceDocs": [
+      "docs\\u3-source-note-2026-04-02.md",
+      "docs\\u3-subskills-unit3-scaffold-2026-04-02.md"
+    ]
+  },
+  {
+    "id": "U3-S3",
+    "status": "draft-from-docs",
+    "title": "Evaluate algebraic expressions by substitution",
+    "summary": "Draft U3-S3 skill extracted from the source includes substitution with signed numbers, fractions, powers,.",
+    "sourceDocs": [
+      "docs\\u3-source-note-2026-04-02.md",
+      "docs\\u3-subskills-unit3-scaffold-2026-04-02.md"
+    ]
+  },
+  {
+    "id": "U3-S4",
+    "status": "draft-from-docs",
+    "title": "Simplify linear expressions with variables",
+    "summary": "Draft U3-S4 skill extracted from the source includes removing operation symbols, using parentheses.",
+    "sourceDocs": [
+      "docs\\u3-source-note-2026-04-02.md",
+      "docs\\u3-subskills-unit3-scaffold-2026-04-02.md"
+    ]
+  },
+  {
+    "id": "U3-S5",
+    "status": "draft-from-docs",
+    "title": "Model and simplify contextual expressions",
+    "summary": "Draft U3-S5 skill extracted from the source includes geometry, ratio, pattern, and word-problem situations.",
+    "sourceDocs": [
+      "docs\\u3-source-note-2026-04-02.md",
+      "docs\\u3-subskills-unit3-scaffold-2026-04-02.md"
+    ]
+  }
+]

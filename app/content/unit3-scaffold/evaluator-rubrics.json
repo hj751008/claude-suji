@@ -1,0 +1,57 @@
+[
+  {
+    "lessonStepId": "STEP-U3-S1-DEFINE-VARIABLE-ROLE",
+    "status": "draft-from-docs",
+    "requiredSignals": [
+      "defines_variable_meaning",
+      "writes_matching_expression_from_context"
+    ],
+    "sourceDocs": [
+      "docs\\u3-draft-learning-design-2026-04-02.md"
+    ]
+  },
+  {
+    "lessonStepId": "STEP-U3-S2-READ-TERM-STRUCTURE",
+    "status": "draft-from-docs",
+    "requiredSignals": [
+      "identifies_coefficient_or_constant_correctly",
+      "distinguishes_like_terms_by_structure"
+    ],
+    "sourceDocs": [
+      "docs\\u3-draft-learning-design-2026-04-02.md"
+    ]
+  },
+  {
+    "lessonStepId": "STEP-U3-S3-SUBSTITUTE-WITH-STRUCTURE",
+    "status": "draft-from-docs",
+    "requiredSignals": [
+      "substitutes_values_without_structure_loss",
+      "keeps_sign_or_power_meaning_consistent"
+    ],
+    "sourceDocs": [
+      "docs\\u3-draft-learning-design-2026-04-02.md"
+    ]
+  },
+  {
+    "lessonStepId": "STEP-U3-S4-COMBINE-LIKE-TERMS",
+    "status": "draft-from-docs",
+    "requiredSignals": [
+      "distributes_or_removes_parentheses_correctly",
+      "combines_only_like_terms"
+    ],
+    "sourceDocs": [
+      "docs\\u3-draft-learning-design-2026-04-02.md"
+    ]
+  },
+  {
+    "lessonStepId": "STEP-U3-S5-MODEL-THEN-SIMPLIFY",
+    "status": "draft-from-docs",
+    "requiredSignals": [
+      "builds_expression_from_context_relationship",
+      "simplifies_context_expression_consistently"
+    ],
+    "sourceDocs": [
+      "docs\\u3-draft-learning-design-2026-04-02.md"
+    ]
+  }
+]

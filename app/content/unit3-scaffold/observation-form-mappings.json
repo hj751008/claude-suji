@@ -1,0 +1,127 @@
+[
+  {
+    "lessonStepId": "STEP-U3-S1-DEFINE-VARIABLE-ROLE",
+    "status": "draft-from-docs",
+    "learnerResponsePrompt": "Write how the learner named the quantity each variable represents and.",
+    "tutorNotePrompt": "Note whether the learner named the quantity each variable represents and.",
+    "fields": [
+      {
+        "fieldId": "defines_variable_meaning",
+        "signalOnTrue": "defines_variable_meaning",
+        "label": "Defines variable meaning",
+        "prompt": "Did the learner show evidence for defines variable meaning?",
+        "trueMeans": "The learner showed evidence for defines variable meaning."
+      },
+      {
+        "fieldId": "writes_matching_expression_from_context",
+        "signalOnTrue": "writes_matching_expression_from_context",
+        "label": "Writes matching expression from context",
+        "prompt": "Did the learner show evidence for writes matching expression from context?",
+        "trueMeans": "The learner showed evidence for writes matching expression from context."
+      }
+    ],
+    "sourceDocs": [
+      "docs\\u3-draft-learning-design-2026-04-02.md"
+    ]
+  },
+  {
+    "lessonStepId": "STEP-U3-S2-READ-TERM-STRUCTURE",
+    "status": "draft-from-docs",
+    "learnerResponsePrompt": "Write how the learner identified coefficient or constant term correctly.",
+    "tutorNotePrompt": "Note whether the learner identified coefficient or constant term correctly.",
+    "fields": [
+      {
+        "fieldId": "identifies_coefficient_or_constant_correctly",
+        "signalOnTrue": "identifies_coefficient_or_constant_correctly",
+        "label": "Identifies coefficient or constant correctly",
+        "prompt": "Did the learner show evidence for identifies coefficient or constant correctly?",
+        "trueMeans": "The learner showed evidence for identifies coefficient or constant correctly."
+      },
+      {
+        "fieldId": "distinguishes_like_terms_by_structure",
+        "signalOnTrue": "distinguishes_like_terms_by_structure",
+        "label": "Distinguishes like terms by structure",
+        "prompt": "Did the learner show evidence for distinguishes like terms by structure?",
+        "trueMeans": "The learner showed evidence for distinguishes like terms by structure."
+      }
+    ],
+    "sourceDocs": [
+      "docs\\u3-draft-learning-design-2026-04-02.md"
+    ]
+  },
+  {
+    "lessonStepId": "STEP-U3-S3-SUBSTITUTE-WITH-STRUCTURE",
+    "status": "draft-from-docs",
+    "learnerResponsePrompt": "Write how the learner preserved sign, exponent, reciprocal, and.",
+    "tutorNotePrompt": "Note whether the learner preserved sign, exponent, reciprocal, and.",
+    "fields": [
+      {
+        "fieldId": "substitutes_values_without_structure_loss",
+        "signalOnTrue": "substitutes_values_without_structure_loss",
+        "label": "Substitutes values without structure loss",
+        "prompt": "Did the learner show evidence for substitutes values without structure loss?",
+        "trueMeans": "The learner showed evidence for substitutes values without structure loss."
+      },
+      {
+        "fieldId": "keeps_sign_or_power_meaning_consistent",
+        "signalOnTrue": "keeps_sign_or_power_meaning_consistent",
+        "label": "Keeps sign or power meaning consistent",
+        "prompt": "Did the learner show evidence for keeps sign or power meaning consistent?",
+        "trueMeans": "The learner showed evidence for keeps sign or power meaning consistent."
+      }
+    ],
+    "sourceDocs": [
+      "docs\\u3-draft-learning-design-2026-04-02.md"
+    ]
+  },
+  {
+    "lessonStepId": "STEP-U3-S4-COMBINE-LIKE-TERMS",
+    "status": "draft-from-docs",
+    "learnerResponsePrompt": "Write how the learner removed parentheses safely and combined only like.",
+    "tutorNotePrompt": "Note whether the learner removed parentheses safely and combined only like.",
+    "fields": [
+      {
+        "fieldId": "distributes_or_removes_parentheses_correctly",
+        "signalOnTrue": "distributes_or_removes_parentheses_correctly",
+        "label": "Distributes or removes parentheses correctly",
+        "prompt": "Did the learner show evidence for distributes or removes parentheses correctly?",
+        "trueMeans": "The learner showed evidence for distributes or removes parentheses correctly."
+      },
+      {
+        "fieldId": "combines_only_like_terms",
+        "signalOnTrue": "combines_only_like_terms",
+        "label": "Combines only like terms",
+        "prompt": "Did the learner show evidence for combines only like terms?",
+        "trueMeans": "The learner showed evidence for combines only like terms."
+      }
+    ],
+    "sourceDocs": [
+      "docs\\u3-draft-learning-design-2026-04-02.md"
+    ]
+  },
+  {
+    "lessonStepId": "STEP-U3-S5-MODEL-THEN-SIMPLIFY",
+    "status": "draft-from-docs",
+    "learnerResponsePrompt": "Write how the learner built the expression from the situation first and.",
+    "tutorNotePrompt": "Note whether the learner built the expression from the situation first and.",
+    "fields": [
+      {
+        "fieldId": "builds_expression_from_context_relationship",
+        "signalOnTrue": "builds_expression_from_context_relationship",
+        "label": "Builds expression from context relationship",
+        "prompt": "Did the learner show evidence for builds expression from context relationship?",
+        "trueMeans": "The learner showed evidence for builds expression from context relationship."
+      },
+      {
+        "fieldId": "simplifies_context_expression_consistently",
+        "signalOnTrue": "simplifies_context_expression_consistently",
+        "label": "Simplifies context expression consistently",
+        "prompt": "Did the learner show evidence for simplifies context expression consistently?",
+        "trueMeans": "The learner showed evidence for simplifies context expression consistently."
+      }
+    ],
+    "sourceDocs": [
+      "docs\\u3-draft-learning-design-2026-04-02.md"
+    ]
+  }
+]

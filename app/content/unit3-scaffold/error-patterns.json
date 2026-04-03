@@ -1,0 +1,77 @@
+[
+  {
+    "id": "u3-s1-variable-role-confusion",
+    "skillId": "U3-S1",
+    "status": "draft-from-docs",
+    "summary": "Variable-role confusion.",
+    "watchFor": [
+      "Learner uses the same variable for different quantities or does not define",
+      "Learner writes a number-only answer where the task still asks for an"
+    ],
+    "operatorNote": "Learner uses the same variable for different quantities or does not define",
+    "sourceDocs": [
+      "docs\\u3-source-note-2026-04-02.md",
+      "docs\\u3-draft-learning-design-2026-04-02.md"
+    ]
+  },
+  {
+    "id": "u3-s2-structure-reading-confusion",
+    "skillId": "U3-S2",
+    "status": "draft-from-docs",
+    "summary": "Structure-reading confusion.",
+    "watchFor": [
+      "Learner confuses coefficient with term count or constant term.",
+      "Learner treats terms of different degree or different variables as like terms."
+    ],
+    "operatorNote": "Learner confuses coefficient with term count or constant term.",
+    "sourceDocs": [
+      "docs\\u3-source-note-2026-04-02.md",
+      "docs\\u3-draft-learning-design-2026-04-02.md"
+    ]
+  },
+  {
+    "id": "u3-s3-substitution-sign-drift",
+    "skillId": "U3-S3",
+    "status": "draft-from-docs",
+    "summary": "Substitution sign drift.",
+    "watchFor": [
+      "Learner substitutes correctly but loses a negative sign, reciprocal, or power",
+      "Learner treats `x = 1` style evaluation as if the expression can be reordered"
+    ],
+    "operatorNote": "Learner substitutes correctly but loses a negative sign, reciprocal, or power",
+    "sourceDocs": [
+      "docs\\u3-source-note-2026-04-02.md",
+      "docs\\u3-draft-learning-design-2026-04-02.md"
+    ]
+  },
+  {
+    "id": "u3-s4-simplification-structure-loss",
+    "skillId": "U3-S4",
+    "status": "draft-from-docs",
+    "summary": "Simplification structure loss.",
+    "watchFor": [
+      "Learner removes parentheses without tracking the outer sign or factor.",
+      "Learner combines unlike terms or changes the coefficient while collecting"
+    ],
+    "operatorNote": "Learner removes parentheses without tracking the outer sign or factor.",
+    "sourceDocs": [
+      "docs\\u3-source-note-2026-04-02.md",
+      "docs\\u3-draft-learning-design-2026-04-02.md"
+    ]
+  },
+  {
+    "id": "u3-s5-context-to-expression-mismatch",
+    "skillId": "U3-S5",
+    "status": "draft-from-docs",
+    "summary": "Context-to-expression mismatch.",
+    "watchFor": [
+      "Learner chooses the right quantities but writes the wrong operation",
+      "Learner can build the first expression but cannot simplify it into a usable"
+    ],
+    "operatorNote": "Learner chooses the right quantities but writes the wrong operation",
+    "sourceDocs": [
+      "docs\\u3-source-note-2026-04-02.md",
+      "docs\\u3-draft-learning-design-2026-04-02.md"
+    ]
+  }
+]
