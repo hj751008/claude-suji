@@ -1,0 +1,113 @@
+{
+  "learnerId": "unit3-s3-sample-learner",
+  "activeSession": {
+    "learnerId": "unit3-s3-sample-learner",
+    "targetSkillId": "U3-S3",
+    "status": "in_progress",
+    "currentStepIndex": 0,
+    "currentStep": {
+      "lessonStepId": "STEP-U3-S3-SUBSTITUTE-WITH-STRUCTURE",
+      "activityId": "ACT-U3-S3-SUBSTITUTE-WITH-STRUCTURE",
+      "status": "provisional",
+      "openingLine": "Let's substitute first and keep the whole structure visible before we calculate.",
+      "firstTutorQuestion": "After replacing the variable, which signs, powers, or parentheses still matter here?",
+      "smallHint": "Rewrite the full substituted expression first so the negative signs and exponents stay attached to the right part.",
+      "goodStoppingPoint": "Learner evaluates a substituted expression without losing sign, grouping, reciprocal, or power meaning.",
+      "watchFor": [
+        "Learner substitutes correctly but loses a negative sign, reciprocal, or power during evaluation.",
+        "Learner treats the expression as if it can be reordered without preserving grouping."
+      ],
+      "exampleTutorMove": "Ask the learner to rewrite 2x^2 - 3 with x = -2 as 2(-2)^2 - 3 before doing any arithmetic.",
+      "exampleLearnerResponse": "I should write 2(-2)^2 - 3 first, so the square stays on -2 before I compute the value.",
+      "skillId": "U3-S3",
+      "activityType": "worked-bridge",
+      "title": "Substitute, then compute"
+    },
+    "nextStep": null,
+    "completedStepIds": [],
+    "remainingStepIds": [
+      "STEP-U3-S3-SUBSTITUTE-WITH-STRUCTURE"
+    ],
+    "steps": [
+      {
+        "lessonStepId": "STEP-U3-S3-SUBSTITUTE-WITH-STRUCTURE",
+        "activityId": "ACT-U3-S3-SUBSTITUTE-WITH-STRUCTURE",
+        "status": "provisional",
+        "openingLine": "Let's substitute first and keep the whole structure visible before we calculate.",
+        "firstTutorQuestion": "After replacing the variable, which signs, powers, or parentheses still matter here?",
+        "smallHint": "Rewrite the full substituted expression first so the negative signs and exponents stay attached to the right part.",
+        "goodStoppingPoint": "Learner evaluates a substituted expression without losing sign, grouping, reciprocal, or power meaning.",
+        "watchFor": [
+          "Learner substitutes correctly but loses a negative sign, reciprocal, or power during evaluation.",
+          "Learner treats the expression as if it can be reordered without preserving grouping."
+        ],
+        "exampleTutorMove": "Ask the learner to rewrite 2x^2 - 3 with x = -2 as 2(-2)^2 - 3 before doing any arithmetic.",
+        "exampleLearnerResponse": "I should write 2(-2)^2 - 3 first, so the square stays on -2 before I compute the value.",
+        "skillId": "U3-S3",
+        "activityType": "worked-bridge",
+        "title": "Substitute, then compute"
+      }
+    ],
+    "completionRule": "complete_all_steps_in_order",
+    "lastEvaluation": null,
+    "history": []
+  },
+  "sessions": [
+    {
+      "learnerId": "unit3-s3-sample-learner",
+      "targetSkillId": "U3-S3",
+      "status": "in_progress",
+      "currentStepIndex": 0,
+      "currentStep": {
+        "lessonStepId": "STEP-U3-S3-SUBSTITUTE-WITH-STRUCTURE",
+        "activityId": "ACT-U3-S3-SUBSTITUTE-WITH-STRUCTURE",
+        "status": "provisional",
+        "openingLine": "Let's substitute first and keep the whole structure visible before we calculate.",
+        "firstTutorQuestion": "After replacing the variable, which signs, powers, or parentheses still matter here?",
+        "smallHint": "Rewrite the full substituted expression first so the negative signs and exponents stay attached to the right part.",
+        "goodStoppingPoint": "Learner evaluates a substituted expression without losing sign, grouping, reciprocal, or power meaning.",
+        "watchFor": [
+          "Learner substitutes correctly but loses a negative sign, reciprocal, or power during evaluation.",
+          "Learner treats the expression as if it can be reordered without preserving grouping."
+        ],
+        "exampleTutorMove": "Ask the learner to rewrite 2x^2 - 3 with x = -2 as 2(-2)^2 - 3 before doing any arithmetic.",
+        "exampleLearnerResponse": "I should write 2(-2)^2 - 3 first, so the square stays on -2 before I compute the value.",
+        "skillId": "U3-S3",
+        "activityType": "worked-bridge",
+        "title": "Substitute, then compute"
+      },
+      "nextStep": null,
+      "completedStepIds": [],
+      "remainingStepIds": [
+        "STEP-U3-S3-SUBSTITUTE-WITH-STRUCTURE"
+      ],
+      "steps": [
+        {
+          "lessonStepId": "STEP-U3-S3-SUBSTITUTE-WITH-STRUCTURE",
+          "activityId": "ACT-U3-S3-SUBSTITUTE-WITH-STRUCTURE",
+          "status": "provisional",
+          "openingLine": "Let's substitute first and keep the whole structure visible before we calculate.",
+          "firstTutorQuestion": "After replacing the variable, which signs, powers, or parentheses still matter here?",
+          "smallHint": "Rewrite the full substituted expression first so the negative signs and exponents stay attached to the right part.",
+          "goodStoppingPoint": "Learner evaluates a substituted expression without losing sign, grouping, reciprocal, or power meaning.",
+          "watchFor": [
+            "Learner substitutes correctly but loses a negative sign, reciprocal, or power during evaluation.",
+            "Learner treats the expression as if it can be reordered without preserving grouping."
+          ],
+          "exampleTutorMove": "Ask the learner to rewrite 2x^2 - 3 with x = -2 as 2(-2)^2 - 3 before doing any arithmetic.",
+          "exampleLearnerResponse": "I should write 2(-2)^2 - 3 first, so the square stays on -2 before I compute the value.",
+          "skillId": "U3-S3",
+          "activityType": "worked-bridge",
+          "title": "Substitute, then compute"
+        }
+      ],
+      "completionRule": "complete_all_steps_in_order",
+      "lastEvaluation": null,
+      "history": []
+    }
+  ],
+  "evidenceEvents": [],
+  "latestSkillSummaries": [],
+  "latestRecommendations": [],
+  "updatedAt": null
+}

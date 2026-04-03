@@ -1,0 +1,113 @@
+{
+  "learnerId": "unit3-s5-sample-learner",
+  "activeSession": {
+    "learnerId": "unit3-s5-sample-learner",
+    "targetSkillId": "U3-S5",
+    "status": "in_progress",
+    "currentStepIndex": 0,
+    "currentStep": {
+      "lessonStepId": "STEP-U3-S5-MODEL-THEN-SIMPLIFY",
+      "activityId": "ACT-U3-S5-MODEL-THEN-SIMPLIFY",
+      "status": "provisional",
+      "openingLine": "Let's translate the story into an expression first and leave the arithmetic for after the relationship is correct.",
+      "firstTutorQuestion": "What relationship between the quantities should the expression show before we simplify it?",
+      "smallHint": "Label the quantities first, then decide whether the story is describing addition, subtraction, multiplication, division, or a repeated pattern.",
+      "goodStoppingPoint": "Learner writes a context-matching expression and simplifies it into a clean final form.",
+      "watchFor": [
+        "Learner chooses the right quantities but writes the wrong operation relationship.",
+        "Learner can build the first expression but cannot simplify it into a usable final form."
+      ],
+      "exampleTutorMove": "Ask the learner to name the quantities in the context, write the unsimplified expression, and only then clean it up.",
+      "exampleLearnerResponse": "If one side is x and the perimeter adds two more lengths, I should write 2x + 6 first and then simplify only if needed.",
+      "skillId": "U3-S5",
+      "activityType": "worked-bridge",
+      "title": "Build the expression from the story"
+    },
+    "nextStep": null,
+    "completedStepIds": [],
+    "remainingStepIds": [
+      "STEP-U3-S5-MODEL-THEN-SIMPLIFY"
+    ],
+    "steps": [
+      {
+        "lessonStepId": "STEP-U3-S5-MODEL-THEN-SIMPLIFY",
+        "activityId": "ACT-U3-S5-MODEL-THEN-SIMPLIFY",
+        "status": "provisional",
+        "openingLine": "Let's translate the story into an expression first and leave the arithmetic for after the relationship is correct.",
+        "firstTutorQuestion": "What relationship between the quantities should the expression show before we simplify it?",
+        "smallHint": "Label the quantities first, then decide whether the story is describing addition, subtraction, multiplication, division, or a repeated pattern.",
+        "goodStoppingPoint": "Learner writes a context-matching expression and simplifies it into a clean final form.",
+        "watchFor": [
+          "Learner chooses the right quantities but writes the wrong operation relationship.",
+          "Learner can build the first expression but cannot simplify it into a usable final form."
+        ],
+        "exampleTutorMove": "Ask the learner to name the quantities in the context, write the unsimplified expression, and only then clean it up.",
+        "exampleLearnerResponse": "If one side is x and the perimeter adds two more lengths, I should write 2x + 6 first and then simplify only if needed.",
+        "skillId": "U3-S5",
+        "activityType": "worked-bridge",
+        "title": "Build the expression from the story"
+      }
+    ],
+    "completionRule": "complete_all_steps_in_order",
+    "lastEvaluation": null,
+    "history": []
+  },
+  "sessions": [
+    {
+      "learnerId": "unit3-s5-sample-learner",
+      "targetSkillId": "U3-S5",
+      "status": "in_progress",
+      "currentStepIndex": 0,
+      "currentStep": {
+        "lessonStepId": "STEP-U3-S5-MODEL-THEN-SIMPLIFY",
+        "activityId": "ACT-U3-S5-MODEL-THEN-SIMPLIFY",
+        "status": "provisional",
+        "openingLine": "Let's translate the story into an expression first and leave the arithmetic for after the relationship is correct.",
+        "firstTutorQuestion": "What relationship between the quantities should the expression show before we simplify it?",
+        "smallHint": "Label the quantities first, then decide whether the story is describing addition, subtraction, multiplication, division, or a repeated pattern.",
+        "goodStoppingPoint": "Learner writes a context-matching expression and simplifies it into a clean final form.",
+        "watchFor": [
+          "Learner chooses the right quantities but writes the wrong operation relationship.",
+          "Learner can build the first expression but cannot simplify it into a usable final form."
+        ],
+        "exampleTutorMove": "Ask the learner to name the quantities in the context, write the unsimplified expression, and only then clean it up.",
+        "exampleLearnerResponse": "If one side is x and the perimeter adds two more lengths, I should write 2x + 6 first and then simplify only if needed.",
+        "skillId": "U3-S5",
+        "activityType": "worked-bridge",
+        "title": "Build the expression from the story"
+      },
+      "nextStep": null,
+      "completedStepIds": [],
+      "remainingStepIds": [
+        "STEP-U3-S5-MODEL-THEN-SIMPLIFY"
+      ],
+      "steps": [
+        {
+          "lessonStepId": "STEP-U3-S5-MODEL-THEN-SIMPLIFY",
+          "activityId": "ACT-U3-S5-MODEL-THEN-SIMPLIFY",
+          "status": "provisional",
+          "openingLine": "Let's translate the story into an expression first and leave the arithmetic for after the relationship is correct.",
+          "firstTutorQuestion": "What relationship between the quantities should the expression show before we simplify it?",
+          "smallHint": "Label the quantities first, then decide whether the story is describing addition, subtraction, multiplication, division, or a repeated pattern.",
+          "goodStoppingPoint": "Learner writes a context-matching expression and simplifies it into a clean final form.",
+          "watchFor": [
+            "Learner chooses the right quantities but writes the wrong operation relationship.",
+            "Learner can build the first expression but cannot simplify it into a usable final form."
+          ],
+          "exampleTutorMove": "Ask the learner to name the quantities in the context, write the unsimplified expression, and only then clean it up.",
+          "exampleLearnerResponse": "If one side is x and the perimeter adds two more lengths, I should write 2x + 6 first and then simplify only if needed.",
+          "skillId": "U3-S5",
+          "activityType": "worked-bridge",
+          "title": "Build the expression from the story"
+        }
+      ],
+      "completionRule": "complete_all_steps_in_order",
+      "lastEvaluation": null,
+      "history": []
+    }
+  ],
+  "evidenceEvents": [],
+  "latestSkillSummaries": [],
+  "latestRecommendations": [],
+  "updatedAt": null
+}
