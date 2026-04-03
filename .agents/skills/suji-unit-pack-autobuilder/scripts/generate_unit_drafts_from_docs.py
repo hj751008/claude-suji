@@ -134,7 +134,15 @@ def slugify(value: str) -> str:
 
 
 def parse_subskills(subskills_lines: list[str]) -> list[dict]:
-    section = extract_h2_section(subskills_lines, "Draft Unit 2 Skill Set")
+    section = None
+    for heading in ("Draft Unit 2 Skill Set", "Draft Skill Set", "Draft Unit Skill Set"):
+        try:
+            section = extract_h2_section(subskills_lines, heading)
+            break
+        except ValueError:
+            continue
+    if section is None:
+        raise ValueError("Could not find a supported draft skill-set section.")
     records: list[dict] = []
     for heading, body in extract_h3_blocks(section):
         skill_id = extract_quoted_id(heading)

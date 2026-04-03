@@ -1,0 +1,77 @@
+[
+  {
+    "id": "u3-s1-variable-role-confusion",
+    "skillId": "U3-S1",
+    "status": "provisional",
+    "summary": "Learner loses track of what each variable stands for while writing an expression.",
+    "watchFor": [
+      "Learner uses the same variable for different quantities or does not define the variable at all.",
+      "Learner writes a number-only answer even though the task still asks for an expression."
+    ],
+    "operatorNote": "Check whether the learner can say what the variable represents before writing the symbolic relationship.",
+    "sourceDocs": [
+      "docs/unit3-source-evidence-teaching-records-2026-04-03.md",
+      "docs/u3-draft-learning-design-2026-04-02.md"
+    ]
+  },
+  {
+    "id": "u3-s2-structure-reading-confusion",
+    "skillId": "U3-S2",
+    "status": "provisional",
+    "summary": "Learner reads the visible symbols but not the structural roles inside the expression.",
+    "watchFor": [
+      "Learner confuses coefficient with term count or constant term.",
+      "Learner treats terms of different degree or different variables as like terms."
+    ],
+    "operatorNote": "Ask the learner to name one term, one coefficient, and one constant term separately before simplifying anything.",
+    "sourceDocs": [
+      "docs/unit3-source-evidence-teaching-records-2026-04-03.md",
+      "docs/u3-draft-learning-design-2026-04-02.md"
+    ]
+  },
+  {
+    "id": "u3-s3-substitution-sign-drift",
+    "skillId": "U3-S3",
+    "status": "provisional",
+    "summary": "Learner substitutes the value but loses sign, reciprocal, exponent, or grouping structure while evaluating.",
+    "watchFor": [
+      "Learner substitutes correctly but loses a negative sign, reciprocal, or power during computation.",
+      "Learner treats a substituted expression as if terms can be freely reordered without preserving grouping."
+    ],
+    "operatorNote": "Have the learner rewrite the full substituted expression once before simplifying it.",
+    "sourceDocs": [
+      "docs/unit3-source-evidence-teaching-records-2026-04-03.md",
+      "docs/u3-draft-learning-design-2026-04-02.md"
+    ]
+  },
+  {
+    "id": "u3-s4-simplification-structure-loss",
+    "skillId": "U3-S4",
+    "status": "provisional",
+    "summary": "Learner starts simplification but breaks the original structure while removing parentheses or collecting terms.",
+    "watchFor": [
+      "Learner removes parentheses without tracking the outer sign or factor.",
+      "Learner combines unlike terms or changes the coefficient while collecting terms."
+    ],
+    "operatorNote": "Pause the learner at the rewritten line and check whether only structurally matching terms are being combined.",
+    "sourceDocs": [
+      "docs/unit3-source-evidence-teaching-records-2026-04-03.md",
+      "docs/u3-draft-learning-design-2026-04-02.md"
+    ]
+  },
+  {
+    "id": "u3-s5-context-to-expression-mismatch",
+    "skillId": "U3-S5",
+    "status": "provisional",
+    "summary": "Learner can name the quantities but still writes the wrong relationship when turning a context into an expression.",
+    "watchFor": [
+      "Learner chooses the right quantities but writes the wrong operation relationship.",
+      "Learner can build the first expression but cannot simplify it into a usable final form."
+    ],
+    "operatorNote": "Keep the learner on the story relationship first and treat simplification as a second move.",
+    "sourceDocs": [
+      "docs/unit3-source-evidence-teaching-records-2026-04-03.md",
+      "docs/u3-draft-learning-design-2026-04-02.md"
+    ]
+  }
+]

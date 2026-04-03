@@ -1,0 +1,113 @@
+{
+  "learnerId": "unit3-s4-sample-learner",
+  "activeSession": {
+    "learnerId": "unit3-s4-sample-learner",
+    "targetSkillId": "U3-S4",
+    "status": "in_progress",
+    "currentStepIndex": 0,
+    "currentStep": {
+      "lessonStepId": "STEP-U3-S4-COMBINE-LIKE-TERMS",
+      "activityId": "ACT-U3-S4-COMBINE-LIKE-TERMS",
+      "status": "provisional",
+      "openingLine": "Let's change the structure one line at a time so we do not lose which terms still match.",
+      "firstTutorQuestion": "After removing the parentheses, which terms are actually alike and can be combined?",
+      "smallHint": "Only terms with the same variable part can combine, and the outside sign still affects every term inside the parentheses.",
+      "goodStoppingPoint": "Learner simplifies a linear expression and can explain why unlike terms did not combine.",
+      "watchFor": [
+        "Learner removes parentheses without tracking the outer sign or factor.",
+        "Learner combines unlike terms or changes the coefficient while collecting terms."
+      ],
+      "exampleTutorMove": "Have the learner rewrite the expression with parentheses removed, then circle only the terms that still match structurally.",
+      "exampleLearnerResponse": "After removing the parentheses I get 3x + 2x - 4, so only the x terms combine and the result is 5x - 4.",
+      "skillId": "U3-S4",
+      "activityType": "worked-bridge",
+      "title": "Simplify without breaking structure"
+    },
+    "nextStep": null,
+    "completedStepIds": [],
+    "remainingStepIds": [
+      "STEP-U3-S4-COMBINE-LIKE-TERMS"
+    ],
+    "steps": [
+      {
+        "lessonStepId": "STEP-U3-S4-COMBINE-LIKE-TERMS",
+        "activityId": "ACT-U3-S4-COMBINE-LIKE-TERMS",
+        "status": "provisional",
+        "openingLine": "Let's change the structure one line at a time so we do not lose which terms still match.",
+        "firstTutorQuestion": "After removing the parentheses, which terms are actually alike and can be combined?",
+        "smallHint": "Only terms with the same variable part can combine, and the outside sign still affects every term inside the parentheses.",
+        "goodStoppingPoint": "Learner simplifies a linear expression and can explain why unlike terms did not combine.",
+        "watchFor": [
+          "Learner removes parentheses without tracking the outer sign or factor.",
+          "Learner combines unlike terms or changes the coefficient while collecting terms."
+        ],
+        "exampleTutorMove": "Have the learner rewrite the expression with parentheses removed, then circle only the terms that still match structurally.",
+        "exampleLearnerResponse": "After removing the parentheses I get 3x + 2x - 4, so only the x terms combine and the result is 5x - 4.",
+        "skillId": "U3-S4",
+        "activityType": "worked-bridge",
+        "title": "Simplify without breaking structure"
+      }
+    ],
+    "completionRule": "complete_all_steps_in_order",
+    "lastEvaluation": null,
+    "history": []
+  },
+  "sessions": [
+    {
+      "learnerId": "unit3-s4-sample-learner",
+      "targetSkillId": "U3-S4",
+      "status": "in_progress",
+      "currentStepIndex": 0,
+      "currentStep": {
+        "lessonStepId": "STEP-U3-S4-COMBINE-LIKE-TERMS",
+        "activityId": "ACT-U3-S4-COMBINE-LIKE-TERMS",
+        "status": "provisional",
+        "openingLine": "Let's change the structure one line at a time so we do not lose which terms still match.",
+        "firstTutorQuestion": "After removing the parentheses, which terms are actually alike and can be combined?",
+        "smallHint": "Only terms with the same variable part can combine, and the outside sign still affects every term inside the parentheses.",
+        "goodStoppingPoint": "Learner simplifies a linear expression and can explain why unlike terms did not combine.",
+        "watchFor": [
+          "Learner removes parentheses without tracking the outer sign or factor.",
+          "Learner combines unlike terms or changes the coefficient while collecting terms."
+        ],
+        "exampleTutorMove": "Have the learner rewrite the expression with parentheses removed, then circle only the terms that still match structurally.",
+        "exampleLearnerResponse": "After removing the parentheses I get 3x + 2x - 4, so only the x terms combine and the result is 5x - 4.",
+        "skillId": "U3-S4",
+        "activityType": "worked-bridge",
+        "title": "Simplify without breaking structure"
+      },
+      "nextStep": null,
+      "completedStepIds": [],
+      "remainingStepIds": [
+        "STEP-U3-S4-COMBINE-LIKE-TERMS"
+      ],
+      "steps": [
+        {
+          "lessonStepId": "STEP-U3-S4-COMBINE-LIKE-TERMS",
+          "activityId": "ACT-U3-S4-COMBINE-LIKE-TERMS",
+          "status": "provisional",
+          "openingLine": "Let's change the structure one line at a time so we do not lose which terms still match.",
+          "firstTutorQuestion": "After removing the parentheses, which terms are actually alike and can be combined?",
+          "smallHint": "Only terms with the same variable part can combine, and the outside sign still affects every term inside the parentheses.",
+          "goodStoppingPoint": "Learner simplifies a linear expression and can explain why unlike terms did not combine.",
+          "watchFor": [
+            "Learner removes parentheses without tracking the outer sign or factor.",
+            "Learner combines unlike terms or changes the coefficient while collecting terms."
+          ],
+          "exampleTutorMove": "Have the learner rewrite the expression with parentheses removed, then circle only the terms that still match structurally.",
+          "exampleLearnerResponse": "After removing the parentheses I get 3x + 2x - 4, so only the x terms combine and the result is 5x - 4.",
+          "skillId": "U3-S4",
+          "activityType": "worked-bridge",
+          "title": "Simplify without breaking structure"
+        }
+      ],
+      "completionRule": "complete_all_steps_in_order",
+      "lastEvaluation": null,
+      "history": []
+    }
+  ],
+  "evidenceEvents": [],
+  "latestSkillSummaries": [],
+  "latestRecommendations": [],
+  "updatedAt": null
+}

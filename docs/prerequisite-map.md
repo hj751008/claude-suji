@@ -72,6 +72,26 @@ Approved relationship set is not finalized.
 - `U2-S5` does not yet receive an internal prerequisite link.
 - `docs/unit2-source-evidence-prerequisites-2026-04-02.md` records why the current evidence is strong enough for the four links above but still too weak for a `U2-S5` prerequisite chain.
 
+## Unit 3 Worked Example: Variables And Expressions
+
+### Skill Breakdown
+- `U3-S1`: use variables to represent quantities and simple relationships
+- `U3-S2`: read the structure of algebraic expressions
+- `U3-S3`: evaluate algebraic expressions by substitution
+- `U3-S4`: simplify linear expressions with variables
+- `U3-S5`: model and simplify contextual expressions
+
+### Conservative Prerequisite Links
+| Prerequisite | Target | Relationship | Evidence | Status |
+| --- | --- | --- | --- | --- |
+| `U3-S1 define variable meaning` | `U3-S5 model contextual expressions` | `HELPFUL` | The current Unit 3 extraction defines `U3-S5` as building an expression from a situation, so variable-role clarity directly supports later modeling work | `provisional` |
+| `U3-S2 read term structure` | `U3-S4 simplify linear expressions` | `HELPFUL` | The current Unit 3 extraction defines `U3-S4` through parentheses, distribution, and like-term combination, so reading structural roles supports that simplification step directly | `provisional` |
+
+### Deliberately Unlinked For Now
+- `U3-S3` does not yet receive an internal prerequisite link.
+- `U3-S4 -> U3-S5` is still left unapproved.
+- `docs/unit3-source-evidence-prerequisites-2026-04-03.md` records why the current evidence is strong enough for the two links above but still too weak for a broader Unit 3 chain.
+
 ## Rules For Uncertain Links
 - Do not guess prerequisite chains.
 - Do not convert an uncertain link into `REQUIRED` or `HELPFUL` without evidence.

@@ -9,6 +9,7 @@ from pathlib import Path
 APP_ROOT = Path(__file__).resolve().parents[1]
 UNIT1_DIR = APP_ROOT / "content" / "unit1-prime-factorization"
 UNIT2_DIR = APP_ROOT / "content" / "unit2-scaffold"
+UNIT3_DIR = APP_ROOT / "content" / "unit3-scaffold"
 
 
 def _load_json(path: Path):
@@ -74,6 +75,7 @@ def load_content_for_unit(unit_id: str) -> UnitContent:
     content_dirs = {
         "U1": UNIT1_DIR,
         "U2": UNIT2_DIR,
+        "U3": UNIT3_DIR,
     }
     content_dir = content_dirs.get(normalized)
     if content_dir is None:
@@ -87,3 +89,7 @@ def load_unit1_content() -> UnitContent:
 
 def load_unit2_content() -> UnitContent:
     return load_content_for_unit("U2")
+
+
+def load_unit3_content() -> UnitContent:
+    return load_content_for_unit("U3")

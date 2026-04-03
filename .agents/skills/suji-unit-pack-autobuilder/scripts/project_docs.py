@@ -103,6 +103,8 @@ def update_next_steps(next_steps_path: Path, unit_id: str, slug: str, stage: str
         stage_note = "Fill source-backed docs before generating draft JSON."
     elif stage == "draft-records-generated":
         stage_note = "Review generated drafts, then decide on prerequisites/runtime/harness work."
+    elif stage == "source-backed-provisional":
+        stage_note = "Source-backed provisional records exist. Decide whether runtime wiring, transcript fixtures, and harness coverage should be added next."
     elif stage == "runtime-gate-passed":
         stage_note = "Runtime activation gate passed. Runtime wiring and harness activation can now land in the same reviewed change."
     elif stage == "runtime-gate-blocked":

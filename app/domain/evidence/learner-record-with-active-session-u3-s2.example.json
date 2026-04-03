@@ -1,0 +1,113 @@
+{
+  "learnerId": "unit3-s2-sample-learner",
+  "activeSession": {
+    "learnerId": "unit3-s2-sample-learner",
+    "targetSkillId": "U3-S2",
+    "status": "in_progress",
+    "currentStepIndex": 0,
+    "currentStep": {
+      "lessonStepId": "STEP-U3-S2-READ-TERM-STRUCTURE",
+      "activityId": "ACT-U3-S2-READ-TERM-STRUCTURE",
+      "status": "provisional",
+      "openingLine": "Let's read the parts of the expression by role before we try to transform it.",
+      "firstTutorQuestion": "Which part of this expression is the coefficient, and which part is the constant term?",
+      "smallHint": "A coefficient is attached to the variable term, while a constant term stands alone.",
+      "goodStoppingPoint": "Learner identifies coefficient, constant term, and like terms without confusing their roles.",
+      "watchFor": [
+        "Learner confuses coefficient with term count or constant term.",
+        "Learner treats terms of different degree or different variables as like terms."
+      ],
+      "exampleTutorMove": "Point to one term at a time and ask the learner to name its coefficient, variable part, and whether it matches another term.",
+      "exampleLearnerResponse": "In 3x + 5 - 2x, the coefficients are 3 and -2, the constant term is 5, and 3x and -2x are like terms.",
+      "skillId": "U3-S2",
+      "activityType": "dialogue-flow",
+      "title": "Read each term by role"
+    },
+    "nextStep": null,
+    "completedStepIds": [],
+    "remainingStepIds": [
+      "STEP-U3-S2-READ-TERM-STRUCTURE"
+    ],
+    "steps": [
+      {
+        "lessonStepId": "STEP-U3-S2-READ-TERM-STRUCTURE",
+        "activityId": "ACT-U3-S2-READ-TERM-STRUCTURE",
+        "status": "provisional",
+        "openingLine": "Let's read the parts of the expression by role before we try to transform it.",
+        "firstTutorQuestion": "Which part of this expression is the coefficient, and which part is the constant term?",
+        "smallHint": "A coefficient is attached to the variable term, while a constant term stands alone.",
+        "goodStoppingPoint": "Learner identifies coefficient, constant term, and like terms without confusing their roles.",
+        "watchFor": [
+          "Learner confuses coefficient with term count or constant term.",
+          "Learner treats terms of different degree or different variables as like terms."
+        ],
+        "exampleTutorMove": "Point to one term at a time and ask the learner to name its coefficient, variable part, and whether it matches another term.",
+        "exampleLearnerResponse": "In 3x + 5 - 2x, the coefficients are 3 and -2, the constant term is 5, and 3x and -2x are like terms.",
+        "skillId": "U3-S2",
+        "activityType": "dialogue-flow",
+        "title": "Read each term by role"
+      }
+    ],
+    "completionRule": "complete_all_steps_in_order",
+    "lastEvaluation": null,
+    "history": []
+  },
+  "sessions": [
+    {
+      "learnerId": "unit3-s2-sample-learner",
+      "targetSkillId": "U3-S2",
+      "status": "in_progress",
+      "currentStepIndex": 0,
+      "currentStep": {
+        "lessonStepId": "STEP-U3-S2-READ-TERM-STRUCTURE",
+        "activityId": "ACT-U3-S2-READ-TERM-STRUCTURE",
+        "status": "provisional",
+        "openingLine": "Let's read the parts of the expression by role before we try to transform it.",
+        "firstTutorQuestion": "Which part of this expression is the coefficient, and which part is the constant term?",
+        "smallHint": "A coefficient is attached to the variable term, while a constant term stands alone.",
+        "goodStoppingPoint": "Learner identifies coefficient, constant term, and like terms without confusing their roles.",
+        "watchFor": [
+          "Learner confuses coefficient with term count or constant term.",
+          "Learner treats terms of different degree or different variables as like terms."
+        ],
+        "exampleTutorMove": "Point to one term at a time and ask the learner to name its coefficient, variable part, and whether it matches another term.",
+        "exampleLearnerResponse": "In 3x + 5 - 2x, the coefficients are 3 and -2, the constant term is 5, and 3x and -2x are like terms.",
+        "skillId": "U3-S2",
+        "activityType": "dialogue-flow",
+        "title": "Read each term by role"
+      },
+      "nextStep": null,
+      "completedStepIds": [],
+      "remainingStepIds": [
+        "STEP-U3-S2-READ-TERM-STRUCTURE"
+      ],
+      "steps": [
+        {
+          "lessonStepId": "STEP-U3-S2-READ-TERM-STRUCTURE",
+          "activityId": "ACT-U3-S2-READ-TERM-STRUCTURE",
+          "status": "provisional",
+          "openingLine": "Let's read the parts of the expression by role before we try to transform it.",
+          "firstTutorQuestion": "Which part of this expression is the coefficient, and which part is the constant term?",
+          "smallHint": "A coefficient is attached to the variable term, while a constant term stands alone.",
+          "goodStoppingPoint": "Learner identifies coefficient, constant term, and like terms without confusing their roles.",
+          "watchFor": [
+            "Learner confuses coefficient with term count or constant term.",
+            "Learner treats terms of different degree or different variables as like terms."
+          ],
+          "exampleTutorMove": "Point to one term at a time and ask the learner to name its coefficient, variable part, and whether it matches another term.",
+          "exampleLearnerResponse": "In 3x + 5 - 2x, the coefficients are 3 and -2, the constant term is 5, and 3x and -2x are like terms.",
+          "skillId": "U3-S2",
+          "activityType": "dialogue-flow",
+          "title": "Read each term by role"
+        }
+      ],
+      "completionRule": "complete_all_steps_in_order",
+      "lastEvaluation": null,
+      "history": []
+    }
+  ],
+  "evidenceEvents": [],
+  "latestSkillSummaries": [],
+  "latestRecommendations": [],
+  "updatedAt": null
+}

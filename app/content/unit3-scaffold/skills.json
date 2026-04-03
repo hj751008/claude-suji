@@ -1,0 +1,52 @@
+[
+  {
+    "id": "U3-S1",
+    "status": "provisional",
+    "title": "Use variables to represent quantities and simple relationships",
+    "summary": "Unit 3 variable-writing skill grounded in source-backed tasks on averages, prices, concentration, pattern rules, and quantity relationships.",
+    "sourceDocs": [
+      "docs/mastery-rules.md",
+      "docs/unit3-source-evidence-skills-2026-04-03.md"
+    ]
+  },
+  {
+    "id": "U3-S2",
+    "status": "provisional",
+    "title": "Read the structure of algebraic expressions",
+    "summary": "Unit 3 structure-reading skill grounded in source-backed questions about coefficients, constant terms, term counts, and like terms.",
+    "sourceDocs": [
+      "docs/mastery-rules.md",
+      "docs/unit3-source-evidence-skills-2026-04-03.md"
+    ]
+  },
+  {
+    "id": "U3-S3",
+    "status": "provisional",
+    "title": "Evaluate algebraic expressions by substitution",
+    "summary": "Unit 3 substitution skill grounded in source-backed evaluation tasks with signed numbers, fractions, powers, reciprocals, and grouping.",
+    "sourceDocs": [
+      "docs/mastery-rules.md",
+      "docs/unit3-source-evidence-skills-2026-04-03.md"
+    ]
+  },
+  {
+    "id": "U3-S4",
+    "status": "provisional",
+    "title": "Simplify linear expressions with variables",
+    "summary": "Unit 3 simplification skill grounded in source-backed tasks on parentheses, distributive structure, omitted operation symbols, and like-term combination.",
+    "sourceDocs": [
+      "docs/mastery-rules.md",
+      "docs/unit3-source-evidence-skills-2026-04-03.md"
+    ]
+  },
+  {
+    "id": "U3-S5",
+    "status": "provisional",
+    "title": "Model and simplify contextual expressions",
+    "summary": "Unit 3 contextual-modeling skill grounded in source-backed geometry, ratio, pattern, and word-problem expression tasks.",
+    "sourceDocs": [
+      "docs/mastery-rules.md",
+      "docs/unit3-source-evidence-skills-2026-04-03.md"
+    ]
+  }
+]

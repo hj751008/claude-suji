@@ -73,5 +73,33 @@
       ],
       "firstLessonStepId": "STEP-U1-S3-REWRITE-CLEANLY"
     }
+  },
+  {
+    "name": "plan a new session after completed u3-s4 transcript with blocker-first opening step",
+    "transcriptFile": "app/domain/evidence/unit3-tutor-transcripts.example.json",
+    "transcriptId": "u3-s4-combine-like-terms-ko-text-only-active-session",
+    "expected": {
+      "action": "plan_new_session",
+      "plannedFromSkillId": "U3-S4",
+      "recommendedNextSkillIds": [
+        "U3-S2",
+        "U3-S4"
+      ],
+      "firstLessonStepId": "STEP-U3-S2-READ-TERM-STRUCTURE"
+    }
+  },
+  {
+    "name": "plan a new session after completed u3-s5 transcript with blocker-first opening step",
+    "transcriptFile": "app/domain/evidence/unit3-tutor-transcripts.example.json",
+    "transcriptId": "u3-s5-model-then-simplify-ko-text-only-active-session",
+    "expected": {
+      "action": "plan_new_session",
+      "plannedFromSkillId": "U3-S5",
+      "recommendedNextSkillIds": [
+        "U3-S1",
+        "U3-S5"
+      ],
+      "firstLessonStepId": "STEP-U3-S1-DEFINE-VARIABLE-ROLE"
+    }
   }
 ]

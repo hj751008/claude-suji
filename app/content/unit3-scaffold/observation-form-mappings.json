@@ -1,0 +1,132 @@
+[
+  {
+    "lessonStepId": "STEP-U3-S1-DEFINE-VARIABLE-ROLE",
+    "status": "provisional",
+    "learnerResponsePrompt": "Write how the learner named the quantity the variable represents and how they wrote the matching expression.",
+    "tutorNotePrompt": "Note whether the learner defined the variable clearly before writing the expression from the context.",
+    "fields": [
+      {
+        "fieldId": "defines_variable_meaning",
+        "signalOnTrue": "defines_variable_meaning",
+        "label": "Defines variable meaning",
+        "prompt": "Did the learner show evidence for defines variable meaning?",
+        "trueMeans": "The learner showed evidence for defines variable meaning."
+      },
+      {
+        "fieldId": "writes_matching_expression_from_context",
+        "signalOnTrue": "writes_matching_expression_from_context",
+        "label": "Writes matching expression from context",
+        "prompt": "Did the learner show evidence for writes matching expression from context?",
+        "trueMeans": "The learner showed evidence for writes matching expression from context."
+      }
+    ],
+    "sourceDocs": [
+      "docs/unit3-source-evidence-teaching-records-2026-04-03.md",
+      "docs/u3-draft-learning-design-2026-04-02.md"
+    ]
+  },
+  {
+    "lessonStepId": "STEP-U3-S2-READ-TERM-STRUCTURE",
+    "status": "provisional",
+    "learnerResponsePrompt": "Write how the learner identified the coefficient, constant term, and like terms in the expression.",
+    "tutorNotePrompt": "Note whether the learner read term roles correctly before trying to simplify the expression.",
+    "fields": [
+      {
+        "fieldId": "identifies_coefficient_or_constant_correctly",
+        "signalOnTrue": "identifies_coefficient_or_constant_correctly",
+        "label": "Identifies coefficient or constant correctly",
+        "prompt": "Did the learner show evidence for identifies coefficient or constant correctly?",
+        "trueMeans": "The learner showed evidence for identifies coefficient or constant correctly."
+      },
+      {
+        "fieldId": "distinguishes_like_terms_by_structure",
+        "signalOnTrue": "distinguishes_like_terms_by_structure",
+        "label": "Distinguishes like terms by structure",
+        "prompt": "Did the learner show evidence for distinguishes like terms by structure?",
+        "trueMeans": "The learner showed evidence for distinguishes like terms by structure."
+      }
+    ],
+    "sourceDocs": [
+      "docs/unit3-source-evidence-teaching-records-2026-04-03.md",
+      "docs/u3-draft-learning-design-2026-04-02.md"
+    ]
+  },
+  {
+    "lessonStepId": "STEP-U3-S3-SUBSTITUTE-WITH-STRUCTURE",
+    "status": "provisional",
+    "learnerResponsePrompt": "Write how the learner substituted the values and whether they preserved sign, power, reciprocal, and grouping structure.",
+    "tutorNotePrompt": "Note whether the learner rewrote the substituted expression clearly before simplifying it.",
+    "fields": [
+      {
+        "fieldId": "substitutes_values_without_structure_loss",
+        "signalOnTrue": "substitutes_values_without_structure_loss",
+        "label": "Substitutes values without structure loss",
+        "prompt": "Did the learner show evidence for substitutes values without structure loss?",
+        "trueMeans": "The learner showed evidence for substitutes values without structure loss."
+      },
+      {
+        "fieldId": "keeps_sign_or_power_meaning_consistent",
+        "signalOnTrue": "keeps_sign_or_power_meaning_consistent",
+        "label": "Keeps sign or power meaning consistent",
+        "prompt": "Did the learner show evidence for keeps sign or power meaning consistent?",
+        "trueMeans": "The learner showed evidence for keeps sign or power meaning consistent."
+      }
+    ],
+    "sourceDocs": [
+      "docs/unit3-source-evidence-teaching-records-2026-04-03.md",
+      "docs/u3-draft-learning-design-2026-04-02.md"
+    ]
+  },
+  {
+    "lessonStepId": "STEP-U3-S4-COMBINE-LIKE-TERMS",
+    "status": "provisional",
+    "learnerResponsePrompt": "Write how the learner removed parentheses, tracked the outside sign or factor, and combined only like terms.",
+    "tutorNotePrompt": "Note whether the learner changed the structure safely before collecting terms.",
+    "fields": [
+      {
+        "fieldId": "distributes_or_removes_parentheses_correctly",
+        "signalOnTrue": "distributes_or_removes_parentheses_correctly",
+        "label": "Distributes or removes parentheses correctly",
+        "prompt": "Did the learner show evidence for distributes or removes parentheses correctly?",
+        "trueMeans": "The learner showed evidence for distributes or removes parentheses correctly."
+      },
+      {
+        "fieldId": "combines_only_like_terms",
+        "signalOnTrue": "combines_only_like_terms",
+        "label": "Combines only like terms",
+        "prompt": "Did the learner show evidence for combines only like terms?",
+        "trueMeans": "The learner showed evidence for combines only like terms."
+      }
+    ],
+    "sourceDocs": [
+      "docs/unit3-source-evidence-teaching-records-2026-04-03.md",
+      "docs/u3-draft-learning-design-2026-04-02.md"
+    ]
+  },
+  {
+    "lessonStepId": "STEP-U3-S5-MODEL-THEN-SIMPLIFY",
+    "status": "provisional",
+    "learnerResponsePrompt": "Write how the learner built the expression from the situation and how they simplified it afterward.",
+    "tutorNotePrompt": "Note whether the learner matched the relationship in the story before simplifying the expression.",
+    "fields": [
+      {
+        "fieldId": "builds_expression_from_context_relationship",
+        "signalOnTrue": "builds_expression_from_context_relationship",
+        "label": "Builds expression from context relationship",
+        "prompt": "Did the learner show evidence for builds expression from context relationship?",
+        "trueMeans": "The learner showed evidence for builds expression from context relationship."
+      },
+      {
+        "fieldId": "simplifies_context_expression_consistently",
+        "signalOnTrue": "simplifies_context_expression_consistently",
+        "label": "Simplifies context expression consistently",
+        "prompt": "Did the learner show evidence for simplifies context expression consistently?",
+        "trueMeans": "The learner showed evidence for simplifies context expression consistently."
+      }
+    ],
+    "sourceDocs": [
+      "docs/unit3-source-evidence-teaching-records-2026-04-03.md",
+      "docs/u3-draft-learning-design-2026-04-02.md"
+    ]
+  }
+]

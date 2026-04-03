@@ -159,6 +159,39 @@ The following remain intentionally undecided:
 - `ready_for_next_step` is approved as a conservative next-step judgment, not as final mastery.
 - Unit 2 scoring cutoffs, reassessment rules, and override rules remain `UNDECIDED`.
 
+## Unit 3 Worked Example: Variables And Expressions
+
+### Skill Breakdown
+- `U3-S1`: use variables to represent quantities and simple relationships
+- `U3-S2`: read the structure of algebraic expressions
+- `U3-S3`: evaluate algebraic expressions by substitution
+- `U3-S4`: simplify linear expressions with variables
+- `U3-S5`: model and simplify contextual expressions
+
+### Mastery Evidence Examples
+- `U3-S1`: learner can define what a variable represents and write a matching expression for an average, price, count, or pattern situation; one correct skill-linked event may justify `ready_for_next_step`, but final mastery remains `UNDECIDED`
+- `U3-S2`: learner can identify coefficient, constant term, term count, or like terms correctly when reading an expression; one correct skill-linked event may justify `ready_for_next_step`, but final mastery remains `UNDECIDED`
+- `U3-S3`: learner can substitute integers, fractions, or signed values into an expression without losing sign, grouping, reciprocal, or power meaning; one correct skill-linked event may justify `ready_for_next_step`, but final mastery remains `UNDECIDED`
+- `U3-S4`: learner can remove parentheses safely, keep distributive structure consistent, and combine only like terms in a linear expression; one correct skill-linked event may justify `ready_for_next_step`, but final mastery remains `UNDECIDED`
+- `U3-S5`: learner can translate a geometry, ratio, pattern, or word-problem context into an expression and then simplify it consistently; one correct skill-linked event may justify `ready_for_next_step`, but final mastery remains `UNDECIDED`
+
+### Evidence Notes For Unit 3
+- The current Unit 3 extraction records direct expression-writing tasks for averages, prices, concentration, pattern rules, and quantity relationships, which support `U3-S1`.
+- The same extraction records direct questions about coefficients, constant terms, term counts, like terms, and whether an expression is a monomial, polynomial, or linear expression, which support `U3-S2`.
+- The sources also include substitution tasks with signed numbers, fractions, powers, reciprocals, and comparison after substitution, which support `U3-S3`.
+- The extraction records removing operation symbols, handling parentheses, using distributive structure, and combining like terms, which support `U3-S4`.
+- The extraction records geometry, ratio, pattern, and word-problem situations that require expression building before simplification, which support `U3-S5`.
+- `docs/unit3-source-evidence-skills-2026-04-03.md` records the narrower source-backed rationale for this Unit 3 slice.
+
+### Notes
+- Evidence basis for this worked example is limited to:
+  - `C:\MathFile\중1\중1_ 미래엔 중단원마무리_2_1_문자의_사용과_식의_계산.pdf`
+  - `C:\MathFile\중1\[수준별 문제은행_발전] Ⅱ-1. 문자의 사용과 식의 계산.pdf`
+- This worked example promotes only the current Unit 3 skill cluster `U3-S1` to `U3-S5`.
+- These are evidence examples, not approved numeric thresholds.
+- `ready_for_next_step` is approved as a conservative next-step judgment, not as final mastery.
+- Unit 3 scoring cutoffs, reassessment rules, and override rules remain `UNDECIDED`.
+
 ## Change Policy
 - Do not silently change mastery thresholds, pass criteria, or scoring logic.
 - Any change to an approved rule must update this document in the same change.

@@ -95,5 +95,33 @@
       "firstLessonStepId": "STEP-U2-S5-SIGN-FIRST-EXPRESSION",
       "stepCount": 1
     }
+  },
+  {
+    "name": "plan-next-session-from-completed-u3-s4-transcript",
+    "transcriptFile": "app/domain/evidence/unit3-tutor-transcripts.example.json",
+    "transcriptId": "u3-s4-combine-like-terms-ko-text-only-active-session",
+    "expected": {
+      "plannedFromSkillId": "U3-S4",
+      "recommendedNextSkillIds": [
+        "U3-S2",
+        "U3-S4"
+      ],
+      "firstLessonStepId": "STEP-U3-S2-READ-TERM-STRUCTURE",
+      "stepCount": 2
+    }
+  },
+  {
+    "name": "plan-next-session-from-completed-u3-s5-transcript",
+    "transcriptFile": "app/domain/evidence/unit3-tutor-transcripts.example.json",
+    "transcriptId": "u3-s5-model-then-simplify-ko-text-only-active-session",
+    "expected": {
+      "plannedFromSkillId": "U3-S5",
+      "recommendedNextSkillIds": [
+        "U3-S1",
+        "U3-S5"
+      ],
+      "firstLessonStepId": "STEP-U3-S1-DEFINE-VARIABLE-ROLE",
+      "stepCount": 2
+    }
   }
 ]

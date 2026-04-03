@@ -1,0 +1,397 @@
+[
+  {
+    "transcriptId": "u3-s1-define-variable-role-ko-text-only-active-session",
+    "name": "Unit 3 variable-role log with confirmed observation signals",
+    "skillId": "U3-S1",
+    "tags": [
+      "unit3",
+      "variable-role",
+      "ko",
+      "confirmed",
+      "active"
+    ],
+    "learnerFile": "app/domain/evidence/learner-record-with-active-session-u3-s1.example.json",
+    "turns": [
+      {
+        "turnIndex": 1,
+        "lessonStepId": "STEP-U3-S1-DEFINE-VARIABLE-ROLE",
+        "messages": [
+          {
+            "speaker": "tutor",
+            "text": "공책을 x권 산다면 x가 무엇을 뜻하는지 먼저 말해 볼래?"
+          },
+          {
+            "speaker": "learner",
+            "text": "x는 공책의 개수야. 한 권에 1200원이니까 총가격은 1200x원이야."
+          }
+        ],
+        "operatorNote": "튜터가 변수 의미와 식 대응을 둘 다 확인해 체크했다.",
+        "observationFormInput": {
+          "learnerResponse": "x는 공책의 개수야. 한 권에 1200원이니까 총가격은 1200x원이야.",
+          "fieldValues": {
+            "defines_variable_meaning": true,
+            "writes_matching_expression_from_context": true
+          },
+          "tutorNote": "튜터가 변수 의미와 식 대응을 둘 다 확인해 체크했다.",
+          "timestamp": "2026-04-03T18:05:00+09:00"
+        }
+      }
+    ]
+  },
+  {
+    "transcriptId": "u3-s1-define-variable-role-mixed-quantity-ko-uncertain",
+    "name": "Unit 3 variable-role log that mixes quantity meaning with a fixed number",
+    "skillId": "U3-S1",
+    "tags": [
+      "unit3",
+      "variable-role",
+      "ko",
+      "text-only",
+      "active",
+      "uncertain"
+    ],
+    "learnerFile": "app/domain/evidence/learner-record-with-active-session-u3-s1.example.json",
+    "turns": [
+      {
+        "turnIndex": 1,
+        "lessonStepId": "STEP-U3-S1-DEFINE-VARIABLE-ROLE",
+        "messages": [
+          {
+            "speaker": "tutor",
+            "text": "x가 무엇을 뜻하는지 말한 다음 식을 써 볼래?"
+          },
+          {
+            "speaker": "learner",
+            "text": "x를 공책 수에도 쓰고 돈에도 같이 써도 될 것 같아. 답은 그냥 3600이라고 하면 돼."
+          }
+        ],
+        "operatorNote": "튜터가 변수 의미를 분리하지 못하고 숫자 답으로 바로 가는 반응으로 적었다.",
+        "observationFormInput": {
+          "learnerResponse": "x를 공책 수에도 쓰고 돈에도 같이 써도 될 것 같아. 답은 그냥 3600이라고 하면 돼.",
+          "fieldValues": {
+            "defines_variable_meaning": false,
+            "writes_matching_expression_from_context": false
+          },
+          "tutorNote": "튜터가 변수 의미를 분리하지 못하고 숫자 답으로 바로 가는 반응으로 적었다.",
+          "timestamp": "2026-04-03T18:06:00+09:00"
+        }
+      }
+    ]
+  },
+  {
+    "transcriptId": "u3-s2-read-term-structure-ko-text-only-active-session",
+    "name": "Unit 3 structure-reading log with Korean text-only observation",
+    "skillId": "U3-S2",
+    "tags": [
+      "unit3",
+      "structure",
+      "ko",
+      "text-only",
+      "active"
+    ],
+    "learnerFile": "app/domain/evidence/learner-record-with-active-session-u3-s2.example.json",
+    "turns": [
+      {
+        "turnIndex": 1,
+        "lessonStepId": "STEP-U3-S2-READ-TERM-STRUCTURE",
+        "messages": [
+          {
+            "speaker": "tutor",
+            "text": "3x + 5 - 2x에서 계수와 상수항을 먼저 말해 볼래?"
+          },
+          {
+            "speaker": "learner",
+            "text": "3과 -2가 계수이고 5가 상수항이야. 3x와 -2x는 같은 문자 x가 있어서 동류항이야."
+          }
+        ],
+        "operatorNote": "튜터가 체크박스는 비워 두고 구조 읽기 설명만 남겼다.",
+        "observationFormInput": {
+          "learnerResponse": "3과 -2가 계수이고 5가 상수항이야. 3x와 -2x는 같은 문자 x가 있어서 동류항이야.",
+          "fieldValues": {
+            "identifies_coefficient_or_constant_correctly": false,
+            "distinguishes_like_terms_by_structure": false
+          },
+          "tutorNote": "튜터가 체크박스는 비워 두고 구조 읽기 설명만 남겼다.",
+          "timestamp": "2026-04-03T16:10:00+09:00"
+        }
+      }
+    ]
+  },
+  {
+    "transcriptId": "u3-s2-read-term-structure-role-swap-ko-uncertain",
+    "name": "Unit 3 structure-reading log that swaps coefficient and constant roles",
+    "skillId": "U3-S2",
+    "tags": [
+      "unit3",
+      "structure",
+      "ko",
+      "text-only",
+      "active",
+      "uncertain"
+    ],
+    "learnerFile": "app/domain/evidence/learner-record-with-active-session-u3-s2.example.json",
+    "turns": [
+      {
+        "turnIndex": 1,
+        "lessonStepId": "STEP-U3-S2-READ-TERM-STRUCTURE",
+        "messages": [
+          {
+            "speaker": "tutor",
+            "text": "3x + 5 - 2x에서 계수와 상수항을 다시 짚어 볼래?"
+          },
+          {
+            "speaker": "learner",
+            "text": "3은 상수항이고 5가 계수야. x가 들어 있으니까 셋 다 같은 항이라고 보면 될 것 같아."
+          }
+        ],
+        "operatorNote": "튜터가 계수와 상수항을 바꾸고 모든 항을 동류항처럼 읽는 반응으로 기록했다.",
+        "observationFormInput": {
+          "learnerResponse": "3은 상수항이고 5가 계수야. x가 들어 있으니까 셋 다 같은 항이라고 보면 될 것 같아.",
+          "fieldValues": {
+            "identifies_coefficient_or_constant_correctly": false,
+            "distinguishes_like_terms_by_structure": false
+          },
+          "tutorNote": "튜터가 계수와 상수항을 바꾸고 모든 항을 동류항처럼 읽는 반응으로 기록했다.",
+          "timestamp": "2026-04-03T18:07:00+09:00"
+        }
+      }
+    ]
+  },
+  {
+    "transcriptId": "u3-s3-substitute-with-structure-ko-text-only-active-session",
+    "name": "Unit 3 substitution log with confirmed observation signals",
+    "skillId": "U3-S3",
+    "tags": [
+      "unit3",
+      "substitution",
+      "ko",
+      "confirmed",
+      "active"
+    ],
+    "learnerFile": "app/domain/evidence/learner-record-with-active-session-u3-s3.example.json",
+    "turns": [
+      {
+        "turnIndex": 1,
+        "lessonStepId": "STEP-U3-S3-SUBSTITUTE-WITH-STRUCTURE",
+        "messages": [
+          {
+            "speaker": "tutor",
+            "text": "2x^2 - 3에서 x = -2이면 어떤 식으로 다시 써야 할까?"
+          },
+          {
+            "speaker": "learner",
+            "text": "2(-2)^2 - 3으로 먼저 써야 해. 제곱을 먼저 보면 8 - 3이라서 5야."
+          }
+        ],
+        "operatorNote": "튜터가 대입 구조 보존과 부호 처리 둘 다 확인해 체크했다.",
+        "observationFormInput": {
+          "learnerResponse": "2(-2)^2 - 3으로 먼저 써야 해. 제곱을 먼저 보면 8 - 3이라서 5야.",
+          "fieldValues": {
+            "substitutes_values_without_structure_loss": true,
+            "keeps_sign_or_power_meaning_consistent": true
+          },
+          "tutorNote": "튜터가 대입 구조 보존과 부호 처리 둘 다 확인해 체크했다.",
+          "timestamp": "2026-04-03T18:08:00+09:00"
+        }
+      }
+    ]
+  },
+  {
+    "transcriptId": "u3-s3-substitute-with-structure-sign-loss-ko-uncertain",
+    "name": "Unit 3 substitution log that drops the protected square structure",
+    "skillId": "U3-S3",
+    "tags": [
+      "unit3",
+      "substitution",
+      "ko",
+      "text-only",
+      "active",
+      "uncertain"
+    ],
+    "learnerFile": "app/domain/evidence/learner-record-with-active-session-u3-s3.example.json",
+    "turns": [
+      {
+        "turnIndex": 1,
+        "lessonStepId": "STEP-U3-S3-SUBSTITUTE-WITH-STRUCTURE",
+        "messages": [
+          {
+            "speaker": "tutor",
+            "text": "2x^2 - 3에서 x = -2이면 식을 어떻게 쓰고 계산해야 할까?"
+          },
+          {
+            "speaker": "learner",
+            "text": "2×-2^2-3으로 쓰면 되고, -2의 제곱은 -4처럼 보여서 답은 -11이야."
+          }
+        ],
+        "operatorNote": "튜터가 음수와 제곱 구조를 보호하지 못하고 부호를 잃는 반응으로 적었다.",
+        "observationFormInput": {
+          "learnerResponse": "2×-2^2-3으로 쓰면 되고, -2의 제곱은 -4처럼 보여서 답은 -11이야.",
+          "fieldValues": {
+            "substitutes_values_without_structure_loss": false,
+            "keeps_sign_or_power_meaning_consistent": false
+          },
+          "tutorNote": "튜터가 음수와 제곱 구조를 보호하지 못하고 부호를 잃는 반응으로 적었다.",
+          "timestamp": "2026-04-03T18:09:00+09:00"
+        }
+      }
+    ]
+  },
+  {
+    "transcriptId": "u3-s4-combine-like-terms-ko-text-only-active-session",
+    "name": "Unit 3 simplification log with confirmed observation signals",
+    "skillId": "U3-S4",
+    "tags": [
+      "unit3",
+      "simplification",
+      "ko",
+      "confirmed",
+      "active"
+    ],
+    "learnerFile": "app/domain/evidence/learner-record-with-active-session-u3-s4.example.json",
+    "turns": [
+      {
+        "turnIndex": 1,
+        "lessonStepId": "STEP-U3-S4-COMBINE-LIKE-TERMS",
+        "messages": [
+          {
+            "speaker": "tutor",
+            "text": "3(x + 2) - x를 괄호부터 정리하면 어떤 줄이 먼저 보여야 할까?"
+          },
+          {
+            "speaker": "learner",
+            "text": "먼저 3x + 6 - x로 써야 해. 그다음 같은 항은 3x와 -x뿐이니까 2x + 6이야."
+          }
+        ],
+        "operatorNote": "튜터가 괄호 해제와 동류항 결합을 둘 다 확인해 체크했다.",
+        "observationFormInput": {
+          "learnerResponse": "먼저 3x + 6 - x로 써야 해. 그다음 같은 항은 3x와 -x뿐이니까 2x + 6이야.",
+          "fieldValues": {
+            "distributes_or_removes_parentheses_correctly": true,
+            "combines_only_like_terms": true
+          },
+          "tutorNote": "튜터가 괄호 해제와 동류항 결합을 둘 다 확인해 체크했다.",
+          "timestamp": "2026-04-03T18:10:00+09:00"
+        }
+      }
+    ]
+  },
+  {
+    "transcriptId": "u3-s4-combine-like-terms-distribution-slip-ko-uncertain",
+    "name": "Unit 3 simplification log that drops part of the distributed structure",
+    "skillId": "U3-S4",
+    "tags": [
+      "unit3",
+      "simplification",
+      "ko",
+      "text-only",
+      "active",
+      "uncertain"
+    ],
+    "learnerFile": "app/domain/evidence/learner-record-with-active-session-u3-s4.example.json",
+    "turns": [
+      {
+        "turnIndex": 1,
+        "lessonStepId": "STEP-U3-S4-COMBINE-LIKE-TERMS",
+        "messages": [
+          {
+            "speaker": "tutor",
+            "text": "3(x + 2) - x를 정리할 때 괄호 바깥의 3은 어떻게 처리해야 할까?"
+          },
+          {
+            "speaker": "learner",
+            "text": "3x + 2 - x로 쓰면 되고, x끼리 더해서 4x + 2가 돼."
+          }
+        ],
+        "operatorNote": "튜터가 분배를 끝까지 하지 못하고 서로 다른 구조를 섞는 반응으로 적었다.",
+        "observationFormInput": {
+          "learnerResponse": "3x + 2 - x로 쓰면 되고, x끼리 더해서 4x + 2가 돼.",
+          "fieldValues": {
+            "distributes_or_removes_parentheses_correctly": false,
+            "combines_only_like_terms": false
+          },
+          "tutorNote": "튜터가 분배를 끝까지 하지 못하고 서로 다른 구조를 섞는 반응으로 적었다.",
+          "timestamp": "2026-04-03T18:11:00+09:00"
+        }
+      }
+    ]
+  },
+  {
+    "transcriptId": "u3-s5-model-then-simplify-ko-text-only-active-session",
+    "name": "Unit 3 contextual-modeling log with confirmed observation signals",
+    "skillId": "U3-S5",
+    "tags": [
+      "unit3",
+      "context-modeling",
+      "ko",
+      "confirmed",
+      "active"
+    ],
+    "learnerFile": "app/domain/evidence/learner-record-with-active-session-u3-s5.example.json",
+    "turns": [
+      {
+        "turnIndex": 1,
+        "lessonStepId": "STEP-U3-S5-MODEL-THEN-SIMPLIFY",
+        "messages": [
+          {
+            "speaker": "tutor",
+            "text": "한 변이 x이고 나머지 두 변의 길이 합이 6인 도형의 둘레를 식으로 쓰면 어떻게 될까?"
+          },
+          {
+            "speaker": "learner",
+            "text": "둘레는 변을 다 더해야 하니까 x + x + 6으로 쓰고, 그래서 2x + 6이야."
+          }
+        ],
+        "operatorNote": "튜터가 상황 관계 세우기와 식 정리를 둘 다 확인해 체크했다.",
+        "observationFormInput": {
+          "learnerResponse": "둘레는 변을 다 더해야 하니까 x + x + 6으로 쓰고, 그래서 2x + 6이야.",
+          "fieldValues": {
+            "builds_expression_from_context_relationship": true,
+            "simplifies_context_expression_consistently": true
+          },
+          "tutorNote": "튜터가 상황 관계 세우기와 식 정리를 둘 다 확인해 체크했다.",
+          "timestamp": "2026-04-03T18:12:00+09:00"
+        }
+      }
+    ]
+  },
+  {
+    "transcriptId": "u3-s5-model-then-simplify-operation-mismatch-ko-uncertain",
+    "name": "Unit 3 contextual-modeling log that picks the wrong relationship from the story",
+    "skillId": "U3-S5",
+    "tags": [
+      "unit3",
+      "context-modeling",
+      "ko",
+      "text-only",
+      "active",
+      "uncertain"
+    ],
+    "learnerFile": "app/domain/evidence/learner-record-with-active-session-u3-s5.example.json",
+    "turns": [
+      {
+        "turnIndex": 1,
+        "lessonStepId": "STEP-U3-S5-MODEL-THEN-SIMPLIFY",
+        "messages": [
+          {
+            "speaker": "tutor",
+            "text": "이 둘레 상황에서 어떤 관계를 식으로 먼저 보여야 할까?"
+          },
+          {
+            "speaker": "learner",
+            "text": "길이가 x랑 6이니까 그냥 x + 6만 쓰면 될 것 같아."
+          }
+        ],
+        "operatorNote": "튜터가 필요한 양은 보지만 관계를 빠뜨리는 반응으로 적었다.",
+        "observationFormInput": {
+          "learnerResponse": "길이가 x랑 6이니까 그냥 x + 6만 쓰면 될 것 같아.",
+          "fieldValues": {
+            "builds_expression_from_context_relationship": false,
+            "simplifies_context_expression_consistently": false
+          },
+          "tutorNote": "튜터가 필요한 양은 보지만 관계를 빠뜨리는 반응으로 적었다.",
+          "timestamp": "2026-04-03T18:13:00+09:00"
+        }
+      }
+    ]
+  }
+]

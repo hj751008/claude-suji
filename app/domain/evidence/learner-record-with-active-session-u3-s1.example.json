@@ -1,0 +1,113 @@
+{
+  "learnerId": "unit3-s1-sample-learner",
+  "activeSession": {
+    "learnerId": "unit3-s1-sample-learner",
+    "targetSkillId": "U3-S1",
+    "status": "in_progress",
+    "currentStepIndex": 0,
+    "currentStep": {
+      "lessonStepId": "STEP-U3-S1-DEFINE-VARIABLE-ROLE",
+      "activityId": "ACT-U3-S1-DEFINE-VARIABLE-ROLE",
+      "status": "provisional",
+      "openingLine": "Let's decide what the variable means before we try to compress the situation into symbols.",
+      "firstTutorQuestion": "What quantity should x represent here, and how would you say that in words first?",
+      "smallHint": "Name the quantity first, then write the relationship with x still meaning that quantity.",
+      "goodStoppingPoint": "Learner names the quantity clearly and writes a matching simple expression from the context.",
+      "watchFor": [
+        "Learner uses the same variable for different quantities or does not define the variable.",
+        "Learner writes a number-only answer where the task still asks for an expression."
+      ],
+      "exampleTutorMove": "Ask the learner to complete the sentence 'x means ...' before writing any algebraic symbols.",
+      "exampleLearnerResponse": "x means the number of notebooks, so the total price can be written as 1200x.",
+      "skillId": "U3-S1",
+      "activityType": "dialogue-flow",
+      "title": "Name the quantity before writing the symbol"
+    },
+    "nextStep": null,
+    "completedStepIds": [],
+    "remainingStepIds": [
+      "STEP-U3-S1-DEFINE-VARIABLE-ROLE"
+    ],
+    "steps": [
+      {
+        "lessonStepId": "STEP-U3-S1-DEFINE-VARIABLE-ROLE",
+        "activityId": "ACT-U3-S1-DEFINE-VARIABLE-ROLE",
+        "status": "provisional",
+        "openingLine": "Let's decide what the variable means before we try to compress the situation into symbols.",
+        "firstTutorQuestion": "What quantity should x represent here, and how would you say that in words first?",
+        "smallHint": "Name the quantity first, then write the relationship with x still meaning that quantity.",
+        "goodStoppingPoint": "Learner names the quantity clearly and writes a matching simple expression from the context.",
+        "watchFor": [
+          "Learner uses the same variable for different quantities or does not define the variable.",
+          "Learner writes a number-only answer where the task still asks for an expression."
+        ],
+        "exampleTutorMove": "Ask the learner to complete the sentence 'x means ...' before writing any algebraic symbols.",
+        "exampleLearnerResponse": "x means the number of notebooks, so the total price can be written as 1200x.",
+        "skillId": "U3-S1",
+        "activityType": "dialogue-flow",
+        "title": "Name the quantity before writing the symbol"
+      }
+    ],
+    "completionRule": "complete_all_steps_in_order",
+    "lastEvaluation": null,
+    "history": []
+  },
+  "sessions": [
+    {
+      "learnerId": "unit3-s1-sample-learner",
+      "targetSkillId": "U3-S1",
+      "status": "in_progress",
+      "currentStepIndex": 0,
+      "currentStep": {
+        "lessonStepId": "STEP-U3-S1-DEFINE-VARIABLE-ROLE",
+        "activityId": "ACT-U3-S1-DEFINE-VARIABLE-ROLE",
+        "status": "provisional",
+        "openingLine": "Let's decide what the variable means before we try to compress the situation into symbols.",
+        "firstTutorQuestion": "What quantity should x represent here, and how would you say that in words first?",
+        "smallHint": "Name the quantity first, then write the relationship with x still meaning that quantity.",
+        "goodStoppingPoint": "Learner names the quantity clearly and writes a matching simple expression from the context.",
+        "watchFor": [
+          "Learner uses the same variable for different quantities or does not define the variable.",
+          "Learner writes a number-only answer where the task still asks for an expression."
+        ],
+        "exampleTutorMove": "Ask the learner to complete the sentence 'x means ...' before writing any algebraic symbols.",
+        "exampleLearnerResponse": "x means the number of notebooks, so the total price can be written as 1200x.",
+        "skillId": "U3-S1",
+        "activityType": "dialogue-flow",
+        "title": "Name the quantity before writing the symbol"
+      },
+      "nextStep": null,
+      "completedStepIds": [],
+      "remainingStepIds": [
+        "STEP-U3-S1-DEFINE-VARIABLE-ROLE"
+      ],
+      "steps": [
+        {
+          "lessonStepId": "STEP-U3-S1-DEFINE-VARIABLE-ROLE",
+          "activityId": "ACT-U3-S1-DEFINE-VARIABLE-ROLE",
+          "status": "provisional",
+          "openingLine": "Let's decide what the variable means before we try to compress the situation into symbols.",
+          "firstTutorQuestion": "What quantity should x represent here, and how would you say that in words first?",
+          "smallHint": "Name the quantity first, then write the relationship with x still meaning that quantity.",
+          "goodStoppingPoint": "Learner names the quantity clearly and writes a matching simple expression from the context.",
+          "watchFor": [
+            "Learner uses the same variable for different quantities or does not define the variable.",
+            "Learner writes a number-only answer where the task still asks for an expression."
+          ],
+          "exampleTutorMove": "Ask the learner to complete the sentence 'x means ...' before writing any algebraic symbols.",
+          "exampleLearnerResponse": "x means the number of notebooks, so the total price can be written as 1200x.",
+          "skillId": "U3-S1",
+          "activityType": "dialogue-flow",
+          "title": "Name the quantity before writing the symbol"
+        }
+      ],
+      "completionRule": "complete_all_steps_in_order",
+      "lastEvaluation": null,
+      "history": []
+    }
+  ],
+  "evidenceEvents": [],
+  "latestSkillSummaries": [],
+  "latestRecommendations": [],
+  "updatedAt": null
+}
