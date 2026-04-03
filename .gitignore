@@ -2,3 +2,4 @@ __pycache__/
 *.pyc
 .agents/skills/gstack/
 .agents/skills/gstack-*/
+/tools/gh/
