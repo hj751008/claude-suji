@@ -1,5 +1,53 @@
 [
   {
+    "name": "prepare observation form from active unit3 s1 session",
+    "learnerFile": "app/domain/evidence/learner-record-with-active-session-u3-s1.example.json",
+    "expected": {
+      "lessonStepId": "STEP-U3-S1-DEFINE-VARIABLE-ROLE",
+      "fieldIds": [
+        "defines_variable_meaning",
+        "writes_matching_expression_from_context"
+      ],
+      "learnerResponsePrompt": "Write how the learner named the quantity the variable represents and how they wrote the matching expression."
+    }
+  },
+  {
+    "name": "prepare observation form from active unit3 s3 session",
+    "learnerFile": "app/domain/evidence/learner-record-with-active-session-u3-s3.example.json",
+    "expected": {
+      "lessonStepId": "STEP-U3-S3-SUBSTITUTE-WITH-STRUCTURE",
+      "fieldIds": [
+        "substitutes_values_without_structure_loss",
+        "keeps_sign_or_power_meaning_consistent"
+      ],
+      "learnerResponsePrompt": "Write how the learner substituted the values and whether they preserved sign, power, reciprocal, and grouping structure."
+    }
+  },
+  {
+    "name": "prepare observation form from active unit3 s4 session",
+    "learnerFile": "app/domain/evidence/learner-record-with-active-session-u3-s4.example.json",
+    "expected": {
+      "lessonStepId": "STEP-U3-S4-COMBINE-LIKE-TERMS",
+      "fieldIds": [
+        "distributes_or_removes_parentheses_correctly",
+        "combines_only_like_terms"
+      ],
+      "learnerResponsePrompt": "Write how the learner removed parentheses, tracked the outside sign or factor, and combined only like terms."
+    }
+  },
+  {
+    "name": "prepare observation form from active unit3 s5 session",
+    "learnerFile": "app/domain/evidence/learner-record-with-active-session-u3-s5.example.json",
+    "expected": {
+      "lessonStepId": "STEP-U3-S5-MODEL-THEN-SIMPLIFY",
+      "fieldIds": [
+        "builds_expression_from_context_relationship",
+        "simplifies_context_expression_consistently"
+      ],
+      "learnerResponsePrompt": "Write how the learner built the expression from the situation and how they simplified it afterward."
+    }
+  },
+  {
     "name": "prepare observation form from planned live session",
     "learnerFile": "app/domain/evidence/learner-record-with-live-session.example.json",
     "expected": {
@@ -210,6 +258,34 @@
         "distinguishes_like_terms_by_structure"
       ],
       "learnerResponsePrompt": "Write how the learner identified the coefficient, constant term, and like terms in the expression."
+    }
+  },
+  {
+    "name": "prepare observation form after completed u3-s4 transcript handoff",
+    "transcriptFile": "app/domain/evidence/unit3-tutor-transcripts.example.json",
+    "transcriptId": "u3-s4-combine-like-terms-ko-text-only-active-session",
+    "startBeforePrepare": true,
+    "expected": {
+      "lessonStepId": "STEP-U3-S2-READ-TERM-STRUCTURE",
+      "fieldIds": [
+        "identifies_coefficient_or_constant_correctly",
+        "distinguishes_like_terms_by_structure"
+      ],
+      "learnerResponsePrompt": "Write how the learner identified the coefficient, constant term, and like terms in the expression."
+    }
+  },
+  {
+    "name": "prepare observation form after completed u3-s5 transcript handoff",
+    "transcriptFile": "app/domain/evidence/unit3-tutor-transcripts.example.json",
+    "transcriptId": "u3-s5-model-then-simplify-ko-text-only-active-session",
+    "startBeforePrepare": true,
+    "expected": {
+      "lessonStepId": "STEP-U3-S1-DEFINE-VARIABLE-ROLE",
+      "fieldIds": [
+        "defines_variable_meaning",
+        "writes_matching_expression_from_context"
+      ],
+      "learnerResponsePrompt": "Write how the learner named the quantity the variable represents and how they wrote the matching expression."
     }
   }
 ]
