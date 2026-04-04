@@ -183,9 +183,9 @@ The following remain intentionally undecided:
 - The extraction records geometry, ratio, pattern, and word-problem situations that require expression building before simplification, which support `U3-S5`.
 - `docs/unit3-source-evidence-skills-2026-04-03.md` records the narrower source-backed rationale for this Unit 3 slice.
 - Replay-ready operator logs now include both checkbox-confirmed completions and
-  a narrow notes-only completion path for `U3-S2`.
-- Equivalent notes-only completion is still not approved for `U3-S4` or
-  `U3-S5`, so those steps still rely on explicit observation signals.
+  notes-only completion paths for `U3-S2`, `U3-S4`, and `U3-S5`.
+- The approved notes-only logs for `U3-S4` and `U3-S5` were replay-verified in
+  the current CLI and harness flow before this rule note was updated.
 - The added notes-only evidence strengthens replay density, but it does not
   approve any new numeric threshold or final mastery cutoff by itself.
 

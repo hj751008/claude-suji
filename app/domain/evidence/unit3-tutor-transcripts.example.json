@@ -317,6 +317,47 @@
     ]
   },
   {
+    "transcriptId": "u3-s4-combine-like-terms-ko-notes-only-completion",
+    "name": "Unit 3 simplification log with notes-only completion evidence",
+    "skillId": "U3-S4",
+    "tags": [
+      "unit3",
+      "simplification",
+      "ko",
+      "text-only",
+      "active",
+      "notes-only",
+      "completed"
+    ],
+    "learnerFile": "app/domain/evidence/learner-record-with-active-session-u3-s4.example.json",
+    "turns": [
+      {
+        "turnIndex": 1,
+        "lessonStepId": "STEP-U3-S4-COMBINE-LIKE-TERMS",
+        "messages": [
+          {
+            "speaker": "tutor",
+            "text": "3(x + 2) - x를 정리할 때 어떤 식을 먼저 써야 하는지 말해 볼래?"
+          },
+          {
+            "speaker": "learner",
+            "text": "괄호를 풀면 3x + 6 - x이고, 같은 항은 3x와 -x뿐이라서 정리하면 2x + 6이야."
+          }
+        ],
+        "operatorNote": "튜터가 체크박스는 비워 두었지만 괄호 해제와 같은 항 정리를 모두 드러내는 발화를 완료 증거로 남겼다.",
+        "observationFormInput": {
+          "learnerResponse": "괄호를 풀면 3x + 6 - x이고, 같은 항은 3x와 -x뿐이라서 정리하면 2x + 6이야.",
+          "fieldValues": {
+            "distributes_or_removes_parentheses_correctly": false,
+            "combines_only_like_terms": false
+          },
+          "tutorNote": "튜터가 체크박스는 비워 두었지만 괄호 해제와 같은 항 정리를 모두 드러내는 발화를 완료 증거로 남겼다.",
+          "timestamp": "2026-04-04T09:10:00+09:00"
+        }
+      }
+    ]
+  },
+  {
     "transcriptId": "u3-s4-combine-like-terms-distribution-slip-ko-uncertain",
     "name": "Unit 3 simplification log that drops part of the distributed structure",
     "skillId": "U3-S4",
@@ -353,7 +394,7 @@
           "tutorNote": "튜터가 분배를 끝까지 하지 못하고 서로 다른 구조를 섞는 반응으로 적었다.",
           "timestamp": "2026-04-03T18:11:00+09:00"
         }
-      }
+        }
       ]
     },
     {
@@ -391,6 +432,47 @@
           },
           "tutorNote": "튜터가 상황 관계 세우기와 식 정리를 둘 다 확인해 체크했다.",
           "timestamp": "2026-04-03T18:12:00+09:00"
+        }
+        }
+      ]
+    },
+    {
+      "transcriptId": "u3-s5-model-then-simplify-ko-notes-only-completion",
+      "name": "Unit 3 contextual-modeling log with notes-only completion evidence",
+    "skillId": "U3-S5",
+    "tags": [
+      "unit3",
+      "context-modeling",
+      "ko",
+      "text-only",
+      "active",
+      "notes-only",
+      "completed"
+    ],
+    "learnerFile": "app/domain/evidence/learner-record-with-active-session-u3-s5.example.json",
+    "turns": [
+      {
+        "turnIndex": 1,
+        "lessonStepId": "STEP-U3-S5-MODEL-THEN-SIMPLIFY",
+        "messages": [
+          {
+            "speaker": "tutor",
+            "text": "이 둘레 상황을 식으로 먼저 쓰고 정리해 보면 어떻게 될까?"
+          },
+          {
+            "speaker": "learner",
+            "text": "상황을 식으로 쓰면 둘레는 x + x + 6이고, 정리하면 2x + 6이야."
+          }
+        ],
+        "operatorNote": "튜터가 체크박스는 비워 두었지만 상황을 식으로 세우고 정리까지 연결하는 발화를 완료 증거로 남겼다.",
+        "observationFormInput": {
+          "learnerResponse": "상황을 식으로 쓰면 둘레는 x + x + 6이고, 정리하면 2x + 6이야.",
+          "fieldValues": {
+            "builds_expression_from_context_relationship": false,
+            "simplifies_context_expression_consistently": false
+          },
+          "tutorNote": "튜터가 체크박스는 비워 두었지만 상황을 식으로 세우고 정리까지 연결하는 발화를 완료 증거로 남겼다.",
+          "timestamp": "2026-04-04T09:12:00+09:00"
         }
       }
       ]

@@ -2,20 +2,22 @@
 
 ## Current Focus
 
-1. Keep turning `app/content/unit2-scaffold/` into a stronger Unit 2 pack for
+1. Keep Unit 3 `문자의 사용과 식` conservative now that notes-only completion is
+   approved for `U3-S2`, `U3-S4`, and `U3-S5`, but broader prerequisite chains
+   and mastery cutoffs remain undecided.
+2. Keep turning `app/content/unit2-scaffold/` into a stronger Unit 2 pack for
    `정수와 유리수` now that skills, teaching records, and conservative
    prerequisites are source-backed `provisional`.
-2. Keep Unit 1 stable while expanding failure-path validation around malformed
-   learner state and session state.
-3. Revisit broader recommendation generalization only after the next unit has
-   real content or the planner surface needs to widen.
+3. Keep expanding failure-path validation around malformed learner state and
+   session state.
 
 ## Immediate Actions
 
-1. Review whether Unit 2 transcript examples should be converted into
-   replay-ready evidence fixtures.
-2. Add stronger Unit 2 harness or learner-state coverage once the next
-   evidence-fixture slice is chosen.
+1. Verify whether the newly approved Unit 3 notes-only completion paths also
+   need extra operator UI or session-orchestrator coverage beyond learning-turn
+   replay.
+2. Review whether additional Unit 2 transcript examples should be converted
+   into replay-ready evidence fixtures.
 3. Revisit prerequisite links only if new source-backed evidence justifies
    changes beyond the current conservative subset.
 
@@ -31,7 +33,7 @@
 <!-- UNIT:U3 START -->
 ### U3 `unit3-scaffold`
 1. Current stage: `runtime-gate-passed`.
-2. Runtime activation gate passed. Runtime wiring and harness activation can now land in the same reviewed change.
+2. Notes-only completion is approved for `U3-S2`, `U3-S4`, and `U3-S5`, while broader prerequisite and cutoff policy stays conservative.
 3. Run `python app/cli.py validate-content` after the next meaningful content change.
 <!-- UNIT:U3 END -->
 <!-- AUTO-MANAGED-UNIT-ACTIONS END -->

@@ -793,6 +793,18 @@
       }
     },
     {
+      "name": "replay transcript fixture for unit3 simplification notes-only completion with blocker-first next session",
+      "transcriptFile": "app/domain/evidence/unit3-tutor-transcripts.example.json",
+      "transcriptId": "u3-s4-combine-like-terms-ko-notes-only-completion",
+    "expected": {
+      "decision": "completed",
+      "nextAction": "review_next_recommendation",
+      "sessionStatus": "completed",
+        "targetSkillId": "U3-S4",
+        "firstLessonStepId": "STEP-U3-S2-READ-TERM-STRUCTURE"
+      }
+    },
+    {
       "name": "replay transcript fixture for unit3 simplification uncertainty when distribution slips",
       "transcriptFile": "app/domain/evidence/unit3-tutor-transcripts.example.json",
       "transcriptId": "u3-s4-combine-like-terms-distribution-slip-ko-uncertain",
@@ -808,6 +820,18 @@
       "name": "replay transcript fixture for unit3 contextual-modeling completion with blocker-first next session",
       "transcriptFile": "app/domain/evidence/unit3-tutor-transcripts.example.json",
       "transcriptId": "u3-s5-model-then-simplify-ko-text-only-active-session",
+    "expected": {
+      "decision": "completed",
+      "nextAction": "review_next_recommendation",
+      "sessionStatus": "completed",
+        "targetSkillId": "U3-S5",
+        "firstLessonStepId": "STEP-U3-S1-DEFINE-VARIABLE-ROLE"
+      }
+    },
+    {
+      "name": "replay transcript fixture for unit3 contextual-modeling notes-only completion with blocker-first next session",
+      "transcriptFile": "app/domain/evidence/unit3-tutor-transcripts.example.json",
+      "transcriptId": "u3-s5-model-then-simplify-ko-notes-only-completion",
     "expected": {
       "decision": "completed",
       "nextAction": "review_next_recommendation",

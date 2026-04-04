@@ -91,9 +91,8 @@ Approved relationship set is not finalized.
 - `U3-S3` does not yet receive an internal prerequisite link.
 - `U3-S4 -> U3-S5` is still left unapproved.
 - `docs/unit3-source-evidence-prerequisites-2026-04-03.md` records why the current evidence is strong enough for the two links above but still too weak for a broader Unit 3 chain.
-- A narrow notes-only completion log is now accepted for `U3-S2`, but the
-  blocker-first completion paths for `U3-S4` and `U3-S5` still rely on
-  explicit observation signals.
+- Notes-only completion logs are now accepted for `U3-S2`, `U3-S4`, and
+  `U3-S5`, including the blocker-first replay paths for `U3-S4` and `U3-S5`.
 - That evidence increase does not justify a broader Unit 3 prerequisite chain.
 
 ## Rules For Uncertain Links
