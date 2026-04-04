@@ -17,12 +17,13 @@ Build a Korean middle school math learning AI with strong math accuracy, honest 
 - `app/` now includes a schema-first Unit 1 runtime with content validation, learner summary, prerequisite-aware recommendations, session payload generation, session runner logic, and learner-record persistence
 - The current CLI operator loop reaches `start-learning-session -> run-learning-turn`, so a tutor can open or resume a session, submit an observation, and immediately see the next step or next recommendation
 - The runtime is still intentionally conservative: mastery thresholds, pass labels, and scoring cutoffs remain provisional or undecided unless approved in `docs/`
-- The current runnable flow reaches `learner_record -> activeSession -> observation submission -> learner summary/recommendation refresh`, and the runtime now includes Unit 1 plus a conservative Unit 2 `정수와 유리수` pack
-- `app/content/unit2-scaffold/` is now runtime-loaded and holds source-backed `provisional` Unit 2 skills, teaching records, and conservative prerequisite links, while transcript examples remain review artifacts rather than replay-ready evidence
+- The current runnable flow reaches `learner_record -> activeSession -> observation submission -> learner summary/recommendation refresh`, and the runtime now includes Unit 1, Unit 2 `정수와 유리수`, and Unit 3 `문자의 사용과 식`
+- `app/content/unit2-scaffold/` and `app/content/unit3-scaffold/` are now runtime-loaded with source-backed `provisional` skills, teaching records, and conservative prerequisite links
+- Replay-ready Unit 3 transcript fixtures now include approved notes-only completion paths for `U3-S2`, `U3-S4`, and `U3-S5`, while broader mastery thresholds and prerequisite expansion remain intentionally undecided
 
 ## Next Priorities
-1. Keep extending Unit 2 `정수와 유리수` from source-backed `provisional` records into stronger prerequisite, transcript-evidence, and harness-backed coverage
-2. Keep Unit 1 worked examples and app content evidence-backed and conservative
+1. Keep Unit 3 `문자의 사용과 식` evidence-backed and conservative now that notes-only completion is approved for `U3-S2`, `U3-S4`, and `U3-S5`
+2. Keep extending Unit 2 `정수와 유리수` from source-backed `provisional` records into stronger prerequisite, transcript-evidence, and harness-backed coverage
 3. Expand failure-path validation for malformed learner/session state, not just happy-path harness cases
 
 ## Auto-Managed Unit Pipeline

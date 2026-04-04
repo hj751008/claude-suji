@@ -9,12 +9,11 @@
 - Each step now has:
   - one confirmed completion fixture
   - one uncertain or follow-up fixture
-- `U3-S2` now also has an additional notes-only completion fixture where the
-  learner explanation is strong enough to justify completion even when the
-  operator leaves the checkboxes blank.
-- Equivalent notes-only completion is still not approved for `U3-S4` or
-  `U3-S5`; those blocker-first steps still rely on explicit observation
-  signals for completion.
+- `U3-S2`, `U3-S4`, and `U3-S5` now also have additional notes-only completion
+  fixtures where the learner explanation is strong enough to justify
+  completion even when the operator leaves the checkboxes blank.
+- These notes-only completion fixtures were replay-verified through the current
+  CLI and harness flow before being approved here.
 
 ## Source Basis
 
@@ -67,12 +66,14 @@
 - Lesson step: `STEP-U3-S4-COMBINE-LIKE-TERMS`
 - Confirmed replay fixture:
   `u3-s4-combine-like-terms-ko-text-only-active-session`
+- Notes-only completion fixture:
+  `u3-s4-combine-like-terms-ko-notes-only-completion`
 - Uncertain replay fixture:
   `u3-s4-combine-like-terms-distribution-slip-ko-uncertain`
 - Coverage:
   - learner rewrites the expression one line at a time
-  - completion still relies on explicit observation signals for safe
-    blocker-first replay behavior
+  - notes-only completion still states the parentheses-removal step and which
+    terms are actually like terms in operator free text
   - uncertain case misses part of the distribution and then combines badly
 - Current replay note:
   - completion on `U3-S4` currently replans the next session as
@@ -83,12 +84,14 @@
 - Lesson step: `STEP-U3-S5-MODEL-THEN-SIMPLIFY`
 - Confirmed replay fixture:
   `u3-s5-model-then-simplify-ko-text-only-active-session`
+- Notes-only completion fixture:
+  `u3-s5-model-then-simplify-ko-notes-only-completion`
 - Uncertain replay fixture:
   `u3-s5-model-then-simplify-operation-mismatch-ko-uncertain`
 - Coverage:
   - learner names the quantities and relationship before simplifying
-  - completion still relies on explicit observation signals for safe
-    blocker-first replay behavior
+  - notes-only completion still states the context expression and cleaned final
+    expression in operator free text
   - uncertain case notices quantities but misses the story relationship
 - Current replay note:
   - completion on `U3-S5` currently replans the next session as
@@ -98,7 +101,7 @@
 
 - These fixtures are still one-turn examples, not multi-turn transcripts.
 - They are strong enough for current CLI replay and harness coverage, including
-  a narrow notes-only completion path for `U3-S2`, but not for broader
-  operator-flow realism claims.
+  notes-only completion paths for `U3-S2`, `U3-S4`, and `U3-S5`, but not for
+  broader operator-flow realism claims.
 - Additional replay-ready Unit 3 transcript examples can still be added later if
   operator UI QA or session-orchestrator coverage needs stronger evidence.
