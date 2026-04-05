@@ -2,9 +2,8 @@
 
 ## Current Focus
 
-1. Close `Unit 1` as the first public result using the agreed done definition:
-   production demo stability, honest proof-page claim, route QA, and `Unit 1`
-   only public scope.
+1. Keep `Unit 1` stable as the first public result now that production routes,
+   proof-page claim, share assets, and share metadata are in place.
 2. Keep `Unit 2` work in the background only when it does not change the
    current `Unit 1` result or widen the public surface.
 3. Keep expanding failure-path validation around malformed learner state and
@@ -13,12 +12,12 @@
 
 ## Immediate Actions
 
-1. Lock `Unit 1` closeout status in docs and keep the first public story centered
-   on `Unit 1`.
-2. Record the remaining `Unit 1` presentation-closeout tasks such as share-ready
-   screenshots and final QA-note cleanup.
-3. Continue low-risk `Unit 2` transcript-evidence and harness work only behind
-   that stable `Unit 1` front layer.
+1. Keep the first public story centered on `Unit 1` and avoid widening the demo
+   surface before the next milestone.
+2. Continue low-risk `Unit 2` transcript-evidence, harness, and failure-path
+   work behind the stable `Unit 1` front layer.
+3. Only revisit `Unit 1` if regression, deploy drift, or share-surface issues
+   appear.
 
 ## Auto-Managed Unit Actions
 <!-- AUTO-MANAGED-UNIT-ACTIONS START -->

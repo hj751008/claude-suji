@@ -46,7 +46,7 @@
 - [x] `Unit 1` can be shown as a first public result
 - [x] The public story now closes through `landing -> unit1/proof`
 - [x] The current demo reflects a proof-first scope instead of a multi-unit promise
-- [ ] A curated screenshot or OG/share asset set is finalized for external sharing
+- [x] A curated screenshot or OG/share asset set is finalized for external sharing
 
 ## Current Assessment
 
@@ -56,10 +56,16 @@
   - `python app/cli.py validate-content` pass on 2026-04-05
   - `PYTHONPATH=.` + `python app/harness/run_harness.py` pass on 2026-04-05
   - production browser confirmation for `/`, `/unit1`, and `/unit1/proof`
-- The highest-value remaining `Unit 1` work is:
-  - capture or choose the final share-ready screenshots
-  - decide whether `qa-snapshots/` should be kept, curated, or removed
-  - optionally prepare one share-ready OG or thumbnail asset set for external reuse
+- The current curated share set now includes:
+  - `home-desktop`
+  - `home-mobile`
+  - `unit1-desktop`
+  - `proof-desktop`
+  - live `/opengraph-image` social preview asset
+- `qa-snapshots/` remains the broader local capture area, while
+  `share-assets/unit1/` is the current share-ready handoff set.
+- `Unit 1` no longer has a required presentation-closeout blocker for the current
+  milestone.
 
 ## Background Work Rule
 
