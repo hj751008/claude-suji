@@ -41,6 +41,12 @@
 - [x] Current production browser QA confirmed `/` and `/unit1/proof` without console errors
 - [x] A fresh browser QA confirmation for `/unit1` after the latest deploy is recorded in this checklist
 
+### Unit 1 Regression Watch
+
+- [x] Regression watch stays focused on `/`, `/unit1`, `/unit1/proof`, and `/opengraph-image`
+- [x] Share metadata check covers `og:image` and `twitter:image` on the live homepage
+- [x] Revisit `Unit 1` UI only for regression, deploy drift, or share-surface issues
+
 ### Unit 1 Demo Readiness
 
 - [x] `Unit 1` can be shown as a first public result

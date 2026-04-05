@@ -12,8 +12,8 @@
 
 ## Immediate Actions
 
-1. Keep the first public story centered on `Unit 1` and avoid widening the demo
-   surface before the next milestone.
+1. Keep a short regression watch on `/`, `/unit1`, `/unit1/proof`, and
+   `/opengraph-image` while avoiding new `Unit 1` scope expansion.
 2. Continue low-risk `Unit 2` transcript-evidence, harness, and failure-path
    work behind the stable `Unit 1` front layer.
 3. Only revisit `Unit 1` if regression, deploy drift, or share-surface issues

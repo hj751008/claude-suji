@@ -64,5 +64,119 @@
     "kind": "validate_learner_record",
     "learnerFile": "app/domain/evidence/learner-record-invalid.example.json",
     "expectedErrorContains": "activeSession.learnerId"
+  },
+  {
+    "name": "validate learner record catches unit2 s2 current-step mismatch",
+    "kind": "validate_learner_record",
+    "learnerRecord": {
+      "learnerId": "unit2-sample-learner",
+      "activeSession": {
+        "learnerId": "unit2-sample-learner",
+        "targetSkillId": "U2-S2",
+        "status": "in_progress",
+        "currentStepIndex": 0,
+        "currentStep": {
+          "lessonStepId": "STEP-U2-S3-ABSOLUTE-VALUE-DISTANCE",
+          "activityId": "ACT-U2-S3-ABSOLUTE-VALUE-DISTANCE",
+          "skillId": "U2-S3"
+        },
+        "nextStep": null,
+        "completedStepIds": [],
+        "remainingStepIds": [
+          "STEP-U2-S2-NUMBER-LINE-ORDER"
+        ],
+        "steps": [
+          {
+            "lessonStepId": "STEP-U2-S2-NUMBER-LINE-ORDER",
+            "activityId": "ACT-U2-S2-NUMBER-LINE-BRIDGE",
+            "status": "provisional",
+            "openingLine": "Let's compare the positions first instead of trusting how big the numerals look.",
+            "firstTutorQuestion": "Which of these two numbers is farther left on the number line?",
+            "smallHint": "Farther left means smaller, even when the number has a larger absolute value.",
+            "goodStoppingPoint": "Learner orders negative numbers or fractions by position language and not by surface appearance alone.",
+            "watchFor": [
+              "Learner says -7 is greater than -3 because 7 is bigger than 3."
+            ],
+            "exampleTutorMove": "Sketch a short number line with two labels and ask the learner to place one additional value before comparing.",
+            "exampleLearnerResponse": "-7 is farther left than -3, so it is smaller even though 7 has the larger absolute value.",
+            "skillId": "U2-S2",
+            "activityType": "worked-bridge",
+            "title": "Compare and Place on the Number Line"
+          }
+        ],
+        "completionRule": "complete_all_steps_in_order",
+        "lastEvaluation": null,
+        "history": []
+      },
+      "sessions": [],
+      "evidenceEvents": [],
+      "latestSkillSummaries": [],
+      "latestRecommendations": [],
+      "updatedAt": null
+    },
+    "expectedErrorContains": "activeSession.currentStep must match steps[currentStepIndex]"
+  },
+  {
+    "name": "validate learner record catches unit2 s3 remaining-step mismatch",
+    "kind": "validate_learner_record",
+    "learnerRecord": {
+      "learnerId": "unit2-sample-learner",
+      "activeSession": {
+        "learnerId": "unit2-sample-learner",
+        "targetSkillId": "U2-S3",
+        "status": "in_progress",
+        "currentStepIndex": 0,
+        "currentStep": {
+          "lessonStepId": "STEP-U2-S3-ABSOLUTE-VALUE-DISTANCE",
+          "activityId": "ACT-U2-S3-ABSOLUTE-VALUE-DISTANCE",
+          "status": "provisional",
+          "openingLine": "Let's turn absolute value back into distance before we touch the symbols.",
+          "firstTutorQuestion": "How far is this number from 0 on the number line?",
+          "smallHint": "Absolute value tells distance, so the answer itself is not negative.",
+          "goodStoppingPoint": "Learner explains absolute value as distance and uses that idea to compare values correctly.",
+          "watchFor": [
+            "Learner keeps the negative sign when writing an absolute-value answer."
+          ],
+          "exampleTutorMove": "Point to -4 on a number line and ask for the distance to 0 before asking for |-4|.",
+          "exampleLearnerResponse": "The distance from -4 to 0 is 4, so |-4| is 4, not -4.",
+          "skillId": "U2-S3",
+          "activityType": "dialogue-flow",
+          "title": "Reframe Absolute Value as Distance"
+        },
+        "nextStep": null,
+        "completedStepIds": [],
+        "remainingStepIds": [
+          "STEP-U2-S2-NUMBER-LINE-ORDER"
+        ],
+        "steps": [
+          {
+            "lessonStepId": "STEP-U2-S3-ABSOLUTE-VALUE-DISTANCE",
+            "activityId": "ACT-U2-S3-ABSOLUTE-VALUE-DISTANCE",
+            "status": "provisional",
+            "openingLine": "Let's turn absolute value back into distance before we touch the symbols.",
+            "firstTutorQuestion": "How far is this number from 0 on the number line?",
+            "smallHint": "Absolute value tells distance, so the answer itself is not negative.",
+            "goodStoppingPoint": "Learner explains absolute value as distance and uses that idea to compare values correctly.",
+            "watchFor": [
+              "Learner keeps the negative sign when writing an absolute-value answer."
+            ],
+            "exampleTutorMove": "Point to -4 on a number line and ask for the distance to 0 before asking for |-4|.",
+            "exampleLearnerResponse": "The distance from -4 to 0 is 4, so |-4| is 4, not -4.",
+            "skillId": "U2-S3",
+            "activityType": "dialogue-flow",
+            "title": "Reframe Absolute Value as Distance"
+          }
+        ],
+        "completionRule": "complete_all_steps_in_order",
+        "lastEvaluation": null,
+        "history": []
+      },
+      "sessions": [],
+      "evidenceEvents": [],
+      "latestSkillSummaries": [],
+      "latestRecommendations": [],
+      "updatedAt": null
+    },
+    "expectedErrorContains": "activeSession.remainingStepIds must match the remaining steps from currentStepIndex"
   }
 ]
