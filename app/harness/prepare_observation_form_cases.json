@@ -225,6 +225,34 @@
     }
   },
   {
+    "name": "prepare observation form after completed u2-s2 transcript handoff",
+    "transcriptFile": "app/domain/evidence/unit2-tutor-transcripts.example.json",
+    "transcriptId": "u2-s2-number-line-order-ko-text-only-active-session",
+    "startBeforePrepare": true,
+    "expected": {
+      "lessonStepId": "STEP-U2-S1-CATEGORY-SORT",
+      "fieldIds": [
+        "classifies_zero_separately",
+        "states_integer_subset_of_rational"
+      ],
+      "learnerResponsePrompt": "Write how the learner classified zero, integers, and rational numbers."
+    }
+  },
+  {
+    "name": "prepare observation form after completed u2-s3 transcript handoff",
+    "transcriptFile": "app/domain/evidence/unit2-tutor-transcripts.example.json",
+    "transcriptId": "u2-s3-absolute-value-distance-ko-text-only-active-session",
+    "startBeforePrepare": true,
+    "expected": {
+      "lessonStepId": "STEP-U2-S2-NUMBER-LINE-ORDER",
+      "fieldIds": [
+        "orders_by_left_right_position",
+        "explains_negative_order_without_abs_reversal"
+      ],
+      "learnerResponsePrompt": "Write how the learner compared the numbers on the number line."
+    }
+  },
+  {
     "name": "prepare observation form from active unit2 s4 session",
     "learnerFile": "app/domain/evidence/learner-record-with-active-session-u2-s4.example.json",
     "expected": {

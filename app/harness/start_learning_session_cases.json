@@ -131,6 +131,44 @@
     }
   },
   {
+    "name": "start learning session after completed u2-s2 transcript keeps session target but opens blocker step",
+    "transcriptFile": "app/domain/evidence/unit2-tutor-transcripts.example.json",
+    "transcriptId": "u2-s2-number-line-order-ko-text-only-active-session",
+    "expected": {
+      "action": "plan_new_session",
+      "targetSkillId": "U2-S2",
+      "currentStepSkillId": "U2-S1",
+      "currentLessonStepId": "STEP-U2-S1-CATEGORY-SORT",
+      "firstTutorQuestion": "What makes 0 its own case instead of a positive or negative integer?",
+      "nextLessonStepId": "STEP-U2-S2-NUMBER-LINE-ORDER",
+      "remainingStepCount": 2,
+      "plannedFromSkillId": "U2-S2",
+      "recommendedNextSkillIds": [
+        "U2-S1",
+        "U2-S2"
+      ]
+    }
+  },
+  {
+    "name": "start learning session after completed u2-s3 transcript keeps session target but opens blocker step",
+    "transcriptFile": "app/domain/evidence/unit2-tutor-transcripts.example.json",
+    "transcriptId": "u2-s3-absolute-value-distance-ko-text-only-active-session",
+    "expected": {
+      "action": "plan_new_session",
+      "targetSkillId": "U2-S3",
+      "currentStepSkillId": "U2-S2",
+      "currentLessonStepId": "STEP-U2-S2-NUMBER-LINE-ORDER",
+      "firstTutorQuestion": "Which of these two numbers is farther left on the number line?",
+      "nextLessonStepId": "STEP-U2-S3-ABSOLUTE-VALUE-DISTANCE",
+      "remainingStepCount": 2,
+      "plannedFromSkillId": "U2-S3",
+      "recommendedNextSkillIds": [
+        "U2-S2",
+        "U2-S3"
+      ]
+    }
+  },
+  {
     "name": "start learning session after completed u2-s4 transcript keeps session target but opens blocker step",
     "transcriptFile": "app/domain/evidence/unit2-tutor-transcripts.example.json",
     "transcriptId": "u2-s4-signed-change-ko-text-only-active-session",

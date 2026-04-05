@@ -69,6 +69,34 @@
     }
   },
   {
+    "name": "plan-next-session-from-completed-u2-s2-transcript",
+    "transcriptFile": "app/domain/evidence/unit2-tutor-transcripts.example.json",
+    "transcriptId": "u2-s2-number-line-order-ko-text-only-active-session",
+    "expected": {
+      "plannedFromSkillId": "U2-S2",
+      "recommendedNextSkillIds": [
+        "U2-S1",
+        "U2-S2"
+      ],
+      "firstLessonStepId": "STEP-U2-S1-CATEGORY-SORT",
+      "stepCount": 2
+    }
+  },
+  {
+    "name": "plan-next-session-from-completed-u2-s3-transcript",
+    "transcriptFile": "app/domain/evidence/unit2-tutor-transcripts.example.json",
+    "transcriptId": "u2-s3-absolute-value-distance-ko-text-only-active-session",
+    "expected": {
+      "plannedFromSkillId": "U2-S3",
+      "recommendedNextSkillIds": [
+        "U2-S2",
+        "U2-S3"
+      ],
+      "firstLessonStepId": "STEP-U2-S2-NUMBER-LINE-ORDER",
+      "stepCount": 2
+    }
+  },
+  {
     "name": "plan-next-session-from-completed-u2-s4-transcript",
     "transcriptFile": "app/domain/evidence/unit2-tutor-transcripts.example.json",
     "transcriptId": "u2-s4-signed-change-ko-text-only-active-session",

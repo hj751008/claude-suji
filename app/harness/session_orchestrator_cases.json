@@ -75,6 +75,34 @@
     }
   },
   {
+    "name": "plan a new session after completed u2-s2 transcript with blocker-first opening step",
+    "transcriptFile": "app/domain/evidence/unit2-tutor-transcripts.example.json",
+    "transcriptId": "u2-s2-number-line-order-ko-text-only-active-session",
+    "expected": {
+      "action": "plan_new_session",
+      "plannedFromSkillId": "U2-S2",
+      "recommendedNextSkillIds": [
+        "U2-S1",
+        "U2-S2"
+      ],
+      "firstLessonStepId": "STEP-U2-S1-CATEGORY-SORT"
+    }
+  },
+  {
+    "name": "plan a new session after completed u2-s3 transcript with blocker-first opening step",
+    "transcriptFile": "app/domain/evidence/unit2-tutor-transcripts.example.json",
+    "transcriptId": "u2-s3-absolute-value-distance-ko-text-only-active-session",
+    "expected": {
+      "action": "plan_new_session",
+      "plannedFromSkillId": "U2-S3",
+      "recommendedNextSkillIds": [
+        "U2-S2",
+        "U2-S3"
+      ],
+      "firstLessonStepId": "STEP-U2-S2-NUMBER-LINE-ORDER"
+    }
+  },
+  {
     "name": "plan a new session after completed u3-s4 transcript with blocker-first opening step",
     "transcriptFile": "app/domain/evidence/unit3-tutor-transcripts.example.json",
     "transcriptId": "u3-s4-combine-like-terms-ko-text-only-active-session",
