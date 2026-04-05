@@ -2,24 +2,23 @@
 
 ## Current Focus
 
-1. Keep Unit 3 `문자의 사용과 식` conservative now that notes-only completion is
-   approved for `U3-S2`, `U3-S4`, and `U3-S5`, but broader prerequisite chains
-   and mastery cutoffs remain undecided.
-2. Keep turning `app/content/unit2-scaffold/` into a stronger Unit 2 pack for
-   `정수와 유리수` now that skills, teaching records, and conservative
-   prerequisites are source-backed `provisional`.
+1. Close `Unit 1` as the first public result using the agreed done definition:
+   production demo stability, honest proof-page claim, route QA, and `Unit 1`
+   only public scope.
+2. Keep `Unit 2` work in the background only when it does not change the
+   current `Unit 1` result or widen the public surface.
 3. Keep expanding failure-path validation around malformed learner state and
-   session state.
+   session state because that improves the shared engine without changing the
+   current `Unit 1` claim.
 
 ## Immediate Actions
 
-1. Verify whether the newly approved Unit 3 notes-only completion paths also
-   need extra operator UI or session-orchestrator coverage beyond learning-turn
-   replay.
-2. Review whether additional Unit 2 transcript examples should be converted
-   into replay-ready evidence fixtures.
-3. Revisit prerequisite links only if new source-backed evidence justifies
-   changes beyond the current conservative subset.
+1. Lock `Unit 1` closeout status in docs and keep the first public story centered
+   on `Unit 1`.
+2. Record the remaining `Unit 1` presentation-closeout tasks such as share-ready
+   screenshots and final QA-note cleanup.
+3. Continue low-risk `Unit 2` transcript-evidence and harness work only behind
+   that stable `Unit 1` front layer.
 
 ## Auto-Managed Unit Actions
 <!-- AUTO-MANAGED-UNIT-ACTIONS START -->
