@@ -188,6 +188,25 @@
     }
   },
   {
+    "name": "start learning session after completed u3-s4 notes-only transcript keeps session target but opens blocker step",
+    "transcriptFile": "app/domain/evidence/unit3-tutor-transcripts.example.json",
+    "transcriptId": "u3-s4-combine-like-terms-ko-notes-only-completion",
+    "expected": {
+      "action": "plan_new_session",
+      "targetSkillId": "U3-S4",
+      "currentStepSkillId": "U3-S2",
+      "currentLessonStepId": "STEP-U3-S2-READ-TERM-STRUCTURE",
+      "firstTutorQuestion": "Which part of this expression is the coefficient, and which part is the constant term?",
+      "nextLessonStepId": "STEP-U3-S4-COMBINE-LIKE-TERMS",
+      "remainingStepCount": 2,
+      "plannedFromSkillId": "U3-S4",
+      "recommendedNextSkillIds": [
+        "U3-S2",
+        "U3-S4"
+      ]
+    }
+  },
+  {
     "name": "start learning session after completed u3-s5 transcript keeps session target but opens blocker step",
     "transcriptFile": "app/domain/evidence/unit3-tutor-transcripts.example.json",
     "transcriptId": "u3-s5-model-then-simplify-ko-text-only-active-session",
@@ -203,6 +222,43 @@
       "recommendedNextSkillIds": [
         "U3-S1",
         "U3-S5"
+      ]
+    }
+  },
+  {
+    "name": "start learning session after completed u3-s5 notes-only transcript keeps session target but opens blocker step",
+    "transcriptFile": "app/domain/evidence/unit3-tutor-transcripts.example.json",
+    "transcriptId": "u3-s5-model-then-simplify-ko-notes-only-completion",
+    "expected": {
+      "action": "plan_new_session",
+      "targetSkillId": "U3-S5",
+      "currentStepSkillId": "U3-S1",
+      "currentLessonStepId": "STEP-U3-S1-DEFINE-VARIABLE-ROLE",
+      "firstTutorQuestion": "What quantity should x represent here, and how would you say that in words first?",
+      "nextLessonStepId": "STEP-U3-S5-MODEL-THEN-SIMPLIFY",
+      "remainingStepCount": 2,
+      "plannedFromSkillId": "U3-S5",
+      "recommendedNextSkillIds": [
+        "U3-S1",
+        "U3-S5"
+      ]
+    }
+  },
+  {
+    "name": "start learning session after completed u3-s2 notes-only transcript reopens the same step",
+    "transcriptFile": "app/domain/evidence/unit3-tutor-transcripts.example.json",
+    "transcriptId": "u3-s2-read-term-structure-ko-notes-only-completion",
+    "expected": {
+      "action": "plan_new_session",
+      "targetSkillId": "U3-S2",
+      "currentStepSkillId": "U3-S2",
+      "currentLessonStepId": "STEP-U3-S2-READ-TERM-STRUCTURE",
+      "firstTutorQuestion": "Which part of this expression is the coefficient, and which part is the constant term?",
+      "nextLessonStepId": null,
+      "remainingStepCount": 1,
+      "plannedFromSkillId": "U3-S2",
+      "recommendedNextSkillIds": [
+        "U3-S2"
       ]
     }
   }

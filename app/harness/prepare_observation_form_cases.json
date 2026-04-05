@@ -275,6 +275,20 @@
     }
   },
   {
+    "name": "prepare observation form after completed u3-s4 notes-only transcript handoff",
+    "transcriptFile": "app/domain/evidence/unit3-tutor-transcripts.example.json",
+    "transcriptId": "u3-s4-combine-like-terms-ko-notes-only-completion",
+    "startBeforePrepare": true,
+    "expected": {
+      "lessonStepId": "STEP-U3-S2-READ-TERM-STRUCTURE",
+      "fieldIds": [
+        "identifies_coefficient_or_constant_correctly",
+        "distinguishes_like_terms_by_structure"
+      ],
+      "learnerResponsePrompt": "Write how the learner identified the coefficient, constant term, and like terms in the expression."
+    }
+  },
+  {
     "name": "prepare observation form after completed u3-s5 transcript handoff",
     "transcriptFile": "app/domain/evidence/unit3-tutor-transcripts.example.json",
     "transcriptId": "u3-s5-model-then-simplify-ko-text-only-active-session",
@@ -286,6 +300,34 @@
         "writes_matching_expression_from_context"
       ],
       "learnerResponsePrompt": "Write how the learner named the quantity the variable represents and how they wrote the matching expression."
+    }
+  },
+  {
+    "name": "prepare observation form after completed u3-s5 notes-only transcript handoff",
+    "transcriptFile": "app/domain/evidence/unit3-tutor-transcripts.example.json",
+    "transcriptId": "u3-s5-model-then-simplify-ko-notes-only-completion",
+    "startBeforePrepare": true,
+    "expected": {
+      "lessonStepId": "STEP-U3-S1-DEFINE-VARIABLE-ROLE",
+      "fieldIds": [
+        "defines_variable_meaning",
+        "writes_matching_expression_from_context"
+      ],
+      "learnerResponsePrompt": "Write how the learner named the quantity the variable represents and how they wrote the matching expression."
+    }
+  },
+  {
+    "name": "prepare observation form after completed u3-s2 notes-only transcript handoff",
+    "transcriptFile": "app/domain/evidence/unit3-tutor-transcripts.example.json",
+    "transcriptId": "u3-s2-read-term-structure-ko-notes-only-completion",
+    "startBeforePrepare": true,
+    "expected": {
+      "lessonStepId": "STEP-U3-S2-READ-TERM-STRUCTURE",
+      "fieldIds": [
+        "identifies_coefficient_or_constant_correctly",
+        "distinguishes_like_terms_by_structure"
+      ],
+      "learnerResponsePrompt": "Write how the learner identified the coefficient, constant term, and like terms in the expression."
     }
   }
 ]
