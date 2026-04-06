@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { login } from "./actions";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -9,6 +10,7 @@ import { Label } from "@/components/ui/label";
 export function LoginForm() {
   const [error, setError] = useState<string | null>(null);
   const [pending, setPending] = useState(false);
+  const router = useRouter();
 
   async function handleSubmit(formData: FormData) {
     setPending(true);
@@ -17,6 +19,8 @@ export function LoginForm() {
     if (result?.error) {
       setError(result.error);
       setPending(false);
+    } else {
+      window.location.href = "/home";
     }
   }
 
