@@ -2,22 +2,20 @@
 
 ## Current Focus
 
-1. Keep `Unit 1` stable as the first public result now that production routes,
-   proof-page claim, share assets, and share metadata are in place.
-2. Keep `Unit 2` work in the background only when it does not change the
-   current `Unit 1` result or widen the public surface.
-3. Keep expanding failure-path validation around malformed learner state and
-   session state because that improves the shared engine without changing the
-   current `Unit 1` claim.
+1. Finish `Cleanup Phase` so current documents follow the authority order in
+   `docs/authority-map.md`.
+2. Keep `Unit 1` focused on the active tutor-flow contract until a visible MVP
+   route is reviewed and accepted.
+3. Hold `Unit 2` and `Unit 3` as background-only work until `Unit 1` visible
+   MVP status is resolved.
 
 ## Immediate Actions
 
-1. Keep a short regression watch on `/`, `/unit1`, `/unit1/proof`, and
-   `/opengraph-image` while avoiding new `Unit 1` scope expansion.
-2. Continue low-risk `Unit 2` transcript-evidence, harness, and failure-path
-   work behind the stable `Unit 1` front layer.
-3. Only revisit `Unit 1` if regression, deploy drift, or share-surface issues
-   appear.
+1. Separate `Unit 1` execution contract sections from proof-first closeout and
+   status language.
+2. Keep `NEXT_STEPS.md` derived from the contract plus current state, not from
+   earlier closeout wording.
+3. Define the minimum visible `Unit 1` MVP contract before any new build work.
 
 ## Auto-Managed Unit Actions
 <!-- AUTO-MANAGED-UNIT-ACTIONS START -->

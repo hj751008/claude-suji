@@ -5,6 +5,8 @@
 - This checklist records whether `Unit 1` currently satisfies the agreed first-public-result definition.
 - It is scoped to the current `Unit 1` package only.
 - It does not approve `Unit 2` or `Unit 3` for the same public claim.
+- Per [authority-map.md](C:\Users\tcikh\OneDrive\문서\codex\sujimathAI\docs\authority-map.md), this file is a status/checklist record, not the active execution contract.
+- Until a visible `Unit 1` MVP is reviewed and accepted, this file must not be used to justify moving the project focus to later units.
 
 ## Done Definition Reference
 
@@ -56,6 +58,8 @@
 
 ## Current Assessment
 
+- This assessment reflects the earlier proof-first demo milestone.
+- It should be read as historical status, not as the final answer to whether the visible tutoring-loop MVP is delivered.
 - `Unit 1` is effectively ready as the first public result for a proof-first demo.
 - The main remaining gaps are presentation-closeout tasks, not core runtime credibility gaps.
 - The current verification set now includes:

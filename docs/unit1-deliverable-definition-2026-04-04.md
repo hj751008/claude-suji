@@ -34,7 +34,11 @@
   - a finalized mastery-scoring product
   - a full multi-unit curriculum release
 
-## Unit 1 Done Definition
+## Historical Proof-First Done Definition (Non-Authoritative)
+
+- This section is kept as a historical proof-first milestone note.
+- Per [authority-map.md](C:\Users\tcikh\OneDrive\문서\codex\sujimathAI\docs\authority-map.md), it is not the active execution contract for `Unit 1`.
+- The active contract remains the tutor-flow package and recommended demo flow defined above.
 
 - `Unit 1` is considered done as the first public result only when all of the following are true:
   - the live demo landing, `/unit1`, and `/unit1/proof` are stable in production
@@ -122,13 +126,19 @@
   - prerequisite claims are explicitly documented and conservative
   - mastery thresholds or cutoffs are not silently broadened
 
-## Current Recommendation
+## Historical Sequencing Note (Non-Authoritative)
+
+- This section records the sequencing assumption that was in effect when the proof-first package was treated as the current milestone.
+- It does not override the active tutor-flow execution contract above.
 
 - Build the next presentation layer, demo checklist, and packaging docs around `Unit 1` only.
 - Continue developing `Unit 2` and `Unit 3` behind that stable front layer when the work does not change the current `Unit 1` result.
 - Attach later units to the deliverable only after they satisfy the shared validation gate above.
 
-## Unit 1 Closeout Checklist
+## Historical Unit 1 Closeout Checklist (Non-Authoritative)
+
+- This checklist is retained as a historical status record.
+- It must not be used as the final authority for whether `Unit 1` is visibly delivered.
 
 - Status key:
   - `PASS` means the item is already satisfied in the current repo state.
@@ -154,7 +164,10 @@
 - Status: `PASS`
 - Evidence: the public demo only exposes the Unit 1 landing, Unit 1 overview, and Unit 1 proof routes.
 
-## Closeout Verdict
+## Historical Closeout Verdict (Non-Authoritative)
+
+- This verdict reflects the earlier proof-first milestone framing.
+- It is not the controlling verdict for the current visible MVP question.
 
 - `Unit 1` is closed for the current milestone as a first public deliverable.
 - `Unit 2` and `Unit 3` remain in the repository as expansion work behind the same conservative validation gate.

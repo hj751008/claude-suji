@@ -12,6 +12,7 @@ Build a Korean middle school math learning AI with strong math accuracy, honest 
 - Repository docs in `docs/`
 - Explicit curriculum/reference materials checked into the project
 - Approved thresholds and rules documented in the repo
+- Working protocol, team structure, phase order, and reporting format are defined in `docs/project-operating-protocol.md`
 
 ## Current App State
 - `app/` now includes a schema-first Unit 1 runtime with content validation, learner summary, prerequisite-aware recommendations, session payload generation, session runner logic, and learner-record persistence

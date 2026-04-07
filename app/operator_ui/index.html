@@ -3,27 +3,105 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>SujiMathAI Operator QA Surface</title>
+    <title>SujiMathAI Unit 1 Demo</title>
     <link rel="stylesheet" href="/styles.css" />
   </head>
   <body>
     <div class="shell">
       <header class="hero">
-        <div>
-          <p class="eyebrow">Local Operator QA Surface</p>
-          <h1>Transcript replay, recommendation handoff, and live turn inspection.</h1>
+        <div class="hero-copy">
+          <p class="eyebrow">Unit 1 Deliverable</p>
+          <h1>소인수분해 Unit 1 Tutor Flow Demo</h1>
+          <p class="hero-body">
+            지금 첫 결과물로 보여줄 범위는 Unit 1이다. 검증된 transcript를
+            replay하고, blocker-first handoff를 열고, 한 번의 tutor turn까지
+            이어서 볼 수 있다.
+          </p>
+          <div class="hero-actions">
+            <button type="button" class="button button-large" data-run-preset-id="pilot-s2-s4">
+              Demo Flow 바로 시작
+            </button>
+            <button type="button" class="button secondary" data-run-preset-id="pilot-s5-transfer">
+              Transfer Flow 보기
+            </button>
+          </div>
         </div>
         <div class="hero-meta">
-          <span class="chip">Multi-unit</span>
-          <span class="chip">CLI-backed</span>
-          <span class="chip">Optional log writes</span>
+          <span class="chip">Unit 1 first</span>
+          <span class="chip">Transcript-backed</span>
+          <span class="chip">Operator demo</span>
         </div>
       </header>
+
+      <section class="demo-strip">
+        <div class="demo-panel demo-panel-primary">
+          <p class="section-kicker">Recommended Entry</p>
+          <h2>보여줄 흐름은 세 가지면 충분하다</h2>
+          <div class="quick-flow-grid">
+            <button type="button" class="flow-card" data-run-preset-id="pilot-s2-s4">
+              <span class="flow-label">Pilot A</span>
+              <strong>개념 확인에서 검증 습관까지</strong>
+              <span>S2-S4 bridge and verification flow</span>
+            </button>
+            <button type="button" class="flow-card" data-run-preset-id="pilot-s5-transfer">
+              <span class="flow-label">Pilot B</span>
+              <strong>전이 문제 후 blocker-first reopen</strong>
+              <span>S5 transfer with blocker-first handoff</span>
+            </button>
+            <button type="button" class="flow-card" data-run-preset-id="pilot-s5c-transfer">
+              <span class="flow-label">Pilot C</span>
+              <strong>최대공약수/최소공배수 전이</strong>
+              <span>S5C gcd/lcm transfer and reorder</span>
+            </button>
+          </div>
+        </div>
+        <div class="demo-panel">
+          <p class="section-kicker">What This Proves</p>
+          <div class="demo-stats">
+            <div>
+              <strong>Runtime complete</strong>
+              <span>Unit 1 tutoring loop is already runnable end-to-end.</span>
+            </div>
+            <div>
+              <strong>Pilot validated</strong>
+              <span>Transcript realism has some real pilot comparison evidence.</span>
+            </div>
+            <div>
+              <strong>Blocker-first handoff</strong>
+              <span>Finished turns reopen the next guided step conservatively.</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="story-strip">
+        <article class="story-card">
+          <p class="section-kicker">Hero Claim</p>
+          <h2>Unit 1만으로도 이미 결과를 보여줄 수 있다</h2>
+          <p>
+            지금 단계의 목적은 모든 단원을 다 보여주는 것이 아니라, 하나의 tutoring
+            loop가 실제로 시작되고 이어지고 다시 계획되는 모습을 명확하게 보여주는
+            것이다.
+          </p>
+        </article>
+        <article class="story-card">
+          <p class="section-kicker">Demo Sequence</p>
+          <ol class="story-steps">
+            <li>검증된 transcript replay</li>
+            <li>다음 guided session handoff 확인</li>
+            <li>한 번의 tutor turn 제출</li>
+            <li>필요하면 raw operator log 저장</li>
+          </ol>
+        </article>
+      </section>
 
       <main class="layout">
         <aside class="sidebar">
           <section class="sidebar-section">
-            <h2>Quick Pilot Presets</h2>
+            <h2>Unit 1 Demo Presets</h2>
+            <p class="section-note">
+              첫 화면에서는 Unit 1의 대표 흐름만 바로 고를 수 있게 둔다.
+            </p>
             <div class="preset-list">
               <button
                 type="button"
@@ -61,81 +139,55 @@
                   <span>transfer</span>
                 </div>
               </button>
-              <button
-                type="button"
-                class="transcript-item preset-item"
-                data-preset-id="pilot-u3-s4-blocker"
-              >
-                <strong>Pilot D</strong>
-                <div>U3-S4 simplification with blocker-first reopen</div>
-                <div class="transcript-meta">
-                  <span>u3-s4-combine-like-terms...</span>
-                  <span>active session</span>
-                </div>
-              </button>
-              <button
-                type="button"
-                class="transcript-item preset-item"
-                data-preset-id="pilot-u3-s5-blocker"
-              >
-                <strong>Pilot E</strong>
-                <div>U3-S5 modeling with blocker-first reopen</div>
-                <div class="transcript-meta">
-                  <span>u3-s5-model-then-simplify...</span>
-                  <span>active session</span>
-                </div>
-              </button>
             </div>
           </section>
 
-          <section class="sidebar-section">
-            <h2>Transcripts</h2>
-            <label class="field">
-              <span>Skill filter</span>
-              <input id="skill-filter" type="text" placeholder="U3-S4" />
-            </label>
-            <label class="field">
-              <span>Tag filter</span>
-              <input id="tag-filter" type="text" placeholder="uncertain" />
-            </label>
-            <div id="transcript-list" class="transcript-list"></div>
-          </section>
+          <details class="sidebar-section advanced-section">
+            <summary class="advanced-summary">
+              <span>
+                <strong>Advanced Library</strong>
+                <small>Transcript, learner record, and cross-unit QA scope</small>
+              </span>
+              <span id="scope-description" class="summary-chip">Unit 1 only</span>
+            </summary>
 
-          <section class="sidebar-section">
-            <h2>Learner Records</h2>
-            <div class="inline-row">
-              <select id="learner-file-select"></select>
-              <button id="load-learner-button" class="button secondary">Load</button>
+            <div class="advanced-body">
+              <div class="inline-row advanced-actions">
+                <button type="button" class="button secondary" id="scope-toggle">
+                  Show all units
+                </button>
+              </div>
+
+              <label class="field">
+                <span>Skill filter</span>
+                <input id="skill-filter" type="text" placeholder="U3-S4" />
+              </label>
+              <label class="field">
+                <span>Tag filter</span>
+                <input id="tag-filter" type="text" placeholder="uncertain" />
+              </label>
+              <div id="transcript-list" class="transcript-list"></div>
+
+              <div class="advanced-divider"></div>
+
+              <h2>Learner Records</h2>
+              <p class="section-note">
+                Unit 1 데모에 맞는 learner record를 기본으로 먼저 보여준다.
+              </p>
+              <div class="inline-row">
+                <select id="learner-file-select"></select>
+                <button id="load-learner-button" class="button secondary">Load</button>
+              </div>
             </div>
-          </section>
+          </details>
         </aside>
 
         <section class="workspace">
           <section class="workspace-section">
             <div class="section-heading">
               <div>
-                <p class="section-kicker">Step 0</p>
-                <h2>Capture a raw operator log</h2>
-              </div>
-              <div class="inline-row">
-                <button id="export-log-button" class="button secondary">Export JSON</button>
-                <button id="save-log-button" class="button">Save raw log</button>
-              </div>
-            </div>
-
-            <div class="field">
-              <span>Pilot note</span>
-              <textarea id="pilot-note" placeholder="Who tested, what was unusual, where the operator hesitated, what should be compared later."></textarea>
-            </div>
-            <div id="log-meta" class="result-grid"></div>
-            <pre id="log-json" class="code-block"></pre>
-          </section>
-
-          <section class="workspace-section">
-            <div class="section-heading">
-              <div>
                 <p class="section-kicker">Step 1</p>
-                <h2>Replay a transcript fixture</h2>
+                <h2>Replay a proven Unit 1 path</h2>
               </div>
               <div class="inline-row">
                 <label class="field compact">
@@ -157,7 +209,7 @@
             <div class="section-heading">
               <div>
                 <p class="section-kicker">Step 2</p>
-                <h2>Inspect the next session handoff</h2>
+                <h2>Open the next guided session</h2>
               </div>
               <button id="start-session-button" class="button secondary">Start from current learner state</button>
             </div>
@@ -170,7 +222,7 @@
             <div class="section-heading">
               <div>
                 <p class="section-kicker">Step 3</p>
-                <h2>Simulate one operator turn</h2>
+                <h2>Simulate one tutor turn</h2>
               </div>
               <div class="inline-row">
                 <button id="prepare-form-button" class="button secondary">Refresh observation form</button>
@@ -184,6 +236,26 @@
             </div>
             <div id="turn-summary" class="result-grid"></div>
             <pre id="turn-json" class="code-block"></pre>
+          </section>
+
+          <section class="workspace-section">
+            <div class="section-heading">
+              <div>
+                <p class="section-kicker">Step 4</p>
+                <h2>Capture a raw operator log</h2>
+              </div>
+              <div class="inline-row">
+                <button id="export-log-button" class="button secondary">Export JSON</button>
+                <button id="save-log-button" class="button">Save raw log</button>
+              </div>
+            </div>
+
+            <div class="field">
+              <span>Pilot note</span>
+              <textarea id="pilot-note" placeholder="Who tested, what was unusual, where the operator hesitated, what should be compared later."></textarea>
+            </div>
+            <div id="log-meta" class="result-grid"></div>
+            <pre id="log-json" class="code-block"></pre>
           </section>
         </section>
       </main>

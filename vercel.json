@@ -1,0 +1,30 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "routes": [
+    {
+      "src": "/favicon.ico",
+      "dest": "/api/index.py"
+    },
+    {
+      "src": "/app.js",
+      "dest": "/api/index.py"
+    },
+    {
+      "src": "/styles.css",
+      "dest": "/api/index.py"
+    },
+    {
+      "src": "/api/(.*)",
+      "dest": "/api/index.py"
+    },
+    {
+      "src": "/",
+      "dest": "/api/index.py"
+    }
+  ],
+  "functions": {
+    "api/index.py": {
+      "excludeFiles": "{docs/**,output/**,.agents/**,tools/**}"
+    }
+  }
+}

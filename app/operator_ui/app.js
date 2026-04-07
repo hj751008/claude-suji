@@ -3,6 +3,7 @@ const state = {
   transcriptFiles: [],
   learnerFiles: [],
   transcriptFile: "",
+  showAllUnits: false,
   selectedTranscriptId: null,
   learnerRecord: null,
   loadedLearnerFile: null,
@@ -106,9 +107,13 @@ document.querySelector("#prepare-form-button").addEventListener("click", prepare
 document.querySelector("#submit-turn-button").addEventListener("click", submitTurn);
 document.querySelector("#export-log-button").addEventListener("click", exportLogBundle);
 document.querySelector("#save-log-button").addEventListener("click", saveLogBundle);
+document.querySelector("#scope-toggle").addEventListener("click", toggleUnitScope);
 pilotNoteInput.addEventListener("input", () => refreshLogPreview());
 for (const button of document.querySelectorAll("[data-preset-id]")) {
   button.addEventListener("click", () => applyPilotPreset(button.dataset.presetId));
+}
+for (const button of document.querySelectorAll("[data-run-preset-id]")) {
+  button.addEventListener("click", () => runPresetDemo(button.dataset.runPresetId));
 }
 
 bootstrap().catch((error) => showToast(error.message));
@@ -119,16 +124,19 @@ async function bootstrap() {
   state.transcriptFiles = payload.transcriptFiles ?? [];
   state.learnerFiles = payload.learnerFiles ?? [];
   state.transcriptFile = payload.transcriptFile;
-  state.selectedTranscriptId = state.transcripts[0]?.transcriptId ?? null;
+  document.querySelector("#skill-filter").value = "U1";
+  state.selectedTranscriptId = getVisibleTranscripts()[0]?.transcriptId ?? state.transcripts[0]?.transcriptId ?? null;
   renderTranscriptList();
   renderLearnerFiles();
   renderSelectedTranscript();
+  renderScopeDescription();
   refreshLogPreview();
 }
 
 function renderLearnerFiles() {
+  const visibleLearnerFiles = getVisibleLearnerFiles();
   learnerFileSelect.innerHTML = "";
-  for (const learnerFile of state.learnerFiles) {
+  for (const learnerFile of visibleLearnerFiles) {
     const option = document.createElement("option");
     option.value = learnerFile;
     option.textContent = learnerFile;
@@ -141,7 +149,7 @@ function renderTranscriptList() {
   const tagFilter = document.querySelector("#tag-filter").value.trim().toLowerCase();
   transcriptList.innerHTML = "";
 
-  const filtered = state.transcripts.filter((item) => {
+  const filtered = getVisibleTranscripts().filter((item) => {
     const skillOk = !skillFilter || String(item.skillId ?? "").toLowerCase().includes(skillFilter);
     const tagOk =
       !tagFilter ||
@@ -176,9 +184,11 @@ function renderTranscriptList() {
 }
 
 function renderSelectedTranscript() {
-  const transcript = state.transcripts.find((item) => item.transcriptId === state.selectedTranscriptId);
+  const transcript = getVisibleTranscripts().find((item) => item.transcriptId === state.selectedTranscriptId);
   if (!transcript) {
-    selectedTranscript.textContent = "No transcript matches the current filter.";
+    selectedTranscript.textContent = state.showAllUnits
+      ? "No transcript matches the current filter."
+      : "현재 Unit 1 범위에서 조건에 맞는 transcript가 없습니다.";
     return;
   }
 
@@ -215,6 +225,65 @@ function applyPilotPreset(presetId) {
   renderSelectedTranscript();
   refreshLogPreview();
   showToast(`Preset loaded: ${transcript.name}`);
+}
+
+async function runPresetDemo(presetId) {
+  const preset = PILOT_PRESETS[presetId];
+  if (!preset) {
+    showToast("Unknown preset.");
+    return;
+  }
+  applyPilotPreset(presetId);
+  await replaySelectedTranscript();
+  window.scrollTo({ top: document.querySelector(".workspace")?.offsetTop ?? 0, behavior: "smooth" });
+}
+
+function toggleUnitScope() {
+  state.showAllUnits = !state.showAllUnits;
+  document.querySelector("#skill-filter").value = state.showAllUnits ? "" : "U1";
+  const visibleTranscripts = getVisibleTranscripts();
+  if (!visibleTranscripts.some((item) => item.transcriptId === state.selectedTranscriptId)) {
+    state.selectedTranscriptId = visibleTranscripts[0]?.transcriptId ?? null;
+  }
+  if (!getVisibleLearnerFiles().includes(learnerFileSelect.value)) {
+    state.loadedLearnerFile = null;
+  }
+  renderScopeDescription();
+  renderTranscriptList();
+  renderLearnerFiles();
+  renderSelectedTranscript();
+  showToast(state.showAllUnits ? "All unit QA is now visible." : "Unit 1 scope restored.");
+}
+
+function renderScopeDescription() {
+  const scopeButton = document.querySelector("#scope-toggle");
+  const scopeDescription = document.querySelector("#scope-description");
+  scopeButton.textContent = state.showAllUnits ? "Show Unit 1 only" : "Show all units";
+  scopeDescription.textContent = state.showAllUnits
+    ? "All units visible"
+    : "Unit 1 only";
+}
+
+function getVisibleTranscripts() {
+  if (state.showAllUnits) {
+    return state.transcripts;
+  }
+  return state.transcripts.filter((item) => String(item.skillId ?? "").startsWith("U1"));
+}
+
+function getVisibleLearnerFiles() {
+  if (state.showAllUnits) {
+    return state.learnerFiles;
+  }
+  return state.learnerFiles.filter((path) => isUnit1LearnerFile(path));
+}
+
+function isUnit1LearnerFile(path) {
+  const normalized = String(path ?? "").toLowerCase();
+  if (normalized.includes("-u2-") || normalized.includes("-u3-") || normalized.includes("unit2")) {
+    return false;
+  }
+  return true;
 }
 
 async function replaySelectedTranscript() {
