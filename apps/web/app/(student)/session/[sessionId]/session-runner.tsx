@@ -38,6 +38,7 @@ export function SessionRunner({
   const [submitting, setSubmitting] = useState(false);
 
   const current = problems[index];
+  const progress = ((index + (feedback ? 1 : 0)) / problems.length) * 100;
 
   async function handleSubmit() {
     setSubmitting(true);
@@ -76,7 +77,8 @@ export function SessionRunner({
       .filter(Boolean) as string[];
 
     return (
-      <div className="space-y-6">
+      <div className="space-y-5">
+        <ProgressBar value={progress} />
         <FeedbackPanel
           isCorrect={feedback.isCorrect}
           selectedNames={selectedNames}
@@ -84,14 +86,15 @@ export function SessionRunner({
           webtoonScript={feedback.webtoonScript as never}
         />
         <Button onClick={handleNext} className="w-full" size="lg">
-          {index + 1 >= problems.length ? "세션 완료" : "다음 문제"}
+          {index + 1 >= problems.length ? "미션 완료! 🎉" : "다음 문제 ➡️"}
         </Button>
       </div>
     );
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-5">
+      <ProgressBar value={progress} />
       <ProblemCard body={current.body} index={index} total={problems.length} />
       <ConceptMultiselect
         concepts={allConcepts}
@@ -104,8 +107,19 @@ export function SessionRunner({
         className="w-full"
         size="lg"
       >
-        {submitting ? "제출 중..." : "제출"}
+        {submitting ? "제출 중... ⏳" : "제출하기 ✨"}
       </Button>
+    </div>
+  );
+}
+
+function ProgressBar({ value }: { value: number }) {
+  return (
+    <div className="w-full h-2.5 bg-muted rounded-full overflow-hidden">
+      <div
+        className="h-full bg-gradient-to-r from-primary to-accent rounded-full transition-all duration-500 ease-out"
+        style={{ width: `${Math.min(100, Math.max(0, value))}%` }}
+      />
     </div>
   );
 }

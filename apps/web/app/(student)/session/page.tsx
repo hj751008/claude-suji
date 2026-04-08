@@ -22,8 +22,9 @@ export default function SessionStartPage() {
   }, [router]);
 
   return (
-    <div className="flex items-center justify-center min-h-[200px]">
-      <p className="text-sm text-muted-foreground">세션 준비 중...</p>
+    <div className="flex flex-col items-center justify-center min-h-[300px] animate-pop-in">
+      <p className="text-4xl mb-4 animate-bounce-gentle">📐</p>
+      <p className="text-sm text-muted-foreground font-medium">문제 준비 중...</p>
     </div>
   );
 }

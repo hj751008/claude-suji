@@ -36,11 +36,34 @@ const config: Config = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        pastel: {
+          lavender: "#E8D5F5",
+          mint: "#C5EBD6",
+          pink: "#F5D5E0",
+          yellow: "#FFF3C4",
+          blue: "#D5E5F5",
+          peach: "#FFE0CC",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
+        xl: "1.5rem",
+        "2xl": "2rem",
+      },
+      boxShadow: {
+        soft: "0 2px 12px rgba(180, 140, 220, 0.15)",
+        "soft-lg": "0 4px 20px rgba(180, 140, 220, 0.2)",
+      },
+      keyframes: {
+        "pop-in": {
+          "0%": { transform: "scale(0.9)", opacity: "0" },
+          "100%": { transform: "scale(1)", opacity: "1" },
+        },
+      },
+      animation: {
+        "pop-in": "pop-in 0.3s ease-out",
       },
     },
   },

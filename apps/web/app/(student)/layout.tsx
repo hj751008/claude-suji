@@ -21,12 +21,15 @@ export default async function StudentLayout({
   if (profile.role !== "student") redirect("/dashboard");
 
   return (
-    <div className="min-h-screen bg-background">
-      <header className="border-b px-4 py-3 flex items-center justify-between">
-        <h1 className="text-sm text-muted-foreground">수지의 수학 학습</h1>
+    <div className="min-h-screen bg-gradient-to-b from-pastel-lavender/30 via-background to-pastel-mint/20">
+      <header className="sticky top-0 z-10 backdrop-blur-sm bg-white/70 border-b border-border/50 px-4 py-3 flex items-center justify-between">
+        <div className="flex items-center gap-2">
+          <span className="text-lg">📐</span>
+          <h1 className="text-sm font-semibold text-primary">수지의 수학</h1>
+        </div>
         <LogoutButton />
       </header>
-      <main className="p-4 max-w-md mx-auto">{children}</main>
+      <main className="p-4 pb-8 max-w-md mx-auto">{children}</main>
     </div>
   );
 }
