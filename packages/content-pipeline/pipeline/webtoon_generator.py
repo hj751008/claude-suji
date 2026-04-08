@@ -9,7 +9,7 @@ from .config import ANTHROPIC_API_KEY, MODEL_NAME, MAX_RETRIES
 from .models import CreatedProblem, WebtoonScript, WebtoonLine
 from .prompts.webtoon import SYSTEM, USER_TEMPLATE
 
-console = Console()
+console = Console(force_terminal=True)
 _client: Anthropic | None = None
 
 

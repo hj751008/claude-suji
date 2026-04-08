@@ -9,7 +9,7 @@ from .config import ANTHROPIC_API_KEY, MODEL_NAME, MAX_RETRIES
 from .models import CreatedProblem, Difficulty, SolutionStep
 from .prompts.problem_creation import PERSONAS, USER_TEMPLATE, DIFFICULTY_GUIDES
 
-console = Console()
+console = Console(force_terminal=True)
 _client: Anthropic | None = None
 
 

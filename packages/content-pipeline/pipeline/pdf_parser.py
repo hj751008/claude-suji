@@ -5,7 +5,7 @@ from pathlib import Path
 from pypdf import PdfReader
 from rich.console import Console
 
-console = Console()
+console = Console(force_terminal=True)
 
 
 def extract_text_from_pdf(pdf_path: str | Path) -> list[dict]:

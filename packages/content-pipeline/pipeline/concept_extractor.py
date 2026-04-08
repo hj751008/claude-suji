@@ -9,7 +9,7 @@ from .config import ANTHROPIC_API_KEY, MODEL_NAME, MAX_RETRIES
 from .models import ExtractedConcept
 from .prompts.concept_extraction import SYSTEM, USER_TEMPLATE
 
-console = Console()
+console = Console(force_terminal=True)
 _client: Anthropic | None = None
 
 

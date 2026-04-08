@@ -9,7 +9,7 @@ from .config import ANTHROPIC_API_KEY, MODEL_NAME, MAX_RETRIES
 from .models import CreatedProblem, ReviewResult, ReviewVerdict
 from .prompts.review import PERSONAS, USER_TEMPLATE
 
-console = Console()
+console = Console(force_terminal=True)
 _client: Anthropic | None = None
 
 
