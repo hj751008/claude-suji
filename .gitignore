@@ -12,3 +12,5 @@ dist/
 coverage/
 .swc/
 next-env.d.ts
+
+.vercel
